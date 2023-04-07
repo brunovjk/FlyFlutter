@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "OddsAndEven",
+  "sourceName": "contracts/Betting.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "playerHand",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "playerGuess",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "houseHand",
+          "type": "uint8"
+        }
+      ],
+      "name": "winner",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "winner",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
