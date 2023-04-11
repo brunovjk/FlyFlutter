@@ -1,0 +1,14 @@
+.main {
+  background-color: bisque;
+  width: 100vw;
+}
+
+.app {
+  max-width: 2024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+}
