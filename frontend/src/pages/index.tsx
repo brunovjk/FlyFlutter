@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "./App.module.css";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
+import Projects from "@/sections/Projects";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
         <div className={styles.app}>
           <Header />
           <Hero />
+          <Projects />
+          <ScrollToTopButton />
         </div>
       </main>
     </>

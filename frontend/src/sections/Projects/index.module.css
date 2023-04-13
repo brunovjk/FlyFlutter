@@ -1,6 +1,8 @@
 .container {
   width: 100%;
-  height: 79vh;
+  height: 100vh;
+  background-color: coral;
+
   display: flex;
   justify-content: center;
   align-items: center;
