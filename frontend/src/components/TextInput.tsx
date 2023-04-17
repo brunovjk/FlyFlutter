@@ -2,8 +2,8 @@ import React, { FunctionComponent } from "react";
 import classNames from "classnames";
 
 interface TextInputProps {
-  value: string;
-  onChange: (value: string) => void;
+  value: string | number;
+  onChange: (value: any) => void;
   placeholder?: string;
   disabled?: boolean;
   className?: string;

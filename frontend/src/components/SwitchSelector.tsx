@@ -1,20 +1,20 @@
 import React from "react";
 import classNames from "classnames";
 
-interface ButtonSwitcherProps {
-  value: string;
-  onChange: (value: string) => void;
-  options: string[];
-  className?: string;
+interface SwitchSelector {
+  value: number | string;
+  onChange: (value: any) => void;
+  options: number[] | string[];
+  className?: any;
 }
 
-const SwitchSelector: React.FC<ButtonSwitcherProps> = ({
+const SwitchSelector: React.FC<SwitchSelector> = ({
   value,
   onChange,
   options,
   className,
 }) => {
-  const buttonClasses = (option: string) =>
+  const buttonClasses = (option: number | string) =>
     classNames(
       "px-4 py-2 rounded-full text-center cursor-pointer transition-all duration-150",
       {
@@ -23,7 +23,7 @@ const SwitchSelector: React.FC<ButtonSwitcherProps> = ({
       }
     );
 
-  const handleSwitcherChange = (value: string) => {
+  const handleSwitcherChange = (value: number | string) => {
     onChange(value);
   };
 

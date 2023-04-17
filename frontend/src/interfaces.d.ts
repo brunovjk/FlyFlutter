@@ -16,3 +16,10 @@ interface AmountSelectorProps {
   value: number;
   onChange: (value: number) => void;
 }
+
+interface CircularLoadingProps {
+  size?: number;
+  strokeWidth?: number;
+  color?: string;
+  className?: string;
+}

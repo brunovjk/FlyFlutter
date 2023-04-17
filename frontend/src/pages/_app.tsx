@@ -1,16 +1,19 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
+import { WagmiConfig, createClient } from "wagmi";
+import { polygon, polygonMumbai } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 
-import { WagmiConfig, createClient } from "wagmi";
-
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_APIKEY_MUMBAI;
+
+const chains = [polygonMumbai, polygon];
 
 const client = createClient(
   getDefaultClient({
     appName: "FlyFlutter",
     alchemyId,
+    chains,
   })
 );
 

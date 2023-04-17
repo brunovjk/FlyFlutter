@@ -9,11 +9,38 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function FFCGame({
+  setRequestId,
+  setTaskId,
+  setBetId,
+  setHouseHand,
+  setWinner,
+  setWaitingBet,
+}: {
+  setRequestId: any;
+  setTaskId: any;
+  setBetId: any;
+  setHouseHand: any;
+  setWinner: any;
+  setWaitingBet: any;
+}) {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const categories = [
-    { id: 0, name: "Play", component: <Play /> },
+    {
+      id: 0,
+      name: "Play",
+      component: (
+        <Play
+          setRequestId={setRequestId}
+          setTaskId={setTaskId}
+          setBetId={setBetId}
+          setHouseHand={setHouseHand}
+          setWinner={setWinner}
+          setWaitingBet={setWaitingBet}
+        />
+      ),
+    },
     { id: 1, name: "Rules", component: <Rules /> },
     { id: 2, name: "History", component: <History /> },
   ];

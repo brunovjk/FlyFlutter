@@ -3,11 +3,17 @@ import GlassPaper from "@/components/GlassPaper";
 import Hands from "./Hands";
 import FFCStatus from "./FFCStatus";
 
-const FFCDisplay = () => {
+const FFCDisplay = ({
+  balances,
+  handleBalances,
+}: {
+  balances: any;
+  handleBalances: any;
+}) => {
   return (
     <div className="grid gap-4">
       <GlassPaper>
-        <FFCStatus />
+        <FFCStatus balances={balances} handleBalances={handleBalances} />
       </GlassPaper>
 
       <Hands />

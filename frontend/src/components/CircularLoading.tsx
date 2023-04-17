@@ -1,13 +1,6 @@
 import React, { FunctionComponent } from "react";
 import classNames from "classnames";
 
-interface CircularLoadingProps {
-  size?: number;
-  strokeWidth?: number;
-  color?: string;
-  className?: string;
-}
-
 const CircularLoading: FunctionComponent<CircularLoadingProps> = ({
   size = 24,
   strokeWidth = 2,

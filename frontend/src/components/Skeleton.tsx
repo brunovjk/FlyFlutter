@@ -1,26 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 
-interface SkeletonProps {
-  width?: number | string;
-  height?: number | string;
-  borderRadius?: number | string;
-  className?: string;
-}
-
-const Skeleton: React.FC<SkeletonProps> = ({
-  width = "100%",
-  height = "100%",
-  borderRadius = "0",
-  className,
-}) => {
-  const skeletonClasses = classNames("bg-gray-200 animate-pulse", className);
-
+const Skeleton = ({}) => {
   return (
-    <div
-      className={skeletonClasses}
-      style={{ width, height, borderRadius }}
-    ></div>
+    <div role="status" className="max-w-sm animate-pulse">
+      <div className="h-8 bg-red-200 rounded-lg"></div>
+    </div>
   );
 };
 
