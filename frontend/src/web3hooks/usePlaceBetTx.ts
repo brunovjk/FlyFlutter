@@ -1,10 +1,9 @@
+import { ethers } from "ethers";
+import { prepareSendTransaction, sendTransaction } from "@wagmi/core";
 import addresses from "../contracts/addresses.json";
 import BETTING_ABI from "../contracts/Betting.json";
 
-import { ethers } from "ethers";
-import { prepareSendTransaction, sendTransaction } from "@wagmi/core";
-
-const bettingAddress: any = addresses.bettingAddress;
+const bettingAddress = addresses.bettingAddress;
 
 export const usePlaceBetTx = async ({
   player,
@@ -12,13 +11,7 @@ export const usePlaceBetTx = async ({
   selectedHand,
   selectedGuess,
   selectedBetAmount,
-}: {
-  player: `0x${string}` | undefined;
-  betFee: number | ethers.BigNumber | undefined;
-  selectedHand: number;
-  selectedGuess: number;
-  selectedBetAmount: number;
-}): Promise<{ success: boolean; hash?: `0x${string}`; message: string }> => {
+}: PlaceBetTxProps): Promise<PlaceBetTxResult> => {
   try {
     const config = await prepareSendTransaction({
       request: {

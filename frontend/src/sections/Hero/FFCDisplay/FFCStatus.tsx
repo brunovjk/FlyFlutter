@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 import addresses from "../../../contracts/addresses.json";
 import { useFFCBalance } from "@/web3hooks/useFFCBalance";
-import { useHouseTotalBetted } from "@/web3hooks/useHouseTotalBetted";
-import { useHouseTotalLost } from "@/web3hooks/useHouseTotalLost";
 import Button from "@/components/Button";
 import Skeleton from "@/components/Skeleton";
 import { useMintFFC } from "@/web3hooks/useMintFFC";
+import Alert from "@/components/Alert";
+import { fetchBalances } from "../fetchBalances";
 
 const houseAddress: string = addresses.houseAddress;
 
@@ -19,46 +19,54 @@ const FFCStatus = ({
 }) => {
   const { address, isConnected } = useAccount();
   const [disableMint, setDisableMint] = useState<boolean>(true);
-
+  const [isLoadingMint, setIsLoadingMint] = useState<boolean>(false);
+  const [isOpenAlert, setIsOpenAlert] = useState<{
+    type: "info" | "success" | "warning" | "error";
+    message: string;
+    isOpen: boolean;
+  }>({
+    type: "info",
+    message: "Alert popup",
+    isOpen: false,
+  });
   async function handleMint() {
+    setIsLoadingMint(true);
     if (isConnected && address != undefined) {
       const mintTX = await useMintFFC({ player: address });
       if (mintTX.success) {
         console.log("Minted 100 to: ", address);
+        setIsOpenAlert({
+          type: "success",
+          message: `Minted 100 to: ${address}`,
+          isOpen: true,
+        });
+        setIsLoadingMint(false);
       } else {
         console.log("Failed to Mint, please try again");
+        setIsOpenAlert({
+          type: "error",
+          message: "Failed to Mint, please try again",
+          isOpen: true,
+        });
+        setIsLoadingMint(false);
       }
     }
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (address != undefined) {
-          const playerBalanceTx: any = await useFFCBalance({
-            checkAddress: address,
-          });
-          const houseBalanceTx: any = await useFFCBalance({
-            checkAddress: houseAddress,
-          });
-          const totalBettedTx: any = await useHouseTotalBetted();
-          const totalLostTx: any = await useHouseTotalLost();
-
-          handleBalances({
-            player: playerBalanceTx.data || undefined,
-            house: houseBalanceTx.data || undefined,
-            totalBetted: totalBettedTx.data || undefined,
-            totalLost: totalLostTx.data || undefined,
-          });
+    const handleDisableMint = async (address: any) => {
+      if (address != undefined) {
+        const playerBalanceTx: any = await useFFCBalance({
+          checkAddress: address,
+        });
+        if (playerBalanceTx.data != undefined && playerBalanceTx.data <= 10) {
+          setDisableMint(false);
         }
-      } catch (error: any) {
-        console.error(error);
       }
     };
-
     if (address) {
-      fetchData();
-      setDisableMint(false);
+      fetchBalances(address, handleBalances);
+      handleDisableMint(address);
     }
   }, [address]);
 
@@ -73,7 +81,12 @@ const FFCStatus = ({
             {balances.player ? balances.player : <Skeleton />}
           </span>
         </div>
-        <Button disabled={disableMint} text="Mint" onClick={handleMint} />
+        <Button
+          disabled={disableMint}
+          isLoading={isLoadingMint}
+          text="Mint"
+          onClick={handleMint}
+        />
       </div>
       <div className="w-full flex items-center">
         <div className="w-full flex flex-col items-right">
@@ -100,6 +113,12 @@ const FFCStatus = ({
           </span>
         </div>
       </div>
+      <Alert
+        type={isOpenAlert.type}
+        message={isOpenAlert.message}
+        isOpen={isOpenAlert.isOpen}
+        setIsOpen={setIsOpenAlert}
+      />
     </div>
   );
 };

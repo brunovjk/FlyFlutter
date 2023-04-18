@@ -11,7 +11,9 @@ export async function useAllowanceBetting({
 }: {
   player: `0x${string}` | undefined;
 }): Promise<{
-  data: number | ethers.BigNumber | undefined;
+  success: boolean;
+  data: string | undefined;
+  message: string;
 }> {
   try {
     const data: any = await readContract({
@@ -20,9 +22,13 @@ export async function useAllowanceBetting({
       functionName: "allowance",
       args: [player, bettingAddress],
     });
-    return { data: data };
+
+    return {
+      success: true,
+      data: { data }.data.toString(),
+      message: "Allowance Betting successful",
+    };
   } catch (error: any) {
-    console.error(error);
-    return { data: undefined };
+    return { success: false, data: undefined, message: error.message };
   }
 }

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type SelectorProps = {
   value: number;
   onChange: (value: number) => void;

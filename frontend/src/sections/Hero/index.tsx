@@ -3,6 +3,7 @@ import FFCEvents from "./FFCEvents";
 import FFCDisplay from "./FFCDisplay";
 import FFCGame from "./FFCGame";
 import FFCHeader from "./FFCHeader";
+import { ethers } from "ethers";
 
 const Hero = () => {
   const [requestId, setRequestId] = useState<string | undefined>(undefined);
@@ -16,11 +17,13 @@ const Hero = () => {
     house: string | undefined;
     totalBetted: string | undefined;
     totalLost: string | undefined;
+    allowance: number | ethers.BigNumber | undefined;
   }>({
     player: undefined,
     house: undefined,
     totalBetted: undefined,
     totalLost: undefined,
+    allowance: undefined,
   });
 
   const [waitingBet, setWaitingBet] = useState<boolean>(false);
@@ -37,6 +40,8 @@ const Hero = () => {
 
       <div className="row-span-8 md:row-span-4 grid md:flex items-center justify-evenly">
         <FFCGame
+          balances={balances}
+          handleBalances={handleBalances}
           setRequestId={setRequestId}
           setTaskId={setTaskId}
           setBetId={setBetId}

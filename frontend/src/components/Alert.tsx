@@ -6,6 +6,8 @@ interface AlertProps {
   message: string;
   duration?: number;
   className?: string;
+  isOpen: boolean;
+  setIsOpen: any /*(value: boolean) => void;*/;
 }
 
 const Alert: React.FC<AlertProps> = ({
@@ -13,12 +15,18 @@ const Alert: React.FC<AlertProps> = ({
   message = "Alert popup",
   duration = 5000,
   className,
+  isOpen = false,
+  setIsOpen,
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setIsOpen(false);
+      setIsOpen({
+        type: "info",
+        message: "Alert popup",
+        duration: 5000,
+        className: undefined,
+        isOpen: false,
+      });
     }, duration);
 
     return () => {

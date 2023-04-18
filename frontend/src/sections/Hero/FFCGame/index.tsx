@@ -10,6 +10,8 @@ function classNames(...classes: string[]) {
 }
 
 export default function FFCGame({
+  balances,
+  handleBalances,
   setRequestId,
   setTaskId,
   setBetId,
@@ -17,6 +19,8 @@ export default function FFCGame({
   setWinner,
   setWaitingBet,
 }: {
+  balances: any;
+  handleBalances: any;
   setRequestId: any;
   setTaskId: any;
   setBetId: any;
@@ -32,6 +36,8 @@ export default function FFCGame({
       name: "Play",
       component: (
         <Play
+          balances={balances}
+          handleBalances={handleBalances}
           setRequestId={setRequestId}
           setTaskId={setTaskId}
           setBetId={setBetId}

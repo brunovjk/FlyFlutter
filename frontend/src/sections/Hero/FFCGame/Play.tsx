@@ -14,13 +14,17 @@ import TextInput from "@/components/TextInput";
 import { useBetFee } from "@/web3hooks/useBetFee";
 import { usePlaceBetTxPermit } from "@/web3hooks/usePlaceBetTxPermit";
 import { usePlaceBetTx } from "@/web3hooks/usePlaceBetTx";
-import { useHashExplorer } from "@/web3hooks/useExplorer";
+import { useHashExplorer, useBetIdExplorer } from "@/web3hooks/useExplorer";
 import { useWatchBettingEvent } from "@/web3hooks/useWatchBettingEvent";
 import { useWaitForTransaction } from "@/web3hooks/useWaitForTransaction";
 import { useAllowanceBetting } from "@/web3hooks/useAllowanceBetting";
 import { useApproveBetting } from "@/web3hooks/useApproveBetting";
+import Alert from "@/components/Alert";
+import { fetchBalances } from "../fetchBalances";
 
 export default function Play({
+  balances,
+  handleBalances,
   setRequestId,
   setTaskId,
   setBetId,
@@ -28,6 +32,8 @@ export default function Play({
   setWinner,
   setWaitingBet,
 }: {
+  balances: any;
+  handleBalances: any;
   setRequestId: any;
   setTaskId: any;
   setBetId: any;
@@ -35,24 +41,35 @@ export default function Play({
   setWinner: any;
   setWaitingBet: any;
 }) {
+  let currentBetId: any;
   const { address, isConnected } = useAccount();
 
-  const [betFee, setBetFee] = useState<number | ethers.BigNumber | undefined>(
-    undefined
-  );
+  const [aproveOrPermit, setAproveOrPermit] = useState<string>("Approve");
 
   const [selectedHand, setSelectedHand] = useState<number>(99);
   const [selectedGuess, setSelectedGuess] = useState<number>(99);
   const [selectedBetAmount, setSelectedBetAmount] = useState<number>(0);
 
-  const [aproveOrPermit, setAproveOrPermit] = useState<string>("Approve");
+  const [betFee, setBetFee] = useState<{
+    useFee: number | ethers.BigNumber | undefined;
+    showFee: string | undefined;
+  }>({ useFee: undefined, showFee: undefined });
+
   const [amountToApprove, setAmountToApprove] = useState<number>(0);
-  const [bettingAllowance, setBettingAllowance] = useState<
-    number | ethers.BigNumber | undefined
-  >(undefined);
 
   const [disabledBet, setDisabledBet] = useState<boolean>(true);
   const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false);
+  const [isOpenAlert, setIsOpenAlert] = useState<{
+    type: "info" | "success" | "warning" | "error";
+    message: string;
+    isOpen: boolean;
+  }>({
+    type: "info",
+    message: "Alert popup",
+    isOpen: false,
+  });
+  const [isLoadingApprove, setIsLoadingApprove] = useState<boolean>(false);
+  const [isLoadingPlaceBet, setIsLoadingPlaceBet] = useState<boolean>(false);
 
   async function handleResetStates() {
     setTimeout(() => {
@@ -69,13 +86,16 @@ export default function Play({
       setAmountToApprove(0);
       setDisabledBet(true);
       setIsOpenDialog(false);
-    }, 3000);
+      setIsLoadingApprove(false);
+      setIsLoadingPlaceBet(false);
+    }, 2000);
   }
 
   async function handleSetWinner(TaskExecutedEvent: any) {
     if (
-      TaskExecutedEvent.owner.topics[0] === id("TaskExecuted(bytes32,string)")
-      // && TaskExecutedEvent.owner.topics[1] === requestId
+      TaskExecutedEvent.owner.topics[0] ===
+        id("TaskExecuted(bytes32,string)") &&
+      TaskExecutedEvent.owner.topics[1] === currentBetId
     ) {
       if (TaskExecutedEvent.owner.topics[2] === id("Player wins")) {
         console.log("Task Executed, Winner: ", "Player wins");
@@ -86,15 +106,22 @@ export default function Play({
       }
     } else {
       console.log("TaskExecutedEvent not found: ", TaskExecutedEvent);
-      handleResetStates();
+      setWinner("Erro to fetch Winner");
+      setIsOpenAlert({
+        type: "warning",
+        message: `Erro to fetch Winner, Copy your BetId and check at the explorer:  ${
+          (await useBetIdExplorer()).data
+        }`,
+        isOpen: true,
+      });
     }
   }
 
   async function handleSetHousehand(ReceivedUint256Event: any) {
     if (
       ReceivedUint256Event.owner.topics[0] ===
-      id("ReceivedUint256(bytes32,uint8)")
-      // && ReceivedUint256Event.owner.topics[1] === requestId
+        id("ReceivedUint256(bytes32,uint8)") &&
+      ReceivedUint256Event.owner.topics[1] === currentBetId
     ) {
       console.log(
         "QRNG Received, House hand: ",
@@ -105,7 +132,14 @@ export default function Play({
       );
     } else {
       console.log("ReceivedUint256Event not found: ", ReceivedUint256Event);
-      handleResetStates();
+      setHouseHand("Erro to fetch House Hand");
+      setIsOpenAlert({
+        type: "warning",
+        message: `Erro to fetch House Hand, Copy your BetId and check at the explorer: ${
+          (await useBetIdExplorer()).data
+        }`,
+        isOpen: true,
+      });
     }
   }
 
@@ -115,6 +149,7 @@ export default function Play({
   ]: any[]) {
     await handleSetHousehand(ReceivedUint256Event);
     await handleSetWinner(TaskExecutedEvent);
+    await fetchBalances(address, handleBalances);
   }
 
   async function handleWatchEvents() {
@@ -144,13 +179,13 @@ export default function Play({
         element.topics[0] === id("BetPlaced(bytes32,address,uint8,uint8,uint8)")
       ) {
         console.log("Bet Placed, BetId: ", element.topics[1]);
+        currentBetId = element.topics[1];
         setBetId(element.topics[1]);
       }
     }
   }
 
   async function handleBetTxSuccess(transaction: any) {
-    // - open events component and tell the user can close/reload the page
     setWaitingBet(true);
     // - set RequestId, TaskId and BetId
     await handleSetIds(transaction);
@@ -161,24 +196,37 @@ export default function Play({
   }
 
   async function handleBetTx(placeBetTx: any) {
-    // Alert user Transaction was sent
-    console.log(
-      "Transaction was sent, please wait confirmation:",
-      (await useHashExplorer({ hash: placeBetTx.hash })).data
-    );
     // Wait Transaction result
     const transaction: any = await useWaitForTransaction({
       hash: placeBetTx.hash,
     });
     // if Success
     if (transaction.data.status != 0) {
+      // - open events component and tell the user can close/reload the page
+      setIsOpenAlert({
+        type: "success",
+        message: `Bet placed successful, you can close this page: ${
+          (await useHashExplorer({ hash: placeBetTx.hash })).data
+        }`,
+        isOpen: true,
+      });
+      setIsLoadingPlaceBet(false);
+      await fetchBalances(address, handleBalances);
       await handleBetTxSuccess(transaction);
     } else {
       // if failed, alert failed
       console.log(
-        "Transaction has failed, please try again:",
+        "Transaction failed, please try again:",
         (await useHashExplorer({ hash: placeBetTx.hash })).data
       );
+      setIsOpenAlert({
+        type: "info",
+        message: `Transaction failed, please try again: ${
+          (await useHashExplorer({ hash: placeBetTx.hash })).data
+        }`,
+        isOpen: true,
+      });
+      await fetchBalances(address, handleBalances);
       handleResetStates();
     }
   }
@@ -186,23 +234,47 @@ export default function Play({
   async function handlePlaceBet() {
     try {
       console.log("Placing Bet...");
+      setIsLoadingPlaceBet(true);
       const placeBetTx = await usePlaceBetTx({
         player: address,
-        betFee: betFee,
+        betFee: betFee.useFee,
         selectedHand: selectedHand,
         selectedGuess: selectedGuess,
         selectedBetAmount: selectedBetAmount,
       });
 
       if (placeBetTx.success && placeBetTx.hash != undefined) {
+        // Alert user Transaction was sent
+        console.log(
+          "Transaction sent, please wait confirmation:",
+          (await useHashExplorer({ hash: placeBetTx.hash })).data
+        );
+        setIsOpenAlert({
+          type: "info",
+          message: `Transaction sent, please wait confirmation: ${
+            (await useHashExplorer({ hash: placeBetTx.hash })).data
+          }`,
+          isOpen: true,
+        });
+
         await handleBetTx(placeBetTx);
       } else {
         console.log("Transaction not sent, please try again");
         handleResetStates();
+        setIsOpenAlert({
+          type: "warning",
+          message: "Transaction not sent, please try again",
+          isOpen: true,
+        });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
       handleResetStates();
+      setIsOpenAlert({
+        type: "error",
+        message: error.message,
+        isOpen: true,
+      });
     }
   }
 
@@ -212,7 +284,7 @@ export default function Play({
       selectedHand !== 99 &&
       selectedGuess !== 99 &&
       selectedBetAmount !== 0 &&
-      betFee != undefined
+      betFee.useFee != undefined
     ) {
       setIsOpenDialog(true);
     }
@@ -220,6 +292,7 @@ export default function Play({
 
   async function handleApprove(amount: number) {
     try {
+      setIsLoadingApprove(true);
       if (
         isConnected &&
         address != undefined &&
@@ -231,12 +304,31 @@ export default function Play({
         });
         if (approveTx.success) {
           console.log("Approve successful");
+          await fetchBalances(address, handleBalances);
+          setIsOpenAlert({
+            type: "success",
+            message: "Approve successful",
+            isOpen: true,
+          });
         } else {
           console.log("Approve failed");
+          handleResetStates();
+          setIsOpenAlert({
+            type: "error",
+            message: "Approve failed",
+            isOpen: true,
+          });
         }
       }
-    } catch (error) {
+      setIsLoadingApprove(false);
+    } catch (error: any) {
       console.log(error);
+      handleResetStates();
+      setIsOpenAlert({
+        type: "error",
+        message: error.message,
+        isOpen: true,
+      });
     }
   }
 
@@ -247,8 +339,8 @@ export default function Play({
       selectedHand !== 99 &&
       selectedGuess !== 99 &&
       selectedBetAmount !== 0 &&
-      bettingAllowance != undefined &&
-      ethers.BigNumber.from(bettingAllowance).gt(0)
+      balances.allowance != undefined &&
+      ethers.BigNumber.from(balances.allowance).gt(0)
     ) {
       setDisabledBet(false);
     } else {
@@ -258,23 +350,14 @@ export default function Play({
   }, [isConnected, selectedHand, selectedGuess, selectedBetAmount]);
 
   useEffect(() => {
-    const getPlayerBettingAllowance = async () => {
-      try {
-        const bettingAllowanceTX: number | ethers.BigNumber | undefined = (
-          await useAllowanceBetting({ player: address })
-        ).data;
-        if (bettingAllowanceTX != undefined) {
-          setBettingAllowance(bettingAllowanceTX);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
     const getBetFee = async () => {
       try {
-        const betFeeTX = (await useBetFee()).fee;
-        if (betFeeTX != undefined) {
-          setBetFee(betFeeTX);
+        const betFeeTX = await useBetFee();
+        if (betFeeTX.success) {
+          setBetFee({
+            useFee: betFeeTX?.data?.useFee,
+            showFee: betFeeTX?.data?.showFee,
+          });
         }
       } catch (error) {
         console.log(error);
@@ -282,7 +365,6 @@ export default function Play({
     };
 
     if (isConnected && address != undefined) {
-      getPlayerBettingAllowance();
       getBetFee();
     }
 
@@ -292,17 +374,17 @@ export default function Play({
   return (
     <>
       <SwitchSelector
-        value={selectedHand}
-        onChange={setSelectedHand}
+        value={selectedGuess}
+        onChange={setSelectedGuess}
         options={[0, 1]}
       />
-      <SliderSelector value={selectedGuess} onChange={setSelectedGuess} />
+      <SliderSelector value={selectedHand} onChange={setSelectedHand} />
       <AmountSelector
         value={selectedBetAmount}
         onChange={setSelectedBetAmount}
       />
       <p>Bet Fee:</p>
-      <p>{betFee != undefined ? betFee.toString() : "--"}</p>
+      <p>{betFee.showFee != undefined ? betFee.showFee : "--"}</p>
       <SwitchSelector
         value={aproveOrPermit}
         onChange={setAproveOrPermit}
@@ -312,7 +394,9 @@ export default function Play({
         <>
           <p>Player betting allowance:</p>
           <p>
-            {bettingAllowance != undefined ? bettingAllowance.toString() : "--"}
+            {balances.allowance != undefined
+              ? balances.allowance.toString()
+              : "--"}
           </p>
           <TextInput
             value={amountToApprove}
@@ -325,6 +409,7 @@ export default function Play({
             onClick={() => {
               handleApprove(amountToApprove);
             }}
+            isLoading={isLoadingApprove}
           />
         </>
       ) : (
@@ -335,15 +420,27 @@ export default function Play({
         disabled={disabledBet}
         text="REVIEW AND PLACE THE BET"
         onClick={handleConfirmBet}
+        isLoading={isLoadingPlaceBet}
       />
       <Dialog
         title="Confirm Bet"
-        text1={`selectedHand: ${selectedHand}`}
-        text2={`selectedGuess: ${selectedGuess}`}
-        text3={`selectedBetAmount: ${selectedBetAmount}`}
-        text4={`betFee: ${betFee}`}
+        content={
+          <>
+            <div className="p-4">{`selectedHand: ${selectedHand}`}</div>
+            <div className="p-4">{`selectedGuess: ${selectedGuess}`}</div>
+            <div className="p-4">{`selectedBetAmount: ${selectedBetAmount}`}</div>
+            <div className="p-4">{`betFee: ${betFee.showFee}`}</div>
+          </>
+        }
         onAccept={handlePlaceBet}
         isOpen={isOpenDialog}
+        setIsOpenDialog={setIsOpenDialog}
+      />
+      <Alert
+        type={isOpenAlert.type}
+        message={isOpenAlert.message}
+        isOpen={isOpenAlert.isOpen}
+        setIsOpen={setIsOpenAlert}
       />
     </>
   );

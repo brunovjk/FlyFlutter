@@ -6,7 +6,14 @@ import { ethers } from "ethers";
 const bettingAddress: any = addresses.bettingAddress;
 
 export async function useBetFee(): Promise<{
-  fee: number | ethers.BigNumber | undefined;
+  success: boolean;
+  data:
+    | {
+        useFee: number | ethers.BigNumber | undefined;
+        showFee: string | undefined;
+      }
+    | undefined;
+  message: string;
 }> {
   try {
     const data: any = await readContract({
@@ -15,9 +22,16 @@ export async function useBetFee(): Promise<{
       functionName: "betFee",
     });
 
-    return { fee: data };
+    const useFee = data;
+    const showFee = ethers.utils.formatUnits(data.toString());
+
+    return {
+      success: true,
+      data: { useFee: useFee, showFee: showFee },
+      message: "Bet Fee successful",
+    };
   } catch (error: any) {
     console.error(error);
-    return { fee: undefined };
+    return { success: false, data: undefined, message: error.message };
   }
 }
