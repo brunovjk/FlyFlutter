@@ -37,8 +37,8 @@ const Alert: React.FC<AlertProps> = ({
   const alertClasses = classNames(
     "fixed bottom-4 left-4 bg-blue-500 text-white border border-gray-300 rounded-full shadow-md px-4 py-3",
     {
-      "bg-green-100 text-green-800 border-green-300": type === "success",
-      "bg-red-100 text-red-800 border-red-300": type === "error",
+      "bg-green-300 text-green-800 border-green-500": type === "success",
+      "bg-red-300 text-red-800 border-red-500": type === "error",
       "opacity-100": isOpen,
       "opacity-0": !isOpen,
       "pointer-events-none": !isOpen,

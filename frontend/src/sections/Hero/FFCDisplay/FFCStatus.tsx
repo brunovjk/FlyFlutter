@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 import Skeleton from "@/components/Skeleton";
 import { useMintFFC } from "@/web3hooks/useMintFFC";
 import Alert from "@/components/Alert";
-import { fetchBalances } from "../fetchBalances";
+import { fetchBalances } from "../../../web3hooks/fetchBalances";
 
 const houseAddress: string = addresses.houseAddress;
 
@@ -29,6 +29,20 @@ const FFCStatus = ({
     message: "Alert popup",
     isOpen: false,
   });
+
+  const handleDisableMint = async (address: any) => {
+    if (address != undefined) {
+      const playerBalanceTx: any = await useFFCBalance({
+        checkAddress: address,
+      });
+      if (playerBalanceTx.data != undefined && playerBalanceTx.data <= 10) {
+        setDisableMint(false);
+      } else {
+        setDisableMint(true);
+      }
+    }
+  };
+
   async function handleMint() {
     setIsLoadingMint(true);
     if (isConnected && address != undefined) {
@@ -40,6 +54,8 @@ const FFCStatus = ({
           message: `Minted 100 to: ${address}`,
           isOpen: true,
         });
+        await fetchBalances(address, handleBalances);
+        handleDisableMint(address);
         setIsLoadingMint(false);
       } else {
         console.log("Failed to Mint, please try again");
@@ -48,27 +64,20 @@ const FFCStatus = ({
           message: "Failed to Mint, please try again",
           isOpen: true,
         });
+        await fetchBalances(address, handleBalances);
+        handleDisableMint(address);
         setIsLoadingMint(false);
       }
     }
   }
 
   useEffect(() => {
-    const handleDisableMint = async (address: any) => {
-      if (address != undefined) {
-        const playerBalanceTx: any = await useFFCBalance({
-          checkAddress: address,
-        });
-        if (playerBalanceTx.data != undefined && playerBalanceTx.data <= 10) {
-          setDisableMint(false);
-        }
-      }
-    };
     if (address) {
+      console.log("Player Balance:", balances.player);
       fetchBalances(address, handleBalances);
       handleDisableMint(address);
     }
-  }, [address]);
+  }, [address, balances.player]);
 
   return (
     <div className="w-full h-full flex flex-col md:flex-row justify-center items-center">

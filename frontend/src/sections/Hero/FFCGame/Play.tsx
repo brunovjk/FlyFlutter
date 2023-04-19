@@ -12,15 +12,13 @@ import Button from "@/components/Button";
 import TextInput from "@/components/TextInput";
 
 import { useBetFee } from "@/web3hooks/useBetFee";
-import { usePlaceBetTxPermit } from "@/web3hooks/usePlaceBetTxPermit";
 import { usePlaceBetTx } from "@/web3hooks/usePlaceBetTx";
 import { useHashExplorer, useBetIdExplorer } from "@/web3hooks/useExplorer";
 import { useWatchBettingEvent } from "@/web3hooks/useWatchBettingEvent";
 import { useWaitForTransaction } from "@/web3hooks/useWaitForTransaction";
-import { useAllowanceBetting } from "@/web3hooks/useAllowanceBetting";
 import { useApproveBetting } from "@/web3hooks/useApproveBetting";
 import Alert from "@/components/Alert";
-import { fetchBalances } from "../fetchBalances";
+import { fetchBalances } from "../../../web3hooks/fetchBalances";
 
 export default function Play({
   balances,

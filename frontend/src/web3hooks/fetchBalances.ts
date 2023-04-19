@@ -3,7 +3,7 @@ import { useHouseTotalLost } from "@/web3hooks/useHouseTotalLost";
 import { useFFCBalance } from "@/web3hooks/useFFCBalance";
 import { useAllowanceBetting } from "@/web3hooks/useAllowanceBetting";
 
-import addresses from "../../contracts/addresses.json";
+import addresses from "../contracts/addresses.json";
 
 const houseAddress: string = addresses.houseAddress;
 

@@ -37,3 +37,16 @@ type PlaceBetTxProps = {
   selectedGuess: number;
   selectedBetAmount: number;
 };
+
+interface Bet {
+  playerAddress: string;
+  playerHand: number;
+  playerGuess: number;
+  betAmount: number;
+  houseHand: number;
+  requestId: string;
+  taskId: string;
+  waitingFulfillment: boolean;
+  waitingCloseBet: boolean;
+  winner: string;
+}

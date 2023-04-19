@@ -543,6 +543,82 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "endIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "getBetsPerPlayer",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "playerAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint8",
+            "name": "playerHand",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "playerGuess",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "betAmount",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "houseHand",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "requestId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "taskId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bool",
+            "name": "waitingFulfillment",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "waitingCloseBet",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "winner",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct Betting.Bet[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "houseContract",
     "outputs": [
