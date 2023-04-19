@@ -12,11 +12,11 @@ async function main() {
     "0xfb6d017bb87991b7495f563db3c8cf59ff87b09781947bb1e417006ad7f55a78";
 
   const verifying = true;
-  const houseAddress = "0x8dd49685c8EA4cb4fE910d3BB223C0F10549F5e5";
-  const ffcAddress = "0xa3e40d9AfeD50B0971781D5d40525010c981324F";
-  const oddAndEvenAddress = "0xaC94c48DEd4544627786B97c18D89192f6E9040b";
-  const bettingAddress = "0xA1B26BA7e525B51eD7786f5b1937262fA13dE869";
-  const sponsorWallet = "0xA52201Bb06f6B5340978771580F3FFc82Cf64D9f";
+  const houseAddress = "0x6f4e47027c9554C6Dc6FB7BFA833c053d9F89C63";
+  const ffcAddress = "0x7c01D875dB251c2697a207f722A348a862A0c300";
+  const oddAndEvenAddress = "0xcdE029AFC6249EcD93A6ce2A93e5293ebD5a3582";
+  const bettingAddress = "0x07d6B48aC555521B60c2D00eD1e0059eDEdc8914";
+  const sponsorWallet = "0x216e6D350b1d29338F579dee4Ac05787795f958C";
 
   // Check deployer
   const [deployer] = await ethers.getSigners();

@@ -87,6 +87,7 @@ export interface BettingInterface extends utils.Interface {
     "flyFlutterCoinContract()": FunctionFragment;
     "fulfillUint256(bytes32,bytes)": FunctionFragment;
     "fundsOwner()": FunctionFragment;
+    "getBetsPerPlayer(address,uint256)": FunctionFragment;
     "houseContract()": FunctionFragment;
     "oddsAndEvenContract()": FunctionFragment;
     "owner()": FunctionFragment;
@@ -125,6 +126,7 @@ export interface BettingInterface extends utils.Interface {
       | "flyFlutterCoinContract"
       | "fulfillUint256"
       | "fundsOwner"
+      | "getBetsPerPlayer"
       | "houseContract"
       | "oddsAndEvenContract"
       | "owner"
@@ -196,6 +198,10 @@ export interface BettingInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "fundsOwner",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getBetsPerPlayer",
+    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "houseContract",
@@ -303,6 +309,10 @@ export interface BettingInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "fundsOwner", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getBetsPerPlayer",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "houseContract",
     data: BytesLike
@@ -537,6 +547,12 @@ export interface Betting extends BaseContract {
 
     fundsOwner(overrides?: CallOverrides): Promise<[string]>;
 
+    getBetsPerPlayer(
+      player: PromiseOrValue<string>,
+      endIndex: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[Betting.BetStructOutput[]]>;
+
     houseContract(overrides?: CallOverrides): Promise<[string]>;
 
     oddsAndEvenContract(overrides?: CallOverrides): Promise<[string]>;
@@ -677,6 +693,12 @@ export interface Betting extends BaseContract {
 
   fundsOwner(overrides?: CallOverrides): Promise<string>;
 
+  getBetsPerPlayer(
+    player: PromiseOrValue<string>,
+    endIndex: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<Betting.BetStructOutput[]>;
+
   houseContract(overrides?: CallOverrides): Promise<string>;
 
   oddsAndEvenContract(overrides?: CallOverrides): Promise<string>;
@@ -816,6 +838,12 @@ export interface Betting extends BaseContract {
     ): Promise<void>;
 
     fundsOwner(overrides?: CallOverrides): Promise<string>;
+
+    getBetsPerPlayer(
+      player: PromiseOrValue<string>,
+      endIndex: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<Betting.BetStructOutput[]>;
 
     houseContract(overrides?: CallOverrides): Promise<string>;
 
@@ -988,6 +1016,12 @@ export interface Betting extends BaseContract {
 
     fundsOwner(overrides?: CallOverrides): Promise<BigNumber>;
 
+    getBetsPerPlayer(
+      player: PromiseOrValue<string>,
+      endIndex: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     houseContract(overrides?: CallOverrides): Promise<BigNumber>;
 
     oddsAndEvenContract(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1108,6 +1142,12 @@ export interface Betting extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     fundsOwner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getBetsPerPlayer(
+      player: PromiseOrValue<string>,
+      endIndex: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
 
     houseContract(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 

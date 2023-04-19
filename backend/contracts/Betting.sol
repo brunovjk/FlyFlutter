@@ -167,6 +167,7 @@ contract Betting is Ownable, RrpRequesterV0, AutomateTaskCreator {
         });
         bets[requestId] = newBet;
         betIDsPerPlayer[msg.sender].push(requestId);
+
         // Send the FlyFlutterCoin betAmount to the House Contract.
         if (
             !flyFlutterCoinContract.transferFrom(
@@ -220,7 +221,7 @@ contract Betting is Ownable, RrpRequesterV0, AutomateTaskCreator {
             if (
                 !houseContract.sendBet(
                     bets[requestId].playerAddress,
-                    2 * bets[requestId].betAmount
+                    bets[requestId].betAmount
                 )
             ) revert SendBetFailed();
         } else {
@@ -229,6 +230,29 @@ contract Betting is Ownable, RrpRequesterV0, AutomateTaskCreator {
         bets[requestId].waitingCloseBet = false;
         success = true;
         _cancelTask(bets[requestId].taskId);
+    }
+
+    function getBetsPerPlayer(
+        address player,
+        uint256 endIndex
+    ) public view returns (Bet[] memory) {
+        uint256 outputBetLength;
+        bytes32[] memory betIDsPerPlayer_ = betIDsPerPlayer[player];
+
+        if (betIDsPerPlayer_.length > endIndex) {
+            outputBetLength = endIndex;
+        } else {
+            outputBetLength = betIDsPerPlayer_.length;
+        }
+
+        Bet[] memory outputBets = new Bet[](outputBetLength);
+
+        for (uint256 i = 0; i < outputBetLength; i++) {
+            bytes32 betID = betIDsPerPlayer_[betIDsPerPlayer_.length - 1 - i];
+            outputBets[i] = bets[betID];
+        }
+
+        return outputBets;
     }
 
     // *** QRNG functions **************************************************//

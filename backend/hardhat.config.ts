@@ -29,19 +29,19 @@ const config: HardhatUserConfig = {
     polygonMumbai: {
       url: MUMBAI_RPC_ENDPOINT,
       chainId: 80001,
-      accounts: [PRIVATE_KEY],
+      accounts: [PRIVATE_KEY ? PRIVATE_KEY : ""],
     },
     polygon: {
       url: POLYGON_RPC_ENDPOINT,
       chainId: 137,
-      accounts: [PRIVATE_KEY],
+      accounts: [PRIVATE_KEY ? PRIVATE_KEY : ""],
       gasPrice: 8000000000,
     },
   },
   etherscan: {
     apiKey: {
-      polygonMumbai: POLYGONSCAN_API_KEY,
-      polygon: POLYGONSCAN_API_KEY,
+      polygonMumbai: POLYGONSCAN_API_KEY ? POLYGONSCAN_API_KEY : "",
+      polygon: POLYGONSCAN_API_KEY ? POLYGONSCAN_API_KEY : "",
     },
   },
 };

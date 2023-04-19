@@ -48,4 +48,5 @@ Deploy the contracts:
 
 ```
 npx hardhat run --network <network> deploy.js
+npx hardhat run --network polygonMumbai scripts/deploy_mumbai.ts
 ```
