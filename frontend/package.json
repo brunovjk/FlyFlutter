@@ -25,6 +25,7 @@
     "connectkit": "1.2.3",
     "ethers": "^5",
     "next": "latest",
+    "nodemailer": "^6.9.2",
     "react": "latest",
     "react-dom": "latest",
     "react-multi-carousel": "^2.8.3",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@types/node": "latest",
+    "@types/nodemailer": "^6.4.7",
     "@types/react": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",

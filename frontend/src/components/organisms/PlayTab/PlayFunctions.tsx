@@ -68,7 +68,7 @@ export function usePlayFunctions(state: any, context: any) {
         winner: "Erro to fetch Winner",
       });
       context.setIsOpenAlert({
-        type: "warning",
+        severity: "warning",
         message: `Erro to fetch Winner, Copy your BetId and check at the explorer:  ${
           (await useBetIdExplorer()).data
         }`,
@@ -100,7 +100,7 @@ export function usePlayFunctions(state: any, context: any) {
       });
 
       context.setIsOpenAlert({
-        type: "warning",
+        severity: "warning",
         message: `Erro to fetch House Hand, Copy your BetId and check at the explorer: ${
           (await useBetIdExplorer()).data
         }`,
@@ -182,7 +182,7 @@ export function usePlayFunctions(state: any, context: any) {
     if (transaction.data.status != 0) {
       // - open events component and tell the user can close/reload the page
       context.setIsOpenAlert({
-        type: "success",
+        severity: "success",
         message: `Bet placed successful, you can close this page: ${
           (await useHashExplorer({ hash: placeBetTx.hash })).data
         }`,
@@ -212,7 +212,7 @@ export function usePlayFunctions(state: any, context: any) {
         (await useHashExplorer({ hash: placeBetTx.hash })).data
       );
       context.setIsOpenAlert({
-        type: "info",
+        severity: "info",
         message: `Transaction failed, please try again: ${
           (await useHashExplorer({ hash: placeBetTx.hash })).data
         }`,
@@ -256,7 +256,7 @@ export function usePlayFunctions(state: any, context: any) {
           (await useHashExplorer({ hash: placeBetTx.hash })).data
         );
         context.setIsOpenAlert({
-          type: "info",
+          severity: "info",
           message: `Transaction sent, please wait confirmation: ${
             (await useHashExplorer({ hash: placeBetTx.hash })).data
           }`,
@@ -268,7 +268,7 @@ export function usePlayFunctions(state: any, context: any) {
         console.log("Transaction not sent, please try again");
         handleResetStates();
         context.setIsOpenAlert({
-          type: "warning",
+          severity: "warning",
           message: "Transaction not sent, please try again",
           isOpen: true,
         });
@@ -277,7 +277,7 @@ export function usePlayFunctions(state: any, context: any) {
       console.log(error);
       handleResetStates();
       context.setIsOpenAlert({
-        type: "error",
+        severity: "error",
         message: error.message,
         isOpen: true,
       });

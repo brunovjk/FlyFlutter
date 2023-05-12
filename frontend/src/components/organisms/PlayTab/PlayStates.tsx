@@ -12,11 +12,11 @@ export function usePlayState() {
   const [disabledBet, setDisabledBet] = useState<boolean>(true);
   const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false);
   const [isOpenAlert, setIsOpenAlert] = useState<{
-    type: "info" | "success" | "warning" | "error";
+    severity: "info" | "success" | "warning" | "error";
     message: string;
     isOpen: boolean;
   }>({
-    type: "info",
+    severity: "info",
     message: "Alert popup",
     isOpen: false,
   });

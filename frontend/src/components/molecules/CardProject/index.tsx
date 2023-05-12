@@ -29,6 +29,7 @@ const CardProject: FC<CardProjectProps> = ({
     <CustomPaper
       sx={{
         padding: "24px",
+        margin: "12px",
         maxWidth: { xs: "100%", md: "324px" },
         border: isConnected ? "" : "2px solid",
       }}
