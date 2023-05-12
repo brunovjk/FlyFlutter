@@ -1,10 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import { theme } from "@/config/theme";
 
-const commonStyle = {
-  transition: "all 0.5s ease-in-out",
-  // transition: "all 0.25s ease",
-};
+const commonStyle = {};
 
 export const useStyles = makeStyles({
   defaultStyle: {
@@ -16,6 +13,8 @@ export const useStyles = makeStyles({
     cursor: "pointer",
     "&:hover": {
       transform: "translateX(-3px) translateY(-3px)",
+      border: "2px solid",
+      backgroundColor: theme.palette.common.white,
       boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
     },
     "&:active": {
@@ -33,6 +32,8 @@ export const useStyles = makeStyles({
     cursor: "pointer",
     "&:hover": {
       transform: "translateX(-3px) translateY(-3px)",
+      border: "2px solid",
+      backgroundColor: theme.palette.primary.main,
       boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
     },
     "&:active": {
@@ -50,6 +51,11 @@ export const useStyles = makeStyles({
     cursor: "pointer",
     transform: "translateX(-1px) translateY(-1px)",
     boxShadow: "0 0px 0px rgba(0, 0, 0, 0)",
+    "&:hover": {
+      transform: "translateX(-1px) translateY(-1px)",
+      boxShadow: "0 0px 0px rgba(0, 0, 0, 0)",
+      backgroundColor: theme.palette.common.white,
+    },
     ...commonStyle,
   },
   disabledStyle: {

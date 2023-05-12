@@ -23,6 +23,8 @@ export default function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
+        <title>brunovjk - Web3 Developer</title>
+        <meta name="description" content="Web3 Developer" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>

@@ -20,10 +20,10 @@ export const useStyles = makeStyles({
   connectedStyle: {
     color: theme.palette.text.secondary,
     "&:hover": {
-      color: theme.palette.primary.dark,
+      color: theme.palette.secondary.dark,
     },
     "&:active": {
-      color: theme.palette.secondary.dark,
+      color: theme.palette.secondary.light,
     },
     ...commonStyle,
   },

@@ -12,7 +12,6 @@ export interface CardProjectProps {
   role: string;
   challenges: string;
   learnMore: string;
-  isDarkCard?: boolean;
 }
 
 const CardProject: FC<CardProjectProps> = ({
@@ -23,22 +22,14 @@ const CardProject: FC<CardProjectProps> = ({
   role,
   challenges,
   learnMore,
-  isDarkCard,
 }) => {
   const isConnected = useConnectionSync();
-
-  const isDarkCardStyle = !isConnected
-    ? {
-        bgcolor: isDarkCard ? "text.primary" : "common.white",
-      }
-    : {};
 
   return (
     <CustomPaper
       sx={{
-        ...isDarkCardStyle,
         padding: "24px",
-        maxWidth: { xs: "100%", md: "360px" },
+        maxWidth: { xs: "100%", md: "324px" },
         border: isConnected ? "" : "2px solid",
       }}
     >
@@ -50,7 +41,6 @@ const CardProject: FC<CardProjectProps> = ({
         role={role}
         challenges={challenges}
         learnMore={learnMore}
-        isDarkCard={isDarkCard}
       />
     </CustomPaper>
   );

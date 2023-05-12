@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import Stack from "@mui/material/Stack";
 import { CustomTypography, CustomButton } from "@/components/atoms";
-import { CardProjectProps } from ".";
 
 const CardContent: FC<CardProjectProps> = ({
   projectName,
@@ -11,7 +10,6 @@ const CardContent: FC<CardProjectProps> = ({
   role,
   challenges,
   learnMore,
-  isDarkCard,
 }) => {
   return (
     <Stack spacing="16px">

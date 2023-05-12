@@ -20,12 +20,14 @@
     "@mui/material": "latest",
     "@mui/styles": "^5.12.3",
     "@mui/x-data-grid": "^6.3.0",
+    "@react-spring/web": "^9.7.2",
     "@wagmi/core": "0.10.11",
     "connectkit": "1.2.3",
     "ethers": "^5",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-multi-carousel": "^2.8.3",
     "wagmi": "^0.12.12"
   },
   "devDependencies": {

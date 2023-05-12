@@ -13,6 +13,8 @@ const CustomBackground: FC<ContainerProps> = ({
 
   return (
     <Container
+      disableGutters
+      maxWidth={false}
       {...rest}
       className={isConnected ? classes.connectedStyle : classes.defaultStyle}
       sx={sx}

@@ -21,16 +21,18 @@ const ContentLayout: React.FC<SectionProps> = ({ content1, content2 }) => {
     <>
       {content2 ? (
         <Grid container>
-          <Grid item xs={12} md={6} sx={{ zIndex: 2 }}>
+          <Grid item xs={12} md={6} sx={{ width: "100%", zIndex: 2 }}>
             {content1}
           </Grid>
-          <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
+          <Grid item xs={12} md={6} sx={{ width: "100%", zIndex: 1 }}>
             {content2}
           </Grid>
         </Grid>
       ) : (
         <Grid container direction="column" alignItems="center">
-          {content1}
+          <Grid item xs={12} sx={{ width: "100%", zIndex: 1 }}>
+            {content1}
+          </Grid>
         </Grid>
       )}
     </>
