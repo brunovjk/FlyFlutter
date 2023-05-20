@@ -1,21 +1,23 @@
 import React, { FC } from "react";
-
-import { HeroAnimation } from "@/components/molecules";
-import { HeroTab } from "@/components/organisms";
-
-import { HeroContextProvider } from "./HeroContext";
-import HeroHeader from "./HeroHeader";
-import HeroDisplay from "./HeroDisplay";
+import { Stack, Typography } from "@mui/material";
+import { ConnectButton, FadeInLayout } from "../../components";
 
 const Hero: FC = () => {
   return (
-    <HeroContextProvider>
-      <HeroAnimation
-        HeroHeader={HeroHeader}
-        HeroDisplay={HeroDisplay}
-        HeroTab={HeroTab}
-      />
-    </HeroContextProvider>
+    <FadeInLayout>
+      <Stack spacing={3}>
+        <Typography variant="h1">
+          Experience the thrill of gambling without risking a dime.
+        </Typography>
+        <Typography variant="body1">
+          FlyFlutter is a game designed to provide entertainment for the ones
+          who enjoy the thrill of gambling but without using real money. It
+          operates on the Polygon and Mumbai blockchains using the free to mint
+          <strong> FlyFlutterCoin </strong>token.
+        </Typography>
+        <ConnectButton />
+      </Stack>
+    </FadeInLayout>
   );
 };
 

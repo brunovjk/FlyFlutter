@@ -1,10 +1,20 @@
 import React, { FC } from "react";
-import { SectionLayout } from "@/components/atoms";
-import { CarouselProject } from "@/components/molecules";
-import { projects } from "@/assets/copy";
+import { CarouselProject, FadeInLayout, GlassPaper } from "../../components";
+import Copy from "./Copy";
+import { projects } from "../../copy";
+import { Stack } from "@mui/material";
 
 const Projects: FC = () => {
-  return <SectionLayout content1={<CarouselProject projects={projects} />} />;
+  return (
+    <FadeInLayout>
+      <GlassPaper>
+        <Stack spacing={3} justifyContent="center">
+          <Copy />
+          <CarouselProject projects={projects} />
+        </Stack>
+      </GlassPaper>
+    </FadeInLayout>
+  );
 };
 
 export default Projects;

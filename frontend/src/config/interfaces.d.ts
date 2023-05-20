@@ -2,7 +2,7 @@ interface AppAlertProps {
   isOpen: boolean;
   severity: "info" | "success" | "warning" | "error";
   message: string;
-  handleClose?: () => void;
+  link?: string;
 }
 
 interface BalancesProps {
@@ -11,6 +11,7 @@ interface BalancesProps {
   totalBetted?: string;
   totalLost?: string;
   allowance?: number | ethers.BigNumber;
+  betFee?: number | ethers.BigNumber;
 }
 
 interface BetProps {
@@ -30,10 +31,18 @@ interface CardProjectProps {
   projectName: string;
   description: string;
   technologiesUsed: string;
-  keyFeatures: string;
-  role: string;
-  challenges: string;
+  keyFeatures?: string;
   learnMore: string;
+}
+
+interface DialogProps {
+  open: boolean;
+  title: string;
+  body: JSX.Element;
+  setOpenDialog: React.Dispatch<React.SetStateAction<boolean>>;
+  onConfirm: () => Promise<void>;
+  confirmText?: string;
+  cancelText?: string;
 }
 
 interface DisplayProps {
@@ -42,21 +51,36 @@ interface DisplayProps {
   waitingBet: boolean;
 }
 
-interface HeroContextProps {
+type FlyFlutterContextProps = {
   balances: BalancesProps;
   inputs: InputsProps;
   results: ResultsProps;
+  enabledMint: boolean;
+  enabledApprove: boolean;
+  enabledBet: boolean;
+  placingBet: boolean;
   waitingBet: boolean;
-  setIsOpenAlert: Dispatch<SetStateAction<AppAlertProps>>;
+  openAlert: AppAlertProps;
+  setEnabledMint: React.Dispatch<React.SetStateAction<boolean>>;
+  setEnabledApprove: React.Dispatch<React.SetStateAction<boolean>>;
+  setEnabledBet: React.Dispatch<React.SetStateAction<boolean>>;
+  setPlacingBet: React.Dispatch<React.SetStateAction<boolean>>;
   setWaitingBet: React.Dispatch<React.SetStateAction<boolean>>;
-  updateInputOutputs: (newInputOutputs: any) => void;
+  setOpenAlert: React.Dispatch<React.SetStateAction<AppAlertProps>>;
+  updateBalances: (newBalancesValue: BalancesProps) => void;
+  updateInputs: (newInputsValue: InputsProps) => void;
+  updateResults: (newResultsValue: ResultsProps) => void;
+  fetchOnlyPlayerBalances: () => Promise<void>;
   fetchBalances: () => Promise<void>;
-}
+};
 
 interface HouseDisplayProps {
   balances: BalancesProps;
 }
 
+interface IconStackProps {
+  color: string;
+}
 interface InputsProps {
   guess?: number;
   hand?: number;
@@ -76,6 +100,20 @@ interface ResultsProps {
 interface ResultsDisplayProps {
   results: ResultsProps;
   waitingBet: boolean;
+}
+
+interface PlaceBetTxResult {
+  success: boolean;
+  hash?: string;
+  message: string;
+}
+
+interface PlaceBetTxProps {
+  player: `0x${string}` | undefined;
+  betFee: number | ethers.BigNumber | undefined;
+  selectedHand: number;
+  selectedGuess: number;
+  selectedBetAmount: number;
 }
 
 interface TabContent {

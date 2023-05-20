@@ -1,9 +1,0 @@
-export { default as CustomTypography } from "./CustomTypography";
-export { default as CustomPaper } from "./CustomPaper";
-export { default as CustomLink } from "./CustomLink";
-export { default as CustomTooltip } from "./CustomTooltip";
-export { default as CustomButton } from "./CustomButton";
-export { default as CustomBackground } from "./CustomBackground";
-export { default as Illustration } from "./Illustration";
-export { default as PageLayout } from "./PageLayout";
-export { default as SectionLayout } from "./SectionLayout";

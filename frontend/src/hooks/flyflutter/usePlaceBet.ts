@@ -1,6 +1,6 @@
 import { prepareWriteContract, writeContract } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
-import BETTING_ABI from "@/contracts/Betting.json";
+import addresses from "../../contracts/addresses.json";
+import BETTING_ABI from "../../contracts/Betting.json";
 
 import { ethers } from "ethers";
 

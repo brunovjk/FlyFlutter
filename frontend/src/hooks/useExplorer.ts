@@ -1,5 +1,5 @@
 import { getNetwork } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
+import addresses from "../contracts/addresses.json";
 
 const bettingAddress: any = addresses.bettingAddress;
 

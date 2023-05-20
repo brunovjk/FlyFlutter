@@ -1,6 +1,6 @@
 import { readContract } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
-import FFC_ABI from "@/contracts/FlyFlutterCoin.json";
+import addresses from "../../contracts/addresses.json";
+import FFC_ABI from "../../contracts/FlyFlutterCoin.json";
 
 const ffcAddress: any = addresses.ffcAddress;
 

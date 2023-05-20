@@ -1,18 +1,13 @@
 import { readContract } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
-import BETTING_ABI from "@/contracts/Betting.json";
+import addresses from "../../contracts/addresses.json";
+import BETTING_ABI from "../../contracts/Betting.json";
 import { ethers } from "ethers";
 
 const bettingAddress: any = addresses.bettingAddress;
 
 export async function useBetFee(): Promise<{
   success: boolean;
-  data:
-    | {
-        useFee: number | ethers.BigNumber | undefined;
-        showFee: string | undefined;
-      }
-    | undefined;
+  data: number | ethers.BigNumber | undefined;
   message: string;
 }> {
   try {
@@ -22,12 +17,9 @@ export async function useBetFee(): Promise<{
       functionName: "betFee",
     });
 
-    const useFee = data;
-    const showFee = ethers.utils.formatUnits(data.toString());
-
     return {
       success: true,
-      data: { useFee: useFee, showFee: showFee },
+      data: data,
       message: "Bet Fee successful",
     };
   } catch (error: any) {

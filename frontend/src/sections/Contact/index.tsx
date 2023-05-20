@@ -1,27 +1,19 @@
+import React from "react";
 import { Stack } from "@mui/material";
-import { SectionLayout } from "@/components/atoms";
-import {
-  ContactCopy,
-  ContactIllustration,
-  IconStack,
-} from "@/components/molecules";
-import { ContactMessage } from "@/components/organisms";
-import { useIsUpScreen } from "@/hooks";
+import { FadeInLayout, IconStack } from "../../components";
+import Copy from "./Copy";
+import Form from "./Form";
+import theme from "../../config/theme";
 
 const Contact: React.FC = () => {
-  const isMediumScreen = useIsUpScreen("md");
-
   return (
-    <SectionLayout
-      content1={
-        <Stack spacing="20px">
-          <ContactCopy />
-          <IconStack />
-          <ContactMessage />
-        </Stack>
-      }
-      content2={isMediumScreen ? <ContactIllustration /> : null}
-    />
+    <FadeInLayout>
+      <Stack spacing={3}>
+        <Copy />
+        <IconStack color={theme.palette.text.secondary} />
+        <Form />
+      </Stack>
+    </FadeInLayout>
   );
 };
 

@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import { prepareSendTransaction, sendTransaction } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
-import BETTING_ABI from "@/contracts/Betting.json";
+import addresses from "../../contracts/addresses.json";
+import BETTING_ABI from "../../contracts/Betting.json";
 
 const bettingAddress = addresses.bettingAddress;
 

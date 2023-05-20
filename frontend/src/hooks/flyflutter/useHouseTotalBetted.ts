@@ -1,6 +1,6 @@
 import { readContract } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
-import HOUSE_ABI from "@/contracts/House.json";
+import addresses from "../../contracts/addresses.json";
+import HOUSE_ABI from "../../contracts/House.json";
 
 const houseAddress: any = addresses.houseAddress;
 

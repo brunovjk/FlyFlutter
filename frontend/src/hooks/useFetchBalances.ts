@@ -1,10 +1,9 @@
-import {
-  useHouseTotalBetted,
-  useHouseTotalLost,
-  useFFCBalance,
-  useAllowanceBetting,
-} from "@/hooks";
-import addresses from "@/contracts/addresses.json";
+import { useHouseTotalBetted } from "./flyflutter/useHouseTotalBetted";
+import { useHouseTotalLost } from "./flyflutter/useHouseTotalLost";
+import { useFFCBalance } from "./flyflutter/useFFCBalance";
+import { useAllowanceBetting } from "./flyflutter/useAllowanceBetting";
+
+import addresses from "../contracts/addresses.json";
 
 const houseAddress: string = addresses.houseAddress;
 

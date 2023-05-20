@@ -1,16 +1,9 @@
-import { ethers, BigNumber } from "ethers";
-import {
-  prepareSendTransaction,
-  sendTransaction,
-  getProvider,
-  fetchSigner,
-  signMessage,
-  signTypedData,
-} from "@wagmi/core";
+import { ethers } from "ethers";
+import { getProvider, fetchSigner, signMessage } from "@wagmi/core";
 
-import addresses from "@/contracts/addresses.json";
-import BETTING_ABI from "@/contracts/Betting.json";
-import FFC_ABI from "@/contracts/FlyFlutterCoin.json";
+import addresses from "../../contracts/addresses.json";
+import BETTING_ABI from "../../contracts/Betting.json";
+import FFC_ABI from "../../contracts/FlyFlutterCoin.json";
 
 const ffcAddress: any = addresses.ffcAddress;
 const bettingAddress: any = addresses.bettingAddress;

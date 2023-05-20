@@ -1,14 +1,30 @@
-import CustomBackground from "@/components/atoms/CustomBackground";
-import PageLayout from "@/components/atoms/PageLayout";
+import React from "react";
+import { Typography, Stack, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
-import { NotFound } from "@/sections";
-
-const NotFoundPage: React.FC = () => {
+const ErrorPage = () => {
   return (
-    <CustomBackground>
-      <PageLayout sections={[<NotFound key="NotFound" />]} />
-    </CustomBackground>
+    <Stack
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+      spacing={8}
+    >
+      <Typography variant="h4" component="h1" color="text.secondary">
+        404 - Page Not Found
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        Sorry, the page you are looking for does not exist.
+      </Typography>
+      <Button component={Link} to="/">
+        Go back to Home
+      </Button>
+    </Stack>
   );
 };
 
-export default NotFoundPage;
+export default ErrorPage;

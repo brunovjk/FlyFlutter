@@ -1,6 +1,6 @@
 import { readContract } from "@wagmi/core";
-import addresses from "@/contracts/addresses.json";
-import BETTING_ABI from "@/contracts/Betting.json";
+import addresses from "../../contracts/addresses.json";
+import BETTING_ABI from "../../contracts/Betting.json";
 
 const bettingAddress: any = addresses.bettingAddress;
 
@@ -9,7 +9,7 @@ export const useGetBetsPerPlayer = async (
   endIndex: number
 ): Promise<{
   success: boolean;
-  data?: Bet[];
+  data?: BetProps[];
   message: string;
 }> => {
   try {
