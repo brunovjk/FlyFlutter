@@ -1,6 +1,7 @@
 import { readContract } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import FFC_ABI from "../../contracts/FlyFlutterCoin.json";
+import { BigNumber } from "ethers";
 
 const ffcAddress: any = addresses.ffcAddress;
 
@@ -10,7 +11,7 @@ export const useFFCBalance = async ({
   checkAddress: string;
 }): Promise<{
   success: boolean;
-  data: string | undefined;
+  data?: number | BigNumber;
   message: string;
 }> => {
   try {
@@ -23,7 +24,7 @@ export const useFFCBalance = async ({
 
     return {
       success: true,
-      data: { data }.data.toString(),
+      data: data,
       message: "FFC Balance successful",
     };
   } catch (error: any) {

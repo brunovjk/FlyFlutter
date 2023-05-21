@@ -2,6 +2,12 @@ import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import theme from "../config/theme";
 import { Box } from "@mui/material";
+import {
+  ChasingAstronaut,
+  Contact,
+  Rocket,
+  TalkingAstronauts,
+} from "../sections";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -116,11 +122,9 @@ function Sky() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-
-            backgroundColor: "#FFED00",
           }}
         >
-          Rocket
+          <Rocket />
         </Box>
       </ParallaxLayer>
     </>
@@ -168,17 +172,14 @@ function Sections() {
         <Box
           sx={{
             height: "100%",
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
 
             display: "flex",
             alignItems: "center",
             justifyContent: { xs: "flex-end", md: "center" },
-
-            backgroundColor: "#A459D1",
-            opacity: "0.5",
           }}
         >
-          TalkingAstronauts
+          <TalkingAstronauts />
         </Box>
       </ParallaxLayer>
       {/* FlyFlutter */}
@@ -220,17 +221,14 @@ function Sections() {
         <Box
           sx={{
             height: "100%",
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
 
             display: "flex",
             alignItems: "center",
             justifyContent: { xs: "flex-end", md: "center" },
-
-            backgroundColor: "#805E73",
-            opacity: "0.5",
           }}
         >
-          ChasingAstronauts
+          <ChasingAstronaut />
         </Box>
       </ParallaxLayer>
       {/* Projects */}
@@ -277,12 +275,9 @@ function Sections() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-
-            backgroundColor: "#16FF00",
-            opacity: "0.5",
           }}
         >
-          ContactForm
+          <Contact />
         </Box>
       </ParallaxLayer>
     </>

@@ -3,6 +3,7 @@ import { Stack, TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { AppAlert } from "../../components";
 import { contact } from "../../copy";
+import theme from "../../config/theme";
 
 const Form: FC = () => {
   const [name, setName] = useState("");
@@ -77,8 +78,9 @@ const Form: FC = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Stack spacing={3}>
+        <Stack spacing={2}>
           <TextField
+            color="secondary"
             required
             id="contact-name"
             label="Name"
@@ -86,6 +88,7 @@ const Form: FC = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <TextField
+            color="secondary"
             required
             id="contact-email"
             label="Email"
@@ -94,6 +97,7 @@ const Form: FC = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
+            color="secondary"
             required
             id="contact-send-message"
             label="Message"
@@ -104,8 +108,8 @@ const Form: FC = () => {
           />
           <LoadingButton
             type="submit"
-            variant="outlined"
-            sx={{ maxWidth: "192px" }}
+            variant="contained"
+            sx={{ maxWidth: "192px", color: theme.palette.secondary.main }}
             loading={sending}
           >
             {contact.sendButton}

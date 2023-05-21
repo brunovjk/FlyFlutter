@@ -1,15 +1,15 @@
 interface AppAlertProps {
-  isOpen: boolean;
-  severity: "info" | "success" | "warning" | "error";
-  message: string;
+  isOpen?: boolean;
+  severity?: "info" | "success" | "warning" | "error";
+  message?: string;
   link?: string;
 }
 
 interface BalancesProps {
-  player?: string;
-  house?: string;
-  totalBetted?: string;
-  totalLost?: string;
+  player?: number | ethers.BigNumber;
+  house?: number | ethers.BigNumber;
+  totalBetted?: number | ethers.BigNumber;
+  totalLost?: number | ethers.BigNumber;
   allowance?: number | ethers.BigNumber;
   betFee?: number | ethers.BigNumber;
 }

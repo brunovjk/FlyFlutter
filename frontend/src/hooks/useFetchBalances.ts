@@ -13,16 +13,16 @@ export const usePlayerFetchBalances = async (
 ) => {
   try {
     if (address != undefined) {
-      const playerBalanceTx: any = await useFFCBalance({
+      const { data: playerBalance } = await useFFCBalance({
         checkAddress: address,
       });
-      const bettingAllowanceTX: any = await useAllowanceBetting({
+      const { data: bettingAllowance } = await useAllowanceBetting({
         checkAddress: address,
       });
 
       updateBalances({
-        player: playerBalanceTx.data || undefined,
-        allowance: bettingAllowanceTX.data || undefined,
+        player: playerBalance,
+        allowance: bettingAllowance,
       });
     }
   } catch (error: any) {
@@ -33,25 +33,25 @@ export const usePlayerFetchBalances = async (
 export const useFetchBalances = async (address: any, updateBalances: any) => {
   try {
     if (address != undefined) {
-      const playerBalanceTx: any = await useFFCBalance({
+      const { data: playerBalance } = await useFFCBalance({
         checkAddress: address,
       });
-      const bettingAllowanceTX: any = await useAllowanceBetting({
+      const { data: bettingAllowance } = await useAllowanceBetting({
         checkAddress: address,
       });
 
-      const houseBalanceTx: any = await useFFCBalance({
+      const { data: houseBalance } = await useFFCBalance({
         checkAddress: houseAddress,
       });
-      const totalBettedTx: any = await useHouseTotalBetted();
-      const totalLostTx: any = await useHouseTotalLost();
+      const { data: totalBetted } = await useHouseTotalBetted();
+      const { data: totalLost } = await useHouseTotalLost();
 
       updateBalances({
-        player: playerBalanceTx.data || undefined,
-        allowance: bettingAllowanceTX.data || undefined,
-        house: houseBalanceTx.data || undefined,
-        totalBetted: totalBettedTx.data || undefined,
-        totalLost: totalLostTx.data || undefined,
+        player: playerBalance,
+        allowance: bettingAllowance,
+        house: houseBalance,
+        totalBetted: totalBetted,
+        totalLost: totalLost,
       });
     }
   } catch (error: any) {

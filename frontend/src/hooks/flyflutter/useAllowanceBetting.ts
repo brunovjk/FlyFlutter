@@ -1,7 +1,7 @@
 import { readContract } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import FFC_ABI from "../../contracts/FlyFlutterCoin.json";
-import { ethers } from "ethers";
+import { BigNumber } from "ethers";
 
 const bettingAddress: any = addresses.bettingAddress;
 const ffcAddress: any = addresses.ffcAddress;
@@ -12,7 +12,7 @@ export async function useAllowanceBetting({
   checkAddress: `0x${string}` | undefined;
 }): Promise<{
   success: boolean;
-  data: string | undefined;
+  data?: number | BigNumber;
   message: string;
 }> {
   try {
@@ -25,7 +25,7 @@ export async function useAllowanceBetting({
 
     return {
       success: true,
-      data: { data }.data.toString(),
+      data: data,
       message: "Allowance Betting successful",
     };
   } catch (error: any) {

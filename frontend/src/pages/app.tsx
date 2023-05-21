@@ -29,6 +29,7 @@ export default function App() {
       <ConnectKitProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Header />
           <Box
             component="div"
             style={{
@@ -37,7 +38,6 @@ export default function App() {
               backgroundColor: theme.palette.primary.dark,
             }}
           >
-            <Header />
             <RouterProvider router={router} />
           </Box>
         </ThemeProvider>

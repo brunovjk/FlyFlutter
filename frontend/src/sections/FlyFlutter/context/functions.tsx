@@ -1,24 +1,34 @@
 import { usePlayerFetchBalances, useFetchBalances } from "../../../hooks";
 import { useAccount } from "wagmi";
 
-export function useFunctions(state: any) {
+interface UseFunctionsProps {
+  setBalances: React.Dispatch<React.SetStateAction<BalancesProps>>;
+  setInputs: React.Dispatch<React.SetStateAction<InputsProps>>;
+  setResults: React.Dispatch<React.SetStateAction<ResultsProps>>;
+}
+
+export function useFunctions({
+  setBalances,
+  setInputs,
+  setResults,
+}: UseFunctionsProps) {
   const { address } = useAccount();
 
   function updateBalances(newBalances: Partial<BalancesProps>) {
-    state.setBalances((prevState: any) => ({
+    setBalances((prevState: any) => ({
       ...prevState,
       ...newBalances,
     }));
   }
 
   function updateInputs(newInputs: Partial<InputsProps>) {
-    state.setInputs((prevState: any) => ({
+    setInputs((prevState: any) => ({
       ...prevState,
       ...newInputs,
     }));
   }
   function updateResults(newResults: Partial<ResultsProps>) {
-    state.setResults((prevState: any) => ({
+    setResults((prevState: any) => ({
       ...prevState,
       ...newResults,
     }));

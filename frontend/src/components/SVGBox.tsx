@@ -3,10 +3,11 @@ import { Box } from "@mui/material";
 
 interface SVGBoxProps {
   svgPath: string;
+  svgAlt: string;
   styles?: React.CSSProperties;
 }
 
-const SVGBox: React.FC<SVGBoxProps> = ({ svgPath, styles }) => {
+const SVGBox: React.FC<SVGBoxProps> = ({ svgPath, svgAlt, styles }) => {
   const svgUrl = process.env.PUBLIC_URL + svgPath;
 
   return (
@@ -18,7 +19,7 @@ const SVGBox: React.FC<SVGBoxProps> = ({ svgPath, styles }) => {
       alignItems="center"
       style={styles}
     >
-      <img src={svgUrl} alt="SVG" style={{ width: "100%", height: "100%" }} />
+      <img src={svgUrl} alt={svgAlt} style={{ width: "100%" }} />
     </Box>
   );
 };

@@ -1,12 +1,13 @@
 import { readContract } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import HOUSE_ABI from "../../contracts/House.json";
+import { BigNumber } from "ethers";
 
 const houseAddress: any = addresses.houseAddress;
 
 export const useHouseTotalLost = async (): Promise<{
   success: boolean;
-  data: string | undefined;
+  data?: number | BigNumber;
   message: string;
 }> => {
   try {
@@ -18,7 +19,7 @@ export const useHouseTotalLost = async (): Promise<{
 
     return {
       success: true,
-      data: { data }.data.toString(),
+      data: data,
       message: "House Total Betted successful",
     };
   } catch (error: any) {

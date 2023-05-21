@@ -4,7 +4,7 @@ import { SVGBox } from "../../components";
 const TalkingAstronaut: React.FC = () => {
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <SVGBox svgPath="public\talking_astronauts.svg" />
+      <SVGBox svgPath="talking_astronauts.svg" svgAlt="Talking Astronaut" />
     </div>
   );
 };

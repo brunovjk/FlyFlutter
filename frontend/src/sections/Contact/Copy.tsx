@@ -6,26 +6,14 @@ import theme from "../../config/theme";
 const Copy: FC = () => {
   return (
     <Stack spacing={3}>
-      <Typography
-        variant="h1"
-        color={theme.palette.text.secondary}
-        sx={{
-          fontWeight: "regular",
-          fontSize: { xs: "1.75rem", md: "3.5rem" },
-          textAlign: "left",
-          letterSpacing: { xs: "-1.4px", md: "-3px" },
-        }}
-      >
+      <Typography variant="h2" color={theme.palette.text.secondary}>
         {contact.title}
       </Typography>
       <Typography
         variant="body1"
         color={theme.palette.text.secondary}
         sx={{
-          fontWeight: "regular",
           fontSize: "1.125rem",
-          textAlign: "left",
-          paddingBottom: { xs: "24px", md: "32px" },
         }}
       >
         {contact.body1}
@@ -34,9 +22,7 @@ const Copy: FC = () => {
         variant="body1"
         color={theme.palette.text.secondary}
         sx={{
-          fontWeight: "bold",
-          fontSize: "1.25rem",
-          textAlign: "left",
+          fontSize: "1.125rem",
         }}
       >
         {contact.body2}
@@ -45,9 +31,7 @@ const Copy: FC = () => {
         variant="body1"
         color={theme.palette.text.secondary}
         sx={{
-          fontWeight: "regular",
           fontSize: "1.125rem",
-          textAlign: "left",
         }}
       >
         {contact.body3} <strong>{contact.email}</strong> {contact.body4}
