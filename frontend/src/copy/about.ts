@@ -1,6 +1,6 @@
 export const about = {
-  title:
-    "Web3 Developer specializing in building decentralized applications on the blockchain",
+  title1: "Web Developer",
+  title2: "Specializing in building decentralized applications",
   body1: "Looking for a blockchain developer?",
   body2:
     "A deep understanding of blockchain technology and proficient in Solidity and Typescript.",

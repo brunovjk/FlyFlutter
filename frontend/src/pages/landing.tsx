@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import theme from "../config/theme";
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import {
   ChasingAstronaut,
   Contact,
+  Projects,
   Rocket,
   TalkingAstronauts,
 } from "../sections";
@@ -176,7 +177,7 @@ function Sections() {
 
             display: "flex",
             alignItems: "center",
-            justifyContent: { xs: "flex-end", md: "center" },
+            justifyContent: "center",
           }}
         >
           <TalkingAstronauts />
@@ -225,7 +226,7 @@ function Sections() {
 
             display: "flex",
             alignItems: "center",
-            justifyContent: { xs: "flex-end", md: "center" },
+            justifyContent: "center",
           }}
         >
           <ChasingAstronaut />
@@ -241,21 +242,9 @@ function Sections() {
           justifyContent: "center",
         }}
       >
-        <Box
-          sx={{
-            height: "100%",
-            width: "100%",
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-
-            backgroundColor: "#2CD3E1",
-            opacity: "0.5",
-          }}
-        >
-          Projects
-        </Box>
+        <Container>
+          <Projects />
+        </Container>
       </ParallaxLayer>
       {/* ContactForm */}
       <ParallaxLayer
@@ -267,18 +256,9 @@ function Sections() {
           justifyContent: "flex-start",
         }}
       >
-        <Box
-          sx={{
-            height: "100%",
-            width: { xs: "100%", md: "50%" },
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <Container>
           <Contact />
-        </Box>
+        </Container>
       </ParallaxLayer>
     </>
   );

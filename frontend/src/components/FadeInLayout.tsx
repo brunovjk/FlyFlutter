@@ -15,7 +15,7 @@ const FadeInBox = styled(Box)({
   },
 });
 
-const FadeInLayout: React.FC<FadeInProps> = ({ children }) => {
+const FadeInLayout: React.FC<FadeInProps> = ({ children, ...props }) => {
   const [show, setShow] = useState(false);
   const fadeInRef = useRef<HTMLDivElement>(null);
 
@@ -46,6 +46,7 @@ const FadeInLayout: React.FC<FadeInProps> = ({ children }) => {
       ref={fadeInRef}
       sx={{ width: "100%" }}
       className={show ? "fade-in" : ""}
+      {...props}
     >
       {children}
     </FadeInBox>

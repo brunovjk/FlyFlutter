@@ -13,18 +13,22 @@ const CarouselProject: React.FC<{ projects: CardProjectProps[] }> = ({
     largeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
       items: 4,
+      partialVisibilityGutter: 32,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
+      partialVisibilityGutter: 24,
     },
     tablet: {
       breakpoint: { max: 1024, min: 768 },
       items: 2,
+      partialVisibilityGutter: 18,
     },
     mobile: {
       breakpoint: { max: 767, min: 0 },
       items: 1,
+      partialVisibilityGutter: 16,
     },
   };
 
@@ -37,6 +41,7 @@ const CarouselProject: React.FC<{ projects: CardProjectProps[] }> = ({
         focusOnSelect={true}
         swipeable={true}
         draggable={true}
+        partialVisbile={true}
         responsive={responsive}
         customTransition={customTransition}
       >

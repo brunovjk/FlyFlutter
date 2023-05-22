@@ -5,26 +5,13 @@ import { about } from "../../copy";
 const Copy: FC = () => {
   return (
     <Stack spacing={3} justifyContent="center">
-      <Typography
-        variant="h1"
-        textAlign="center"
-        sx={{
-          fontSize: { xs: "1.75rem", md: "3.5rem" },
-          textAlign: "left",
-          letterSpacing: { xs: "-1.4px", md: "-3px" },
-          marginBottom: { xs: 2, md: "32px" },
-        }}
-      >
-        {about.title}
+      <Typography gutterBottom variant="h2" textAlign="center">
+        {about.title1}
       </Typography>
-      <Typography
-        variant="body1"
-        textAlign="center"
-        sx={{
-          fontSize: "1.125rem",
-          textAlign: "left",
-        }}
-      >
+      <Typography gutterBottom variant="h4" textAlign="center">
+        {about.title2}
+      </Typography>
+      <Typography variant="body1" textAlign="center">
         {about.body1} <br /> {about.body2} <br /> {about.body3}
       </Typography>
     </Stack>

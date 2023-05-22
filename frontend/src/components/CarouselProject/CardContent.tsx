@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Stack, Typography } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
+import theme from "../../config/theme";
 
 const CardContent: FC<CardProjectProps> = ({
   projectName,
@@ -52,7 +53,12 @@ const CardContent: FC<CardProjectProps> = ({
           {keyFeatures}
         </Typography>
       )}
-      <LoadingButton variant="outlined">{learnMore}</LoadingButton>
+      <LoadingButton
+        variant="text"
+        sx={{ color: theme.palette.secondary.main }}
+      >
+        {learnMore}
+      </LoadingButton>
     </Stack>
   );
 };

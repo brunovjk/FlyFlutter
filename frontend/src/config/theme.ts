@@ -1,17 +1,24 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const components = {
-  MuiButton: {
+  MuiTypography: {
     styleOverrides: {
-      root: {
-        borderRadius: "12px",
+      body1: {
+        fontSize: "1.125rem",
       },
     },
   },
-  OutlinedInput: {
+  MuiButton: {
     styleOverrides: {
       root: {
-        borderRadius: "12px",
+        borderRadius: "16px",
+      },
+    },
+  },
+  MuiOutlinedInput: {
+    styleOverrides: {
+      root: {
+        borderRadius: "16px",
       },
     },
   },
@@ -23,7 +30,7 @@ const palette = {
     dark: "#04040c",
   },
   secondary: {
-    light: "#ffef8c",
+    light: "#fffbe8",
     main: "#ffcc00",
     dark: "#b38f00",
   },

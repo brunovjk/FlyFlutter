@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Paper from "@mui/material/Paper";
 import CardContent from "./CardContent";
+import GlassPaper from "../GlassPaper";
 
 const CardProject: FC<CardProjectProps> = ({
   projectName,
@@ -10,7 +10,7 @@ const CardProject: FC<CardProjectProps> = ({
   learnMore,
 }) => {
   return (
-    <Paper
+    <GlassPaper
       sx={{
         padding: "24px",
         margin: "12px",
@@ -24,7 +24,7 @@ const CardProject: FC<CardProjectProps> = ({
         keyFeatures={keyFeatures}
         learnMore={learnMore}
       />
-    </Paper>
+    </GlassPaper>
   );
 };
 
