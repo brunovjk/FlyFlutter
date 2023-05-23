@@ -4,12 +4,6 @@ export { useConnectionSync } from "./useConnectionSync";
 export { useHashExplorer } from "./useExplorer";
 export { useAddressExplorer } from "./useExplorer";
 export { useBetIdExplorer } from "./useExplorer";
-export { useIsDownScreen } from "./useScreen";
-export { useIsUpScreen } from "./useScreen";
-export { useShortenAddress } from "./useShorten";
-export { useShortenBytes } from "./useShorten";
-export { useShortenNumber } from "./useShorten";
-export { guessConverter } from "./useGuessConverter";
 
 export { useAllowanceBetting } from "./flyflutter/useAllowanceBetting";
 export { useApproveBetting } from "./flyflutter/useApproveBetting";

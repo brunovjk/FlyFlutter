@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import { Box } from "@mui/material";
 import {
@@ -22,7 +22,7 @@ const url = (name: string, wrap = false) =>
     wrap ? ")" : ""
   }`;
 
-function Sky() {
+function Sky({ isConnected }: { isConnected: boolean }) {
   return (
     <>
       <FadeInBox>
@@ -112,29 +112,55 @@ function Sky() {
       {/* Rocket */}
       <ParallaxLayer offset={0} speed={0.8}>
         <FadeInContainer justifyContent="flex-end">
-          <Rocket />
+          <Rocket isConnected={isConnected} />
         </FadeInContainer>
       </ParallaxLayer>
     </>
   );
 }
-function Sections() {
+function Sections({
+  isConnected,
+  setIsConnected,
+}: {
+  isConnected: boolean;
+  setIsConnected: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <>
       {/* TalkingAstronauts */}
       <ParallaxLayer offset={0} speed={-0.3}>
         <FadeInContainer justifyContent="flex-end">
-          <TalkingAstronauts />
+          <TalkingAstronauts isConnected={isConnected} />
         </FadeInContainer>
       </ParallaxLayer>
       {/* Hero */}
-      <ParallaxLayer offset={0} speed={0.3}>
+      <ParallaxLayer
+        offset={0}
+        speed={0.3}
+        onClick={() => {
+          setIsConnected(!isConnected);
+        }}
+        style={{
+          marginLeft: isConnected ? "-100%" : "0%",
+          transition: `margin 0.9s ${theme.transitions.easing.easeIn}`,
+        }}
+      >
         <FadeInContainer justifyContent="flex-start">
           <Hero />
         </FadeInContainer>
       </ParallaxLayer>
       {/* FlyFlutter */}
-      <ParallaxLayer offset={0} speed={0.3}>
+      <ParallaxLayer
+        offset={0}
+        speed={0.3}
+        onClick={() => {
+          setIsConnected(!isConnected);
+        }}
+        style={{
+          marginLeft: isConnected ? "0%" : "100%",
+          transition: `margin 1.2s ${theme.transitions.easing.easeIn}`,
+        }}
+      >
         <FadeInContainer>
           <FlyFlutter />
         </FadeInContainer>
@@ -163,6 +189,9 @@ function Sections() {
 
 export default function LandingPage() {
   const parallax = useRef<IParallax>(null!);
+  const [isConnected, setIsConnected] = useState(false);
+  // const isConnected = useConnectionSync();
+
   return (
     <Box
       component="div"
@@ -179,8 +208,8 @@ export default function LandingPage() {
             background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.primary.light}`,
           }}
         />
-        <Sky />
-        <Sections />
+        <Sky isConnected={isConnected} />
+        <Sections isConnected={isConnected} setIsConnected={setIsConnected} />
       </Parallax>
     </Box>
   );

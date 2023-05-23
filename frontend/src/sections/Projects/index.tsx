@@ -7,7 +7,13 @@ import theme from "../../config/theme";
 
 const Projects: FC = () => {
   return (
-    <GlassPaper sx={{ paddingBlock: theme.spacing(2) }}>
+    <GlassPaper
+      sx={{
+        paddingBlock: theme.spacing(2),
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.4)",
+        backdropFilter: "blur(12px)",
+      }}
+    >
       <Box
         component="div"
         sx={{

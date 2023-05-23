@@ -1,17 +1,12 @@
 import React, { FC } from "react";
 import { CardDisplayBet, CardDisplayResult } from "../../../components";
 import { Stack } from "@mui/material";
-import { guessConverter } from "../../../hooks";
+import { guessConverter, houseConverter } from "../../../helpers";
 
 const Results: FC<ResultsDisplayProps> = ({ results, waitingBet }) => {
   const playerGuess = guessConverter(results.playerGuess);
   // The house bets against the Player
-  const houseGuess =
-    results.playerGuess == 0
-      ? "Odd"
-      : results.playerGuess == 1
-      ? "Even"
-      : undefined;
+  const houseGuess = houseConverter(results.playerGuess);
 
   const playerHand = results.playerHand;
   const houseHand = results.houseHand;

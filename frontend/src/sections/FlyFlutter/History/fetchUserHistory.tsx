@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAccount } from "wagmi";
-import { useGetBetsPerPlayer, guessConverter } from "../../../hooks";
+import { useGetBetsPerPlayer } from "../../../hooks";
+import { guessConverter } from "../../../helpers";
 
 interface UserHistoryProps {
   bets: BetProps[];

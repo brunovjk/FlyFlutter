@@ -7,7 +7,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "1KEYWORD",
   },
   {
     projectName: "NFT Collection2",
@@ -17,7 +16,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "2KEYWORD",
   },
   {
     projectName: "NFT Collection3",
@@ -27,7 +25,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "3KEYWORD",
   },
   {
     projectName: "NFT Collection4",
@@ -37,7 +34,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "4KEYWORD",
   },
   {
     projectName: "NFT Collection5",
@@ -47,7 +43,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "5KEYWORD",
   },
   {
     projectName: "NFT Collection6",
@@ -57,7 +52,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "6KEYWORD",
   },
   {
     projectName: "NFT Collection7",
@@ -67,7 +61,6 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "7KEYWORD",
   },
   {
     projectName: "NFT Collection8",
@@ -77,6 +70,5 @@ export const projects: CardProjectProps[] = [
     keyFeatures:
       "Each NFT is one-of-a-kind, with a limited supply of each design",
     learnMore: "Learn More",
-    keyword: "8KEYWORD",
   },
 ];

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Stack, Typography } from "@mui/material";
-import { guessConverter } from "../../../hooks";
+import { guessConverter } from "../../../helpers";
 
 const ConfirmBetDetails: FC<{
   balances: BalancesProps;

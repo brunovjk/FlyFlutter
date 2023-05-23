@@ -1,5 +1,5 @@
 // Shorten Ethereum addresses
-export const useShortenAddress = (address?: string, digits = 4): string => {
+export const shortenAddress = (address?: string, digits = 4): string => {
   if (!address) return "";
   const prefix = address.substring(0, digits);
   const suffix = address.substring(address.length - digits);
@@ -7,7 +7,7 @@ export const useShortenAddress = (address?: string, digits = 4): string => {
 };
 
 // Shorten bytes
-export const useShortenBytes = (bytes?: string, digits = 4): string => {
+export const shortenBytes = (bytes?: string, digits = 4): string => {
   if (!bytes) return "";
   const prefix = bytes.substring(0, digits);
   const suffix = bytes.substring(bytes.length - digits);
@@ -15,7 +15,7 @@ export const useShortenBytes = (bytes?: string, digits = 4): string => {
 };
 
 // Shorten large numbers
-export const useShortenNumber = (num?: number, digits = 4): string => {
+export const shortenNumber = (num?: number, digits = 4): string => {
   if (!num) return "";
   const suffixes = ["", "K", "M", "B", "T"];
   const suffixNum = Math.floor(("" + num).length / 3);
