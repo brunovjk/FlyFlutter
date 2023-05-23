@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import CardContent from "./CardContent";
-import GlassPaper from "../GlassPaper";
+import GlassPaperCard from "../GlassPaper/GlassPaperCard";
+import theme from "../../config/theme";
 
 const CardProject: FC<CardProjectProps> = ({
   projectName,
@@ -8,13 +9,22 @@ const CardProject: FC<CardProjectProps> = ({
   technologiesUsed,
   keyFeatures,
   learnMore,
+  keyword,
 }) => {
   return (
-    <GlassPaper
+    <GlassPaperCard
+      keyword={keyword}
       sx={{
-        padding: "24px",
-        margin: "12px",
-        maxWidth: { xs: "100%", md: "324px" },
+        padding: {
+          xs: theme.spacing(1),
+          md: theme.spacing(2),
+          lg: theme.spacing(4),
+        },
+        margin: {
+          xs: theme.spacing(1),
+          md: theme.spacing(2),
+          lg: theme.spacing(4),
+        },
       }}
     >
       <CardContent
@@ -23,8 +33,9 @@ const CardProject: FC<CardProjectProps> = ({
         technologiesUsed={technologiesUsed}
         keyFeatures={keyFeatures}
         learnMore={learnMore}
+        keyword={keyword}
       />
-    </GlassPaper>
+    </GlassPaperCard>
   );
 };
 

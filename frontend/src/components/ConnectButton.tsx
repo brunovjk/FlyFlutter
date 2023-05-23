@@ -1,6 +1,7 @@
 import React from "react";
 import { ConnectKitButton } from "connectkit";
 import LoadingButton from "@mui/lab/LoadingButton";
+import theme from "../config/theme";
 
 const ConnectButton = () => {
   return (
@@ -8,7 +9,12 @@ const ConnectButton = () => {
       {({ isConnected, isConnecting, show, truncatedAddress }) => {
         return (
           <LoadingButton
-            sx={{ minWidth: "148px" }}
+            variant="contained"
+            sx={{
+              width: "148px",
+              color: theme.palette.primary.main,
+              backgroundColor: theme.palette.secondary.main,
+            }}
             onClick={show}
             loading={isConnecting}
           >

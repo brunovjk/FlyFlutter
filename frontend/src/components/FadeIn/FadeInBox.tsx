@@ -2,20 +2,21 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import theme from "../../config/theme";
 
 interface FadeInProps {
   children: React.ReactNode;
 }
 
-const FadeInBox = styled(Box)({
-  transition: "opacity 1.5s",
+const StyledBox = styled(Box)(() => ({
   opacity: 0,
+  transition: `opacity 1.9s ${theme.transitions.easing.easeIn}`,
   "&.fade-in": {
     opacity: 1,
   },
-});
+}));
 
-const FadeInLayout: React.FC<FadeInProps> = ({ children, ...props }) => {
+const FadeInBox: React.FC<FadeInProps> = ({ children, ...props }) => {
   const [show, setShow] = useState(false);
   const fadeInRef = useRef<HTMLDivElement>(null);
 
@@ -42,15 +43,15 @@ const FadeInLayout: React.FC<FadeInProps> = ({ children, ...props }) => {
   }, []);
 
   return (
-    <FadeInBox
+    <StyledBox
       ref={fadeInRef}
-      sx={{ width: "100%" }}
+      sx={{ height: "100%", width: "100%" }}
       className={show ? "fade-in" : ""}
       {...props}
     >
       {children}
-    </FadeInBox>
+    </StyledBox>
   );
 };
 
-export default FadeInLayout;
+export default FadeInBox;

@@ -1,8 +1,9 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardProject from "./CardProject";
+import theme from "../../config/theme";
 
 const customTransition = "transform 1300ms ease-in-out";
 
@@ -10,32 +11,41 @@ const CarouselProject: React.FC<{ projects: CardProjectProps[] }> = ({
   projects,
 }) => {
   const responsive = {
-    largeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 4,
+    desktop: {
+      breakpoint: { max: 4000, min: 1600 },
+      items: 3,
       partialVisibilityGutter: 32,
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+    desktopfdsfs: {
+      breakpoint: { max: 1599, min: 1200 },
       items: 3,
       partialVisibilityGutter: 24,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 768 },
+      breakpoint: { max: 1199, min: 900 },
       items: 2,
-      partialVisibilityGutter: 18,
+      partialVisibilityGutter: 32,
+    },
+    tabletdsa: {
+      breakpoint: { max: 899, min: 600 },
+      items: 2,
+      partialVisibilityGutter: 24,
     },
     mobile: {
-      breakpoint: { max: 767, min: 0 },
+      breakpoint: { max: 599, min: 400 },
       items: 1,
-      partialVisibilityGutter: 16,
+      partialVisibilityGutter: 32,
+    },
+    smallMobile: {
+      breakpoint: { max: 399, min: 0 },
+      items: 1,
+      partialVisibilityGutter: 24,
     },
   };
 
   return (
-    <Container>
+    <Box component="div" sx={{ width: "90vw" }}>
       <Carousel
-        ssr={true}
         // css={{ overflow: "visible", paddingBottom: "32px" }}
         arrows={false}
         focusOnSelect={true}
@@ -49,7 +59,7 @@ const CarouselProject: React.FC<{ projects: CardProjectProps[] }> = ({
           <CardProject key={index} {...project} />
         ))}
       </Carousel>
-    </Container>
+    </Box>
   );
 };
 

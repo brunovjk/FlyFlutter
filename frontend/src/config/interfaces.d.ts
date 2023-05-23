@@ -33,6 +33,7 @@ interface CardProjectProps {
   technologiesUsed: string;
   keyFeatures?: string;
   learnMore: string;
+  keyword: string;
 }
 
 interface DialogProps {

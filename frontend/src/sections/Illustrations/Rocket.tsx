@@ -1,11 +1,21 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { SVGBox } from "../../components";
 
 const Rocket: React.FC = () => {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <Box
+      component="div"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: { xs: "100%", md: "50%" },
+        height: "100%",
+      }}
+    >
       <SVGBox svgPath="rocket.svg" svgAlt="Rocket" />
-    </div>
+    </Box>
   );
 };
 

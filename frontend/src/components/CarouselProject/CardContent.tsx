@@ -17,7 +17,7 @@ const CardContent: FC<CardProjectProps> = ({
         sx={{
           fontWeight: "medium",
           fontSize: { xs: "1.25rem", md: "1.5rem" },
-          textAlign: "left",
+          textAlign: "center",
           letterSpacing: "0.063rem",
         }}
       >
@@ -27,7 +27,7 @@ const CardContent: FC<CardProjectProps> = ({
         sx={{
           fontWeight: "regular",
           fontSize: { xs: "1rem", md: "1.125rem" },
-          textAlign: "left",
+          textAlign: "center",
         }}
       >
         {description}
@@ -37,7 +37,7 @@ const CardContent: FC<CardProjectProps> = ({
         sx={{
           fontWeight: "light",
           fontSize: { xs: "0.875rem", md: "1rem" },
-          textAlign: "left",
+          textAlign: "center",
         }}
       >
         {technologiesUsed}
@@ -47,7 +47,7 @@ const CardContent: FC<CardProjectProps> = ({
           sx={{
             fontWeight: "regular",
             fontSize: { xs: "0.875rem", md: "1rem" },
-            textAlign: "left",
+            textAlign: "center",
           }}
         >
           {keyFeatures}

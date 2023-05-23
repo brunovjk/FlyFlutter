@@ -1,14 +1,19 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import theme from "../config/theme";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import {
   ChasingAstronaut,
   Contact,
+  FlyFlutter,
+  Hero,
   Projects,
   Rocket,
   TalkingAstronauts,
 } from "../sections";
+
+import { FadeInBox, FadeInContainer } from "../components";
+import theme from "../config/theme";
+import { useConnectionSync } from "../hooks";
 
 const url = (name: string, wrap = false) =>
   `${
@@ -20,23 +25,22 @@ const url = (name: string, wrap = false) =>
 function Sky() {
   return (
     <>
-      <ParallaxLayer
-        offset={0}
-        speed={0}
-        factor={3}
-        style={{
-          backgroundImage: url("stars", true),
-          backgroundSize: "cover",
-        }}
-      />
-      <ParallaxLayer
-        offset={1.3}
-        speed={-0.3}
-        style={{ pointerEvents: "none" }}
-      >
+      <FadeInBox>
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          factor={3}
+          style={{
+            backgroundImage: url("stars", true),
+            backgroundSize: "cover",
+          }}
+        />
+      </FadeInBox>
+
+      <ParallaxLayer offset={1.5} speed={-2} style={{ pointerEvents: "none" }}>
         <img
           src={url("satellite4")}
-          style={{ width: "15%", marginLeft: "5%", transform: "scaleX(-1)" }}
+          style={{ width: "5%", marginLeft: "3%", transform: "scaleX(-1)" }}
         />
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -106,27 +110,10 @@ function Sky() {
         <img src={url("earth")} style={{ width: "40%" }} />
       </ParallaxLayer>
       {/* Rocket */}
-      <ParallaxLayer
-        offset={0}
-        speed={0.8}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            width: { xs: "100%", md: "50%" },
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+      <ParallaxLayer offset={0} speed={0.8}>
+        <FadeInContainer justifyContent="flex-end">
           <Rocket />
-        </Box>
+        </FadeInContainer>
       </ParallaxLayer>
     </>
   );
@@ -134,131 +121,41 @@ function Sky() {
 function Sections() {
   return (
     <>
-      {/* Hero */}
-      <ParallaxLayer
-        offset={0}
-        speed={0.3}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            width: { xs: "100%", md: "50%" },
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-
-            backgroundColor: "#FFB84C",
-            opacity: "0.5",
-          }}
-        >
-          Hero
-        </Box>
-      </ParallaxLayer>
       {/* TalkingAstronauts */}
-      <ParallaxLayer
-        offset={0}
-        speed={-0.4}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            width: { xs: "100%", md: "50%" },
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+      <ParallaxLayer offset={0} speed={-0.3}>
+        <FadeInContainer justifyContent="flex-end">
           <TalkingAstronauts />
-        </Box>
+        </FadeInContainer>
+      </ParallaxLayer>
+      {/* Hero */}
+      <ParallaxLayer offset={0} speed={0.3}>
+        <FadeInContainer justifyContent="flex-start">
+          <Hero />
+        </FadeInContainer>
       </ParallaxLayer>
       {/* FlyFlutter */}
-      <ParallaxLayer
-        offset={0}
-        speed={0.3}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            width: "100%",
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-
-            backgroundColor: "#F266AB",
-            opacity: "0.5",
-          }}
-        >
-          FlyFlutter
-        </Box>
+      <ParallaxLayer offset={0} speed={0.3}>
+        <FadeInContainer>
+          <FlyFlutter />
+        </FadeInContainer>
       </ParallaxLayer>
       {/* ChasingAstronauts */}
-      <ParallaxLayer
-        offset={2}
-        speed={-0.3}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            width: { xs: "100%", md: "50%" },
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+      <ParallaxLayer offset={2} speed={-0.3}>
+        <FadeInContainer justifyContent="flex-end">
           <ChasingAstronaut />
-        </Box>
+        </FadeInContainer>
       </ParallaxLayer>
       {/* Projects */}
-      <ParallaxLayer
-        offset={1}
-        speed={0.1}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Container>
+      <ParallaxLayer offset={1} speed={0}>
+        <FadeInContainer>
           <Projects />
-        </Container>
+        </FadeInContainer>
       </ParallaxLayer>
       {/* ContactForm */}
-      <ParallaxLayer
-        offset={2}
-        speed={0.1}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
-      >
-        <Container>
+      <ParallaxLayer offset={2} speed={0.3}>
+        <FadeInContainer justifyContent="flex-start">
           <Contact />
-        </Container>
+        </FadeInContainer>
       </ParallaxLayer>
     </>
   );
