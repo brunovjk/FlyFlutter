@@ -1,22 +1,31 @@
 import React, { FC } from "react";
-import { ButtonGroup, FormControl, Button } from "@mui/material";
+import { ToggleButton, ToggleButtonGroup, FormControl } from "@mui/material";
 import { even, odd } from "../../../copy";
 
 interface GuessSelectorProps {
+  value?: number;
   onChange: (newValue: number) => void;
 }
 
-const GuessSelector: FC<GuessSelectorProps> = ({ onChange }) => {
-  const handleChange = (newValue: number) => {
+const GuessSelector: FC<GuessSelectorProps> = ({ value, onChange }) => {
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newValue: number
+  ) => {
     onChange(newValue);
   };
 
   return (
     <FormControl component="fieldset">
-      <ButtonGroup aria-label="guess selection">
-        <Button onClick={() => handleChange(1)}>{odd}</Button>
-        <Button onClick={() => handleChange(0)}>{even}</Button>
-      </ButtonGroup>
+      <ToggleButtonGroup
+        value={value}
+        exclusive
+        onChange={handleChange}
+        aria-label="guess selection"
+      >
+        <ToggleButton value={1}>{odd}</ToggleButton>
+        <ToggleButton value={0}>{even}</ToggleButton>
+      </ToggleButtonGroup>
     </FormControl>
   );
 };

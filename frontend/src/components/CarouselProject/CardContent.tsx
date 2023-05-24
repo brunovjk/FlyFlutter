@@ -53,12 +53,7 @@ const CardContent: FC<CardProjectProps> = ({
           {keyFeatures}
         </Typography>
       )}
-      <LoadingButton
-        variant="text"
-        sx={{ color: theme.palette.secondary.main }}
-      >
-        {learnMore}
-      </LoadingButton>
+      <LoadingButton>{learnMore}</LoadingButton>
     </Stack>
   );
 };

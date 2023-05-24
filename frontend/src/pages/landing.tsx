@@ -90,7 +90,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
       <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
         <img
           src={url("cloud")}
-          style={{ display: "block", width: "20%", marginLeft: "5%" }}
+          style={{ display: "block", width: "5%", marginLeft: "5%" }}
         />
         <img
           src={url("cloud")}
@@ -118,13 +118,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
     </>
   );
 }
-function Sections({
-  isConnected,
-  setIsConnected,
-}: {
-  isConnected: boolean;
-  setIsConnected: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+function Sections({ isConnected }: { isConnected: boolean }) {
   return (
     <>
       {/* TalkingAstronauts */}
@@ -137,9 +131,6 @@ function Sections({
       <ParallaxLayer
         offset={0}
         speed={0.3}
-        onClick={() => {
-          setIsConnected(!isConnected);
-        }}
         style={{
           marginLeft: isConnected ? "-100%" : "0%",
           transition: `margin 0.9s ${theme.transitions.easing.easeIn}`,
@@ -153,9 +144,6 @@ function Sections({
       <ParallaxLayer
         offset={0}
         speed={0.3}
-        onClick={() => {
-          setIsConnected(!isConnected);
-        }}
         style={{
           marginLeft: isConnected ? "0%" : "100%",
           transition: `margin 1.2s ${theme.transitions.easing.easeIn}`,
@@ -189,8 +177,7 @@ function Sections({
 
 export default function LandingPage() {
   const parallax = useRef<IParallax>(null!);
-  const [isConnected, setIsConnected] = useState(false);
-  // const isConnected = useConnectionSync();
+  const isConnected = useConnectionSync();
 
   return (
     <Box
@@ -205,11 +192,11 @@ export default function LandingPage() {
           speed={0}
           factor={3}
           style={{
-            background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.primary.light}`,
+            background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.primary.main}, ${theme.palette.primary.light}`,
           }}
         />
         <Sky isConnected={isConnected} />
-        <Sections isConnected={isConnected} setIsConnected={setIsConnected} />
+        <Sections isConnected={isConnected} />
       </Parallax>
     </Box>
   );

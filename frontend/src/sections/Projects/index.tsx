@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { CarouselProject, GlassPaper } from "../../components";
+import { CarouselProject, GlassPaperLargeShadow } from "../../components";
 import Copy from "./Copy";
 import { projects } from "../../copy";
 import { Box, Stack } from "@mui/material";
@@ -7,11 +7,9 @@ import theme from "../../config/theme";
 
 const Projects: FC = () => {
   return (
-    <GlassPaper
+    <GlassPaperLargeShadow
       sx={{
         paddingBlock: theme.spacing(2),
-        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.4)",
-        backdropFilter: "blur(12px)",
       }}
     >
       <Box
@@ -27,7 +25,7 @@ const Projects: FC = () => {
           <CarouselProject projects={projects} />
         </Stack>
       </Box>
-    </GlassPaper>
+    </GlassPaperLargeShadow>
   );
 };
 

@@ -14,24 +14,22 @@ const HistoryDataGrid: React.FC<HistoryProps> = ({
   isLoading,
 }) => {
   return (
-    <div>
-      <DataGrid
-        rows={bets}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        style={{
-          color: theme.palette.primary.main,
-          border: "none",
-        }}
-        disableColumnMenu={true}
-        disableRowSelectionOnClick={true}
-        loading={isLoading}
-      />
-    </div>
+    <DataGrid
+      rows={bets}
+      columns={columns}
+      initialState={{
+        pagination: {
+          paginationModel: { page: 0, pageSize: 5 },
+        },
+      }}
+      style={{
+        color: theme.palette.secondary.main,
+        border: "none",
+      }}
+      disableColumnMenu={true}
+      disableRowSelectionOnClick={true}
+      loading={isLoading}
+    />
   );
 };
 

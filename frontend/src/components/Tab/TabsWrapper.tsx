@@ -40,7 +40,10 @@ export default function TabsWrapper({
         <Tab
           key={index}
           label={tab.label}
-          sx={{ zIndex: 99 }}
+          sx={{
+            zIndex: 99,
+            color: theme.palette.secondary.light,
+          }}
           {...a11yProps(index)}
         />
       ))}

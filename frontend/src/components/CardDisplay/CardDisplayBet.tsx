@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { Skeleton, Paper, Typography, Tooltip, Stack } from "@mui/material";
+import { Skeleton, Typography, Tooltip, Stack } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { GlassPaper } from "../GlassPaper";
+import theme from "../../config/theme";
 
 interface CardDisplayBetProps {
   label: string;
@@ -16,7 +18,7 @@ const CardDisplayBet: FC<CardDisplayBetProps> = ({
   tooltip,
 }) => {
   return (
-    <Paper>
+    <GlassPaper>
       <Stack
         direction="column"
         justifyContent="center"
@@ -48,15 +50,23 @@ const CardDisplayBet: FC<CardDisplayBetProps> = ({
         {/* Display */}
         <Stack direction="row" spacing={1.5} sx={{ width: "64px" }}>
           <Typography variant="h6" sx={{ width: "100%" }}>
-            {guess ? guess : <Skeleton />}
+            {guess ? (
+              guess
+            ) : (
+              <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
+            )}
           </Typography>
 
           <Typography variant="h6" sx={{ width: "100%" }}>
-            {hand ? hand : <Skeleton />}
+            {hand ? (
+              hand
+            ) : (
+              <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
+            )}
           </Typography>
         </Stack>
       </Stack>
-    </Paper>
+    </GlassPaper>
   );
 };
 export default CardDisplayBet;

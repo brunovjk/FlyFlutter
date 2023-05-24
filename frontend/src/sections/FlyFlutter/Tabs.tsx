@@ -1,6 +1,5 @@
 import React, { FC, useState } from "react";
-import { Paper } from "@mui/material";
-import { TabPanel, TabsWrapper } from "../../components";
+import { GlassPaper, TabPanel, TabsWrapper } from "../../components";
 import { Stack } from "@mui/material";
 import theme from "../../config/theme";
 
@@ -37,21 +36,21 @@ const Tabs: FC = () => {
       alignItems="center"
       spacing={2}
     >
-      <Paper>
+      <GlassPaper>
         <TabsWrapper
           value={value}
           onChange={handleChange}
           theme={theme}
           tabs={tabsContent}
         />
-      </Paper>
-      <Paper sx={{ height: "390px", minWidth: "400px" }}>
+      </GlassPaper>
+      <GlassPaper sx={{ height: "390px", minWidth: "400px" }}>
         {tabsContent.map((tab, index) => (
           <TabPanel key={index} value={value} index={index}>
             {tab.component}
           </TabPanel>
         ))}
-      </Paper>
+      </GlassPaper>
     </Stack>
   );
 };

@@ -9,12 +9,7 @@ const ConnectButton = () => {
       {({ isConnected, isConnecting, show, truncatedAddress }) => {
         return (
           <LoadingButton
-            variant="contained"
-            sx={{
-              width: "148px",
-              color: theme.palette.primary.main,
-              backgroundColor: theme.palette.secondary.main,
-            }}
+            sx={{ maxWidth: "192px" }}
             onClick={show}
             loading={isConnecting}
           >

@@ -1,15 +1,9 @@
 import React, { FC } from "react";
-import {
-  Grid,
-  Stack,
-  Box,
-  Skeleton,
-  Paper,
-  Typography,
-  Tooltip,
-} from "@mui/material";
+import { Grid, Stack, Box, Skeleton, Typography, Tooltip } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { GlassPaper } from "../GlassPaper";
+import theme from "../../config/theme";
 
 interface CardBalanceButtonProps {
   label: string;
@@ -31,7 +25,11 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
   tooltip,
 }) => {
   return (
-    <Paper sx={{ width: { xs: "100%", lg: "260px" } }}>
+    <GlassPaper
+      sx={{
+        width: { xs: "100%", lg: "260px" },
+      }}
+    >
       <Grid
         container
         paddingY={{ xs: "8px", md: "12px" }}
@@ -68,7 +66,11 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
                   minWidth: "48px",
                 }}
               >
-                {value ? value : <Skeleton />}
+                {value ? (
+                  value
+                ) : (
+                  <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
+                )}
               </Typography>
               <Typography
                 sx={{
@@ -103,7 +105,7 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
           </Box>
         </Grid>
       </Grid>
-    </Paper>
+    </GlassPaper>
   );
 };
 export default CardBalanceButton;

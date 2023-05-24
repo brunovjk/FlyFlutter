@@ -9,11 +9,11 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
     width: "50%",
     height: "50%",
   };
-  const defaultStyle: React.CSSProperties = {
+  const falseStyle: React.CSSProperties = {
     width: "100%",
     height: "100%",
   };
-  const connectedStyle: React.CSSProperties = {
+  const trueStyle: React.CSSProperties = {
     width: "5%",
     height: "50%",
   };
@@ -29,10 +29,10 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
       }}
     >
       <TransactionBox
-        isConnected={isConnected}
+        controlStyle={isConnected}
         initialStyle={initialStyle}
-        defaultStyle={defaultStyle}
-        connectedStyle={connectedStyle}
+        falseStyle={falseStyle}
+        trueStyle={trueStyle}
       >
         <SVGBox svgPath="talking_astronauts.svg" svgAlt="Talking Astronauts" />
       </TransactionBox>

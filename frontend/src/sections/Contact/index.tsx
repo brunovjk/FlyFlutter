@@ -18,9 +18,9 @@ const Contact: React.FC = () => {
       }}
     >
       <Stack spacing={2}>
-        <Copy />
+        <Copy color={theme.palette.text.secondary} />
         <IconStack color={theme.palette.text.secondary} />
-        <Form />
+        <Form color={theme.palette.text.secondary} />
       </Stack>
     </Box>
   );

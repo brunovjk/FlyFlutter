@@ -5,7 +5,7 @@ import { AppAlert } from "../../components";
 import { contact } from "../../copy";
 import theme from "../../config/theme";
 
-const Form: FC = () => {
+const Form: FC<IconStackProps> = ({ color }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -80,7 +80,6 @@ const Form: FC = () => {
       <form onSubmit={handleSubmit}>
         <Stack spacing={2}>
           <TextField
-            color="secondary"
             required
             id="contact-name"
             label="Name"
@@ -88,7 +87,6 @@ const Form: FC = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <TextField
-            color="secondary"
             required
             id="contact-email"
             label="Email"
@@ -97,7 +95,6 @@ const Form: FC = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
-            color="secondary"
             required
             id="contact-send-message"
             label="Message"
@@ -108,8 +105,7 @@ const Form: FC = () => {
           />
           <LoadingButton
             type="submit"
-            variant="contained"
-            sx={{ maxWidth: "192px", color: theme.palette.secondary.main }}
+            sx={{ maxWidth: "192px" }}
             loading={sending}
           >
             {contact.sendButton}

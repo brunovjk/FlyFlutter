@@ -3,22 +3,22 @@ import { Box } from "@mui/material";
 import { useSpring, useSpringRef, animated } from "@react-spring/web";
 
 interface TransactionBoxProps {
-  isConnected: boolean;
+  controlStyle: boolean;
   commonStyle?: React.CSSProperties;
   initialStyle: React.CSSProperties;
-  defaultStyle: React.CSSProperties;
-  connectedStyle: React.CSSProperties;
+  falseStyle: React.CSSProperties;
+  trueStyle: React.CSSProperties;
   children: React.ReactNode;
 }
 
 const AnimatedBox = animated(Box);
 
 const TransactionBox: React.FC<TransactionBoxProps> = ({
-  isConnected,
+  controlStyle,
   commonStyle,
   initialStyle,
-  defaultStyle,
-  connectedStyle,
+  falseStyle,
+  trueStyle,
   children,
 }) => {
   const api = useSpringRef();
@@ -26,16 +26,15 @@ const TransactionBox: React.FC<TransactionBoxProps> = ({
     ref: api,
     from: initialStyle,
     config: {
-      duration: 1500,
-      delay: 1000,
+      duration: 1900,
     },
   });
 
   useEffect(() => {
     api.start({
-      to: isConnected ? connectedStyle : defaultStyle,
+      to: controlStyle ? trueStyle : falseStyle,
     });
-  }, [isConnected]);
+  }, [controlStyle]);
 
   return (
     <AnimatedBox style={{ ...commonStyle, ...springs }}>{children}</AnimatedBox>

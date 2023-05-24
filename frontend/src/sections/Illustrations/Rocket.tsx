@@ -1,17 +1,17 @@
-import React from "react";
+import React, { FC, CSSProperties } from "react";
 import { Box } from "@mui/material";
 import { SVGBox, TransactionBox } from "../../components";
 
-const Rocket: React.FC<{ isConnected: boolean }> = ({ isConnected }) => {
-  const initialStyle: React.CSSProperties = {
+const Rocket: FC<{ isConnected: boolean }> = ({ isConnected }) => {
+  const initialStyle: CSSProperties = {
     width: "300%",
     height: "200%",
   };
-  const defaultStyle: React.CSSProperties = {
+  const falseStyle: CSSProperties = {
     width: "50%",
     height: "50%",
   };
-  const connectedStyle: React.CSSProperties = {
+  const trueStyle: CSSProperties = {
     width: "25%",
     height: "50%",
   };
@@ -27,10 +27,10 @@ const Rocket: React.FC<{ isConnected: boolean }> = ({ isConnected }) => {
       }}
     >
       <TransactionBox
-        isConnected={isConnected}
+        controlStyle={isConnected}
         initialStyle={initialStyle}
-        defaultStyle={defaultStyle}
-        connectedStyle={connectedStyle}
+        falseStyle={falseStyle}
+        trueStyle={trueStyle}
       >
         <SVGBox svgPath="rocket.svg" svgAlt="Rocket" />
       </TransactionBox>

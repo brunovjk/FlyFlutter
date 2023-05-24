@@ -5,6 +5,7 @@ import { Stack } from "@mui/material";
 import Hands from "./Hands";
 import HouseDisplay from "./HouseDisplay";
 import ResultsDisplay from "./ResultsDisplay";
+import { TransactionBox } from "../../../components";
 
 const Results: FC = () => {
   const { balances, inputs, results, waitingBet } =
@@ -18,34 +19,35 @@ const Results: FC = () => {
     }
   }, [waitingBet]);
 
-  if (!showResults) {
-    return (
-      <Stack
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        padding={{ xs: 1, md: 2 }}
-        spacing={{ xs: 2, md: showResults ? 4 : 8 }}
-      >
-        <HouseDisplay balances={balances} />
-        <Hands inputs={inputs} results={results} waitingBet={waitingBet} />
-      </Stack>
-    );
-  }
+  const hideBox: React.CSSProperties = {
+    opacity: 0,
+  };
+
+  const showBox: React.CSSProperties = {
+    opacity: 1,
+  };
 
   return (
     <Stack
+      sx={{
+        height: "100%",
+      }}
       direction="column"
       justifyContent="center"
       alignItems="center"
-      padding={{ xs: 1, md: 2 }}
-      spacing={{ xs: 2, md: showResults ? 4 : 8 }}
+      spacing={2}
     >
       <HouseDisplay balances={balances} />
       <Hands inputs={inputs} results={results} waitingBet={waitingBet} />
-      {showResults && (
+
+      <TransactionBox
+        controlStyle={showResults}
+        initialStyle={hideBox}
+        falseStyle={hideBox}
+        trueStyle={showBox}
+      >
         <ResultsDisplay results={results} waitingBet={waitingBet} />
-      )}
+      </TransactionBox>
     </Stack>
   );
 };

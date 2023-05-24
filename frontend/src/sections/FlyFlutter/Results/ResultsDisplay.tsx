@@ -1,5 +1,9 @@
 import React, { FC } from "react";
-import { CardDisplayBet, CardDisplayResult } from "../../../components";
+import {
+  CardDisplayBet,
+  CardDisplayResult,
+  ShakingBox,
+} from "../../../components";
 import { Stack } from "@mui/material";
 import { guessConverter, houseConverter } from "../../../helpers";
 
@@ -27,22 +31,26 @@ const Results: FC<ResultsDisplayProps> = ({ results, waitingBet }) => {
         hand={playerHand?.toString()}
         tooltip="Your last bet"
       />
-      <CardDisplayResult
-        shaking={waitingBet}
-        label={waitingBet ? "waiting Bet..." : "Last Bet"}
-        winner={winner}
-        tooltip={
-          waitingBet
-            ? "Waiting QRNG and Gelato, you can close this page anytime. You can check all you bets at History tab."
-            : "Winner of last bet"
-        }
-      />
-      <CardDisplayBet
-        label="House"
-        guess={houseGuess}
-        hand={houseHand?.toString()}
-        tooltip="House Hand"
-      />
+      <ShakingBox shake={waitingBet}>
+        <CardDisplayResult
+          label={waitingBet ? "waiting Bet..." : "Last Bet"}
+          winner={winner}
+          tooltip={
+            waitingBet
+              ? "Waiting QRNG and Gelato, you can close this page anytime. You can check all you bets at History tab."
+              : "Winner of last bet"
+          }
+        />
+      </ShakingBox>
+
+      <ShakingBox shake={waitingBet && houseHand == undefined}>
+        <CardDisplayBet
+          label="House"
+          guess={houseGuess}
+          hand={houseHand?.toString()}
+          tooltip="House Hand"
+        />
+      </ShakingBox>
     </Stack>
   );
 };

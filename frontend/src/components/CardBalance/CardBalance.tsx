@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { Skeleton, Stack, Paper, Typography, Tooltip } from "@mui/material";
+import { Skeleton, Stack, Typography, Tooltip } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { GlassPaper } from "../GlassPaper";
+import theme from "../../config/theme";
 
 interface CardBalanceProps {
   label: string;
@@ -10,7 +12,11 @@ interface CardBalanceProps {
 
 const CardBalance: FC<CardBalanceProps> = ({ label, value, tooltip }) => {
   return (
-    <Paper sx={{ width: { xs: "100%", md: "128px" } }}>
+    <GlassPaper
+      sx={{
+        width: { xs: "100%", md: "128px" },
+      }}
+    >
       <Stack
         direction="column"
         justifyContent="center"
@@ -47,7 +53,11 @@ const CardBalance: FC<CardBalanceProps> = ({ label, value, tooltip }) => {
               minWidth: "48px",
             }}
           >
-            {value ? value : <Skeleton />}
+            {value ? (
+              value
+            ) : (
+              <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
+            )}
           </Typography>
           <Typography
             sx={{
@@ -60,7 +70,7 @@ const CardBalance: FC<CardBalanceProps> = ({ label, value, tooltip }) => {
           </Typography>
         </Stack>
       </Stack>
-    </Paper>
+    </GlassPaper>
   );
 };
 export default CardBalance;

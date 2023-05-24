@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef } from "react";
 import VanillaTilt from "vanilla-tilt";
 import CardContent from "./CardContent";
-import GlassPaper from "../GlassPaper";
+import { GlassPaperNoBlur } from "../GlassPaper";
 import theme from "../../config/theme";
 
 const CardProject: FC<CardProjectProps> = ({
@@ -26,7 +26,7 @@ const CardProject: FC<CardProjectProps> = ({
     }
   }, [options]);
   return (
-    <GlassPaper
+    <GlassPaperNoBlur
       ref={tilt}
       sx={{
         padding: {
@@ -39,7 +39,6 @@ const CardProject: FC<CardProjectProps> = ({
           md: theme.spacing(2),
           lg: theme.spacing(4),
         },
-        boxShadow: "5px 5px 12px rgba(0,0,0,0.5)",
       }}
     >
       <CardContent
@@ -49,7 +48,7 @@ const CardProject: FC<CardProjectProps> = ({
         keyFeatures={keyFeatures}
         learnMore={learnMore}
       />
-    </GlassPaper>
+    </GlassPaperNoBlur>
   );
 };
 

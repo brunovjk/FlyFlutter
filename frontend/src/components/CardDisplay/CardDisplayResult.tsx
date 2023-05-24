@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { Skeleton, Paper, Typography, Tooltip, Stack } from "@mui/material";
+import { Skeleton, Typography, Tooltip, Stack } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { GlassPaper } from "../GlassPaper";
+import theme from "../../config/theme";
 
 interface CardDisplayResulttProps {
   label: string;
@@ -8,36 +10,13 @@ interface CardDisplayResulttProps {
   tooltip: string;
 }
 
-const shakeAnimation = {
-  "0%": {
-    transform: "translate(0, 0)",
-  },
-  "25%": {
-    transform: "translate(-3px, 3px)",
-  },
-  "50%": {
-    transform: "translate(3px, -3px)",
-  },
-  "75%": {
-    transform: "translate(-3px, 3px)",
-  },
-  "100%": {
-    transform: "translate(0, 0)",
-  },
-};
-
-const styles = {
-  shake: {
-    animation: "$shake 1s infinite",
-  },
-  "@keyframes shake": shakeAnimation,
-};
-
-const CardDisplayResultt: FC<
-  CardDisplayResulttProps & { shaking: boolean }
-> = ({ shaking, label, winner, tooltip }) => {
+const CardDisplayResultt: FC<CardDisplayResulttProps> = ({
+  label,
+  winner,
+  tooltip,
+}) => {
   return (
-    <Paper style={shaking ? styles.shake : undefined}>
+    <GlassPaper>
       <Stack
         direction="column"
         justifyContent="center"
@@ -74,10 +53,14 @@ const CardDisplayResultt: FC<
           textAlign="center"
           sx={{ width: { xs: "96px", md: "124px" } }}
         >
-          {winner ? winner : <Skeleton />}
+          {winner ? (
+            winner
+          ) : (
+            <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
+          )}
         </Typography>
       </Stack>
-    </Paper>
+    </GlassPaper>
   );
 };
 export default CardDisplayResultt;
