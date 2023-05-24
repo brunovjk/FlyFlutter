@@ -97,18 +97,6 @@ function Sky({ isConnected }: { isConnected: boolean }) {
           style={{ display: "block", width: "15%", marginLeft: "75%" }}
         />
       </ParallaxLayer>
-      <ParallaxLayer
-        offset={2.7}
-        speed={-0.4}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          pointerEvents: "none",
-        }}
-      >
-        <img src={url("earth")} style={{ width: "40%" }} />
-      </ParallaxLayer>
       {/* Rocket */}
       <ParallaxLayer offset={0} speed={0.8}>
         <FadeInContainer justifyContent="flex-end">
