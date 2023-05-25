@@ -44,7 +44,9 @@ const Tabs: FC = () => {
           tabs={tabsContent}
         />
       </GlassPaper>
-      <GlassPaper sx={{ height: "390px", minWidth: "400px" }}>
+      <GlassPaper
+        sx={{ height: "390px", minWidth: { xs: "100%", md: "400px" } }}
+      >
         {tabsContent.map((tab, index) => (
           <TabPanel key={index} value={value} index={index}>
             {tab.component}

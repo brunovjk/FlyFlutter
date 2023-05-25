@@ -16,7 +16,7 @@ const LogoTypography = styled(Typography)(() => ({
 const FFLogo: FC = () => {
   return (
     <>
-      <LogoTypography variant="h3" alignContent="center">
+      <LogoTypography variant="h3" alignContent="center" textAlign="center">
         <strong>Fly</strong>Flutter
       </LogoTypography>
     </>

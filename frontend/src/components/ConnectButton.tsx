@@ -1,26 +1,36 @@
 import React from "react";
 import { ConnectKitButton } from "connectkit";
 import LoadingButton from "@mui/lab/LoadingButton";
-import theme from "../config/theme";
+import { Box } from "@mui/material";
 
 const ConnectButton = () => {
   return (
     <ConnectKitButton.Custom>
       {({ isConnected, isConnecting, show, truncatedAddress }) => {
         return (
-          <LoadingButton
-            sx={{ maxWidth: "192px" }}
-            onClick={show}
-            loading={isConnecting}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100%",
+              width: "100%",
+            }}
           >
-            <>
-              {isConnecting
-                ? " "
-                : !isConnected
-                ? "Connect"
-                : truncatedAddress?.toString()}
-            </>
-          </LoadingButton>
+            <LoadingButton
+              sx={{ width: "100%", maxWidth: "192px" }}
+              onClick={show}
+              loading={isConnecting}
+            >
+              <>
+                {isConnecting
+                  ? " "
+                  : !isConnected
+                  ? "Connect"
+                  : truncatedAddress?.toString()}
+              </>
+            </LoadingButton>
+          </Box>
         );
       }}
     </ConnectKitButton.Custom>

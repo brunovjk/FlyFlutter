@@ -2,8 +2,8 @@ import { createClient } from "wagmi";
 import { polygon, polygonMumbai } from "wagmi/chains";
 import { getDefaultClient } from "connectkit";
 
-// const polygonAlchemyId = process.env.NEXT_PUBLIC_ALCHEMY_APIKEY_POLYGON;
-const mumbaiAlchemyId = process.env.NEXT_PUBLIC_ALCHEMY_APIKEY_MUMBAI;
+// const polygonAlchemyId = process.env.REACT_APP_ALCHEMY_POLYGON_ID;
+const mumbaiAlchemyId = process.env.REACT_APP_ALCHEMY_MUMBAI_ID;
 const chains = [polygonMumbai, polygon];
 
 export const client = createClient(

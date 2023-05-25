@@ -64,7 +64,7 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
                   fontSize: { xs: "1rem", md: "1.25rem" },
                   textAlign: "right",
                   lineHeight: { xs: "1rem", md: "1.5rem" },
-                  minWidth: "48px",
+                  minWidth: "36px",
                 }}
               >
                 {value ? (

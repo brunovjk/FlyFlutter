@@ -10,14 +10,14 @@ export default async (req: any, res: any) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.NEXT_PUBLIC_GMAIL_USER,
-      pass: process.env.NEXT_PUBLIC_GMAIL_PASS,
+      user: process.env.REACT_APP_GMAIL_USER,
+      pass: process.env.REACT_APP_GMAIL_PASS,
     },
   });
 
   const mailOptions = {
     from: email,
-    to: process.env.NEXT_PUBLIC_GMAIL_USER,
+    to: process.env.REACT_APP_GMAIL_USER,
     subject: `New Portifolio message from: ${name}`,
     text: message,
   };

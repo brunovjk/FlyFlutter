@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import { FlyFlutterContext } from "../context";
-import { Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import { ConnectButton, GlassPaperLargeShadow } from "../../../components";
 import FFLogo from "./FFLogo";
@@ -18,21 +18,35 @@ const Header: FC = () => {
         paddingBlock: theme.spacing(2),
       }}
     >
-      <Stack direction="row" justifyContent="space-around" alignItems="center">
-        <FFLogo />
-
-        <Mint
-          balances={balances}
-          fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
-          setIsOpenAlert={setOpenAlert}
-        />
-        <Approve
-          balances={balances}
-          fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
-          setIsOpenAlert={setOpenAlert}
-        />
-        <ConnectButton />
-      </Stack>
+      <Grid
+        container
+        direction="row"
+        alignItems="center"
+        justifyContent="space-evenly"
+        spacing={2}
+        paddingX={2}
+      >
+        <Grid item xs={12} sm={6} md={3} order={0}>
+          <FFLogo />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3} order={{ xs: 2, md: 1 }}>
+          <Mint
+            balances={balances}
+            fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
+            setIsOpenAlert={setOpenAlert}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3} order={{ xs: 3, md: 2 }}>
+          <Approve
+            balances={balances}
+            fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
+            setIsOpenAlert={setOpenAlert}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3} order={{ xs: 1, md: 3 }}>
+          <ConnectButton />
+        </Grid>
+      </Grid>
     </GlassPaperLargeShadow>
   );
 };
