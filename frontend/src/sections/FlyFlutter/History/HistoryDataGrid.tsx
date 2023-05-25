@@ -25,6 +25,9 @@ const HistoryDataGrid: React.FC<HistoryProps> = ({
       style={{
         color: theme.palette.secondary.main,
         border: "none",
+        // "&.Mui-disabled": {
+        //   color: palette.secondary.dark,
+        // },
       }}
       disableColumnMenu={true}
       disableRowSelectionOnClick={true}

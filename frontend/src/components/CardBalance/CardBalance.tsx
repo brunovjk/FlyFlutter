@@ -3,10 +3,11 @@ import { Skeleton, Stack, Typography, Tooltip } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { GlassPaper } from "../GlassPaper";
 import theme from "../../config/theme";
+import { ethers } from "ethers";
 
 interface CardBalanceProps {
   label: string;
-  value?: string;
+  value?: number | ethers.BigNumber;
   tooltip: string;
 }
 
@@ -54,7 +55,7 @@ const CardBalance: FC<CardBalanceProps> = ({ label, value, tooltip }) => {
             }}
           >
             {value ? (
-              value
+              value.toString()
             ) : (
               <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
             )}

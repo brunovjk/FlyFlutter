@@ -1,32 +1,62 @@
-import React, { useRef, FC } from "react";
-import { Snackbar, Link } from "@mui/material";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
-
-const CustomAlert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-  props,
-  ref
-) {
-  return <MuiAlert elevation={6} ref={ref} {...props} />;
-});
+import React, { useEffect, FC, useState, useContext } from "react";
+import {
+  Snackbar,
+  Link,
+  Alert,
+  AlertTitle,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import theme from "../config/theme";
+import { FlyFlutterContext } from "../sections/FlyFlutter/context";
 
 const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
-  const renderMessage = () => {
+  const { setOpenAlert } = useContext(FlyFlutterContext);
+
+  const handleClose = () => {
+    setOpenAlert({ isOpen: false });
+  };
+
+  const renderMessage = (message?: string, link?: string) => {
     if (link) {
       return (
-        <>
+        <Typography variant="body1">
           {message}{" "}
-          <Link href={link} target="_blank" rel="noopener">
-            {link}
+          <Link
+            href={link}
+            target="_blank"
+            rel="noopener"
+            color={theme.palette.secondary.main}
+          >
+            {" "}
+            Explorer
           </Link>
-        </>
+        </Typography>
       );
     }
-    return message;
+    return <Typography variant="body1">{message}</Typography>;
   };
 
   return (
-    <Snackbar open={isOpen} autoHideDuration={5000}>
-      <CustomAlert severity={severity}>{renderMessage()}</CustomAlert>
+    <Snackbar open={isOpen} onClose={handleClose} autoHideDuration={5000}>
+      <Alert
+        variant="outlined"
+        elevation={6}
+        onClose={handleClose}
+        severity={severity}
+        action={
+          <IconButton aria-label="close" color={severity} onClick={handleClose}>
+            <CloseIcon color={severity} />
+          </IconButton>
+        }
+        sx={{ mb: 2 }}
+      >
+        <AlertTitle>
+          <Typography variant="body1">{severity}</Typography>
+        </AlertTitle>
+        {renderMessage(message, link)}
+      </Alert>
     </Snackbar>
   );
 };

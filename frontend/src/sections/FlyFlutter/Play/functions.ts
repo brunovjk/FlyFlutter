@@ -277,7 +277,7 @@ export function usePlayFunctions(
           setOpenAlert({
             severity: "info",
             message: "Transaction sent, please wait confirmation.",
-            link: `${(await useHashExplorer({ hash: placeBetTx.hash })).data}`,
+            link: (await useHashExplorer({ hash: placeBetTx.hash })).data,
             isOpen: true,
           });
 

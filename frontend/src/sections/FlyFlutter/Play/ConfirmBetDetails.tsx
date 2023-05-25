@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Stack, Typography } from "@mui/material";
 import { guessConverter } from "../../../helpers";
+import { formatEther } from "ethers/lib/utils.js";
 
 const ConfirmBetDetails: FC<{
   balances: BalancesProps;
@@ -12,8 +13,10 @@ const ConfirmBetDetails: FC<{
         inputs.guess
       )}`}</Typography>
       <Typography>{`Selected Hand: ${inputs.hand}`}</Typography>
-      <Typography>{`Selected Bet Amount: ${inputs.amount}`}</Typography>
-      <Typography>{`Bet Fee: ${balances.betFee.toString()}`}</Typography>
+      <Typography>{`Selected Bet Amount: ${inputs.amount} FFC`}</Typography>
+      <Typography>{`Bet Fee: ${formatEther(
+        balances.betFee
+      ).toString()} MATIC`}</Typography>
     </Stack>
   );
 };

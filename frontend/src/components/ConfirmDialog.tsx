@@ -6,6 +6,7 @@ import {
   DialogActions,
 } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { GlassPaperLargeShadow } from "./GlassPaper";
 
 const ConfirmDialog: FC<DialogProps> = ({
   open,
@@ -29,6 +30,7 @@ const ConfirmDialog: FC<DialogProps> = ({
     <Dialog
       open={open}
       onClose={handleCancel}
+      PaperComponent={GlassPaperLargeShadow}
       // PaperProps={{ className: classes.glassDialog }}
     >
       {title && <DialogTitle>{title}</DialogTitle>}

@@ -140,6 +140,7 @@ const Play: FC = () => {
               </Tooltip>
             </Stack>
             <BetAmountSelector
+              value={inputs.amount}
               onChange={(newValue: number) =>
                 updateInputs({ amount: newValue })
               }

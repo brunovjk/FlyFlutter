@@ -4,6 +4,7 @@ import { CardBalanceButton } from "../../../components";
 
 import { useAccount } from "wagmi";
 import { useApproveBetting } from "../../../hooks";
+import { ethers } from "ethers";
 
 export interface FFApproveProps {
   balances: BalancesProps;
@@ -22,19 +23,19 @@ const FFCApprove: FC<FFApproveProps> = ({
   const [isLoadingApprove, setIsLoadingApprove] = useState<boolean>(false);
 
   const handleDisabledApprove = async (
-    address: `0x${string}` | undefined,
-    userAllowance: any,
-    userBalance: any
+    address?: `0x${string}`,
+    userAllowance?: number | ethers.BigNumber,
+    userBalance?: number | ethers.BigNumber
   ) => {
     if (address != undefined) {
       if (
         userAllowance != undefined &&
         userBalance != undefined &&
-        parseInt(userAllowance, 10) >= parseInt(userBalance, 10)
+        ethers.BigNumber.from(userBalance).gt(userAllowance)
       ) {
-        setDisabledApprove(true);
-      } else {
         setDisabledApprove(false);
+      } else {
+        setDisabledApprove(true);
       }
     }
   };
@@ -49,7 +50,7 @@ const FFCApprove: FC<FFApproveProps> = ({
     ) {
       const approveTX = await useApproveBetting({
         player: address,
-        amount: parseInt(balances.player, 10) as number,
+        amount: balances.player,
       });
       if (approveTX.success) {
         fetchOnlyPlayerBalances();

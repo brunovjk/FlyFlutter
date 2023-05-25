@@ -4,10 +4,11 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { GlassPaper } from "../GlassPaper";
 import theme from "../../config/theme";
+import { ethers } from "ethers";
 
 interface CardBalanceButtonProps {
   label: string;
-  value?: string;
+  value?: number | ethers.BigNumber;
   buttonText: string;
   buttonDisabled: boolean;
   buttonLoading: boolean;
@@ -67,7 +68,7 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
                 }}
               >
                 {value ? (
-                  value
+                  value.toString()
                 ) : (
                   <Skeleton sx={{ bgcolor: theme.palette.secondary.dark }} />
                 )}

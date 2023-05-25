@@ -75,6 +75,7 @@ const FlyFlutterContextProvider: FC<{ children: ReactNode }> = ({
         isOpen={openAlert.isOpen}
         severity={openAlert.severity}
         message={openAlert.message}
+        link={openAlert.link}
       />
     </FlyFlutterContext.Provider>
   );

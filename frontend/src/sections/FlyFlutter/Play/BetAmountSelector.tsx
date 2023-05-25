@@ -2,10 +2,12 @@ import React, { FC } from "react";
 import TextField from "@mui/material/TextField";
 
 interface BetAmountSelectorProps {
+  value?: number;
+
   onChange: (newValue: number) => void;
 }
 
-const BetAmountSelector: FC<BetAmountSelectorProps> = ({ onChange }) => {
+const BetAmountSelector: FC<BetAmountSelectorProps> = ({ value, onChange }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value, 10);
     onChange(newValue);
@@ -17,6 +19,7 @@ const BetAmountSelector: FC<BetAmountSelectorProps> = ({ onChange }) => {
       label="Bet Amount"
       type="number"
       helperText="1 to 99 FFC per Bet"
+      value={value}
       onChange={handleChange}
       inputProps={{
         min: 1,

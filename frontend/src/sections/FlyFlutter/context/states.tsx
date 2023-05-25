@@ -35,7 +35,8 @@ export function useStates() {
 
   const [openAlert, setOpenAlert] = useState<AppAlertProps>({
     severity: "info",
-    message: "Alert popup",
+    message: "",
+    link: "",
     isOpen: false,
   });
 

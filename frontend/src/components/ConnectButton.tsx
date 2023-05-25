@@ -13,9 +13,13 @@ const ConnectButton = () => {
             onClick={show}
             loading={isConnecting}
           >
-            {!isConnecting && !isConnected
-              ? "Connect"
-              : truncatedAddress?.toString()}
+            <>
+              {isConnecting
+                ? " "
+                : !isConnected
+                ? "Connect"
+                : truncatedAddress?.toString()}
+            </>
           </LoadingButton>
         );
       }}

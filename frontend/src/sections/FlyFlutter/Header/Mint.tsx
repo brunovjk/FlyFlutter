@@ -4,6 +4,7 @@ import { CardBalanceButton } from "../../../components";
 
 import { useAccount } from "wagmi";
 import { useMintFFC } from "../../../hooks";
+import { ethers } from "ethers";
 
 export interface FFCMintProps {
   balances: BalancesProps;
@@ -23,14 +24,18 @@ const FFCMint: FC<FFCMintProps> = ({
   const [isLoadingMint, setIsLoadingMint] = useState<boolean>(false);
 
   const handleDisabledMint = async (
-    address: `0x${string | undefined}`,
-    userBalance: any
+    address?: `0x${string}`,
+    userBalance?: number | ethers.BigNumber
   ) => {
+    const minToMint: number = 10;
     if (address != undefined) {
-      if (userBalance != undefined && parseInt(userBalance, 10) >= 10) {
-        setDisabledMint(true);
-      } else {
+      if (
+        userBalance != undefined &&
+        ethers.BigNumber.from(userBalance).lt(minToMint)
+      ) {
         setDisabledMint(false);
+      } else {
+        setDisabledMint(true);
       }
     }
   };
@@ -43,7 +48,7 @@ const FFCMint: FC<FFCMintProps> = ({
         fetchOnlyPlayerBalances();
         setIsOpenAlert({
           severity: "success",
-          message: `Minted 100 to: ${address}`,
+          message: `Minted 100 FFC to: ${address}`,
           isOpen: true,
         });
         setIsLoadingMint(false);

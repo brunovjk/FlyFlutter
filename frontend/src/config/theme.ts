@@ -28,6 +28,19 @@ const palette = {
 };
 
 const components: Components<Omit<Theme, "components">> = {
+  MuiAlert: {
+    styleOverrides: {
+      root: {
+        borderRadius: "16px",
+        color: palette.secondary.light,
+        // border: `1px ${hexToRgba(palette.common.white, 0.1)} solid`,
+        // borderBottom: `1px ${hexToRgba(palette.common.black, 0.3)} solid`,
+        // borderRight: `1px ${hexToRgba(palette.common.black, 0.3)} solid`,
+        boxShadow: `16px 16px 16px ${hexToRgba(palette.primary.main, 0.6)}`,
+        backdropFilter: "blur(12px)",
+      },
+    },
+  },
   MuiTypography: {
     styleOverrides: {
       body1: {
@@ -122,7 +135,8 @@ const components: Components<Omit<Theme, "components">> = {
   MuiIconButton: {
     styleOverrides: {
       root: {
-        color: palette.secondary.main,
+        color: palette.secondary.dark,
+
         "&.Mui-disabled": {
           color: palette.secondary.dark,
         },
