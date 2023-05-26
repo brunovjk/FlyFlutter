@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardProject from "./CardProject";
-import theme from "../../config/theme";
 
 const customTransition = "transform 1300ms ease-in-out";
 
@@ -46,7 +45,6 @@ const CarouselProject: React.FC<{ projects: CardProjectProps[] }> = ({
   return (
     <Box component="div" sx={{ width: "90vw" }}>
       <Carousel
-        // css={{ overflow: "visible", paddingBottom: "32px" }}
         arrows={false}
         focusOnSelect={true}
         swipeable={true}

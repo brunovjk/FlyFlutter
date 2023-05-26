@@ -21,4 +21,5 @@ export { default as ShakingBox } from "./ShakingBox";
 export { default as SVGBox } from "./SVGBox";
 export { default as TabPanel } from "./Tab/TabPanel";
 export { default as TabsWrapper } from "./Tab/TabsWrapper";
+export { default as Trail } from "./Trail";
 export { default as TransactionBox } from "./TransactionBox";

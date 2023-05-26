@@ -5,10 +5,10 @@ import { about } from "../../copy";
 const Copy: FC = () => {
   return (
     <Stack spacing={3} justifyContent="center">
-      <Typography gutterBottom variant="h2" textAlign="center">
+      <Typography gutterBottom variant="h3" textAlign="center">
         {about.title1}
       </Typography>
-      <Typography gutterBottom variant="h4" textAlign="center">
+      <Typography gutterBottom variant="h5" textAlign="center">
         {about.title2}
       </Typography>
       <Typography variant="body1" textAlign="center">

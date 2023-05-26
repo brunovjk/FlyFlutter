@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import {
   ChasingAstronaut,
   Contact,
@@ -29,7 +29,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         <ParallaxLayer
           offset={0}
           speed={0}
-          factor={3}
+          factor={4.5}
           style={{
             backgroundImage: url("stars", true),
             backgroundSize: "cover",
@@ -107,6 +107,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
   );
 }
 function Sections({ isConnected }: { isConnected: boolean }) {
+  const isExtraMall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       {/* TalkingAstronauts */}
@@ -132,6 +133,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
       <ParallaxLayer
         offset={0}
         speed={0.3}
+        factor={isExtraMall ? 2 : 1.5}
         style={{
           marginLeft: isConnected ? "0%" : "100%",
           transition: `margin 1.2s ${theme.transitions.easing.easeIn}`,
@@ -148,13 +150,13 @@ function Sections({ isConnected }: { isConnected: boolean }) {
         </FadeInContainer>
       </ParallaxLayer>
       {/* Projects */}
-      <ParallaxLayer offset={1} speed={0}>
+      <ParallaxLayer offset={1.5} speed={0}>
         <FadeInContainer>
           <Projects />
         </FadeInContainer>
       </ParallaxLayer>
       {/* ContactForm */}
-      <ParallaxLayer offset={2} speed={0.3}>
+      <ParallaxLayer offset={3} speed={0.3}>
         <FadeInContainer justifyContent="flex-start">
           <Contact />
         </FadeInContainer>
@@ -171,14 +173,14 @@ export default function LandingPage() {
     <Box
       component="div"
       style={{
-        height: "100vh",
+        minHeight: "100vh",
       }}
     >
-      <Parallax ref={parallax} pages={3}>
+      <Parallax ref={parallax} pages={4.5}>
         <ParallaxLayer
           offset={0}
           speed={0}
-          factor={3}
+          factor={4.5}
           style={{
             background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.primary.main}, ${theme.palette.primary.light}`,
           }}

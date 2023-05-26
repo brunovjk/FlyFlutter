@@ -6,7 +6,7 @@ import theme from "../../config/theme";
 const Copy: FC<IconStackProps> = ({ color }) => {
   return (
     <Stack spacing={3}>
-      <Typography gutterBottom variant="h2" color={color}>
+      <Typography gutterBottom variant="h3" color={color}>
         {contact.title}
       </Typography>
       <Typography variant="body1" color={color}>
