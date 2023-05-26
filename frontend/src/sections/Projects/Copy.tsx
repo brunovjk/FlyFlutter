@@ -4,7 +4,7 @@ import { about } from "../../copy";
 
 const Copy: FC = () => {
   return (
-    <Stack spacing={3} justifyContent="center">
+    <Stack spacing={3} padding={3} justifyContent="center">
       <Typography gutterBottom variant="h3" textAlign="center">
         {about.title1}
       </Typography>

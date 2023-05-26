@@ -1,14 +1,18 @@
-import React from "react";
-import { Box, Stack } from "@mui/material";
-import { IconStack } from "../../components";
+import React, { FC } from "react";
+import { Box } from "@mui/material";
+import { IconStack, TrailFromX } from "../../components";
 import Copy from "./Copy";
 import Form from "./Form";
 import theme from "../../config/theme";
+import { useInView } from "@react-spring/web";
 
-const Contact: React.FC = () => {
+const Contact: FC = () => {
+  const [ref, isInView] = useInView({});
+
   return (
     <Box
       component="div"
+      ref={ref}
       sx={{
         display: "flex",
         alignItems: "center",
@@ -17,11 +21,11 @@ const Contact: React.FC = () => {
         height: "100%",
       }}
     >
-      <Stack spacing={2}>
+      <TrailFromX isConnected={!isInView}>
         <Copy color={theme.palette.text.secondary} />
         <IconStack color={theme.palette.text.secondary} />
         <Form color={theme.palette.text.secondary} />
-      </Stack>
+      </TrailFromX>
     </Box>
   );
 };

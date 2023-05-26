@@ -9,7 +9,7 @@ interface FadeInProps {
 
 const StyledContainer = styled(Container)(() => ({
   opacity: 0,
-  transition: `opacity 1.9s ${theme.transitions.easing.easeInOut}`,
+  transition: `opacity 1.9s ease-in`,
   "&.fade-in": {
     opacity: 1,
   },

@@ -6,8 +6,8 @@ export { default as CardDisplayResult } from "./CardDisplay/CardDisplayResult";
 export { default as CarouselProject } from "./CarouselProject";
 export { default as ConnectButton } from "./ConnectButton";
 export { default as ConfirmDialog } from "./ConfirmDialog";
-export { default as FadeInBox } from "./FadeIn/FadeInBox";
-export { default as FadeInContainer } from "./FadeIn/FadeInContainer";
+export { default as FadeInBox } from "./Transactions/FadeInBox";
+export { default as FadeInContainer } from "./Transactions/FadeInContainer";
 export {
   GlassPaper,
   GlassPaperLargeShadow,
@@ -17,9 +17,10 @@ export { default as Hand } from "./Hand";
 export { default as Header } from "./Header";
 export { default as IconStack } from "./IconStack";
 export { default as Logo } from "./Logo";
+export { default as SectionContainer } from "./SectionContainer";
 export { default as ShakingBox } from "./ShakingBox";
 export { default as SVGBox } from "./SVGBox";
 export { default as TabPanel } from "./Tab/TabPanel";
 export { default as TabsWrapper } from "./Tab/TabsWrapper";
-export { default as Trail } from "./Trail";
-export { default as TransactionBox } from "./TransactionBox";
+export { default as TrailFromX } from "./Transactions/TrailFromX";
+export { default as TransactionBox } from "./Transactions/TransactionBox";

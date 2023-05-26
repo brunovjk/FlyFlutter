@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import { Box, useMediaQuery } from "@mui/material";
 import {
@@ -11,7 +11,7 @@ import {
   TalkingAstronauts,
 } from "../sections";
 
-import { FadeInBox, FadeInContainer } from "../components";
+import { FadeInBox, FadeInContainer, SectionContainer } from "../components";
 import theme from "../config/theme";
 import { useConnectionSync } from "../hooks";
 
@@ -99,9 +99,9 @@ function Sky({ isConnected }: { isConnected: boolean }) {
       </ParallaxLayer>
       {/* Rocket */}
       <ParallaxLayer offset={0} speed={0.8}>
-        <FadeInContainer justifyContent="flex-end">
+        <SectionContainer justifyContent="flex-end">
           <Rocket isConnected={isConnected} />
-        </FadeInContainer>
+        </SectionContainer>
       </ParallaxLayer>
     </>
   );
@@ -112,22 +112,15 @@ function Sections({ isConnected }: { isConnected: boolean }) {
     <>
       {/* TalkingAstronauts */}
       <ParallaxLayer offset={0} speed={-0.3}>
-        <FadeInContainer justifyContent="flex-end">
+        <SectionContainer justifyContent="flex-end">
           <TalkingAstronauts isConnected={isConnected} />
-        </FadeInContainer>
+        </SectionContainer>
       </ParallaxLayer>
       {/* Hero */}
-      <ParallaxLayer
-        offset={0}
-        speed={0.3}
-        style={{
-          marginLeft: isConnected ? "-100%" : "0%",
-          transition: `margin 0.9s ${theme.transitions.easing.easeIn}`,
-        }}
-      >
-        <FadeInContainer justifyContent="flex-start">
-          <Hero />
-        </FadeInContainer>
+      <ParallaxLayer offset={0} speed={0.3}>
+        <SectionContainer justifyContent="flex-start">
+          <Hero isConnected={isConnected} />
+        </SectionContainer>
       </ParallaxLayer>
       {/* FlyFlutter */}
       <ParallaxLayer
@@ -139,27 +132,27 @@ function Sections({ isConnected }: { isConnected: boolean }) {
           transition: `margin 1.2s ${theme.transitions.easing.easeIn}`,
         }}
       >
-        <FadeInContainer>
+        <SectionContainer>
           <FlyFlutter />
-        </FadeInContainer>
+        </SectionContainer>
       </ParallaxLayer>
       {/* ChasingAstronauts */}
       <ParallaxLayer offset={2} speed={-0.3}>
-        <FadeInContainer justifyContent="flex-end">
+        <SectionContainer justifyContent="flex-end">
           <ChasingAstronaut />
-        </FadeInContainer>
+        </SectionContainer>
       </ParallaxLayer>
       {/* Projects */}
       <ParallaxLayer offset={1.5} speed={0}>
-        <FadeInContainer>
+        <SectionContainer>
           <Projects />
-        </FadeInContainer>
+        </SectionContainer>
       </ParallaxLayer>
       {/* ContactForm */}
       <ParallaxLayer offset={3} speed={0.3}>
-        <FadeInContainer justifyContent="flex-start">
+        <SectionContainer justifyContent="flex-start">
           <Contact />
-        </FadeInContainer>
+        </SectionContainer>
       </ParallaxLayer>
     </>
   );
