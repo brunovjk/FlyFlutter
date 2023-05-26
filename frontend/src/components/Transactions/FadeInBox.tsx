@@ -10,7 +10,7 @@ interface FadeInProps {
 
 const StyledBox = styled(Box)(() => ({
   opacity: 0,
-  transition: `opacity 1.9s ${theme.transitions.easing.easeIn}`,
+  transition: "opacity 1s ease-in",
   "&.fade-in": {
     opacity: 1,
   },

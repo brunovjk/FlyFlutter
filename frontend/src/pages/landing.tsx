@@ -11,7 +11,12 @@ import {
   TalkingAstronauts,
 } from "../sections";
 
-import { FadeInBox, FadeInContainer, SectionContainer } from "../components";
+import {
+  FadeInBox,
+  FadeInContainer,
+  SVGBox,
+  SectionContainer,
+} from "../components";
 import theme from "../config/theme";
 import { useConnectionSync } from "../hooks";
 
@@ -25,24 +30,53 @@ const url = (name: string, wrap = false) =>
 function Sky({ isConnected }: { isConnected: boolean }) {
   return (
     <>
-      <FadeInBox>
-        <ParallaxLayer
-          offset={0}
-          speed={0}
-          factor={4.5}
-          style={{
-            backgroundImage: url("stars", true),
-            backgroundSize: "cover",
-          }}
-        />
-      </FadeInBox>
+      <ParallaxLayer
+        offset={0}
+        speed={0}
+        factor={4.5}
+        style={{
+          backgroundImage: url("stars", true),
+          backgroundSize: "cover",
+        }}
+      />
 
-      <ParallaxLayer offset={1.5} speed={-2} style={{ pointerEvents: "none" }}>
-        <img
-          src={url("satellite4")}
-          style={{ width: "5%", marginLeft: "3%", transform: "scaleX(-1)" }}
+      <ParallaxLayer
+        offset={3.7}
+        speed={-0.3}
+        style={{ pointerEvents: "none" }}
+      >
+        <SVGBox
+          svgPath="studying_astronauts.svg"
+          svgAlt="Studying Astronaut"
+          styles={{ width: "25%", opacity: 0.75, marginLeft: "35%" }}
         />
       </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={1.95}
+        speed={-2.85}
+        style={{ pointerEvents: "none" }}
+      >
+        <SVGBox
+          svgPath="ballons_astronauts.svg"
+          svgAlt="Ballons Astronaut"
+          styles={{ width: "25%", opacity: 0.75, transform: "scaleX(-1)" }}
+        />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={2.8} speed={1} style={{ pointerEvents: "none" }}>
+        <SVGBox
+          svgPath="plain_astronauts.svg"
+          svgAlt="Plainning Astronaut"
+          styles={{
+            opacity: 0.75,
+            width: "10%",
+            marginLeft: "90%",
+            transform: "rotate(35deg)",
+          }}
+        />
+      </ParallaxLayer>
+
       <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
         <img
           src={url("cloud")}
@@ -137,7 +171,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
         </SectionContainer>
       </ParallaxLayer>
       {/* ChasingAstronauts */}
-      <ParallaxLayer offset={2} speed={-0.3}>
+      <ParallaxLayer offset={3} speed={-0.1}>
         <SectionContainer justifyContent="flex-end">
           <ChasingAstronaut />
         </SectionContainer>

@@ -4,7 +4,7 @@ import { hexToRgba } from "../helpers";
 
 const PaperStyle = styled(Paper)(() => ({
   color: theme.palette.secondary.light,
-  background: hexToRgba(theme.palette.primary.light, 0.35),
+  background: hexToRgba(theme.palette.primary.light, 0.75),
 
   borderRadius: "16px",
   border: `1px ${hexToRgba(theme.palette.common.white, 0.1)} solid`,

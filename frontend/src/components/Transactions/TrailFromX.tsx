@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { useTrail, a } from "@react-spring/web";
+import { useTrail, a, easings } from "@react-spring/web";
 
 const TrailFromX: React.FC<{
   itemStyle?: React.CSSProperties;
@@ -11,10 +11,11 @@ const TrailFromX: React.FC<{
   const sizeMult: number = fromRight ? 1 : -1;
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
-    x: isConnected ? 4800 * sizeMult : 0,
-    from: { x: 4800 * sizeMult },
     delay: delay,
-    config: { tension: 180, friction: 20 },
+
+    opacity: 1,
+    x: isConnected ? 4800 * sizeMult : 0,
+    from: { opacity: 0, x: 4800 * sizeMult },
   });
   return (
     <div>
