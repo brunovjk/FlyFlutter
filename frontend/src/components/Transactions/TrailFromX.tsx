@@ -2,11 +2,12 @@ import React, { ReactNode } from "react";
 import { useTrail, a } from "@react-spring/web";
 
 const TrailFromX: React.FC<{
+  itemStyle?: React.CSSProperties;
   fromRight?: boolean;
   delay?: number;
   isConnected: boolean;
   children: ReactNode;
-}> = ({ fromRight, delay, isConnected, children }) => {
+}> = ({ itemStyle, fromRight, delay, isConnected, children }) => {
   const sizeMult: number = fromRight ? 1 : -1;
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
@@ -22,7 +23,7 @@ const TrailFromX: React.FC<{
           key={index}
           style={{
             ...style,
-            marginBottom: "32px",
+            ...itemStyle,
           }}
         >
           {items[index]}

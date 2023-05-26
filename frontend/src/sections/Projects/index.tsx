@@ -21,7 +21,7 @@ const Projects: FC = () => {
       opacity: isInView ? 1 : 0,
     },
 
-    config: { duration: 600, tension: 180, friction: 20 },
+    config: { duration: 600 },
   });
 
   return (
@@ -40,7 +40,12 @@ const Projects: FC = () => {
             justifyContent: "center",
           }}
         >
-          <TrailFromX isConnected={!isInView} fromRight={true} delay={600}>
+          <TrailFromX
+            isConnected={!isInView}
+            fromRight={true}
+            delay={600}
+            itemStyle={{ marginTop: "32px" }}
+          >
             <Copy />
             <CarouselProject projects={projects} />
           </TrailFromX>

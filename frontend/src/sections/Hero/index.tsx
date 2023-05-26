@@ -15,7 +15,10 @@ const Hero: FC<{ isConnected: boolean }> = ({ isConnected }) => {
         height: "100%",
       }}
     >
-      <TrailFromX isConnected={isConnected}>
+      <TrailFromX
+        isConnected={isConnected}
+        itemStyle={{ marginBottom: "32px" }}
+      >
         <Typography variant="h3" color={theme.palette.text.secondary}>
           Experience the thrill of gambling without risking a dime.
         </Typography>

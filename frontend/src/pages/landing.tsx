@@ -129,7 +129,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
         factor={isExtraMall ? 2 : 1.5}
         style={{
           marginLeft: isConnected ? "0%" : "100%",
-          transition: `margin 1.2s ${theme.transitions.easing.easeIn}`,
+          transition: "margin 1.9s ease-out",
         }}
       >
         <SectionContainer>
