@@ -12,6 +12,7 @@ const ChasingAstronaut: React.FC = () => {
         justifyContent: "center",
         width: { xs: "100%", md: "50%" },
         height: "100%",
+        opacity: { xs: "0.3", md: "1" },
       }}
     >
       <SVGBox svgPath="chasing_astronauts.svg" svgAlt="Chasing Astronaut" />

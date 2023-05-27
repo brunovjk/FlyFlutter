@@ -26,11 +26,7 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
   tooltip,
 }) => {
   return (
-    <GlassPaper
-      sx={{
-        width: { xs: "100%", lg: "260px" },
-      }}
-    >
+    <GlassPaper sx={{ width: "100%", maxWidth: "260px" }}>
       <Grid
         container
         paddingY={{ xs: "8px", md: "12px" }}

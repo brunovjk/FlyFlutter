@@ -9,13 +9,13 @@ import { CssBaseline, ThemeProvider, Box } from "@mui/material";
 import theme from "../config/theme";
 
 import { Header } from "../components";
-import LandingPage from "./landing";
+import HomePage from "./home";
 import ErroPage from "./404";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <HomePage />,
   },
   {
     path: "*",
@@ -29,7 +29,6 @@ export default function App() {
       <ConnectKitProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Header />
           <Box
             component="div"
             style={{
@@ -38,6 +37,7 @@ export default function App() {
               backgroundColor: theme.palette.primary.dark,
             }}
           >
+            <Header />
             <RouterProvider router={router} />
           </Box>
         </ThemeProvider>

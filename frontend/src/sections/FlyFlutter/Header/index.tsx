@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import { FlyFlutterContext } from "../context";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import { ConnectButton, GlassPaperLargeShadow } from "../../../components";
 import FFLogo from "./FFLogo";
@@ -26,24 +26,68 @@ const Header: FC = () => {
         spacing={2}
         paddingX={2}
       >
-        <Grid item xs={12} sm={6} md={3} order={0}>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={3}
+          order={0}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <FFLogo />
         </Grid>
-        <Grid item xs={12} sm={6} md={3} order={{ xs: 2, md: 1 }}>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={3}
+          order={{ xs: 2, md: 1 }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Mint
             balances={balances}
             fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
             setIsOpenAlert={setOpenAlert}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={3} order={{ xs: 3, md: 2 }}>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={3}
+          order={{ xs: 3, md: 2 }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Approve
             balances={balances}
             fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
             setIsOpenAlert={setOpenAlert}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={3} order={{ xs: 1, md: 3 }}>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={3}
+          order={{ xs: 1, md: 3 }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <ConnectButton />
         </Grid>
       </Grid>

@@ -19,6 +19,7 @@ export { default as IconStack } from "./IconStack";
 export { default as Logo } from "./Logo";
 export { default as SectionContainer } from "./SectionContainer";
 export { default as ShakingBox } from "./ShakingBox";
+export { default as SpeechBubble } from "./SpeechBubble";
 export { default as SVGBox } from "./SVGBox";
 export { default as TabPanel } from "./Tab/TabPanel";
 export { default as TabsWrapper } from "./Tab/TabsWrapper";

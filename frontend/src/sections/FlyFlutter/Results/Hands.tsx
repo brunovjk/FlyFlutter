@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Hand } from "../../../components";
+import { Hand, ShakingBox } from "../../../components";
 import { Stack } from "@mui/material";
 
 const Hands: FC<DisplayProps> = ({ inputs, results, waitingBet }) => {
@@ -7,7 +7,7 @@ const Hands: FC<DisplayProps> = ({ inputs, results, waitingBet }) => {
   const resultsPlayerHand = results.playerHand;
   const playerHand = waitingBet
     ? resultsPlayerHand ?? inputsPlayerHand
-    : inputsPlayerHand || resultsPlayerHand;
+    : inputsPlayerHand;
   const houseHand = results.houseHand;
 
   return (
@@ -21,8 +21,12 @@ const Hands: FC<DisplayProps> = ({ inputs, results, waitingBet }) => {
       }}
       spacing={{ xs: 2, md: 4 }}
     >
-      <Hand side="left" waiting={waitingBet} number={playerHand} />
-      <Hand side="right" waiting={waitingBet} number={houseHand} />
+      <ShakingBox shake={playerHand == undefined}>
+        <Hand side="left" waiting={waitingBet} number={playerHand} />
+      </ShakingBox>
+      <ShakingBox shake={houseHand == undefined}>
+        <Hand side="right" waiting={waitingBet} number={houseHand} />
+      </ShakingBox>
     </Stack>
   );
 };

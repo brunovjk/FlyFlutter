@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useLayoutEffect } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import { Box, useMediaQuery } from "@mui/material";
 import {
@@ -48,23 +48,32 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         <SVGBox
           svgPath="studying_astronauts.svg"
           svgAlt="Studying Astronaut"
-          styles={{ width: "25%", opacity: 0.75, marginLeft: "35%" }}
+          styles={{ width: "2%", opacity: 0.75, marginLeft: "5%" }}
         />
       </ParallaxLayer>
 
       <ParallaxLayer
-        offset={1.95}
-        speed={-2.85}
+        offset={1.5}
+        speed={-2.5}
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
           svgPath="ballons_astronauts.svg"
           svgAlt="Ballons Astronaut"
-          styles={{ width: "25%", opacity: 0.75, transform: "scaleX(-1)" }}
+          styles={{
+            width: "8%",
+            opacity: 0.75,
+            transform: "scaleX(-1)",
+            marginLeft: "-3%",
+          }}
         />
       </ParallaxLayer>
 
-      <ParallaxLayer offset={2.8} speed={1} style={{ pointerEvents: "none" }}>
+      <ParallaxLayer
+        offset={1.25}
+        speed={0.25}
+        style={{ pointerEvents: "none" }}
+      >
         <SVGBox
           svgPath="plain_astronauts.svg"
           svgAlt="Plainning Astronaut"
@@ -141,7 +150,10 @@ function Sky({ isConnected }: { isConnected: boolean }) {
   );
 }
 function Sections({ isConnected }: { isConnected: boolean }) {
-  const isExtraMall = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+  const parallaxFactor: number = isSmallScreen ? 2 : isMediumScreen ? 1.6 : 1.2;
+
   return (
     <>
       {/* TalkingAstronauts */}
@@ -160,7 +172,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
       <ParallaxLayer
         offset={0}
         speed={0.3}
-        factor={isExtraMall ? 2 : 1.5}
+        factor={parallaxFactor}
         style={{
           marginLeft: isConnected ? "0%" : "100%",
           transition: "margin 1.9s ease-out",
@@ -192,7 +204,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
   );
 }
 
-export default function LandingPage() {
+export default function HomePage() {
   const parallax = useRef<IParallax>(null!);
   const isConnected = useConnectionSync();
 

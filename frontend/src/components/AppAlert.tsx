@@ -39,7 +39,12 @@ const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
   };
 
   return (
-    <Snackbar open={isOpen} onClose={handleClose} autoHideDuration={5000}>
+    <Snackbar
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      open={isOpen}
+      onClose={handleClose}
+      autoHideDuration={5000}
+    >
       <Alert
         variant="outlined"
         elevation={6}
@@ -50,7 +55,7 @@ const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
             <CloseIcon color={severity} />
           </IconButton>
         }
-        sx={{ mb: 2 }}
+        sx={{ m: 4 }}
       >
         <AlertTitle>
           <Typography variant="body1">{severity}</Typography>

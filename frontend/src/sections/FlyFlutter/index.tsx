@@ -10,7 +10,7 @@ import Header from "./Header";
 const FlyFlutter: FC = () => {
   return (
     <FlyFlutterContextProvider>
-      <Grid container padding={{ xs: 1, md: 4 }} spacing={{ xs: 2, md: 8 }}>
+      <Grid container padding={{ xs: 1, md: 4 }} spacing={{ xs: 4, md: 8 }}>
         <Grid item xs={12}>
           <Header />
         </Grid>

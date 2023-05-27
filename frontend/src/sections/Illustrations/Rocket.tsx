@@ -24,6 +24,7 @@ const Rocket: FC<{ isConnected: boolean }> = ({ isConnected }) => {
         justifyContent: "flex-end",
         width: { xs: "100%", md: "50%" },
         height: "100%",
+        opacity: { xs: "0.3", md: "1" },
       }}
     >
       <TransactionBox
@@ -31,6 +32,7 @@ const Rocket: FC<{ isConnected: boolean }> = ({ isConnected }) => {
         initialStyle={initialStyle}
         falseStyle={falseStyle}
         trueStyle={trueStyle}
+        config={{ duration: 600 }}
       >
         <SVGBox svgPath="rocket.svg" svgAlt="Rocket" />
       </TransactionBox>
