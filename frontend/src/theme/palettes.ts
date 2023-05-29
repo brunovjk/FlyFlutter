@@ -21,21 +21,21 @@ export const darkPalette = {
 
 export const lightPalette = {
   primary: {
-    light: "#f3f8ff",
-    main: "#cfe4fc",
-    dark: "#9ec8f8",
+    light: "#fffbe8",
+    main: "#ffcc00",
+    dark: "#b38f00",
   },
   secondary: {
-    light: "#fff3d7",
-    main: "#ffc154",
-    dark: "#ff9c00",
+    light: "#1b1b2f",
+    main: "#080817",
+    dark: "#04040c",
   },
   text: {
-    primary: "rgba(0, 0, 0, 0.87)",
-    secondary: "rgba(0, 0, 0, 0.54)",
+    primary: "rgba(255, 255, 255, 0.87)",
+    secondary: "rgba(0, 0, 0, 0.87)",
   },
   common: {
-    black: "#000000",
-    white: "#ffffff",
+    black: "#ffffff",
+    white: "#000000",
   },
 };

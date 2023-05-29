@@ -30,7 +30,8 @@ export default function App() {
           style={{
             minHeight: "100vh",
             overflowX: "hidden",
-            backgroundColor: theme.palette.primary.dark,
+            backgroundImage:
+              "linear-gradient(to bottom right, #04040c, #080817)",
           }}
         >
           <RouterProvider router={router} />

@@ -12,7 +12,7 @@ import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 import { useTranslation } from "react-i18next";
 
 const NavLink = styled(Typography)(({ theme }) => ({
-  color: "#f6f4e6",
+  color: `${theme.palette.secondary.light}`,
   textDecoration: "none",
   textTransform: "uppercase",
   fontWeight: 500,

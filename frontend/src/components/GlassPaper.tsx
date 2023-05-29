@@ -12,12 +12,12 @@ export const PaperStyle = styled(Paper)(({ theme }) => ({
 }));
 
 export const GlassPaper = styled(PaperStyle)(({ theme }) => ({
-  boxShadow: `8px 8px 8px ${hexToRgba(theme.palette.primary.main, 0.35)}`,
+  boxShadow: `4px 4px 4px ${hexToRgba(theme.palette.primary.main, 0.35)}`,
   backdropFilter: "blur(12px)",
 }));
 
 export const GlassPaperLargeShadow = styled(PaperStyle)(({ theme }) => ({
-  boxShadow: `16px 16px 16px ${hexToRgba(theme.palette.primary.main, 0.6)}`,
+  boxShadow: `12px 12px 12px ${hexToRgba(theme.palette.primary.main, 0.6)}`,
   backdropFilter: "blur(12px)",
 }));
 

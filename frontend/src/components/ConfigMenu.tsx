@@ -27,7 +27,7 @@ const ConfigMenu: FC = () => {
         sx={{
           transform: "translateY(4px)",
           cursor: "pointer",
-          color: `${theme.palette.common.white}`,
+          color: `${theme.palette.secondary.light}`,
           transition: `all 0.2s ${theme.transitions.easing.easeInOut}`,
           "&:hover": {
             color: `${theme.palette.secondary.main}`,

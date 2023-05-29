@@ -100,6 +100,7 @@ export const createComponents = (palette: CustomPalette): Components => {
           },
           "&:disabled": {
             boxShadow: `0px 0px 0px ${hexToRgba(palette.primary.main, 0.35)}`,
+            color: hexToRgba(palette.primary.main, 0.35),
           },
         },
       },
@@ -111,25 +112,22 @@ export const createComponents = (palette: CustomPalette): Components => {
           paddingInline: "18px",
           color: palette.primary.main,
           backgroundColor: palette.secondary.main,
-          boxShadow: `8px 8px 8px ${hexToRgba(palette.primary.main, 0.35)}`,
+          boxShadow: `4px 4px 4px ${hexToRgba(palette.primary.main, 0.35)}`,
           "&:hover": {
             color: palette.secondary.main,
             backgroundColor: palette.primary.main,
-            boxShadow: `16px 16px 16px ${hexToRgba(
-              palette.primary.main,
-              0.35
-            )}`,
+            boxShadow: `8px 8px 8px ${hexToRgba(palette.primary.main, 0.35)}`,
           },
           "&:active": {
-            color: palette.secondary.main,
+            color: hexToRgba(palette.primary.main, 0.35),
             backgroundColor: palette.primary.main,
-            boxShadow: `2px 2px 2px ${hexToRgba(palette.primary.main, 0.35)}`,
+            boxShadow: `0px 0px 0px ${hexToRgba(palette.primary.main, 0.35)}`,
           },
           "&.Mui-selected": {
             color: palette.secondary.main,
             backgroundColor: palette.primary.main,
             borderColor: palette.secondary.main,
-            boxShadow: `2px 2px 2px ${hexToRgba(palette.primary.main, 0.35)}`,
+            boxShadow: `0px 0px 0px ${hexToRgba(palette.primary.main, 0.35)}`,
           },
         },
       },
