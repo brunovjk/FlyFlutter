@@ -13,7 +13,7 @@ const DiscordIcon = (props: SvgIconProps) => {
   );
 };
 
-const IconStack: React.FC<IconStackProps> = ({ color }) => {
+const IconStack: React.FC = () => {
   return (
     <Stack
       direction="row"
@@ -25,7 +25,6 @@ const IconStack: React.FC<IconStackProps> = ({ color }) => {
         href="https://github.com/brunovjk"
         target="_blank"
         rel="noopener noreferrer"
-        sx={{ color: color }}
       >
         <GitHubIcon fontSize="large" />
       </IconButton>
@@ -33,7 +32,6 @@ const IconStack: React.FC<IconStackProps> = ({ color }) => {
         href="https://discord.com/channels/@brunovjk#0416m"
         target="_blank"
         rel="noopener noreferrer"
-        sx={{ color: color }}
       >
         <DiscordIcon fontSize="large" />
       </IconButton>
@@ -41,7 +39,6 @@ const IconStack: React.FC<IconStackProps> = ({ color }) => {
         href="https://linkedin.com/in/brunovjk"
         target="_blank"
         rel="noopener noreferrer"
-        sx={{ color: color }}
       >
         <LinkedInIcon fontSize="large" />
       </IconButton>

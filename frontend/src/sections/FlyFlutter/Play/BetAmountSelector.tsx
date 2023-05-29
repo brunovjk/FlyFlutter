@@ -4,14 +4,25 @@ import { useTranslation } from "react-i18next";
 
 interface BetAmountSelectorProps {
   value?: number;
-  onChange: (newValue: number) => void;
+  onChange: (newValue: number | undefined) => void;
 }
 
 const BetAmountSelector: FC<BetAmountSelectorProps> = ({ value, onChange }) => {
   const { t } = useTranslation();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(event.target.value, 10);
+    const input = event.target.value;
+    let newValue: number | undefined;
+
+    if (input === "") {
+      newValue = undefined;
+    } else {
+      newValue = parseInt(input, 10);
+      if (isNaN(newValue) || newValue < 1 || newValue > 99) {
+        newValue = value; // Revert to the previous value if the input is invalid
+      }
+    }
+
     onChange(newValue);
   };
 
@@ -21,7 +32,7 @@ const BetAmountSelector: FC<BetAmountSelectorProps> = ({ value, onChange }) => {
       label={t("betAmountSelector.label")}
       type="number"
       helperText={t("betAmountSelector.helperText")}
-      value={value}
+      value={value === undefined ? "" : String(value)}
       onChange={handleChange}
       inputProps={{
         min: 1,

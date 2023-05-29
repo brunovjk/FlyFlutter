@@ -22,10 +22,8 @@ const Hero: FC<{ isConnected: boolean }> = ({ isConnected }) => {
         isConnected={isConnected}
         itemStyle={{ marginBottom: "32px" }}
       >
-        <Typography variant="h3" color={theme.palette.text.secondary}>
-          {t("hero.title")}
-        </Typography>
-        <Typography variant="body1" color={theme.palette.text.secondary}>
+        <Typography variant="h3">{t("hero.title")}</Typography>
+        <Typography variant="body1">
           {t("hero.description")} <strong> {t("hero.tokenName")}</strong>
         </Typography>
         <ConnectButton />

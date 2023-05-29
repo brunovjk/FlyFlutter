@@ -12,14 +12,6 @@ interface CustomPalette {
     main: string;
     dark: string;
   };
-  text: {
-    primary: string;
-    secondary: string;
-  };
-  common: {
-    black: string;
-    white: string;
-  };
 }
 
 export const createComponents = (palette: CustomPalette): Components => {
@@ -29,9 +21,6 @@ export const createComponents = (palette: CustomPalette): Components => {
         root: {
           borderRadius: "16px",
           color: palette.secondary.light,
-          // border: `1px ${hexToRgba(palette.common.white, 0.1)} solid`,
-          // borderBottom: `1px ${hexToRgba(palette.common.black, 0.3)} solid`,
-          // borderRight: `1px ${hexToRgba(palette.common.black, 0.3)} solid`,
           boxShadow: `16px 16px 16px ${hexToRgba(palette.primary.main, 0.6)}`,
           backdropFilter: "blur(12px)",
         },
@@ -166,7 +155,6 @@ export const createComponents = (palette: CustomPalette): Components => {
       styleOverrides: {
         root: {
           borderRadius: "16px",
-          color: palette.common.white,
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: palette.secondary.light,
           },

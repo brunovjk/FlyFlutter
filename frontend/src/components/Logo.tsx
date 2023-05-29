@@ -3,7 +3,16 @@ import { Typography, Link } from "@mui/material";
 
 const Logo: React.FC = () => (
   <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-    <Link href="/" color="text.secondary" sx={{ textDecoration: "none" }}>
+    <Link
+      href="/"
+      sx={{
+        textDecoration: "none",
+        color: "secondary.light",
+        "&:hover": {
+          color: "secondary.main",
+        },
+      }}
+    >
       brunovjk
     </Link>
   </Typography>

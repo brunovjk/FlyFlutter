@@ -1,20 +1,21 @@
 import React, { FC, useState } from "react";
-import { Stack, TextField } from "@mui/material";
+import { Box, Stack, TextField } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { AppAlert } from "../../components";
 
-const Form: FC<IconStackProps> = ({ color }) => {
+const Form: FC = () => {
   const { t } = useTranslation();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
-  const [isOpenAlert, setIsOpenAlert] = useState<AppAlertProps>({
-    isOpen: false,
+  const [openAlert, setOpenAlert] = useState<AppAlertProps>({
     severity: "info",
-    message: `${t("contact.alertPopup")}`,
+    message: "",
+    link: undefined,
+    isOpen: false,
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +48,7 @@ const Form: FC<IconStackProps> = ({ color }) => {
         setName("");
         setEmail("");
         setMessage("");
-        setIsOpenAlert({
+        setOpenAlert({
           severity: "success",
           message: `${t("contact.messageSent")}`,
           isOpen: true,
@@ -57,7 +58,7 @@ const Form: FC<IconStackProps> = ({ color }) => {
         setName("");
         setEmail("");
         setMessage("");
-        setIsOpenAlert({
+        setOpenAlert({
           severity: "warning",
           message: `${t("contact.sendErrorMessage")}`,
           isOpen: true,
@@ -68,7 +69,7 @@ const Form: FC<IconStackProps> = ({ color }) => {
       setName("");
       setEmail("");
       setMessage("");
-      setIsOpenAlert({
+      setOpenAlert({
         severity: "warning",
         message: `${t("contact.sendErrorMessage")}`,
         isOpen: true,
@@ -114,11 +115,9 @@ const Form: FC<IconStackProps> = ({ color }) => {
           </LoadingButton>
         </Stack>
       </form>
-      <AppAlert
-        isOpen={isOpenAlert.isOpen}
-        severity={isOpenAlert.severity}
-        message={isOpenAlert.message}
-      />
+      <Box sx={{ position: "absolute", bottom: 0, left: 0 }}>
+        <AppAlert openAlert={openAlert} setOpenAlert={setOpenAlert} />
+      </Box>
     </>
   );
 };

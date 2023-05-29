@@ -4,7 +4,7 @@ import { Typography, styled } from "@mui/material";
 
 const LogoTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.secondary.light,
-  transition: "all 0.9s ease-in-out",
+  transition: "all 0.6s ease-in-out",
   transform: "scale(1)",
   "&:hover": {
     color: theme.palette.secondary.main,

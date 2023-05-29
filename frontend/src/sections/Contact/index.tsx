@@ -22,9 +22,9 @@ const Contact: FC = () => {
       }}
     >
       <TrailFromX isConnected={!isInView} itemStyle={{ marginBottom: "32px" }}>
-        <Copy color={theme.palette.text.secondary} />
-        <IconStack color={theme.palette.text.secondary} />
-        <Form color={theme.palette.text.secondary} />
+        <Copy />
+        <IconStack />
+        <Form />
       </TrailFromX>
     </Box>
   );

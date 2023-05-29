@@ -1,4 +1,4 @@
-import React, { useEffect, FC, useState, useContext } from "react";
+import React, { FC } from "react";
 import {
   Snackbar,
   Link,
@@ -7,15 +7,27 @@ import {
   IconButton,
   Typography,
   useTheme,
+  styled,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { FlyFlutterContext } from "../sections/FlyFlutter/context";
 import { useTranslation } from "react-i18next";
 
-const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
+const StyledSnackbar = styled(Snackbar)({
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "flex-end",
+  position: "fixed",
+  bottom: 0,
+  left: 0,
+  margin: "16px",
+});
+
+const AppAlert: FC<{
+  openAlert: AppAlertProps;
+  setOpenAlert: React.Dispatch<React.SetStateAction<AppAlertProps>>;
+}> = ({ openAlert, setOpenAlert }) => {
   const theme = useTheme();
   const { t } = useTranslation();
-  const { setOpenAlert } = useContext(FlyFlutterContext);
 
   const handleClose = () => {
     setOpenAlert({ isOpen: false });
@@ -42,9 +54,9 @@ const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
   };
 
   return (
-    <Snackbar
-      anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      open={isOpen}
+    <StyledSnackbar
+      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      open={openAlert.isOpen}
       onClose={handleClose}
       autoHideDuration={5000}
     >
@@ -52,20 +64,24 @@ const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
         variant="outlined"
         elevation={6}
         onClose={handleClose}
-        severity={severity}
+        severity={openAlert.severity}
         action={
-          <IconButton aria-label="close" color={severity} onClick={handleClose}>
-            <CloseIcon color={severity} />
+          <IconButton
+            aria-label="close"
+            color={openAlert.severity}
+            onClick={handleClose}
+          >
+            <CloseIcon color={openAlert.severity} />
           </IconButton>
         }
         sx={{ m: 4 }}
       >
         <AlertTitle>
-          <Typography variant="body1">{severity}</Typography>
+          <Typography variant="body1">{openAlert.severity}</Typography>
         </AlertTitle>
-        {renderMessage(message, link)}
+        {renderMessage(openAlert.message, openAlert.link)}
       </Alert>
-    </Snackbar>
+    </StyledSnackbar>
   );
 };
 

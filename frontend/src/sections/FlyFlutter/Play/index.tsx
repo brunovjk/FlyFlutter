@@ -151,7 +151,7 @@ const Play: FC = () => {
             </Stack>
             <BetAmountSelector
               value={inputs.amount}
-              onChange={(newValue: number) =>
+              onChange={(newValue: number | undefined) =>
                 updateInputs({ amount: newValue })
               }
             />
