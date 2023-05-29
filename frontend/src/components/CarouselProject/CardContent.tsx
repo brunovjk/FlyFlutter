@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Stack, Typography } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
-import theme from "../../config/theme";
 
 const CardContent: FC<CardProjectProps> = ({
   projectName,
@@ -9,6 +8,7 @@ const CardContent: FC<CardProjectProps> = ({
   technologiesUsed,
   keyFeatures,
   learnMore,
+  learnMoreLink,
 }) => {
   return (
     <Stack spacing="16px">
@@ -53,7 +53,14 @@ const CardContent: FC<CardProjectProps> = ({
           {keyFeatures}
         </Typography>
       )}
-      <LoadingButton>{learnMore}</LoadingButton>
+      <LoadingButton
+        component="a"
+        href={learnMoreLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {learnMore}
+      </LoadingButton>
     </Stack>
   );
 };

@@ -1,20 +1,26 @@
-import { even, odd } from "../copy";
+import { TFunction } from "i18next";
 
-export const guessConverter = (guess: number | undefined) => {
+export const guessConverter = (
+  guess: number | undefined,
+  t: TFunction<"translation", undefined, "translation">
+) => {
   if (guess === 0) {
-    return even;
+    return `${t("even")}`;
   } else if (guess === 1) {
-    return odd;
+    return `${t("odd")}`;
   } else {
     return undefined;
   }
 };
 
-export const houseConverter = (guess: number | undefined) => {
+export const houseConverter = (
+  guess: number | undefined,
+  t: TFunction<"translation", undefined, "translation">
+) => {
   if (guess === 1) {
-    return even;
+    return `${t("even")}`;
   } else if (guess === 0) {
-    return odd;
+    return `${t("odd")}`;
   } else {
     return undefined;
   }

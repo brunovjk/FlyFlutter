@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { GlassPaperLargeShadow } from "./GlassPaper";
+import { useTranslation } from "react-i18next";
 
 const ConfirmDialog: FC<DialogProps> = ({
   open,
@@ -14,9 +15,9 @@ const ConfirmDialog: FC<DialogProps> = ({
   body,
   setOpenDialog,
   onConfirm,
-  confirmText = "Confirm",
-  cancelText = "Cancel",
 }) => {
+  const { t } = useTranslation();
+
   const handleAccept = async () => {
     setOpenDialog(false);
     await onConfirm();
@@ -38,10 +39,12 @@ const ConfirmDialog: FC<DialogProps> = ({
         <DialogContent>{body}</DialogContent>
       </DialogContent>
       <DialogActions>
-        <LoadingButton onClick={handleCancel}>{cancelText}</LoadingButton>
-        <LoadingButton onClick={handleAccept} autoFocus>
-          {confirmText}
+        <LoadingButton onClick={handleCancel}>
+          {t("confirmDialog.cancelText")}
         </LoadingButton>
+        <LoadingButton onClick={handleAccept} autoFocus>
+          {t("confirmDialog.confirmText")}
+        </LoadingButton>{" "}
       </DialogActions>
     </Dialog>
   );

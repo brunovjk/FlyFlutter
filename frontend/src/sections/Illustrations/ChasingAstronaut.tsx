@@ -15,7 +15,7 @@ const ChasingAstronaut: React.FC = () => {
         opacity: { xs: "0.3", md: "1" },
       }}
     >
-      <SVGBox svgPath="chasing_astronauts.svg" svgAlt="Chasing Astronaut" />
+      <SVGBox svgPath="img/chasing_astronauts.svg" svgAlt="Chasing Astronaut" />
     </Box>
   );
 };

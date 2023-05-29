@@ -6,11 +6,14 @@ import {
 } from "../../../components";
 import { Stack } from "@mui/material";
 import { guessConverter, houseConverter } from "../../../helpers";
+import { useTranslation } from "react-i18next";
 
 const Results: FC<ResultsDisplayProps> = ({ results, waitingBet }) => {
-  const playerGuess = guessConverter(results.playerGuess);
+  const { t } = useTranslation();
+
+  const playerGuess = guessConverter(results.playerGuess, t);
   // The house bets against the Player
-  const houseGuess = houseConverter(results.playerGuess);
+  const houseGuess = houseConverter(results.playerGuess, t);
 
   const playerHand = results.playerHand;
   const houseHand = results.houseHand;
@@ -26,29 +29,33 @@ const Results: FC<ResultsDisplayProps> = ({ results, waitingBet }) => {
       sx={{ width: "100%" }}
     >
       <CardDisplayBet
-        label="Player"
+        label={t("results.playerLabel")}
         guess={playerGuess}
         hand={playerHand?.toString()}
-        tooltip="Your last bet"
+        tooltip={t("results.playerTooltip")}
       />
       <ShakingBox shake={waitingBet}>
         <CardDisplayResult
-          label={waitingBet ? "waiting Bet..." : "Last Bet"}
+          label={
+            waitingBet
+              ? t("results.waitingBetLabel")
+              : t("results.lastBetLabel")
+          }
           winner={winner}
           tooltip={
             waitingBet
-              ? "Waiting QRNG and Gelato, you can close this page anytime. You can check all you bets at History tab."
-              : "Winner of last bet"
+              ? t("results.waitingBetTooltip")
+              : t("results.lastBetTooltip")
           }
         />
       </ShakingBox>
 
       <ShakingBox shake={waitingBet && houseHand == undefined}>
         <CardDisplayBet
-          label="House"
+          label={t("results.houseLabel")}
           guess={houseGuess}
           hand={houseHand?.toString()}
-          tooltip="House Hand"
+          tooltip={t("results.houseTooltip")}
         />
       </ShakingBox>
     </Stack>

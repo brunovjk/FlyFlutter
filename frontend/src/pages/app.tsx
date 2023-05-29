@@ -5,12 +5,11 @@ import { WagmiConfig } from "wagmi";
 import { ConnectKitProvider } from "connectkit";
 import { client } from "../config/wagmi";
 
-import { CssBaseline, ThemeProvider, Box } from "@mui/material";
-import theme from "../config/theme";
+import { CssBaseline, ThemeProvider, Box, useTheme } from "@mui/material";
 
-import { Header } from "../components";
 import HomePage from "./home";
 import ErroPage from "./404";
+import ConfigWrapper from "../config/context";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +23,11 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
+  const theme = useTheme();
   return (
     <WagmiConfig client={client}>
       <ConnectKitProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+        <ConfigWrapper>
           <Box
             component="div"
             style={{
@@ -37,10 +36,9 @@ export default function App() {
               backgroundColor: theme.palette.primary.dark,
             }}
           >
-            <Header />
             <RouterProvider router={router} />
           </Box>
-        </ThemeProvider>
+        </ConfigWrapper>
       </ConnectKitProvider>
     </WagmiConfig>
   );

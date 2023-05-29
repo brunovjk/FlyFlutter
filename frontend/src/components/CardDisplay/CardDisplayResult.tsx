@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { Skeleton, Typography, Tooltip, Stack } from "@mui/material";
+import { Skeleton, Typography, Tooltip, Stack, useTheme } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { GlassPaper } from "../GlassPaper";
-import theme from "../../config/theme";
 
 interface CardDisplayResulttProps {
   label: string;
@@ -15,6 +14,8 @@ const CardDisplayResultt: FC<CardDisplayResulttProps> = ({
   winner,
   tooltip,
 }) => {
+  const theme = useTheme();
+
   return (
     <GlassPaper>
       <Stack

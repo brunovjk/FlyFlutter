@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import {
   SVGBox,
   TransactionBox,
@@ -10,6 +11,8 @@ import {
 const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
   isConnected,
 }) => {
+  const { t } = useTranslation();
+
   const initialStyle: React.CSSProperties = {
     width: "50%",
     height: "50%",
@@ -22,6 +25,7 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
     width: "5%",
     height: "50%",
   };
+
   return (
     <Box
       component="div"
@@ -45,11 +49,10 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             width: "100%",
             height: "100%",
             top: "50%",
-
             position: "relative",
             opacity: { xs: "0.5", md: "1" },
           }}
-          config={{ duration: 1000 }}
+          config={{ duration: 900 }}
         >
           <Box
             sx={{
@@ -59,8 +62,8 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             }}
           >
             <SVGBox
-              svgPath="talking_astronauts.svg"
-              svgAlt="Talking Astronauts"
+              svgPath="img/talking_astronauts.svg"
+              svgAlt={t("talkingAstronauts.svgAlt")}
             />
           </Box>
 
@@ -72,7 +75,7 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             }}
           >
             <SpeechBubble side="bottom" size="large">
-              Who's gonna do the dishes tonight?
+              {t("talkingAstronauts.bubble1")}
             </SpeechBubble>
           </Box>
 
@@ -81,12 +84,11 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
               display: { xs: "none", md: isConnected ? "none" : "block" },
               position: "absolute",
               width: "20%",
-
               right: 0,
             }}
           >
             <SpeechBubble side="left" size="medium">
-              Let's play some FluFlutter to decide!
+              {t("talkingAstronauts.bubble2")}
             </SpeechBubble>
           </Box>
         </TrailFromX>

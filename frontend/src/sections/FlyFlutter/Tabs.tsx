@@ -1,26 +1,29 @@
 import React, { FC, useState } from "react";
 import { GlassPaper, TabPanel, TabsWrapper } from "../../components";
-import { Stack } from "@mui/material";
-import theme from "../../config/theme";
+import { Stack, useTheme } from "@mui/material";
 
 import Play from "./Play";
 import Rules from "./Rules";
 import History from "./History";
 
+import { useTranslation } from "react-i18next";
+
 const Tabs: FC = () => {
+  const theme = useTheme();
+  const { t } = useTranslation();
   const [value, setValue] = useState(0);
 
   const tabsContent: TabContent[] = [
     {
-      label: "Play",
+      label: `${t("tabs.playLabel")}`,
       component: <Play />,
     },
     {
-      label: "Rules",
+      label: `${t("tabs.rulesLabel")}`,
       component: <Rules />,
     },
     {
-      label: "History",
+      label: `${t("tabs.historyLabel")}`,
       component: <History />,
     },
   ];

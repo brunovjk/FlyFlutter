@@ -1,26 +1,25 @@
 import React, { FC, useState, useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 import { CardBalanceButton } from "../../../components";
-
 import { useAccount } from "wagmi";
 import { useMintFFC } from "../../../hooks";
 import { ethers } from "ethers";
 
-export interface FFCMintProps {
+export interface MintProps {
   balances: BalancesProps;
   fetchOnlyPlayerBalances: () => void;
   setIsOpenAlert: React.Dispatch<React.SetStateAction<AppAlertProps>>;
 }
 
-const FFCMint: FC<FFCMintProps> = ({
+const Mint: FC<MintProps> = ({
   balances,
   fetchOnlyPlayerBalances,
   setIsOpenAlert,
 }) => {
+  const { t } = useTranslation();
   const { address, isConnected } = useAccount();
 
   const [disabledMint, setDisabledMint] = useState<boolean>(true);
-
   const [isLoadingMint, setIsLoadingMint] = useState<boolean>(false);
 
   const handleDisabledMint = async (
@@ -48,14 +47,14 @@ const FFCMint: FC<FFCMintProps> = ({
         fetchOnlyPlayerBalances();
         setIsOpenAlert({
           severity: "success",
-          message: `Minted 100 FFC to: ${address}`,
+          message: `${t("ffcmint.mintSuccess")} ${address}}`,
           isOpen: true,
         });
         setIsLoadingMint(false);
       } else {
         setIsOpenAlert({
           severity: "error",
-          message: `Failed to Mint, ${mintTX.message}`,
+          message: `${t("ffcmint.mintFailure")} ${mintTX.message}}`,
           isOpen: true,
         });
         setIsLoadingMint(false);
@@ -71,10 +70,10 @@ const FFCMint: FC<FFCMintProps> = ({
 
   return (
     <CardBalanceButton
-      label="Balance"
+      label={t("ffcmint.balanceLabel")}
       value={balances.player}
-      buttonText="Mint"
-      tooltip="FLyFlutterCoin Minting Rules: You can mint just 100 FlyFlutterCoins at a time, but only if your wallet balance is less than 10 FFC."
+      buttonText={t("ffcmint.mintButton")}
+      tooltip={t("ffcmint.mintTooltip")}
       buttonDisabled={disabledMint}
       buttonLoading={isLoadingMint}
       handleClick={handleMint}
@@ -82,4 +81,4 @@ const FFCMint: FC<FFCMintProps> = ({
   );
 };
 
-export default FFCMint;
+export default Mint;

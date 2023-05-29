@@ -33,6 +33,7 @@ interface CardProjectProps {
   technologiesUsed: string;
   keyFeatures?: string;
   learnMore: string;
+  learnMoreLink: string;
 }
 
 interface DialogProps {
@@ -41,8 +42,6 @@ interface DialogProps {
   body: JSX.Element;
   setOpenDialog: React.Dispatch<React.SetStateAction<boolean>>;
   onConfirm: () => Promise<void>;
-  confirmText?: string;
-  cancelText?: string;
 }
 
 interface DisplayProps {

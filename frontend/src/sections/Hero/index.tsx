@@ -1,9 +1,12 @@
 import React, { FC } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { ConnectButton, TrailFromX } from "../../components";
-import theme from "../../config/theme";
 
 const Hero: FC<{ isConnected: boolean }> = ({ isConnected }) => {
+  const theme = useTheme();
+  const { t } = useTranslation();
+
   return (
     <Box
       component="div"
@@ -20,13 +23,10 @@ const Hero: FC<{ isConnected: boolean }> = ({ isConnected }) => {
         itemStyle={{ marginBottom: "32px" }}
       >
         <Typography variant="h3" color={theme.palette.text.secondary}>
-          Experience the thrill of gambling without risking a dime.
+          {t("hero.title")}
         </Typography>
         <Typography variant="body1" color={theme.palette.text.secondary}>
-          FlyFlutter is a game designed to provide entertainment for the ones
-          who enjoy the thrill of gambling but without using real money. It
-          operates on the Polygon and Mumbai blockchains using the free to mint
-          <strong> FlyFlutterCoin </strong>token.
+          {t("hero.description")} <strong> {t("hero.tokenName")}</strong>
         </Typography>
         <ConnectButton />
       </TrailFromX>

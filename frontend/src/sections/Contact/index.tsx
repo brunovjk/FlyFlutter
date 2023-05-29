@@ -1,12 +1,12 @@
 import React, { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { IconStack, TrailFromX } from "../../components";
 import Copy from "./Copy";
 import Form from "./Form";
-import theme from "../../config/theme";
 import { useInView } from "@react-spring/web";
 
 const Contact: FC = () => {
+  const theme = useTheme();
   const [ref, isInView] = useInView({});
 
   return (

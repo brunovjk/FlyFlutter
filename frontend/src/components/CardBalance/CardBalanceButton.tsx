@@ -1,9 +1,16 @@
 import React, { FC } from "react";
-import { Grid, Stack, Box, Skeleton, Typography, Tooltip } from "@mui/material";
+import {
+  Grid,
+  Stack,
+  Box,
+  Skeleton,
+  Typography,
+  Tooltip,
+  useTheme,
+} from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { GlassPaper } from "../GlassPaper";
-import theme from "../../config/theme";
 import { ethers } from "ethers";
 
 interface CardBalanceButtonProps {
@@ -25,6 +32,7 @@ const CardBalanceButton: FC<CardBalanceButtonProps> = ({
   handleClick,
   tooltip,
 }) => {
+  const theme = useTheme();
   return (
     <GlassPaper sx={{ width: "100%", maxWidth: "260px" }}>
       <Grid

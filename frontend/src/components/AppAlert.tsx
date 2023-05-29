@@ -6,12 +6,15 @@ import {
   AlertTitle,
   IconButton,
   Typography,
+  useTheme,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import theme from "../config/theme";
 import { FlyFlutterContext } from "../sections/FlyFlutter/context";
+import { useTranslation } from "react-i18next";
 
 const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
+  const theme = useTheme();
+  const { t } = useTranslation();
   const { setOpenAlert } = useContext(FlyFlutterContext);
 
   const handleClose = () => {
@@ -30,7 +33,7 @@ const AppAlert: FC<AppAlertProps> = ({ isOpen, severity, message, link }) => {
             color={theme.palette.secondary.main}
           >
             {" "}
-            Explorer
+            {`${t("appAlert.checkExplorer")}`}
           </Link>
         </Typography>
       );

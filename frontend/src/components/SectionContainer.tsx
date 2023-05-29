@@ -1,19 +1,21 @@
 import React, { FC, ReactNode } from "react";
-import { Container } from "@mui/material";
+import { Breakpoint, Container } from "@mui/material";
 
 interface SectionContainerProps {
+  maxWidth?: false | Breakpoint;
   justifyContent?: "flex-start" | "center" | "flex-end";
   children: ReactNode;
 }
 
 const SectionContainer: FC<SectionContainerProps> = ({
+  maxWidth = "lg",
   justifyContent = "center",
   children,
   ...props
 }) => {
   return (
     <Container
-      maxWidth="lg"
+      maxWidth={maxWidth}
       sx={{
         height: "100%",
         width: "100%",

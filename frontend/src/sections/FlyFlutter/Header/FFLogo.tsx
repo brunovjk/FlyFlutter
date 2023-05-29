@@ -1,9 +1,8 @@
 import React, { FC } from "react";
 
 import { Typography, styled } from "@mui/material";
-import theme from "../../../config/theme";
 
-const LogoTypography = styled(Typography)(() => ({
+const LogoTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.secondary.light,
   transition: "all 0.9s ease-in-out",
   transform: "scale(1)",

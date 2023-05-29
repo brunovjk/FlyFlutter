@@ -4,11 +4,18 @@ import { ethers } from "ethers";
 import { formatEther } from "ethers/lib/utils.js";
 import { usePlayFunctions } from "./functions";
 import { useBetFee } from "../../../hooks";
-import theme from "../../../config/theme";
+import { useTranslation } from "react-i18next";
 
 import { FlyFlutterContext } from "../context";
 
-import { Grid, Stack, Tooltip, Typography, SvgIcon } from "@mui/material";
+import {
+  Grid,
+  Stack,
+  Tooltip,
+  Typography,
+  SvgIcon,
+  useTheme,
+} from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 
 import { ConfirmDialog } from "../../../components";
@@ -19,6 +26,7 @@ import GuessSelector from "./GuessSelector";
 import HandSelector from "./HandSelector";
 
 const MaticIcon: FC = () => {
+  const theme = useTheme();
   return (
     <SvgIcon
       fontSize="small"
@@ -32,6 +40,8 @@ const MaticIcon: FC = () => {
 };
 
 const Play: FC = () => {
+  const { t } = useTranslation();
+
   const [openConfirmDialog, setOpenConfirmDialog] = useState<boolean>(false);
 
   const { address, isConnected } = useAccount();
@@ -122,8 +132,8 @@ const Play: FC = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <Typography variant="caption">Bet Fee:</Typography>
-              <Tooltip title="This Matic Fee is used to cover the costs of the tools used to ensure the game is fair and secure, including the random number generator and automation services.">
+              <Typography variant="caption">{t("betFee.caption")}</Typography>
+              <Tooltip title={t("betFee.tooltip")}>
                 <Stack
                   direction="row"
                   justifyContent="center"
@@ -149,13 +159,7 @@ const Play: FC = () => {
         </Grid>
         {/* Button */}
         <Grid item>
-          <Tooltip
-            title={
-              enabledBet
-                ? ""
-                : "You need to choose a Guess, a Hand and a Bet Amount to be able to Place Bets. Dont forget to have some FFC"
-            }
-          >
+          <Tooltip title={enabledBet ? "" : t("betButton.tooltip")}>
             <Stack>
               <LoadingButton
                 fullWidth
@@ -164,7 +168,7 @@ const Play: FC = () => {
                 loading={placingBet}
                 sx={{ minWidth: "224px" }}
               >
-                Review and Place Bet
+                {t("betButton.label")}
               </LoadingButton>
             </Stack>
           </Tooltip>
@@ -172,12 +176,10 @@ const Play: FC = () => {
       </Grid>
       <ConfirmDialog
         open={openConfirmDialog}
-        title="Confirm Bet"
+        title={t("confirmDialog.title")}
         body={<ConfirmBetDetails balances={balances} inputs={inputs} />}
         setOpenDialog={setOpenConfirmDialog}
         onConfirm={handlePlaceBet}
-        confirmText="Confirm"
-        cancelText="Cancel"
       />
     </>
   );

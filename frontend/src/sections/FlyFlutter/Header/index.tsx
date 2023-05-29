@@ -1,14 +1,14 @@
 import React, { FC, useContext } from "react";
 import { FlyFlutterContext } from "../context";
-import { Box, Grid } from "@mui/material";
+import { Grid, useTheme } from "@mui/material";
 
 import { ConnectButton, GlassPaperLargeShadow } from "../../../components";
 import FFLogo from "./FFLogo";
 import Mint from "./Mint";
 import Approve from "./Approve";
-import theme from "../../../config/theme";
 
 const Header: FC = () => {
+  const theme = useTheme();
   const { balances, fetchOnlyPlayerBalances, setOpenAlert } =
     useContext(FlyFlutterContext);
 

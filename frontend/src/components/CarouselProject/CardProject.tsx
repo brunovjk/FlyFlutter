@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef } from "react";
 import VanillaTilt from "vanilla-tilt";
 import CardContent from "./CardContent";
 import { GlassPaperNoBlur } from "../GlassPaper";
-import theme from "../../config/theme";
+import { useTheme } from "@mui/material";
 
 const CardProject: FC<CardProjectProps> = ({
   projectName,
@@ -10,7 +10,10 @@ const CardProject: FC<CardProjectProps> = ({
   technologiesUsed,
   keyFeatures,
   learnMore,
+  learnMoreLink,
 }) => {
+  const theme = useTheme();
+
   const options = {
     gyroscope: false,
     max: 15,
@@ -47,6 +50,7 @@ const CardProject: FC<CardProjectProps> = ({
         technologiesUsed={technologiesUsed}
         keyFeatures={keyFeatures}
         learnMore={learnMore}
+        learnMoreLink={learnMoreLink}
       />
     </GlassPaperNoBlur>
   );

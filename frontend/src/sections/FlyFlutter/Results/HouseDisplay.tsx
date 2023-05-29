@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import { CardBalance } from "../../../components";
 import { Stack } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const HouseDisplay: FC<HouseDisplayProps> = ({ balances }) => {
+  const { t } = useTranslation();
   const houseBalance = balances.house;
   const totalBetted = balances.totalBetted;
   const totalLost = balances.totalLost;
@@ -15,19 +17,19 @@ const HouseDisplay: FC<HouseDisplayProps> = ({ balances }) => {
       spacing={2}
     >
       <CardBalance
-        label="House"
+        label={t("houseDisplay.houseLabel")}
         value={houseBalance}
-        tooltip="Total amount of FlyFluterCoin held by the House"
+        tooltip={t("houseDisplay.houseTooltip")}
       />
       <CardBalance
-        label="Total Bet"
+        label={t("houseDisplay.totalBetLabel")}
         value={totalBetted}
-        tooltip="Total amount of FlyFluterCoin bet by the House with the players"
+        tooltip={t("houseDisplay.totalBetTooltip")}
       />
       <CardBalance
-        label="Total Sent"
+        label={t("houseDisplay.totalSentLabel")}
         value={totalLost}
-        tooltip="Total amount of FlyFlutterCoin sent by the house to bet winners"
+        tooltip={t("houseDisplay.totalSentTooltip")}
       />
     </Stack>
   );

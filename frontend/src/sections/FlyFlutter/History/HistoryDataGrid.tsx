@@ -1,6 +1,6 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import theme from "../../../config/theme";
+import { useTheme } from "@mui/material";
 
 interface HistoryProps {
   bets: any[];
@@ -13,6 +13,7 @@ const HistoryDataGrid: React.FC<HistoryProps> = ({
   columns,
   isLoading,
 }) => {
+  const theme = useTheme();
   return (
     <DataGrid
       rows={bets}
@@ -25,9 +26,6 @@ const HistoryDataGrid: React.FC<HistoryProps> = ({
       style={{
         color: theme.palette.secondary.main,
         border: "none",
-        // "&.Mui-disabled": {
-        //   color: palette.secondary.dark,
-        // },
       }}
       disableColumnMenu={true}
       disableRowSelectionOnClick={true}

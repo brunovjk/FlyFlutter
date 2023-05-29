@@ -21,17 +21,14 @@ const Bubble = styled("div")`
 
   &.mini {
     font-size: 1rem;
-    line-height: 1.3em;
   }
 
   &.medium {
-    font-size: 1.25rem;
-    line-height: 1.3em;
+    font-size: 1.2rem;
   }
 
   &.large {
-    font-size: 1.5rem;
-    line-height: 1.3em;
+    font-size: 1.3rem;
     text-transform: uppercase;
   }
 

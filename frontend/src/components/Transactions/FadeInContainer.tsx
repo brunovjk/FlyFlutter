@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, styled } from "@mui/material";
-import theme from "../../config/theme";
 
 interface FadeInProps {
   justifyContent?: "flex-start" | "center" | "flex-end";

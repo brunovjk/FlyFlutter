@@ -1,6 +1,6 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import {
   ChasingAstronaut,
   Contact,
@@ -13,11 +13,12 @@ import {
 
 import {
   FadeInBox,
-  FadeInContainer,
+  Header,
   SVGBox,
+  ScrollToTop,
   SectionContainer,
 } from "../components";
-import theme from "../config/theme";
+
 import { useConnectionSync } from "../hooks";
 
 const url = (name: string, wrap = false) =>
@@ -30,15 +31,17 @@ const url = (name: string, wrap = false) =>
 function Sky({ isConnected }: { isConnected: boolean }) {
   return (
     <>
-      <ParallaxLayer
-        offset={0}
-        speed={0}
-        factor={4.5}
-        style={{
-          backgroundImage: url("stars", true),
-          backgroundSize: "cover",
-        }}
-      />
+      <FadeInBox>
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          factor={4.5}
+          style={{
+            backgroundImage: url("stars", true),
+            backgroundSize: "cover",
+          }}
+        />
+      </FadeInBox>
 
       <ParallaxLayer
         offset={3.7}
@@ -46,7 +49,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
-          svgPath="studying_astronauts.svg"
+          svgPath="img/studying_astronauts.svg"
           svgAlt="Studying Astronaut"
           styles={{ width: "2%", opacity: 0.75, marginLeft: "5%" }}
         />
@@ -58,7 +61,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
-          svgPath="ballons_astronauts.svg"
+          svgPath="img/ballons_astronauts.svg"
           svgAlt="Ballons Astronaut"
           styles={{
             width: "8%",
@@ -75,7 +78,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
-          svgPath="plain_astronauts.svg"
+          svgPath="img/plain_astronauts.svg"
           svgAlt="Plainning Astronaut"
           styles={{
             opacity: 0.75,
@@ -150,6 +153,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
   );
 }
 function Sections({ isConnected }: { isConnected: boolean }) {
+  const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "lg"));
   const parallaxFactor: number = isSmallScreen ? 2 : isMediumScreen ? 1.6 : 1.2;
@@ -164,7 +168,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
       </ParallaxLayer>
       {/* Hero */}
       <ParallaxLayer offset={0} speed={0.3}>
-        <SectionContainer justifyContent="flex-start">
+        <SectionContainer maxWidth="xl" justifyContent="flex-start">
           <Hero isConnected={isConnected} />
         </SectionContainer>
       </ParallaxLayer>
@@ -205,6 +209,7 @@ function Sections({ isConnected }: { isConnected: boolean }) {
 }
 
 export default function HomePage() {
+  const theme = useTheme();
   const parallax = useRef<IParallax>(null!);
   const isConnected = useConnectionSync();
 
@@ -216,6 +221,10 @@ export default function HomePage() {
       }}
     >
       <Parallax ref={parallax} pages={4.5}>
+        <FadeInBox>
+          <Header parallax={parallax} />
+        </FadeInBox>
+
         <ParallaxLayer
           offset={0}
           speed={0}
@@ -226,6 +235,10 @@ export default function HomePage() {
         />
         <Sky isConnected={isConnected} />
         <Sections isConnected={isConnected} />
+
+        <FadeInBox>
+          <ScrollToTop parallax={parallax} />
+        </FadeInBox>
       </Parallax>
     </Box>
   );

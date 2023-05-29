@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 import { CardBalanceButton } from "../../../components";
-
 import { useAccount } from "wagmi";
 import { useApproveBetting } from "../../../hooks";
 import { ethers } from "ethers";
@@ -12,11 +11,12 @@ export interface FFApproveProps {
   setIsOpenAlert: React.Dispatch<React.SetStateAction<AppAlertProps>>;
 }
 
-const FFCApprove: FC<FFApproveProps> = ({
+const Approve: FC<FFApproveProps> = ({
   balances,
   fetchOnlyPlayerBalances,
   setIsOpenAlert,
 }) => {
+  const { t } = useTranslation();
   const { address, isConnected } = useAccount();
 
   const [disabledApprove, setDisabledApprove] = useState<boolean>(true);
@@ -56,14 +56,14 @@ const FFCApprove: FC<FFApproveProps> = ({
         fetchOnlyPlayerBalances();
         setIsOpenAlert({
           severity: "success",
-          message: "Approved successful",
+          message: `${t("ffcapprove.approveSuccess")}`,
           isOpen: true,
         });
         setIsLoadingApprove(false);
       } else {
         setIsOpenAlert({
           severity: "error",
-          message: `Failed to Approve, ${approveTX.message}`,
+          message: `${t("ffcapprove.approveFailure")} ${approveTX.message}`,
           isOpen: true,
         });
         setIsLoadingApprove(false);
@@ -79,10 +79,10 @@ const FFCApprove: FC<FFApproveProps> = ({
 
   return (
     <CardBalanceButton
-      label="Allowance"
+      label={t("ffcapprove.allowanceLabel")}
       value={balances.allowance}
-      buttonText="Approve"
-      tooltip="Approve Betting Contract: To place a bet, you need to approve the Betting contract to spend a certain amount of FFC on your behalf."
+      buttonText={t("ffcapprove.approveButton")}
+      tooltip={t("ffcapprove.approveTooltip")}
       buttonDisabled={disabledApprove}
       buttonLoading={isLoadingApprove}
       handleClick={handleApprove}
@@ -90,4 +90,4 @@ const FFCApprove: FC<FFApproveProps> = ({
   );
 };
 
-export default FFCApprove;
+export default Approve;

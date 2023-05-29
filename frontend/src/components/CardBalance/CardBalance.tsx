@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { Skeleton, Stack, Typography, Tooltip } from "@mui/material";
+import { Skeleton, Stack, Typography, Tooltip, useTheme } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { GlassPaper } from "../GlassPaper";
-import theme from "../../config/theme";
 import { ethers } from "ethers";
 
 interface CardBalanceProps {
@@ -12,6 +11,7 @@ interface CardBalanceProps {
 }
 
 const CardBalance: FC<CardBalanceProps> = ({ label, value, tooltip }) => {
+  const theme = useTheme();
   return (
     <GlassPaper
       sx={{

@@ -1,14 +1,10 @@
-import React, { FC } from "react";
-import HistoryDataGrid from "./HistoryDataGrid";
-import fetchUserHistory from "./fetchUserHistory";
-
 import { GridColDef } from "@mui/x-data-grid";
 import { useTranslation } from "react-i18next";
 
-const HistoryTab: FC = () => {
+export const getHistoryColumns = (): GridColDef[] => {
   const { t } = useTranslation();
 
-  const columns: GridColDef[] = [
+  return [
     {
       field: "guess",
       headerName: `${t("history.columns.guess.headerName")}`,
@@ -50,16 +46,4 @@ const HistoryTab: FC = () => {
       headerAlign: "center",
     },
   ];
-
-  const { bets, isLoadingHistory } = fetchUserHistory();
-
-  return (
-    <HistoryDataGrid
-      bets={bets}
-      columns={columns}
-      isLoading={isLoadingHistory}
-    />
-  );
 };
-
-export default HistoryTab;

@@ -5,13 +5,23 @@ import {
   TrailFromX,
 } from "../../components";
 import Copy from "./Copy";
-import { projects } from "../../copy";
-import { Box } from "@mui/material";
-import theme from "../../config/theme";
+import { Box, useTheme } from "@mui/material";
 import { animated, useInView, useSpring } from "@react-spring/web";
+import { useTranslation } from "react-i18next";
 
 const Projects: FC = () => {
+  const theme = useTheme();
+  const { t } = useTranslation();
   const [ref, isInView] = useInView({});
+
+  const projects: Array<{
+    projectName: string;
+    description: string;
+    technologiesUsed: string;
+    keyFeatures: string;
+    learnMore: string;
+    learnMoreLink: string;
+  }> = t("projects", { returnObjects: true });
 
   const styles = useSpring({
     from: {

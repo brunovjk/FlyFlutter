@@ -1,4 +1,4 @@
-export const rules = [
+export const copy = [
   {
     title: "FlyFlutter Rules",
     copy: "FlutterFly is a game designed to provide entertainment to people who enjoy the thrill of gambling. It operates on the Polygon blockchain using the FlyFlutterCoin token.",

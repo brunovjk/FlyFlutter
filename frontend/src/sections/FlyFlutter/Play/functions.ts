@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 
 import { FlyFlutterContext } from "../context";
 import { ethers } from "ethers";
@@ -18,7 +19,7 @@ export function usePlayFunctions(
   setOpenConfirmDialog: React.Dispatch<React.SetStateAction<boolean>>
 ) {
   let currentBetId: any;
-
+  const { t } = useTranslation();
   const { address } = useAccount();
 
   const {
@@ -66,26 +67,32 @@ export function usePlayFunctions(
       TaskExecutedEvent.owner.topics[1] === currentBetId
     ) {
       if (TaskExecutedEvent.owner.topics[2] === id("Player wins")) {
-        console.log("Task Executed, Winner: ", "Player wins");
+        console.log(
+          "Task Executed, Winner: ",
+          t("playFunctions.handleSetWinner.playerWins")
+        );
 
         updateResults({
-          winner: "Player wins",
+          winner: `${t("playFunctions.handleSetWinner.playerWins")}`,
         });
       } else if (TaskExecutedEvent.owner.topics[2] === id("House wins")) {
-        console.log("Task Executed, Winner: ", "House wins");
+        console.log(
+          "Task Executed, Winner: ",
+          t("playFunctions.handleSetWinner.houseWins")
+        );
         updateResults({
-          winner: "House wins",
+          winner: `${t("playFunctions.handleSetWinner.houseWins")}`,
         });
       }
     } else {
       console.log("TaskExecutedEvent not found: ", TaskExecutedEvent);
 
       updateResults({
-        winner: "Ups... Check History",
+        winner: `${t("playFunctions.handleSetWinner.checkHistoryError")}`,
       });
       setOpenAlert({
         severity: "warning",
-        message: "Erro to fetch Winner, Check at the explorer:",
+        message: `${t("playFunctions.handleSetWinner.fetchWinnerError")}`,
         link: `${(await useBetIdExplorer()).data}`,
         isOpen: true,
       });
@@ -116,7 +123,7 @@ export function usePlayFunctions(
 
       setOpenAlert({
         severity: "warning",
-        message: "Erro to fetch Winner, Check at the explorer:",
+        message: `${t("playFunctions.handleSetHousehand.fetchWinnerError")}`,
         link: `${(await useBetIdExplorer()).data}`,
         isOpen: true,
       });
@@ -188,16 +195,16 @@ export function usePlayFunctions(
     playerHand: any,
     playerGuess: any
   ) {
-    // Wait Transaction result
+    // Wait for transaction result
     const transaction: any = await useWaitForTransaction({
       hash: placeBetTx.hash,
     });
-    // if Success
-    if (transaction.data.status != 0) {
-      // - open events component and tell the user can close/reload the page
+    // If success
+    if (transaction.data.status !== 0) {
+      // Open events component and notify the user to close/reload the page
       setOpenAlert({
         severity: "success",
-        message: "Bet placed successful, you can close this page.",
+        message: `${t("playFunctions.handleBetTx.betPlacedSuccess")}`,
         link: `${(await useHashExplorer({ hash: placeBetTx.hash })).data}`,
         isOpen: true,
       });
@@ -219,14 +226,14 @@ export function usePlayFunctions(
       await fetchBalances();
       await handleBetTxSuccess(transaction);
     } else {
-      // if failed, alert failed
+      // If failed, alert the user
       console.log(
         "Transaction failed, please try again:",
         (await useHashExplorer({ hash: placeBetTx.hash })).data
       );
       setOpenAlert({
         severity: "info",
-        message: "Transaction failed, please try again.",
+        message: `${t("playFunctions.handleBetTx.betTransactionFailed")}`,
         link: `${(await useHashExplorer({ hash: placeBetTx.hash })).data}`,
         isOpen: true,
       });
@@ -242,11 +249,11 @@ export function usePlayFunctions(
       let betFee = balances.betFee;
       let betAmount = inputs.amount;
       if (
-        address != undefined &&
-        betFee != undefined &&
-        playerHand != undefined &&
-        playerGuess != undefined &&
-        betAmount != undefined
+        address !== undefined &&
+        betFee !== undefined &&
+        playerHand !== undefined &&
+        playerGuess !== undefined &&
+        betAmount !== undefined
       ) {
         console.log("Placing Bet...");
         updateResults({
@@ -268,15 +275,15 @@ export function usePlayFunctions(
           selectedBetAmount: betAmount,
         });
 
-        if (placeBetTx.success && placeBetTx.hash != undefined) {
-          // Alert user Transaction was sent
+        if (placeBetTx.success && placeBetTx.hash !== undefined) {
+          // Alert user that the transaction was sent
           console.log(
-            "Transaction sent, please wait confirmation:",
+            "Transaction sent, please wait for confirmation:",
             (await useHashExplorer({ hash: placeBetTx.hash })).data
           );
           setOpenAlert({
             severity: "info",
-            message: "Transaction sent, please wait confirmation.",
+            message: `${t("playFunctions.handlePlaceBet.transactionSent")}`,
             link: (await useHashExplorer({ hash: placeBetTx.hash })).data,
             isOpen: true,
           });
@@ -287,7 +294,7 @@ export function usePlayFunctions(
           handleResetStates();
           setOpenAlert({
             severity: "warning",
-            message: "Transaction not sent, please try again",
+            message: `${t("playFunctions.handlePlaceBet.transactionNotSent")}`,
             isOpen: true,
           });
         }

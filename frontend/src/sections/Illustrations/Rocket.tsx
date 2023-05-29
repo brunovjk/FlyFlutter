@@ -34,7 +34,7 @@ const Rocket: FC<{ isConnected: boolean }> = ({ isConnected }) => {
         trueStyle={trueStyle}
         config={{ duration: 600 }}
       >
-        <SVGBox svgPath="rocket.svg" svgAlt="Rocket" />
+        <SVGBox svgPath="img/rocket.svg" svgAlt="Rocket" />
       </TransactionBox>
     </Box>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import theme from "../../config/theme";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ const StyledBox = styled(Box)(() => ({
   },
 }));
 
-const FadeInBox: React.FC<FadeInProps> = ({ children, ...props }) => {
+const FadeInBox: React.FC<FadeInProps> = ({ children }) => {
   const [show, setShow] = useState(false);
   const fadeInRef = useRef<HTMLDivElement>(null);
 
@@ -43,12 +42,7 @@ const FadeInBox: React.FC<FadeInProps> = ({ children, ...props }) => {
   }, []);
 
   return (
-    <StyledBox
-      ref={fadeInRef}
-      sx={{ height: "100%", width: "100%" }}
-      className={show ? "fade-in" : ""}
-      {...props}
-    >
+    <StyledBox ref={fadeInRef} className={show ? "fade-in" : ""}>
       {children}
     </StyledBox>
   );

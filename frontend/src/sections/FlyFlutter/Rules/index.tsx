@@ -1,9 +1,15 @@
 import React from "react";
 import { Typography, Stack } from "@mui/material";
-import { rules } from "../../copy";
+import { useTranslation } from "react-i18next";
 
 const Rules: React.FC = () => {
-  const rulesMapping = rules.map((rule) => (
+  const { t } = useTranslation();
+
+  const rules: Array<{ title: string; copy: string }> = t("rules", {
+    returnObjects: true,
+  });
+
+  const rulesMapping = rules.map((rule: { title: string; copy: string }) => (
     <Stack spacing={1} key={rule.title}>
       <Typography
         sx={{

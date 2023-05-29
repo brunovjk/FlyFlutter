@@ -1,8 +1,11 @@
 import React from "react";
 import { ConnectKitButton } from "connectkit";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { useTranslation } from "react-i18next";
 
 const ConnectButton = () => {
+  const { t } = useTranslation();
+
   return (
     <ConnectKitButton.Custom>
       {({ isConnected, isConnecting, show, truncatedAddress }) => {
@@ -16,7 +19,7 @@ const ConnectButton = () => {
               {isConnecting
                 ? " "
                 : !isConnected
-                ? "Connect"
+                ? `${t("connect")}`
                 : truncatedAddress?.toString()}
             </>
           </LoadingButton>
