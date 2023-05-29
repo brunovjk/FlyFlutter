@@ -71,7 +71,7 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             sx={{
               display: { xs: "none", md: isConnected ? "none" : "block" },
               position: "absolute",
-              transform: "translateY(-400%)",
+              transform: "translateY(-30vh)",
             }}
           >
             <SpeechBubble side="bottom" size="large">

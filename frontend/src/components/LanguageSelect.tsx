@@ -1,10 +1,15 @@
-import React, { FC, useState } from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
+import React, { FC } from "react";
+import {
+  MenuItem,
+  FormControl,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 interface LanguageOption {
-  value: string;
+  value: typeof i18next.language;
   emoji: string;
 }
 
@@ -23,15 +28,15 @@ const languageOptions: LanguageOption[] = [
 ];
 
 const LanguageSelect: FC = () => {
-  const [language, setLanguage] = useState("en"); // Initial language state
+  const { i18n } = useTranslation();
 
   const handleLanguageChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value as string);
+    i18n.changeLanguage(event.target.value as string);
   };
 
   return (
     <FormControl variant="standard">
-      <Select value={language} onChange={handleLanguageChange}>
+      <Select value={i18n.language} onChange={handleLanguageChange}>
         {languageOptions.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.emoji}

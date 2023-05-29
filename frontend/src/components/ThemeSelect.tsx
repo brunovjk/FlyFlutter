@@ -1,11 +1,11 @@
 import React, { FC, useContext } from "react";
-import { ConfigContext } from "../config/context";
+import { MuiContext } from "../config/mui";
 import { MenuItem, FormControl, useTheme, Select } from "@mui/material";
 
 const ThemeSelect: FC = () => {
   const theme = useTheme();
 
-  const { toggleColorMode } = useContext(ConfigContext);
+  const { toggleColorMode } = useContext(MuiContext);
 
   const handleThemeChange = () => {
     toggleColorMode();

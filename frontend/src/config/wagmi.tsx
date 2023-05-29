@@ -1,6 +1,7 @@
-import { createClient } from "wagmi";
+import React from "react";
+import { createClient, WagmiConfig } from "wagmi";
 import { polygon, polygonMumbai } from "wagmi/chains";
-import { getDefaultClient } from "connectkit";
+import { ConnectKitProvider, getDefaultClient } from "connectkit";
 
 // const polygonAlchemyId = process.env.REACT_APP_ALCHEMY_POLYGON_ID;
 const mumbaiAlchemyId = process.env.REACT_APP_ALCHEMY_MUMBAI_ID;
@@ -13,3 +14,15 @@ export const client = createClient(
     chains,
   })
 );
+
+export default function WagmiWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <WagmiConfig client={client}>
+      <ConnectKitProvider>{children}</ConnectKitProvider>
+    </WagmiConfig>
+  );
+}
