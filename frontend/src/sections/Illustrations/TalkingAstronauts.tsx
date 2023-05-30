@@ -62,7 +62,7 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             }}
           >
             <SVGBox
-              svgPath="img/talking_astronauts.svg"
+              svgPath="/img/talking_astronauts.svg"
               svgAlt={t("talkingAstronauts.svgAlt")}
             />
           </Box>

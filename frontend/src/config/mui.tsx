@@ -17,15 +17,18 @@ export default function MuiWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  // Retrieve the previously selected theme from localStorage (or use "dark" as default)
-  const storedMode =
-    (localStorage.getItem("themeMode") as PaletteMode) || "dark";
-  const [mode, setMode] = useState<PaletteMode>(storedMode);
+  const isClient = typeof window !== "undefined"; // Check if running on the client-side
 
-  // Update the selected theme in localStorage whenever it changes
+  // Retrieve the previously selected theme from localStorage (or use "dark" as default)
+  const storedMode = isClient ? localStorage.getItem("themeMode") : "dark";
+  const [mode, setMode] = useState<PaletteMode>(storedMode as PaletteMode);
+
+  // Update the selected theme in localStorage whenever it changes (on the client-side)
   useEffect(() => {
-    localStorage.setItem("themeMode", mode);
-  }, [mode]);
+    if (isClient) {
+      localStorage.setItem("themeMode", mode);
+    }
+  }, [isClient, mode]);
 
   const muiUtils = useMemo(
     () => ({

@@ -49,7 +49,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
-          svgPath="img/studying_astronauts.svg"
+          svgPath="/img/studying_astronauts.svg"
           svgAlt="Studying Astronaut"
           styles={{ width: "2%", opacity: 0.75, marginLeft: "5%" }}
         />
@@ -61,7 +61,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
-          svgPath="img/ballons_astronauts.svg"
+          svgPath="/img/ballons_astronauts.svg"
           svgAlt="Ballons Astronaut"
           styles={{
             width: "8%",
@@ -78,7 +78,7 @@ function Sky({ isConnected }: { isConnected: boolean }) {
         style={{ pointerEvents: "none" }}
       >
         <SVGBox
-          svgPath="img/plain_astronauts.svg"
+          svgPath="/img/plain_astronauts.svg"
           svgAlt="Plainning Astronaut"
           styles={{
             opacity: 0.75,

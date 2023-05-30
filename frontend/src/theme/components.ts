@@ -94,6 +94,13 @@ export const createComponents = (palette: CustomPalette): Components => {
         },
       },
     },
+    MuiCircularProgress: {
+      styleOverrides: {
+        root: {
+          color: palette.primary.main,
+        },
+      },
+    },
     MuiToggleButton: {
       styleOverrides: {
         root: {

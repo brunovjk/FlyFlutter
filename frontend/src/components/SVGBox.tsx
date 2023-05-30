@@ -8,8 +8,6 @@ interface SVGBoxProps {
 }
 
 const SVGBox: React.FC<SVGBoxProps> = ({ svgPath, svgAlt, styles }) => {
-  const svgUrl = process.env.PUBLIC_URL + svgPath;
-
   return (
     <Box
       width="100%"
@@ -19,7 +17,7 @@ const SVGBox: React.FC<SVGBoxProps> = ({ svgPath, svgAlt, styles }) => {
       alignItems="center"
       style={styles}
     >
-      <img src={svgUrl} alt={svgAlt} style={{ width: "100%" }} />
+      <img src={svgPath} alt={svgAlt} style={{ width: "100%" }} />
     </Box>
   );
 };

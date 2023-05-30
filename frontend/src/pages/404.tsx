@@ -3,7 +3,7 @@ import { Typography, Stack, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const ErrorPage = () => {
+const Custom404 = () => {
   const { t } = useTranslation();
 
   return (
@@ -30,4 +30,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default Custom404;
