@@ -14,17 +14,12 @@ interface LanguageOption {
 }
 
 const languageOptions: LanguageOption[] = [
-  { value: "en", emoji: "🌐" }, // English
-  { value: "es", emoji: "🇪🇸" }, // Spanish
-  { value: "fr", emoji: "🇫🇷" }, // French
-  { value: "it", emoji: "🇮🇹" }, // Italian
-  { value: "de", emoji: "🇩🇪" }, // German
-  { value: "ua", emoji: "🇺🇦" }, // Ukrainian
-  { value: "pt-BR", emoji: "🇧🇷" }, // Brazilian Portuguese
-  { value: "kr", emoji: "🇰🇷" }, // Korean
-  { value: "ch", emoji: "🇨🇳" }, // Chinese
-  { value: "ja", emoji: "🇯🇵" }, // Japanese
-  { value: "ph", emoji: "🇵🇭" }, // Philippines
+  { value: "en", emoji: "🌐" }, // English "en-US"
+  { value: "es", emoji: "🇪🇸" }, // Spanish "es-ES"
+  { value: "fr", emoji: "🇫🇷" }, // French "fr-FR"
+  { value: "ja", emoji: "🇯🇵" }, // Japanese "ja-JP"
+  { value: "pt", emoji: "🇧🇷" }, // Brazilian Portuguese "pt-BR
+  { value: "zh", emoji: "🇨🇳" }, // Chinese "zh-CN"
 ];
 
 const LanguageSelect: FC = () => {
