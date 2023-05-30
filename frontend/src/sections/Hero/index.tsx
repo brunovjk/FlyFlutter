@@ -24,7 +24,8 @@ const Hero: FC<{ isConnected: boolean }> = ({ isConnected }) => {
       >
         <Typography variant="h3">{t("hero.title")}</Typography>
         <Typography variant="body1">
-          {t("hero.description")} <strong> {t("hero.tokenName")}</strong>
+          {t("hero.description")}
+          <strong>{t("hero.tokenName")}</strong>
         </Typography>
         <ConnectButton />
       </TrailFromX>

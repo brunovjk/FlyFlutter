@@ -1,0 +1,44 @@
+# Contribution Guidelines
+
+Thank you for considering contributing to FlutterFly! This document outlines some guidelines to ensure that everyone can work together effectively and efficiently.
+
+## Getting Started
+
+To contribute to FlutterFly, you will need to have some familiarity with the MATIC blockchain and smart contracts. You should also be comfortable with the programming language used for smart contracts in MATIC, which is Solidity.
+
+## How to Contribute
+
+Contributions to FlutterFly can take many forms, including:
+
+- Reporting bugs
+- Suggesting new features
+- Improving the documentation
+- Submitting code changes
+
+Here are the steps to follow to contribute:
+
+    1 - Fork the repository on GitHub.
+    2 - Create a branch for your changes.
+    3 - Make your changes and ensure that they are properly tested.
+    4 - Commit your changes and push your branch to your forked repository.
+    5 - Submit a pull request to the main repository.
+
+## Bug Reports and Feature Requests
+
+If you find a bug in FlutterFly or have an idea for a new feature, please open an issue on the GitHub repository. Please be as detailed as possible in describing the issue or feature request.
+
+## Code Contributions
+
+If you want to contribute code to FlutterFly, please follow these guidelines:
+
+- All code changes must be submitted through a pull request.
+- Your code should be well-documented and easy to read.
+- Make sure that your code adheres to the Solidity style guide.
+- Before submitting your pull request, make sure that all tests pass.
+- Your code will be reviewed by other contributors, and you may be asked to make changes or improvements.
+
+## Conclusion
+
+FlutterFly is an open-source project that welcomes contributions from anyone. By following these guidelines, you can help us make FlutterFly the best game possible.
+
+Thank you for your contributions!

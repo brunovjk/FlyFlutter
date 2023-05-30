@@ -24,7 +24,6 @@ const HistoryDataGrid: React.FC<HistoryProps> = ({
         },
       }}
       style={{
-        color: theme.palette.secondary.main,
         border: "none",
       }}
       disableColumnMenu={true}

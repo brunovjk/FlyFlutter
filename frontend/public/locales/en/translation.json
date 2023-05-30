@@ -3,31 +3,33 @@
   "odd": "Odd",
   "hero": {
     "title": "Experience the thrill of gambling without risking a dime.",
-    "description": "FlyFlutter is a game designed to provide entertainment for the ones who enjoy the thrill of gambling but without using real money. It operates on the Polygon and Mumbai blockchains using the free to mint",
+    "description": "FlyFlutter - Play Odd and Even Hand Game with Quantum Randomness and Smart Contracts Automation for Zero Gravity Decisions! It operates on the Polygon and Mumbai blockchains using our free to mint ",
     "tokenName": "FlyFlutterCoin"
   },
   "talkingAstronauts": {
     "svgAlt": "Talking Astronauts",
     "bubble1": "Who's gonna do the dishes tonight?",
-    "bubble2": "Let's play some FluFlutter to decide!"
+    "bubble2_1": "Let",
+    "bubble2_2": "decide!",
+    "tokenName": "FlyFlutter"
   },
   "ffcmint": {
     "balanceLabel": "Balance",
     "mintButton": "Mint",
-    "mintTooltip": "FlyFlutterCoin Minting Rules: You can mint just 100 FlyFlutterCoins at a time, but only if your wallet balance is less than 10 FFC.",
-    "mintSuccess": "Minted 100 FFC to:",
-    "mintFailure": "Failed to Mint,"
+    "mintTooltip": "FlyFlutterCoin Minting Rules: You can mint up to 100 FlyFlutterCoins at a time if your wallet balance is less than 10 FFC.",
+    "mintSuccess": "Successfully Minted 100 FFC to:",
+    "mintFailure": "Failed to Mint FFC,"
   },
   "ffcapprove": {
     "allowanceLabel": "Allowance",
     "approveButton": "Approve",
-    "approveTooltip": "Approve Betting Contract: To place a bet, you need to approve the Betting contract to spend a certain amount of FFC on your behalf.",
-    "approveSuccess": "Approved successful",
-    "approveFailure": "Failed to Approve,"
+    "approveTooltip": "Approve Betting Contract: To place a bet, you need to approve the Betting contract to spend a specific amount of FFC on your behalf.",
+    "approveSuccess": "Approved successfully",
+    "approveFailure": "Failed to Approve"
   },
   "betAmountSelector": {
     "label": "Bet Amount",
-    "helperText": "1 to 99 FFC per Bet"
+    "helperText": "Choose a Bet Amount (1-99 FFC)"
   },
   "confirmBet": {
     "selectedGuess": "Selected Guess: {{guess}}",
@@ -40,7 +42,7 @@
     "tooltip": "This Matic Fee is used to cover the costs of the tools used to ensure the game is fair and secure, including the random number generator and automation services."
   },
   "betButton": {
-    "tooltip": "You need to choose a Guess, a Hand, and a Bet Amount to be able to Place Bets. Don't forget to have some FFC",
+    "tooltip": "To place a bet, choose a Guess, a Hand, and a Bet Amount. Make sure you have enough FFC tokens.",
     "label": "Review and Place Bet"
   },
   "confirmDialog": {
@@ -50,37 +52,37 @@
   },
   "playFunctions": {
     "handleSetWinner": {
-      "playerWins": "Player wins",
-      "houseWins": "House wins",
-      "checkHistoryError": "Ups... Check History",
-      "fetchWinnerError": "Error fetching the winner. Check at the explorer:"
+      "playerWins": "Player Wins!",
+      "houseWins": "House Wins!",
+      "checkHistoryError": "Oops... Error checking history",
+      "fetchWinnerError": "Error fetching the winner. Please check the explorer:"
     },
     "handleSetHousehand": {
-      "fetchWinnerError": "Error fetching the winner. Check at the explorer:"
+      "fetchWinnerError": "Error fetching the winner. Please check the explorer:"
     },
     "handleBetTx": {
-      "betPlacedSuccess": "Bet placed successfully, you can close this page.",
-      "betTransactionFailed": "Transaction failed, please try again."
+      "betPlacedSuccess": "Bet placed successfully! You can close this page anytime.",
+      "betTransactionFailed": "Transaction failed. Please try again."
     },
     "handlePlaceBet": {
-      "transactionSent": "Transaction sent, please wait for confirmation.",
-      "transactionNotSent": "Transaction not sent, please try again."
+      "transactionSent": "Transaction sent. Please wait for confirmation.",
+      "transactionNotSent": "Transaction not sent. Please try again."
     }
   },
   "houseDisplay": {
     "houseLabel": "House",
-    "houseTooltip": "Total amount of FlyFluterCoin held by the House",
-    "totalBetLabel": "Total Bet",
-    "totalBetTooltip": "Total amount of FlyFluterCoin bet by the House with the players",
+    "houseTooltip": "Total amount of FlyFlutterCoin held by the House",
+    "totalBetLabel": "Total Bets",
+    "totalBetTooltip": "Total amount of FlyFlutterCoin bet by the House with players",
     "totalSentLabel": "Total Sent",
-    "totalSentTooltip": "Total amount of FlyFlutterCoin sent by the house to bet winners"
+    "totalSentTooltip": "Total amount of FlyFlutterCoin sent by the House to bet winners"
   },
   "results": {
     "playerLabel": "Player",
     "playerTooltip": "Your last bet",
-    "waitingBetLabel": "Waiting Bet...",
+    "waitingBetLabel": "Waiting for Bet...",
     "lastBetLabel": "Last Bet",
-    "waitingBetTooltip": "Waiting QRNG and Gelato, you can close this page anytime. You can check all your bets at the History tab.",
+    "waitingBetTooltip": "Waiting for QRNG and Gelato. You can close this page anytime. Check all your bets in the History tab.",
     "lastBetTooltip": "Winner of the last bet",
     "houseLabel": "House",
     "houseTooltip": "House Hand"
@@ -91,52 +93,65 @@
     "historyLabel": "History"
   },
   "about": {
-    "title1": "Web Developer",
-    "title2": "Specializing in building decentralized applications",
-    "body1": "Looking for a blockchain developer?",
-    "body2": "A deep understanding of blockchain technology and proficient in Solidity and Typescript.",
-    "body3": "Check out my projects below to see my work with dApps and smart contracts."
+    "title1": "Full Stack Web Developer",
+    "title2": "Specializing in Blockchain Development",
+    "body1": "Are you looking for a versatile web developer?",
+    "body2": "With a deep understanding of blockchain technology and expertise in Solidity and Typescript.",
+    "body3": "Explore my projects below to see my work with dApps and Smart Contracts."
   },
   "contact": {
     "title": "Continuous Learning",
-    "body1": "As a blockchain developer, my goal is to continue to learn and explore new developments in the blockchain space. I strive to stay up to date with the latest technologies and tools in order to provide the best solutions for my clients.",
-    "body2": "Don't hesitate to get in touch to discuss your project needs and goals.",
+    "body1": "As a developer full stack, I embrace continuous learning to stay at the forefront of emerging technologies. While I have a deep understanding of blockchain development, I also excel in various other areas, enabling me to provide comprehensive solutions for my clients.",
+    "body2": "Feel free to reach out to discuss your project needs and goals.",
     "body3": "You can contact me via email at",
     "email": "brunovjk@gmail.com",
     "body4": " or",
     "placeholder": "Enter your message",
     "sendButton": "Send",
-    "illustrationAltText": "Continuous Learning",
+    "illustrationAltText": "Continual Learning",
     "nameLabel": "Name",
     "emailLabel": "Email",
     "messageLabel": "Message",
-    "alertPopup": "Alert popup",
-    "messageSent": "Message sent! I will contact you as soon as possible.",
-    "sendErrorMessage": "Failed to send message, please try again."
+    "alertPopup": "Alert Popup",
+    "messageSent": "Message sent! I will get back to you as soon as possible.",
+    "sendErrorMessage": "Failed to send the message, please try again."
   },
   "history": {
     "columns": {
       "guess": {
-        "headerName": "My Guess",
+        "headerName": "Guess",
         "description": "Odd or Even"
       },
       "playerHand": {
-        "headerName": "My hand",
-        "description": "Player's chosen hand"
+        "headerName": "Player's Hand",
+        "description": "Selected hand by the player"
       },
       "houseHand": {
-        "headerName": "House Hand",
-        "description": "House's generated hand"
+        "headerName": "House's Hand",
+        "description": "Generated hand by the house"
       },
       "betAmount": {
         "headerName": "Bet Amount",
-        "description": "Betted amount"
+        "description": "Amount betted"
       },
       "winner": {
         "headerName": "Winner",
-        "description": "And the Winner is..."
+        "description": "And the winner is..."
       }
     }
+  },
+  "header": {
+    "linkProjects": "Projects",
+    "linkContact": "Contact"
+  },
+  "appAlert": {
+    "checkExplorer": "Check on Explorer"
+  },
+  "connect": "Play!",
+  "errorPage": {
+    "title": "404 - Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist.",
+    "homeButton": "Go back to Home"
   },
   "projects": [
     {
@@ -206,50 +221,37 @@
   ],
   "rules": [
     {
-      "title": "FlyFlutter Rules",
-      "copy": "FlutterFly is a game designed to provide entertainment to people who enjoy the thrill of gambling. It operates on the Polygon blockchain using the FlyFlutterCoin token."
+      "title": "Welcome to FlyFlutter!",
+      "copy": "FlyFlutter is a game designed to showcase my skills as a developer and provide an entertaining gambling experience. Operating on the Polygon blockchain, using the FlyFlutterCoin token, it combines the excitement of gambling with my passion for Games and Space."
     },
     {
       "title": "FlyFlutterCoin",
-      "copy": "FlyFlutterCoins are the game's native tokens, and they must be used to place bets and earn payouts within the game. They do not have any real-world value and cannot be exchanged for any other currency or asset. Each wallet can mint up to 100 FlyFlutter coins at a time, provided that the wallet balance is less than 10 FlyFlutter coins."
+      "copy": "FlyFlutterCoins are the native tokens of the game and serve as the currency for placing bets and earning payouts. Please note that they have no real-world value and cannot be exchanged for any other currency or asset. Each wallet can mint up to 100 FlyFlutter coins at a time, as long as the wallet balance is below 10 FlyFlutter coins."
     },
     {
       "title": "Placing a Bet",
-      "copy": "To place a bet, a player must pay a bet cost of 0.1 MATIC and choose a value of FlyFlutterCoin between 1 and 99. The 0.1 MATIC fee is used to cover the costs of the tools used to ensure the game is fair and secure, including the random number generator and automation services."
+      "copy": "To place a bet, you must pay a bet cost of 0.01 MATIC and choose a value of FlyFlutterCoin between 1 and 99. The 0.01 MATIC fee covers the expenses associated with maintaining a fair and secure gaming environment, including the utilization of random number generators (QRNG) and automation services (Gelato)."
     },
     {
       "title": "The House",
-      "copy": "The house does not make a profit from the game, and it only holds FlyFlutterCoins. It is given 10000 FFC at the start of the game. Users can donate (transfer) FlyFlutterCoin to the House."
+      "copy": "The house's role in FlyFlutter is solely to hold FlyFlutterCoins. It does not profit from the game. At the beginning of the game, the house is endowed with 10,000 FFC. Additionally, users have the option to donate (transfer) FlyFlutterCoin to the House."
     },
     {
       "title": "Accessibility",
-      "copy": "FlutterFly is accessible to anyone with an internet connection, and players can participate from anywhere in the world."
+      "copy": "FlyFlutter is accessible to players worldwide, requiring only an internet connection and some MATICs to participate. Whether you're located in the heart of a bustling city or in a remote corner of the world, you can join in on the FlyFlutter experience."
     },
 
     {
       "title": "Disclaimer",
-      "copy": "FlutterFly is a game of chance, and there is always a risk of losing when placing bets. We advise players to gamble responsibly and not to bet more than they can afford to lose."
+      "copy": "While FlyFlutter is an exhilarating game, it is important to remember that it involves an element of chance. There is always a risk of losing when placing bets. We strongly advise all players to gamble responsibly and only wager amounts they can afford to lose."
     },
     {
       "title": "Changes to the Rules",
-      "copy": "FlutterFly is an evolving game that may change over time based on user feedback, new features implemented by contributors, and any issues that may arise. We strive to maintain transparency and fairness throughout any updates or changes to the game's rules. We encourage players to provide feedback and suggestions for improving the game."
+      "copy": "FlyFlutter is a dynamic game that will evolve over time. User feedback, contributions from developers, and any emerging issues will shape its ongoing development. We are committed to maintaining transparency and fairness throughout any updates or modifications to the game's rules. We highly encourage players to provide feedback and suggestions to help enhance the overall gaming experience."
     },
     {
       "title": "Conclusion",
-      "copy": "We hope you enjoy playing FlutterFly and wish you the best of luck!"
+      "copy": "Thank you for joining us on this exciting journey with FlyFlutter. We hope you enjoy playing and wish you the best of luck as you explore the thrilling world of FlyFlutter!"
     }
-  ],
-  "header": {
-    "linkProjects": "Projects",
-    "linkContact": "Contact"
-  },
-  "appAlert": {
-    "checkExplorer": "Check at Explorer"
-  },
-  "connect": "Connect",
-  "errorPage": {
-    "title": "404 - Page Not Found",
-    "message": "Sorry, the page you are looking for does not exist.",
-    "homeButton": "Go back to Home"
-  }
+  ]
 }

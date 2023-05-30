@@ -83,12 +83,15 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             sx={{
               display: { xs: "none", md: isConnected ? "none" : "block" },
               position: "absolute",
-              width: "20%",
               right: 0,
             }}
           >
             <SpeechBubble side="left" size="medium">
-              {t("talkingAstronauts.bubble2")}
+              {t("talkingAstronauts.bubble2_1")}
+              <br />
+              <strong>{t("talkingAstronauts.tokenName")}</strong>
+              <br />
+              {t("talkingAstronauts.bubble2_2")}
             </SpeechBubble>
           </Box>
         </TrailFromX>

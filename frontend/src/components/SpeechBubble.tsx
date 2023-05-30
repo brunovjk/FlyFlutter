@@ -24,7 +24,7 @@ const Bubble = styled("div")`
   }
 
   &.medium {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   &.large {

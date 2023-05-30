@@ -48,7 +48,11 @@ const Tabs: FC = () => {
         />
       </GlassPaper>
       <GlassPaper
-        sx={{ height: "390px", minWidth: { xs: "100%", md: "400px" } }}
+        sx={{
+          height: "390px",
+          minWidth: "100%",
+          transition: "all 1s ease-in",
+        }}
       >
         {tabsContent.map((tab, index) => (
           <TabPanel key={index} value={value} index={index}>

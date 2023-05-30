@@ -13,7 +13,10 @@ const Copy: FC = () => {
         {t("about.title2")}
       </Typography>
       <Typography variant="body1" textAlign="center">
-        {t("about.body1")} <br /> {t("about.body2")} <br /> {t("about.body3")}
+        {t("about.body1")} <br /> {t("about.body2")}
+      </Typography>
+      <Typography variant="body1" textAlign="center">
+        {t("about.body3")}
       </Typography>
     </Stack>
   );
