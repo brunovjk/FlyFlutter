@@ -1,97 +1,4 @@
 {
-  "even": "Even",
-  "odd": "Odd",
-  "hero": {
-    "title": "Experience the thrill of gambling without risking a dime.",
-    "description": "FlyFlutter - Play Odd and Even Hand Game with Quantum Randomness and Smart Contracts Automation for Zero Gravity Decisions! It operates on the Polygon and Mumbai blockchains using our free to mint ",
-    "tokenName": "FlyFlutterCoin"
-  },
-  "talkingAstronauts": {
-    "svgAlt": "Talking Astronauts",
-    "bubble1": "Who's gonna do the dishes tonight?",
-    "bubble2_1": "Let",
-    "bubble2_2": "decide!",
-    "tokenName": "FlyFlutter"
-  },
-  "ffcmint": {
-    "balanceLabel": "Balance",
-    "mintButton": "Mint",
-    "mintTooltip": "FlyFlutterCoin Minting Rules: You can mint up to 100 FlyFlutterCoins at a time if your wallet balance is less than 10 FFC.",
-    "mintSuccess": "Successfully Minted 100 FFC to:",
-    "mintFailure": "Failed to Mint FFC,"
-  },
-  "ffcapprove": {
-    "allowanceLabel": "Allowance",
-    "approveButton": "Approve",
-    "approveTooltip": "Approve Betting Contract: To place a bet, you need to approve the Betting contract to spend a specific amount of FFC on your behalf.",
-    "approveSuccess": "Approved successfully",
-    "approveFailure": "Failed to Approve"
-  },
-  "betAmountSelector": {
-    "label": "Bet Amount",
-    "helperText": "Choose a Bet Amount (1-99 FFC)"
-  },
-  "confirmBet": {
-    "selectedGuess": "Selected Guess: {{guess}}",
-    "selectedHand": "Selected Hand: {{hand}}",
-    "selectedBetAmount": "Selected Bet Amount: {{amount}} FFC",
-    "betFee": "Bet Fee: {{fee}} MATIC"
-  },
-  "betFee": {
-    "caption": "Bet Fee:",
-    "tooltip": "This Matic Fee is used to cover the costs of the tools used to ensure the game is fair and secure, including the random number generator and automation services."
-  },
-  "betButton": {
-    "tooltip": "To place a bet, choose a Guess, a Hand, and a Bet Amount. Make sure you have enough FFC tokens.",
-    "label": "Review and Place Bet"
-  },
-  "confirmDialog": {
-    "title": "Confirm Bet",
-    "confirmText": "Confirm",
-    "cancelText": "Cancel"
-  },
-  "playFunctions": {
-    "handleSetWinner": {
-      "playerWins": "Player Wins!",
-      "houseWins": "House Wins!",
-      "checkHistoryError": "Oops... Error checking history",
-      "fetchWinnerError": "Error fetching the winner. Please check the explorer:"
-    },
-    "handleSetHousehand": {
-      "fetchWinnerError": "Error fetching the winner. Please check the explorer:"
-    },
-    "handleBetTx": {
-      "betPlacedSuccess": "Bet placed successfully! You can close this page anytime.",
-      "betTransactionFailed": "Transaction failed. Please try again."
-    },
-    "handlePlaceBet": {
-      "transactionSent": "Transaction sent. Please wait for confirmation.",
-      "transactionNotSent": "Transaction not sent. Please try again."
-    }
-  },
-  "houseDisplay": {
-    "houseLabel": "House",
-    "houseTooltip": "Total amount of FlyFlutterCoin held by the House",
-    "totalBetLabel": "Total Bets",
-    "totalBetTooltip": "Total amount of FlyFlutterCoin bet by the House with players",
-    "totalSentLabel": "Total Sent",
-    "totalSentTooltip": "Total amount of FlyFlutterCoin sent by the House to bet winners"
-  },
-  "results": {
-    "playerLabel": "Player",
-    "playerTooltip": "Your last bet",
-    "waitingBetLabel": "Waiting for Bet...",
-    "lastBetLabel": "Last Bet",
-    "waitingBetTooltip": "Waiting for QRNG and Gelato. You can close this page anytime. Check all your bets in the History tab.",
-    "lastBetTooltip": "Winner of the last bet",
-    "houseLabel": "House",
-    "houseTooltip": "House Hand"
-  },
-  "tabs": {
-    "playLabel": "Play",
-    "rulesLabel": "Rules",
-    "historyLabel": "History"
-  },
   "about": {
     "title1": "Full Stack Web Developer",
     "title2": "Specializing in Blockchain Development",
@@ -99,6 +6,33 @@
     "body2": "With a deep understanding of blockchain technology and expertise in Solidity and Typescript.",
     "body3": "Explore my projects below to see my work with dApps and Smart Contracts."
   },
+  "appAlert": {
+    "checkExplorer": "Check on Explorer"
+  },
+  "betAmountSelector": {
+    "label": "Bet Amount",
+    "helperText": "Choose a Bet Amount (1-99 FFC)"
+  },
+  "betButton": {
+    "tooltip": "To place a bet, choose a Guess, a Hand, and a Bet Amount. Make sure you have enough FFC tokens.",
+    "label": "Review and Place Bet"
+  },
+  "betFee": {
+    "caption": "Bet Fee:",
+    "tooltip": "This Matic Fee is used to cover the costs of the tools used to ensure the game is fair and secure, including the random number generator and automation services."
+  },
+  "confirmBet": {
+    "selectedGuess": "Selected Guess: {{guess}}",
+    "selectedHand": "Selected Hand: {{hand}}",
+    "selectedBetAmount": "Selected Bet Amount: {{amount}} FFC",
+    "betFee": "Bet Fee: {{fee}} MATIC"
+  },
+  "confirmDialog": {
+    "title": "Confirm Bet",
+    "confirmText": "Confirm",
+    "cancelText": "Cancel"
+  },
+  "connect": "Play!",
   "contact": {
     "title": "Continuous Learning",
     "body1": "As a developer full stack, I embrace continuous learning to stay at the forefront of emerging technologies. While I have a deep understanding of blockchain development, I also excel in various other areas, enabling me to provide comprehensive solutions for my clients.",
@@ -115,6 +49,35 @@
     "alertPopup": "Alert Popup",
     "messageSent": "Message sent! I will get back to you as soon as possible.",
     "sendErrorMessage": "Failed to send the message, please try again."
+  },
+  "errorPage": {
+    "title": "404 - Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist.",
+    "homeButton": "Go back to Home"
+  },
+  "even": "Even",
+  "ffcapprove": {
+    "allowanceLabel": "Allowance",
+    "approveButton": "Approve",
+    "approveTooltip": "Approve Betting Contract: To place a bet, you need to approve the Betting contract to spend a specific amount of FFC on your behalf.",
+    "approveSuccess": "Approved successfully",
+    "approveFailure": "Failed to Approve"
+  },
+  "ffcmint": {
+    "balanceLabel": "Balance",
+    "mintButton": "Mint",
+    "mintTooltip": "FlyFlutterCoin Minting Rules: You can mint up to 100 FlyFlutterCoins at a time if your wallet balance is less than 10 FFC.",
+    "mintSuccess": "Successfully Minted 100 FFC to:",
+    "mintFailure": "Failed to Mint FFC,"
+  },
+  "header": {
+    "linkProjects": "Projects",
+    "linkContact": "Contact"
+  },
+  "hero": {
+    "title": "Experience the thrill of gambling without risking a dime.",
+    "description": "FlyFlutter - Play Odd and Even Hand Game with Quantum Randomness and Smart Contracts Automation for Zero Gravity Decisions! It operates on the Polygon and Mumbai blockchains using our free to mint ",
+    "tokenName": "FlyFlutterCoin"
   },
   "history": {
     "columns": {
@@ -140,85 +103,59 @@
       }
     }
   },
-  "header": {
-    "linkProjects": "Projects",
-    "linkContact": "Contact"
+  "houseDisplay": {
+    "houseLabel": "House",
+    "houseTooltip": "Total amount of FlyFlutterCoin held by the House",
+    "totalBetLabel": "Total Bets",
+    "totalBetTooltip": "Total amount of FlyFlutterCoin bet by the House with players",
+    "totalSentLabel": "Total Sent",
+    "totalSentTooltip": "Total amount of FlyFlutterCoin sent by the House to bet winners"
   },
-  "appAlert": {
-    "checkExplorer": "Check on Explorer"
-  },
-  "connect": "Play!",
-  "errorPage": {
-    "title": "404 - Page Not Found",
-    "message": "Sorry, the page you are looking for does not exist.",
-    "homeButton": "Go back to Home"
-  },
-  "projects": [
-    {
-      "projectName": "NFT Collection1",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
+  "odd": "Odd",
+  "playFunctions": {
+    "handleSetWinner": {
+      "playerWins": "Player Wins!",
+      "houseWins": "House Wins!",
+      "checkHistoryError": "Oops... Error checking history",
+      "fetchWinnerError": "Error fetching the winner. Please check the explorer:"
     },
-    {
-      "projectName": "NFT Collection2",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
+    "handleSetHousehand": {
+      "fetchWinnerError": "Error fetching the winner. Please check the explorer:"
     },
-    {
-      "projectName": "NFT Collection3",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
+    "handleBetTx": {
+      "betPlacedSuccess": "Bet placed successfully! You can close this page anytime.",
+      "betTransactionFailed": "Transaction failed. Please try again."
     },
-    {
-      "projectName": "NFT Collection4",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
-    },
-    {
-      "projectName": "NFT Collection5",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
-    },
-    {
-      "projectName": "NFT Collection6",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
-    },
-    {
-      "projectName": "NFT Collection7",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
-    },
-    {
-      "projectName": "NFT Collection8",
-      "description": " A collection of unique non-fungible tokens (NFTs) with original artwork",
-      "technologiesUsed": "Solidity, Typescript, Ethereum",
-      "keyFeatures": "Each NFT is one-of-a-kind, with a limited supply of each design",
-      "learnMore": "Learn More",
-      "learnMoreLink": "https://www.google.com/"
+    "handlePlaceBet": {
+      "transactionSent": "Transaction sent. Please wait for confirmation.",
+      "transactionNotSent": "Transaction not sent. Please try again."
     }
-  ],
+  },
+
+  "results": {
+    "playerLabel": "Player",
+    "playerTooltip": "Your last bet",
+    "waitingBetLabel": "Waiting for Bet...",
+    "lastBetLabel": "Last Bet",
+    "waitingBetTooltip": "Waiting for QRNG and Gelato. You can close this page anytime. Check all your bets in the History tab.",
+    "lastBetTooltip": "Winner of the last bet",
+    "houseLabel": "House",
+    "houseTooltip": "House Hand"
+  },
+
+  "tabs": {
+    "playLabel": "Play",
+    "rulesLabel": "Rules",
+    "historyLabel": "History"
+  },
+  "talkingAstronauts": {
+    "svgAlt": "Talking Astronauts",
+    "bubble1": "Who's gonna do the dishes tonight?",
+    "bubble2_1": "Let",
+    "bubble2_2": "decide!",
+    "tokenName": "FlyFlutter"
+  },
+
   "rules": [
     {
       "title": "Welcome to FlyFlutter!",
@@ -252,6 +189,89 @@
     {
       "title": "Conclusion",
       "copy": "Thank you for joining us on this exciting journey with FlyFlutter. We hope you enjoy playing and wish you the best of luck as you explore the thrilling world of FlyFlutter!"
+    }
+  ],
+
+  "projects": [
+    {
+      "projectName": "Reward System",
+      "description": "Automated reward system for BRAIN+ using Chainlink.",
+      "technologiesUsed": "Data Feed, Automation, Chainlink",
+      "keyFeatures": "Autopilot Rewards, Performance Tracking",
+      "learnMore": "Explore More",
+      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+    },
+    {
+      "projectName": "Gridding",
+      "description": "DeFi portfolio dashboard with dynamic NFT mutation.",
+      "technologiesUsed": "DeFi, Chainlink, Tableland, IPFS",
+      "keyFeatures": "Accessibility, Interactivity, Dynamic NFT Mutation",
+      "learnMore": "Get Started",
+      "learnMoreLink": "https://gridding.xyz/"
+    },
+    {
+      "projectName": "Willr.io",
+      "description": "Create and secured wills on the blockchain.",
+      "technologiesUsed": "ICON, Ethereum, Cross-Chain",
+      "keyFeatures": "Secure asset transfer, Cross-chain functionality",
+      "learnMore": "Discover Now",
+      "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
+    },
+    {
+      "projectName": "MIND Liquidity Tool",
+      "description": "Manage liquidity for MIND/AVAX token pair.",
+      "technologiesUsed": "Automated Market Making (AMM), Liquidity Pool Management",
+      "keyFeatures": "Add/Remove Liquidity, Set Parameters",
+      "learnMore": "Dive In",
+      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
+    },
+    {
+      "projectName": "SoulWars",
+      "description": "Unity Browser-based game with NFT integration to control access.",
+      "technologiesUsed": "ERC-1155, Java, Solidity",
+      "keyFeatures": "Access Control, Thirdweb SDK Unity, Conditional 3D rendering",
+      "learnMore": "Play Now",
+      "learnMoreLink": "https://soulwars.web.app/"
+    },
+    {
+      "projectName": "Frontend Portfolio",
+      "description": "Showcasing frontend skills, page transition, animations and server-side rendering.",
+      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
+      "keyFeatures": "Portfolio Website",
+      "learnMore": "See Showcase",
+      "learnMoreLink": "https://vjkportifolio.web.app/"
+    },
+    {
+      "projectName": "Campaign Creator",
+      "description": "Crowdfunding contract for managing campaigns.",
+      "technologiesUsed": "ERC20, Solidity, Hardhat",
+      "keyFeatures": "Max duration, ERC20 funding, Refund on goal failure",
+      "learnMore": "Start Crowdfunding",
+      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
+    },
+    {
+      "projectName": "ERC-20 Playground",
+      "description": "Interface for interacting with ERC-20 tokens and Uniswap.",
+      "technologiesUsed": "Ethereum, ERC20, Uniswap, Material Ui",
+      "keyFeatures": "Token interaction, Uniswap swapping, Transaction history",
+      "learnMore": "Swap Tokens",
+      "learnMoreLink": "https://vjkswapp.web.app/"
+    },
+    {
+      "projectName": "NFT Generator",
+      "description": "Automated smart contracts for NFT generation using Chainlink.",
+      "technologiesUsed": "Chainlink, Solidity, Ether.js",
+      "keyFeatures": "Contract automation, NFT collection, SVG creation",
+      "learnMore": "Create NFTs",
+      "learnMoreLink": "https://vjknft.web.app/"
+    },
+    {
+      "projectName": "SaudeVapor",
+      "description": "Platform about cannabis and medical research.",
+      "technologiesUsed": "Google Cloud, Solana, Metaplex, DAO",
+      "keyFeatures": "Cannabis Compound NFT collection, DAO creation",
+      "learnMore": "Learn More",
+      "learnMoreLink": "https://www.saudevapor.com/"
     }
   ]
 }

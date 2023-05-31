@@ -1,0 +1,272 @@
+{
+  "about": {
+    "title1": "全栈 Web 开发者",
+    "title2": "专注于区块链开发",
+    "body1": "您正在寻找一位多才多艺的 Web 开发者吗？",
+    "body2": "我对区块链技术有着深入的理解，并精通 Solidity 和 Typescript。",
+    "body3": "请查看下面的项目，了解我的去中心化应用和智能合约开发工作。"
+  },
+  "appAlert": {
+    "checkExplorer": "在浏览器上查看"
+  },
+  "betAmountSelector": {
+    "label": "投注金额",
+    "helperText": "选择投注金额（1-99 FFC）"
+  },
+  "betButton": {
+    "tooltip": "要进行投注，请选择一个猜测、一手牌和一个投注金额。请确保您拥有足够的 FFC 代币。",
+    "label": "查看并下注"
+  },
+  "betFee": {
+    "caption": "投注费用：",
+    "tooltip": "这个 Matic 费用用于支付确保游戏公平和安全所使用的工具成本，包括随机数生成器和自动化服务。"
+  },
+  "confirmBet": {
+    "selectedGuess": "已选择的猜测：{{guess}}",
+    "selectedHand": "已选择的手牌：{{hand}}",
+    "selectedBetAmount": "已选择的投注金额：{{amount}} FFC",
+    "betFee": "投注费用：{{fee}} MATIC"
+  },
+  "confirmDialog": {
+    "title": "确认下注",
+    "confirmText": "确认",
+    "cancelText": "取消"
+  },
+  "connect": "开始游戏！",
+  "contact": {
+    "title": "持续学习",
+    "body1": "作为一名全栈开发者，我积极进行持续学习，以保持对新兴技术的领先了解。虽然我对区块链开发有着深入的理解，但我也在其他领域表现出色，能够为客户提供全面的解决方案。",
+    "body2": "欢迎随时联系我，讨论您的项目需求和目标。",
+    "body3": "您可以通过电子邮件与我联系",
+    "email": "brunovjk@gmail.com",
+    "body4": " 或",
+    "placeholder": "输入您的消息",
+    "sendButton": "发送",
+    "illustrationAltText": "持续学习",
+    "nameLabel": "姓名",
+    "emailLabel": "电子邮件",
+    "messageLabel": "消息",
+    "alertPopup": "警告弹窗",
+    "messageSent": "消息已发送！我会尽快回复您。",
+    "sendErrorMessage": "发送消息失败，请重试。"
+  },
+  "errorPage": {
+    "title": "404 - 页面未找到",
+    "message": "抱歉，您要访问的页面不存在。",
+    "homeButton": "返回首页"
+  },
+  "even": "偶数",
+  "ffcapprove": {
+    "allowanceLabel": "授权额度",
+    "approveButton": "授权",
+    "approveTooltip": "授权投注合约：要进行投注，您需要授权投注合约代表您支出指定数量的FFC。",
+    "approveSuccess": "授权成功",
+    "approveFailure": "授权失败"
+  },
+  "ffcmint": {
+    "balanceLabel": "余额",
+    "mintButton": "铸币",
+    "mintTooltip": "FlyFlutterCoin 铸币规则：如果您的钱包余额低于 10 FFC，您可以一次铸币最多 100 个 FlyFlutterCoins。",
+    "mintSuccess": "成功铸造 100 个 FFC 到：",
+    "mintFailure": "铸币失败"
+  },
+  "header": {
+    "linkProjects": "项目",
+    "linkContact": "联系方式"
+  },
+  "hero": {
+    "title": "体验赌博的刺激，无需冒任何风险。",
+    "description": "FlyFlutter - 通过量子随机性和智能合约自动化，在无重力决策中玩奇偶手游戏！它在Polygon和Mumbai区块链上运行，使用我们的免费铸币",
+    "tokenName": "FlyFlutterCoin"
+  },
+  "history": {
+    "columns": {
+      "guess": {
+        "headerName": "猜测",
+        "description": "奇数或偶数"
+      },
+      "playerHand": {
+        "headerName": "玩家手牌",
+        "description": "玩家选择的手牌"
+      },
+      "houseHand": {
+        "headerName": "庄家手牌",
+        "description": "庄家生成的手牌"
+      },
+      "betAmount": {
+        "headerName": "投注金额",
+        "description": "下注金额"
+      },
+      "winner": {
+        "headerName": "获胜者",
+        "description": "获胜者是..."
+      }
+    }
+  },
+  "houseDisplay": {
+    "houseLabel": "庄家",
+    "houseTooltip": "庄家持有的FlyFlutterCoin总额",
+    "totalBetLabel": "总投注",
+    "totalBetTooltip": "庄家与玩家下注的FlyFlutterCoin总额",
+    "totalSentLabel": "总发送",
+    "totalSentTooltip": "庄家向获胜者发送的FlyFlutterCoin总额"
+  },
+  "odd": "奇数",
+  "playFunctions": {
+    "handleSetWinner": {
+      "playerWins": "玩家获胜！",
+      "houseWins": "庄家获胜！",
+      "checkHistoryError": "哎呀...检查历史时出错",
+      "fetchWinnerError": "获取获胜者时出错，请检查浏览器："
+    },
+    "handleSetHousehand": {
+      "fetchWinnerError": "获取获胜者时出错，请检查浏览器："
+    },
+    "handleBetTx": {
+      "betPlacedSuccess": "下注成功！您可以随时关闭此页面。",
+      "betTransactionFailed": "交易失败，请重试。"
+    },
+    "handlePlaceBet": {
+      "transactionSent": "交易已发送，请等待确认。",
+      "transactionNotSent": "交易未发送，请重试。"
+    }
+  },
+  "results": {
+    "playerLabel": "玩家",
+    "playerTooltip": "您的最后一次下注",
+    "waitingBetLabel": "等待下注...",
+    "lastBetLabel": "上次下注",
+    "waitingBetTooltip": "等待QRNG和Gelato。您可以随时关闭此页面。在历史选项卡中查看所有下注记录。",
+    "lastBetTooltip": "上次下注的赢家",
+    "houseLabel": "庄家",
+    "houseTooltip": "庄家手牌"
+  },
+  "tabs": {
+    "playLabel": "开始游戏",
+    "rulesLabel": "规则",
+    "historyLabel": "历史"
+  },
+  "talkingAstronauts": {
+    "svgAlt": "交谈的宇航员",
+    "bubble1": "今晚谁来洗碗？",
+    "bubble2_1": "让",
+    "bubble2_2": "决定！",
+    "tokenName": "FlyFlutter"
+  },
+  "rules": [
+    {
+      "title": "欢迎来到FlyFlutter！",
+      "copy": "FlyFlutter是一个旨在展示我作为开发者的技能并提供娱乐性赌博体验的游戏。它在Polygon区块链上运行，使用FlyFlutterCoin代币，将赌博的刺激与我对游戏和太空的热爱相结合。"
+    },
+    {
+      "title": "FlyFlutterCoin",
+      "copy": "FlyFlutterCoin是该游戏的原生代币，用作下注和获得赔付的货币。请注意，它们没有实际价值，不能与任何其他货币或资产进行交换。每个钱包可以一次铸造最多100个FlyFlutterCoin，只要钱包余额低于10个FlyFlutterCoin即可。"
+    },
+    {
+      "title": "下注",
+      "copy": "要下注，您必须支付0.01 MATIC的下注费用，并选择1至99之间的FlyFlutterCoin的值。0.01 MATIC费用用于维护公平和安全的游戏环境，包括使用随机数生成器（QRNG）和自动化服务（Gelato）。"
+    },
+    {
+      "title": "庄家",
+      "copy": "FlyFlutter中庄家的角色仅是持有FlyFlutterCoin。庄家不从游戏中获利。在游戏开始时，庄家拥有10,000个FFC。此外，用户可以选择向庄家捐赠（转移）FlyFlutterCoin。"
+    },
+    {
+      "title": "可访问性",
+      "copy": "FlyFlutter对全球玩家开放，只需互联网连接和一些MATIC即可参与。无论您身处繁华都市的中心还是世界偏远的角落，您都可以加入FlyFlutter的体验。"
+    },
+    {
+      "title": "免责声明",
+      "copy": "尽管FlyFlutter是一款令人振奋的游戏，但重要的是记住它涉及一定的运气因素。下注时始终存在输钱的风险。我们强烈建议所有玩家负责任地进行赌博，只下注自己可以承受损失的金额。"
+    },
+    {
+      "title": "规则变更",
+      "copy": "FlyFlutter是一个动态的游戏，将随时间而发展。用户反馈、开发者的贡献以及任何出现的问题都将塑造其持续发展。我们承诺在对游戏规则进行任何更新或修改时保持透明和公平。我们鼓励玩家提供反馈和建议，以帮助提升整体游戏体验。"
+    },
+    {
+      "title": "结论",
+      "copy": "感谢您加入FlyFlutter的激动人心之旅。我们希望您享受游戏，并祝您在探索FlyFlutter刺激世界时好运连连！"
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "奖励系统",
+      "description": "使用 Chainlink 实现 BRAIN+ 的自动化奖励系统。",
+      "technologiesUsed": "数据源，自动化，Chainlink",
+      "keyFeatures": "自动驾驶奖励，绩效跟踪",
+      "learnMore": "了解更多",
+      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+    },
+    {
+      "projectName": "Gridding",
+      "description": "具有动态 NFT 变异的 DeFi 组合仪表盘。",
+      "technologiesUsed": "DeFi，Chainlink，Tableland，IPFS",
+      "keyFeatures": "可访问性，互动性，动态 NFT 变异",
+      "learnMore": "开始使用",
+      "learnMoreLink": "https://gridding.xyz/"
+    },
+    {
+      "projectName": "Willr.io",
+      "description": "在区块链上创建和保护遗嘱。",
+      "technologiesUsed": "ICON，Ethereum，跨链",
+      "keyFeatures": "安全资产转移，跨链功能",
+      "learnMore": "立即探索",
+      "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
+    },
+    {
+      "projectName": "MIND 流动性工具",
+      "description": "管理 MIND/AVAX 代币对的流动性。",
+      "technologiesUsed": "自动化做市（AMM），流动性池管理",
+      "keyFeatures": "增加/移除流动性，设置参数",
+      "learnMore": "立即体验",
+      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
+    },
+    {
+      "projectName": "SoulWars",
+      "description": "基于 Unity 的浏览器游戏，集成 NFT 以控制访问权限。",
+      "technologiesUsed": "ERC-1155，Java，Solidity",
+      "keyFeatures": "访问控制，Thirdweb SDK Unity，条件性 3D 渲染",
+      "learnMore": "立即玩游戏",
+      "learnMoreLink": "https://soulwars.web.app/"
+    },
+    {
+      "projectName": "前端作品集",
+      "description": "展示前端技能，页面过渡，动画和服务器端渲染。",
+      "technologiesUsed": "Next.js，Three.js，Tailwind CSS",
+      "keyFeatures": "作品集网站",
+      "learnMore": "查看展示",
+      "learnMoreLink": "https://vjkportifolio.web.app/"
+    },
+    {
+      "projectName": "众筹创建器",
+      "description": "用于管理众筹活动的智能合约。",
+      "technologiesUsed": "ERC20，Solidity，Hardhat",
+      "keyFeatures": "最长持续时间，ERC20 资金，目标失败时退款",
+      "learnMore": "开始众筹",
+      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
+    },
+    {
+      "projectName": "ERC-20 游乐场",
+      "description": "与 ERC-20 代币和 Uniswap 进行交互的界面。",
+      "technologiesUsed": "以太坊，ERC20，Uniswap，Material Ui",
+      "keyFeatures": "代币交互，Uniswap 交换，交易历史",
+      "learnMore": "交换代币",
+      "learnMoreLink": "https://vjkswapp.web.app/"
+    },
+    {
+      "projectName": "NFT 生成器",
+      "description": "使用 Chainlink 进行自动化的 NFT 生成智能合约。",
+      "technologiesUsed": "Chainlink，Solidity，Ether.js",
+      "keyFeatures": "合约自动化，NFT 收藏，SVG 创建",
+      "learnMore": "创建 NFT",
+      "learnMoreLink": "https://vjknft.web.app/"
+    },
+    {
+      "projectName": "SaudeVapor",
+      "description": "关于大麻和医学研究的平台。",
+      "technologiesUsed": "Google Cloud，Solana，Metaplex，DAO",
+      "keyFeatures": "大麻化合物 NFT 收藏，DAO 创建",
+      "learnMore": "了解更多",
+      "learnMoreLink": "https://www.saudevapor.com/"
+    }
+  ]
+}

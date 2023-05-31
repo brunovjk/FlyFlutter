@@ -36,11 +36,7 @@ const Projects: FC = () => {
 
   return (
     <animated.div style={styles}>
-      <GlassPaperLargeShadow
-        sx={{
-          paddingBlock: theme.spacing(2),
-        }}
-      >
+      <GlassPaperLargeShadow>
         <Box
           ref={ref}
           component="div"

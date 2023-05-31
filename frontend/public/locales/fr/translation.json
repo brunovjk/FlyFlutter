@@ -1,0 +1,275 @@
+{
+  "about": {
+    "title1": "Développeur Web Full Stack",
+    "title2": "Spécialisé dans le développement blockchain",
+    "body1": "Vous recherchez un développeur Web polyvalent ?",
+    "body2": "Avec une compréhension approfondie de la technologie blockchain et une expertise en Solidity et en TypeScript.",
+    "body3": "Explorez mes projets ci-dessous pour découvrir mon travail avec les dApps et les contrats intelligents."
+  },
+  "appAlert": {
+    "checkExplorer": "Vérifier sur l'Explorer"
+  },
+  "betAmountSelector": {
+    "label": "Montant de la mise",
+    "helperText": "Choisissez un montant de mise (1-99 FFC)"
+  },
+  "betButton": {
+    "tooltip": "Pour placer une mise, choisissez une estimation, une main et un montant de mise. Assurez-vous d'avoir suffisamment de jetons FFC.",
+    "label": "Vérifier et placer la mise"
+  },
+  "betFee": {
+    "caption": "Frais de mise:",
+    "tooltip": "Ce frais en Matic est utilisé pour couvrir les coûts des outils utilisés pour garantir l'équité et la sécurité du jeu, notamment le générateur de nombres aléatoires et les services d'automatisation."
+  },
+  "confirmBet": {
+    "selectedGuess": "Estimation sélectionnée : {{guess}}",
+    "selectedHand": "Main sélectionnée : {{hand}}",
+    "selectedBetAmount": "Montant de mise sélectionné : {{amount}} FFC",
+    "betFee": "Frais de mise: {{fee}} MATIC"
+  },
+  "confirmDialog": {
+    "title": "Confirmer la mise",
+    "confirmText": "Confirmer",
+    "cancelText": "Annuler"
+  },
+  "connect": "Jouer!",
+  "contact": {
+    "title": "Apprentissage continu",
+    "body1": "En tant que développeur full stack, j'adopte un apprentissage continu pour rester à la pointe des technologies émergentes. Bien que j'aie une compréhension approfondie du développement blockchain, j'excelle également dans divers autres domaines, ce qui me permet de proposer des solutions complètes à mes clients.",
+    "body2": "N'hésitez pas à me contacter pour discuter de vos besoins et objectifs de projet.",
+    "body3": "Vous pouvez me contacter par e-mail à l'adresse",
+    "email": "brunovjk@gmail.com",
+    "body4": " ou",
+    "placeholder": "Entrez votre message",
+    "sendButton": "Envoyer",
+    "illustrationAltText": "Apprentissage continu",
+    "nameLabel": "Nom",
+    "emailLabel": "E-mail",
+    "messageLabel": "Message",
+    "alertPopup": "Pop-up d'alerte",
+    "messageSent": "Message envoyé ! Je vous répondrai dès que possible.",
+    "sendErrorMessage": "Échec de l'envoi du message, veuillez réessayer."
+  },
+  "errorPage": {
+    "title": "404 - Page non trouvée",
+    "message": "Désolé, la page que vous recherchez n'existe pas.",
+    "homeButton": "Retour à la page d'accueil"
+  },
+  "even": "Pair",
+  "ffcapprove": {
+    "allowanceLabel": "Autorisation",
+    "approveButton": "Autoriser",
+    "approveTooltip": "Autoriser le contrat de paris : Pour placer un pari, vous devez autoriser le contrat de paris à dépenser une quantité spécifique de FFC en votre nom.",
+    "approveSuccess": "Autorisé avec succès",
+    "approveFailure": "Échec de l'autorisation"
+  },
+  "ffcmint": {
+    "balanceLabel": "Solde",
+    "mintButton": "Créer",
+    "mintTooltip": "Règles de création de FlyFlutterCoin : Vous pouvez créer jusqu'à 100 FlyFlutterCoins à la fois si le solde de votre portefeuille est inférieur à 10 FFC.",
+    "mintSuccess": "Création réussie de 100 FFC pour :",
+    "mintFailure": "Échec de la création de FFC"
+  },
+  "header": {
+    "linkProjects": "Projets",
+    "linkContact": "Contact"
+  },
+  "hero": {
+    "title": "Vivez l'excitation des jeux d'argent sans risquer un centime.",
+    "description": "FlyFlutter - Jouez au jeu des mains impaires et paires avec des hasards quantiques et une automatisation des contrats intelligents pour des décisions en apesanteur ! Il fonctionne sur les blockchains Polygon et Mumbai en utilisant notre token gratuit à créer ",
+    "tokenName": "FlyFlutterCoin"
+  },
+
+  "history": {
+    "columns": {
+      "guess": {
+        "headerName": "Prédiction",
+        "description": "Impair ou pair"
+      },
+      "playerHand": {
+        "headerName": "Main du joueur",
+        "description": "Main sélectionnée par le joueur"
+      },
+      "houseHand": {
+        "headerName": "Main de la Maison",
+        "description": "Main générée par la Maison"
+      },
+      "betAmount": {
+        "headerName": "Montant de la mise",
+        "description": "Montant misé"
+      },
+      "winner": {
+        "headerName": "Gagnant",
+        "description": "Et le gagnant est..."
+      }
+    }
+  },
+  "houseDisplay": {
+    "houseLabel": "Maison",
+    "houseTooltip": "Montant total de FlyFlutterCoin détenu par la Maison",
+    "totalBetLabel": "Total des mises",
+    "totalBetTooltip": "Montant total de FlyFlutterCoin misé par la Maison avec les joueurs",
+    "totalSentLabel": "Total envoyé",
+    "totalSentTooltip": "Montant total de FlyFlutterCoin envoyé par la Maison aux gagnants des paris"
+  },
+
+  "odd": "Impair",
+  "playFunctions": {
+    "handleSetWinner": {
+      "playerWins": "Le joueur gagne !",
+      "houseWins": "La Maison gagne !",
+      "checkHistoryError": "Oops... Erreur lors de la vérification de l'historique",
+      "fetchWinnerError": "Erreur lors de la récupération du gagnant. Veuillez vérifier l'explorateur :"
+    },
+    "handleSetHousehand": {
+      "fetchWinnerError": "Erreur lors de la récupération du gagnant. Veuillez vérifier l'explorateur :"
+    },
+    "handleBetTx": {
+      "betPlacedSuccess": "Mise placée avec succès ! Vous pouvez fermer cette page à tout moment.",
+      "betTransactionFailed": "Échec de la transaction. Veuillez réessayer."
+    },
+    "handlePlaceBet": {
+      "transactionSent": "Transaction envoyée. Veuillez patienter pour la confirmation.",
+      "transactionNotSent": "Transaction non envoyée. Veuillez réessayer."
+    }
+  },
+  "results": {
+    "playerLabel": "Joueur",
+    "playerTooltip": "Votre dernière mise",
+    "waitingBetLabel": "En attente de la mise...",
+    "lastBetLabel": "Dernière mise",
+    "waitingBetTooltip": "En attente de QRNG et Gelato. Vous pouvez fermer cette page à tout moment. Consultez toutes vos mises dans l'onglet Historique.",
+    "lastBetTooltip": "Vainqueur de la dernière mise",
+    "houseLabel": "Maison",
+    "houseTooltip": "Main de la Maison"
+  },
+  "tabs": {
+    "playLabel": "Jouer",
+    "rulesLabel": "Règles",
+    "historyLabel": "Historique"
+  },
+  "talkingAstronauts": {
+    "svgAlt": "Astronautes en train de parler",
+    "bubble1": "Qui va faire la vaisselle ce soir ?",
+    "bubble2_1": "Laissez",
+    "bubble2_2": "décider !",
+    "tokenName": "FlyFlutter"
+  },
+  "rules": [
+    {
+      "title": "Bienvenue sur FlyFlutter!",
+      "copy": "FlyFlutter est un jeu conçu pour mettre en valeur mes compétences en tant que développeur et offrir une expérience de jeu divertissante. Fonctionnant sur la blockchain Polygon, en utilisant le jeton FlyFlutterCoin, il combine l'excitation des jeux d'argent avec ma passion pour les jeux et l'espace."
+    },
+    {
+      "title": "FlyFlutterCoin",
+      "copy": "Les FlyFlutterCoins sont les jetons natifs du jeu et servent de monnaie pour placer des paris et recevoir des paiements. Veuillez noter qu'ils n'ont aucune valeur réelle et ne peuvent pas être échangés contre une autre monnaie ou un autre actif. Chaque portefeuille peut créer jusqu'à 100 FlyFlutterCoins à la fois, tant que le solde du portefeuille est inférieur à 10 FlyFlutterCoins."
+    },
+    {
+      "title": "Placer un pari",
+      "copy": "Pour placer un pari, vous devez payer un coût de pari de 0,01 MATIC et choisir une valeur de FlyFlutterCoin entre 1 et 99. Les frais de 0,01 MATIC couvrent les dépenses liées au maintien d'un environnement de jeu équitable et sécurisé, notamment l'utilisation de générateurs de nombres aléatoires (QRNG) et de services d'automatisation (Gelato)."
+    },
+    {
+      "title": "La Maison",
+      "copy": "Le rôle de la maison dans FlyFlutter est uniquement de détenir des FlyFlutterCoins. Elle ne tire aucun profit du jeu. Au début du jeu, la maison dispose de 10 000 FFC. De plus, les utilisateurs ont la possibilité de faire un don (transfert) de FlyFlutterCoin à la Maison."
+    },
+    {
+      "title": "Accessibilité",
+      "copy": "FlyFlutter est accessible aux joueurs du monde entier, il vous suffit d'une connexion Internet et de quelques MATICs pour participer. Que vous soyez situé au cœur d'une ville animée ou dans un coin reculé du monde, vous pouvez vous joindre à l'expérience FlyFlutter."
+    },
+
+    {
+      "title": "Clause de non-responsabilité",
+      "copy": "Bien que FlyFlutter soit un jeu palpitant, il est important de se rappeler qu'il comporte un élément de chance. Il y a toujours un risque de perte lors de la prise de paris. Nous conseillons vivement à tous les joueurs de jouer de manière responsable et de ne miser que des sommes qu'ils peuvent se permettre de perdre."
+    },
+    {
+      "title": "Changements aux règles",
+      "copy": "FlyFlutter est un jeu dynamique qui évoluera au fil du temps. Les commentaires des utilisateurs, les contributions des développeurs et les problèmes émergents façonneront son développement continu. Nous nous engageons à maintenir la transparence et l'équité lors de toute mise à jour ou modification des règles du jeu. Nous encourageons vivement les joueurs à fournir des commentaires et des suggestions pour améliorer l'expérience de jeu globale."
+    },
+    {
+      "title": "Conclusion",
+      "copy": "Merci de vous joindre à nous dans cette excitante aventure avec FlyFlutter. Nous espérons que vous apprécierez de jouer et nous vous souhaitons bonne chance dans l'exploration du monde palpitant de FlyFlutter !"
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "Système de récompense",
+      "description": "Système de récompense automatisé pour BRAIN+ utilisant Chainlink.",
+      "technologiesUsed": "Flux de données, Automatisation, Chainlink",
+      "keyFeatures": "Récompenses en pilote automatique, Suivi des performances",
+      "learnMore": "En savoir plus",
+      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+    },
+    {
+      "projectName": "Gridding",
+      "description": "Tableau de bord de portefeuille DeFi avec mutation dynamique des NFT.",
+      "technologiesUsed": "DeFi, Chainlink, Tableland, IPFS",
+      "keyFeatures": "Accessibilité, Interactivité, Mutation dynamique des NFT",
+      "learnMore": "Commencer",
+      "learnMoreLink": "https://gridding.xyz/"
+    },
+    {
+      "projectName": "Willr.io",
+      "description": "Créez et sécurisez des testaments sur la blockchain.",
+      "technologiesUsed": "ICON, Ethereum, Inter-chaînes",
+      "keyFeatures": "Transfert sécurisé des actifs, Fonctionnalité inter-chaînes",
+      "learnMore": "Découvrir maintenant",
+      "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
+    },
+    {
+      "projectName": "Outil de liquidité MIND",
+      "description": "Gérez la liquidité pour la paire de jetons MIND/AVAX.",
+      "technologiesUsed": "Automated Market Making (AMM), Gestion de pool de liquidité",
+      "keyFeatures": "Ajouter/Supprimer de la liquidité, Définir des paramètres",
+      "learnMore": "Plonger",
+      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
+    },
+    {
+      "projectName": "SoulWars",
+      "description": "Jeu Unity basé sur le navigateur avec intégration NFT pour contrôler l'accès.",
+      "technologiesUsed": "ERC-1155, Java, Solidity",
+      "keyFeatures": "Contrôle d'accès, SDK Unity Thirdweb, Rendu 3D conditionnel",
+      "learnMore": "Jouer maintenant",
+      "learnMoreLink": "https://soulwars.web.app/"
+    },
+    {
+      "projectName": "Portfolio Frontend",
+      "description": "Mise en valeur des compétences frontend, transition de pages, animations et rendu côté serveur.",
+      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
+      "keyFeatures": "Site Web Portfolio",
+      "learnMore": "Voir la démonstration",
+      "learnMoreLink": "https://vjkportifolio.web.app/"
+    },
+    {
+      "projectName": "Créateur de campagnes",
+      "description": "Contrat de financement participatif pour la gestion des campagnes.",
+      "technologiesUsed": "ERC20, Solidity, Hardhat",
+      "keyFeatures": "Durée maximale, Financement ERC20, Remboursement en cas d'échec de l'objectif",
+      "learnMore": "Démarrer une campagne",
+      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
+    },
+    {
+      "projectName": "ERC-20 Playground",
+      "description": "Interface pour interagir avec des jetons ERC-20 et Uniswap.",
+      "technologiesUsed": "Ethereum, ERC20, Uniswap, Material Ui",
+      "keyFeatures": "Interaction avec les jetons, Échange Uniswap, Historique des transactions",
+      "learnMore": "Échanger des jetons",
+      "learnMoreLink": "https://vjkswapp.web.app/"
+    },
+    {
+      "projectName": "Générateur de NFT",
+      "description": "Contrats intelligents automatisés pour la génération de NFT utilisant Chainlink.",
+      "technologiesUsed": "Chainlink, Solidity, Ether.js",
+      "keyFeatures": "Automatisation des contrats, Collection de NFT, Création de SVG",
+      "learnMore": "Créer des NFT",
+      "learnMoreLink": "https://vjknft.web.app/"
+    },
+    {
+      "projectName": "SaudeVapor",
+      "description": "Plateforme sur le cannabis et la recherche médicale.",
+      "technologiesUsed": "Google Cloud, Solana, Metaplex, DAO",
+      "keyFeatures": "Collection de composés de cannabis NFT, Création de DAO",
+      "learnMore": "En savoir plus",
+      "learnMoreLink": "https://www.saudevapor.com/"
+    }
+  ]
+}

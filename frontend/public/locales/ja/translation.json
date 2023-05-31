@@ -1,0 +1,272 @@
+{
+  "about": {
+    "title1": "フルスタックWeb開発者",
+    "title2": "ブロックチェーン開発に特化",
+    "body1": "多才なWeb開発者をお探しですか？",
+    "body2": "ブロックチェーン技術の深い理解とSolidityおよびTypeScriptの専門知識を持っています。",
+    "body3": "以下のプロジェクトをご覧いただき、dAppsやスマートコントラクトへの取り組みをご確認ください。"
+  },
+  "appAlert": {
+    "checkExplorer": "エクスプローラーで確認してください"
+  },
+  "betAmountSelector": {
+    "label": "賭け金額",
+    "helperText": "賭け金額を選択してください（1-99 FFC）"
+  },
+  "betButton": {
+    "tooltip": "推測、手札、および賭け金額を選択して賭けを行います。十分なFFCトークンを持っていることを確認してください。",
+    "label": "確認して賭けを行う"
+  },
+  "betFee": {
+    "caption": "賭け手数料：",
+    "tooltip": "このMaticの手数料は、公平性とセキュリティを確保するためのツールの費用（ランダムナンバージェネレーターおよび自動化サービスなど）に充てられます。"
+  },
+  "confirmBet": {
+    "selectedGuess": "選択された推測：{{guess}}",
+    "selectedHand": "選択された手札：{{hand}}",
+    "selectedBetAmount": "選択された賭け金額：{{amount}} FFC",
+    "betFee": "賭け手数料：{{fee}} MATIC"
+  },
+  "confirmDialog": {
+    "title": "賭けを確認",
+    "confirmText": "確認",
+    "cancelText": "キャンセル"
+  },
+  "connect": "プレイ！",
+  "contact": {
+    "title": "持続的な学習",
+    "body1": "フルスタック開発者として、私は新興技術の最先端に立ち続けるために持続的な学習を取り入れています。ブロックチェーン開発に深い理解を持つ一方で、幅広い他の領域でも優れたスキルを持っており、クライアントに包括的なソリューションを提供することができます。",
+    "body2": "お気軽にご連絡いただき、お客様のニーズやプロジェクトの目標についてお話ししましょう。",
+    "body3": "メールでお問い合わせいただくことも可能です：",
+    "email": "brunovjk@gmail.com",
+    "body4": "または",
+    "placeholder": "メッセージを入力してください",
+    "sendButton": "送信",
+    "illustrationAltText": "持続的な学習",
+    "nameLabel": "名前",
+    "emailLabel": "メールアドレス",
+    "messageLabel": "メッセージ",
+    "alertPopup": "アラートポップアップ",
+    "messageSent": "メッセージが送信されました！できるだけ早くお返事いたします。",
+    "sendErrorMessage": "メッセージの送信に失敗しました。もう一度お試しください。"
+  },
+  "errorPage": {
+    "title": "404 - ページが見つかりません",
+    "message": "申し訳ありませんが、お探しのページは存在しません。",
+    "homeButton": "ホームに戻る"
+  },
+  "even": "偶数",
+  "ffcapprove": {
+    "allowanceLabel": "承認済み",
+    "approveButton": "承認する",
+    "approveTooltip": "パリ契約を承認する: パリをするためには、パリ契約が指定された量のFFCをあなたの代わりに使用することを承認する必要があります。",
+    "approveSuccess": "承認が成功しました",
+    "approveFailure": "承認に失敗しました"
+  },
+  "ffcmint": {
+    "balanceLabel": "残高",
+    "mintButton": "作成する",
+    "mintTooltip": "FlyFlutterCoinの作成ルール: ウォレットの残高が10 FFC未満の場合、最大100 FFCを一度に作成することができます。",
+    "mintSuccess": "次のために100 FFCの作成に成功しました:",
+    "mintFailure": "FFCの作成に失敗しました"
+  },
+  "header": {
+    "linkProjects": "プロジェクト",
+    "linkContact": "お問い合わせ"
+  },
+  "hero": {
+    "title": "一文のリスクなしでギャンブルの興奮を体験しましょう。",
+    "description": "FlyFlutter - 奇数と偶数のゲームを量子的なハザードとスマートコントラクトの自動化で宇宙空間で行う！PolygonとMumbaiのブロックチェーンで動作し、無料で作成できるトークンであるFlyFlutterCoinを使用します。",
+    "tokenName": "FlyFlutterCoin"
+  },
+  "history": {
+    "columns": {
+      "guess": {
+        "headerName": "予測",
+        "description": "奇数または偶数"
+      },
+      "playerHand": {
+        "headerName": "プレイヤーの手",
+        "description": "プレイヤーが選んだ手"
+      },
+      "houseHand": {
+        "headerName": "ハウスの手",
+        "description": "ハウスが生成した手"
+      },
+      "betAmount": {
+        "headerName": "ベット金額",
+        "description": "ベットされた金額"
+      },
+      "winner": {
+        "headerName": "勝者",
+        "description": "そして勝者は..."
+      }
+    }
+  },
+  "houseDisplay": {
+    "houseLabel": "ハウス",
+    "houseTooltip": "ハウスが保持しているFlyFlutterCoinの総額",
+    "totalBetLabel": "総ベット額",
+    "totalBetTooltip": "ハウスがプレイヤーとの間でベットしたFlyFlutterCoinの総額",
+    "totalSentLabel": "総送金額",
+    "totalSentTooltip": "ハウスがベットの勝者に送金したFlyFlutterCoinの総額"
+  },
+  "odd": "奇数",
+  "playFunctions": {
+    "handleSetWinner": {
+      "playerWins": "プレイヤーの勝利！",
+      "houseWins": "ハウスの勝利！",
+      "checkHistoryError": "おっと...履歴の確認中にエラーが発生しました",
+      "fetchWinnerError": "勝者の取得中にエラーが発生しました。エクスプローラを確認してください:"
+    },
+    "handleSetHousehand": {
+      "fetchWinnerError": "勝者の取得中にエラーが発生しました。エクスプローラを確認してください:"
+    },
+    "handleBetTx": {
+      "betPlacedSuccess": "ベットが正常に行われました！いつでもこのページを閉じることができます。",
+      "betTransactionFailed": "トランザクションの実行に失敗しました。もう一度やり直してください。"
+    },
+    "handlePlaceBet": {
+      "transactionSent": "トランザクションが送信されました。確認を待ってください。",
+      "transactionNotSent": "トランザクションが送信されていません。もう一度やり直してください。"
+    }
+  },
+  "results": {
+    "playerLabel": "プレイヤー",
+    "playerTooltip": "前回のベット",
+    "waitingBetLabel": "ベット待機中...",
+    "lastBetLabel": "最後のベット",
+    "waitingBetTooltip": "QRNGとGelatoの待機中です。いつでもこのページを閉じることができます。すべてのベットは「履歴」タブで確認できます。",
+    "lastBetTooltip": "前回のベットの勝者",
+    "houseLabel": "ハウス",
+    "houseTooltip": "ハウスの手"
+  },
+  "tabs": {
+    "playLabel": "プレイ",
+    "rulesLabel": "ルール",
+    "historyLabel": "履歴"
+  },
+  "talkingAstronauts": {
+    "svgAlt": "話す宇宙飛行士たち",
+    "bubble1": "今晩の食器洗いは誰がする？",
+    "bubble2_1": "Let",
+    "bubble2_2": "decide!",
+    "tokenName": "FlyFlutter"
+  },
+  "rules": [
+    {
+      "title": "FlyFlutterへようこそ！",
+      "copy": "FlyFlutterは、私の開発者のスキルを活かし、楽しいゲーム体験を提供するために設計されたゲームです。FlyFlutterCoinトークンを使用し、Polygonブロックチェーン上で動作します。これは、ギャンブルの興奮とゲームや宇宙への情熱を組み合わせたものです。"
+    },
+    {
+      "title": "FlyFlutterCoin",
+      "copy": "FlyFlutterCoinは、ゲームのネイティブトークンであり、ベットを行ったり支払いを受け取るための通貨として機能します。ただし、実際の価値を持たず、他の通貨や資産と交換することはできません。各ウォレットは、ウォレットの残高が10 FlyFlutterCoin未満である限り、最大100 FlyFlutterCoinを一度に作成することができます。"
+    },
+    {
+      "title": "ベットを行う",
+      "copy": "ベットを行うには、0.01 MATICのベットコストを支払い、1から99の範囲でFlyFlutterCoinの値を選択する必要があります。0.01 MATICの手数料は、公正で安全なゲーム環境を維持するための費用（QRNGやGelatoの使用など）に充てられます。"
+    },
+    {
+      "title": "ハウス",
+      "copy": "FlyFlutterにおけるハウスの役割は、FlyFlutterCoinの保有のみです。ハウスはゲームから利益を得ることはありません。ゲーム開始時、ハウスは10,000 FFCを保有しています。また、ユーザーはFlyFlutterCoinをハウスに寄付（転送）することもできます。"
+    },
+    {
+      "title": "アクセシビリティ",
+      "copy": "FlyFlutterは、インターネット接続と少量のMATICがあれば、世界中のプレイヤーにアクセス可能です。あなたが賑やかな都市の中心にいるか、世界の片隅にいるかに関わらず、FlyFlutterの体験に参加することができます。"
+    },
+    {
+      "title": "免責事項",
+      "copy": "FlyFlutterは、刺激的なゲームですが、運の要素を含んでいることを忘れないでください。ベットを行う際には常に損失のリスクがあります。私たちはすべてのプレイヤーに対して責任を持ってプレイし、失っても構わない金額のみを賭けることを強くお勧めします。"
+    },
+    {
+      "title": "ルールの変更",
+      "copy": "FlyFlutterはダイナミックなゲームであり、時間とともに進化していきます。ユーザーのフィードバック、開発者の貢献、および発生する問題が、継続的な開発に影響を与えます。私たちは、ルールの更新や変更が行われる際に透明性と公平性を維持することを約束しています。プレイヤーは、ゲーム体験を向上させるためのフィードバックや提案を積極的に提供することをお勧めします。"
+    },
+    {
+      "title": "結論",
+      "copy": "FlyFlutterのエキサイティングな冒険に参加していただき、ありがとうございます。プレイを楽しんでいただけることを願い、FlyFlutterのスリリングな世界を探索する際に幸運をお祈りします！"
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "報酬システム",
+      "description": "Chainlinkを使用したBRAIN+の自動報酬システム。",
+      "technologiesUsed": "データフィード、自動化、Chainlink",
+      "keyFeatures": "自動報酬、パフォーマンス追跡",
+      "learnMore": "詳細を見る",
+      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+    },
+    {
+      "projectName": "Gridding",
+      "description": "動的なNFT変異を持つDeFiポートフォリオダッシュボード。",
+      "technologiesUsed": "DeFi、Chainlink、Tableland、IPFS",
+      "keyFeatures": "アクセシビリティ、インタラクティビティ、動的なNFT変異",
+      "learnMore": "はじめる",
+      "learnMoreLink": "https://gridding.xyz/"
+    },
+    {
+      "projectName": "Willr.io",
+      "description": "ブロックチェーン上で遺言を作成し、保護します。",
+      "technologiesUsed": "ICON、Ethereum、クロスチェーン",
+      "keyFeatures": "セキュアな資産移転、クロスチェーン機能",
+      "learnMore": "今すぐ詳しく",
+      "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
+    },
+    {
+      "projectName": "MIND Liquidity Tool",
+      "description": "MIND/AVAXトークンペアの流動性を管理します。",
+      "technologiesUsed": "自動マーケットメイキング（AMM）、流動性プールの管理",
+      "keyFeatures": "流動性の追加/削除、パラメータの設定",
+      "learnMore": "詳細を確認",
+      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
+    },
+    {
+      "projectName": "SoulWars",
+      "description": "NFT統合を備えたUnityベースのブラウザゲームでアクセスを制御します。",
+      "technologiesUsed": "ERC-1155、Java、Solidity",
+      "keyFeatures": "アクセス制御、Thirdweb SDK Unity、条件付き3Dレンダリング",
+      "learnMore": "今すぐプレイ",
+      "learnMoreLink": "https://soulwars.web.app/"
+    },
+    {
+      "projectName": "フロントエンドポートフォリオ",
+      "description": "フロントエンドのスキル、ページ遷移、アニメーション、サーバーサイドレンダリングをショーケースします。",
+      "technologiesUsed": "Next.js、Three.js、Tailwind CSS",
+      "keyFeatures": "ポートフォリオウェブサイト",
+      "learnMore": "ショーケースを見る",
+      "learnMoreLink": "https://vjkportifolio.web.app/"
+    },
+    {
+      "projectName": "キャンペーンクリエーター",
+      "description": "キャンペーンを管理するためのクラウドファンディング契約。",
+      "technologiesUsed": "ERC20、Solidity、Hardhat",
+      "keyFeatures": "最大期間、ERC20ファンディング、目標未達時の払い戻し",
+      "learnMore": "クラウドファンディングを開始する",
+      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
+    },
+    {
+      "projectName": "ERC-20プレイグラウンド",
+      "description": "ERC-20トークンとUniswapとのやり取りのためのインターフェース。",
+      "technologiesUsed": "Ethereum、ERC20、Uniswap、Material Ui",
+      "keyFeatures": "トークンのやり取り、Uniswapのスワッピング、トランザクション履歴",
+      "learnMore": "トークンの交換",
+      "learnMoreLink": "https://vjkswapp.web.app/"
+    },
+    {
+      "projectName": "NFTジェネレーター",
+      "description": "Chainlinkを使用したNFT生成のための自動スマートコントラクト。",
+      "technologiesUsed": "Chainlink、Solidity、Ether.js",
+      "keyFeatures": "契約の自動化、NFTコレクション、SVGの作成",
+      "learnMore": "NFTを作成する",
+      "learnMoreLink": "https://vjknft.web.app/"
+    },
+    {
+      "projectName": "SaudeVapor",
+      "description": "大麻と医学研究に関するプラットフォーム。",
+      "technologiesUsed": "Google Cloud、Solana、Metaplex、DAO",
+      "keyFeatures": "大麻化合物NFTコレクション、DAOの作成",
+      "learnMore": "詳細を知る",
+      "learnMoreLink": "https://www.saudevapor.com/"
+    }
+  ]
+}

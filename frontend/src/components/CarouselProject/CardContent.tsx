@@ -17,6 +17,7 @@ const CardContent: FC<CardProjectProps> = ({
         sx={{
           fontWeight: "medium",
           fontSize: { xs: "1.25rem", md: "1.5rem" },
+          lineHeight: { xs: "1.25rem", md: "1.5rem" },
           textAlign: "center",
           letterSpacing: "0.063rem",
         }}

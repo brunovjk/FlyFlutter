@@ -1,0 +1,272 @@
+{
+  "about": {
+    "title1": "Desenvolvedor Web Full Stack",
+    "title2": "Especializado em Desenvolvimento Blockchain",
+    "body1": "Você está procurando por um desenvolvedor web versátil?",
+    "body2": "Com um profundo conhecimento em tecnologia blockchain e experiência em Solidity e Typescript.",
+    "body3": "Explore meus projetos abaixo para ver meu trabalho com dApps e Smart Contracts."
+  },
+  "appAlert": {
+    "checkExplorer": "Verificar no Explorer"
+  },
+  "betAmountSelector": {
+    "label": "Valor da Aposta",
+    "helperText": "Escolha um Valor de Aposta (1-99 FFC)"
+  },
+  "betButton": {
+    "tooltip": "Para fazer uma aposta, escolha um Palpite, uma Mão e um Valor de Aposta. Certifique-se de ter fichas FFC suficientes.",
+    "label": "Revisar e Fazer Aposta"
+  },
+  "betFee": {
+    "caption": "Taxa de Aposta:",
+    "tooltip": "Essa taxa Matic é usada para cobrir os custos das ferramentas usadas para garantir que o jogo seja justo e seguro, incluindo o gerador de números aleatórios e os serviços de automação."
+  },
+  "confirmBet": {
+    "selectedGuess": "Palpite Selecionado: {{guess}}",
+    "selectedHand": "Mão Selecionada: {{hand}}",
+    "selectedBetAmount": "Valor da Aposta Selecionado: {{amount}} FFC",
+    "betFee": "Taxa da Aposta: {{fee}} MATIC"
+  },
+  "confirmDialog": {
+    "title": "Confirmar Aposta",
+    "confirmText": "Confirmar",
+    "cancelText": "Cancelar"
+  },
+  "connect": "Jogar!",
+  "contact": {
+    "title": "Aprendizado Contínuo",
+    "body1": "Como desenvolvedor full stack, abraço o aprendizado contínuo para estar na vanguarda das tecnologias emergentes. Embora eu tenha um profundo conhecimento em desenvolvimento blockchain, também me destaco em várias outras áreas, o que me permite fornecer soluções abrangentes para meus clientes.",
+    "body2": "Sinta-se à vontade para entrar em contato para discutir suas necessidades e objetivos de projeto.",
+    "body3": "Você pode entrar em contato comigo por e-mail em",
+    "email": "brunovjk@gmail.com",
+    "body4": " ou",
+    "placeholder": "Digite sua mensagem",
+    "sendButton": "Enviar",
+    "illustrationAltText": "Aprendizado Contínuo",
+    "nameLabel": "Nome",
+    "emailLabel": "E-mail",
+    "messageLabel": "Mensagem",
+    "alertPopup": "Alerta",
+    "messageSent": "Mensagem enviada! Entrarei em contato o mais breve possível.",
+    "sendErrorMessage": "Falha ao enviar a mensagem, por favor, tente novamente."
+  },
+  "errorPage": {
+    "title": "404 - Página não encontrada",
+    "message": "Desculpe, a página que você está procurando não existe.",
+    "homeButton": "Voltar para a página inicial"
+  },
+  "even": "Par",
+  "ffcapprove": {
+    "allowanceLabel": "Permissão",
+    "approveButton": "Aprovar",
+    "approveTooltip": "Aprovar Contrato de Aposta: Para fazer uma aposta, você precisa aprovar o contrato de aposta para gastar uma quantidade específica de FFC em seu nome.",
+    "approveSuccess": "Aprovado com sucesso",
+    "approveFailure": "Falha ao aprovar"
+  },
+  "ffcmint": {
+    "balanceLabel": "Saldo",
+    "mintButton": "Cunhar",
+    "mintTooltip": "Regras de Cunhagem do FlyFlutterCoin: Você pode cunhar até 100 FlyFlutterCoins de uma vez se o saldo da sua carteira for inferior a 10 FFC.",
+    "mintSuccess": "Cunhagem bem-sucedida de 100 FFC para:",
+    "mintFailure": "Falha ao cunhar FFC"
+  },
+  "header": {
+    "linkProjects": "Projetos",
+    "linkContact": "Contato"
+  },
+  "hero": {
+    "title": "Experimente a emoção do jogo sem arriscar um centavo.",
+    "description": "FlyFlutter - Jogue o jogo de par ou ímpar com aleatoriedade quântica e automação de contratos inteligentes para decisões de Gravidade Zero! Ele opera nas blockchains Polygon e Mumbai usando nossa moeda gratuita para cunhagem,",
+    "tokenName": "FlyFlutterCoin"
+  },
+  "history": {
+    "columns": {
+      "guess": {
+        "headerName": "Palpite",
+        "description": "Ímpar ou par"
+      },
+      "playerHand": {
+        "headerName": "Mão do Jogador",
+        "description": "Mão selecionada pelo jogador"
+      },
+      "houseHand": {
+        "headerName": "Mão da Casa",
+        "description": "Mão gerada pela casa"
+      },
+      "betAmount": {
+        "headerName": "Valor da Aposta",
+        "description": "Valor apostado"
+      },
+      "winner": {
+        "headerName": "Vencedor",
+        "description": "E o vencedor é..."
+      }
+    }
+  },
+  "houseDisplay": {
+    "houseLabel": "Casa",
+    "houseTooltip": "Total de FlyFlutterCoin mantidos pela Casa",
+    "totalBetLabel": "Apostas Totais",
+    "totalBetTooltip": "Total de FlyFlutterCoin apostados pela Casa com os jogadores",
+    "totalSentLabel": "Total Enviado",
+    "totalSentTooltip": "Total de FlyFlutterCoin enviados pela Casa para os vencedores das apostas"
+  },
+  "odd": "Ímpar",
+  "playFunctions": {
+    "handleSetWinner": {
+      "playerWins": "Jogador Vence!",
+      "houseWins": "Casa Vence!",
+      "checkHistoryError": "Oops... Erro ao verificar o histórico",
+      "fetchWinnerError": "Erro ao buscar o vencedor. Por favor, verifique o explorador:"
+    },
+    "handleSetHousehand": {
+      "fetchWinnerError": "Erro ao buscar o vencedor. Por favor, verifique o explorador:"
+    },
+    "handleBetTx": {
+      "betPlacedSuccess": "Aposta realizada com sucesso! Você pode fechar esta página a qualquer momento.",
+      "betTransactionFailed": "Transação falhou. Por favor, tente novamente."
+    },
+    "handlePlaceBet": {
+      "transactionSent": "Transação enviada. Por favor, aguarde a confirmação.",
+      "transactionNotSent": "Transação não enviada. Por favor, tente novamente."
+    }
+  },
+  "results": {
+    "playerLabel": "Jogador",
+    "playerTooltip": "Sua última aposta",
+    "waitingBetLabel": "Aguardando Aposta...",
+    "lastBetLabel": "Última Aposta",
+    "waitingBetTooltip": "Aguardando QRNG e Gelato. Você pode fechar esta página a qualquer momento. Verifique todas as suas apostas na guia Histórico.",
+    "lastBetTooltip": "Vencedor da última aposta",
+    "houseLabel": "Casa",
+    "houseTooltip": "Mão da Casa"
+  },
+  "tabs": {
+    "playLabel": "Jogar",
+    "rulesLabel": "Regras",
+    "historyLabel": "Histórico"
+  },
+  "talkingAstronauts": {
+    "svgAlt": "Astronautas Conversando",
+    "bubble1": "Quem vai lavar a louça hoje à noite?",
+    "bubble2_1": "Deixe",
+    "bubble2_2": "decidir!",
+    "tokenName": "FlyFlutter"
+  },
+  "rules": [
+    {
+      "title": "Bem-vindo ao FlyFlutter!",
+      "copy": "FlyFlutter é um jogo projetado para demonstrar minhas habilidades como desenvolvedor e proporcionar uma experiência de jogo divertida. Operando na blockchain Polygon e usando o token FlyFlutterCoin, ele combina a emoção do jogo com minha paixão por Jogos e Espaço."
+    },
+    {
+      "title": "FlyFlutterCoin",
+      "copy": "FlyFlutterCoins são os tokens nativos do jogo e servem como moeda para fazer apostas e receber pagamentos. Por favor, note que eles não possuem valor real no mundo real e não podem ser trocados por qualquer outra moeda ou ativo. Cada carteira pode criar até 100 FlyFlutterCoins de uma vez, desde que o saldo da carteira seja inferior a 10 FlyFlutterCoins."
+    },
+    {
+      "title": "Fazendo uma Aposta",
+      "copy": "Para fazer uma aposta, você deve pagar um custo de 0,01 MATIC e escolher um valor de FlyFlutterCoin entre 1 e 99. A taxa de 0,01 MATIC cobre as despesas associadas à manutenção de um ambiente de jogo justo e seguro, incluindo a utilização de geradores de números aleatórios (QRNG) e serviços de automação (Gelato)."
+    },
+    {
+      "title": "A Casa",
+      "copy": "O papel da casa no FlyFlutter é apenas deter FlyFlutterCoins. Ela não obtém lucro com o jogo. No início do jogo, a casa é dotada de 10.000 FFC. Além disso, os usuários têm a opção de doar (transferir) FlyFlutterCoin para a Casa."
+    },
+    {
+      "title": "Acessibilidade",
+      "copy": "O FlyFlutter é acessível a jogadores de todo o mundo, exigindo apenas uma conexão com a internet e alguns MATICs para participar. Esteja você localizado no coração de uma cidade movimentada ou em um canto remoto do mundo, você pode aproveitar a experiência do FlyFlutter."
+    },
+    {
+      "title": "Aviso Legal",
+      "copy": "Embora o FlyFlutter seja um jogo emocionante, é importante lembrar que envolve um elemento de sorte. Sempre há o risco de perda ao fazer apostas. Recomendamos enfaticamente que todos os jogadores apostem com responsabilidade e apenas apostem quantias que possam perder."
+    },
+    {
+      "title": "Alterações nas Regras",
+      "copy": "O FlyFlutter é um jogo dinâmico que evoluirá ao longo do tempo. O feedback dos usuários, as contribuições dos desenvolvedores e quaisquer problemas emergentes moldarão seu desenvolvimento contínuo. Estamos comprometidos em manter transparência e equidade em todas as atualizações ou modificações nas regras do jogo. Incentivamos os jogadores a fornecer feedback e sugestões para ajudar a melhorar a experiência geral de jogo."
+    },
+    {
+      "title": "Conclusão",
+      "copy": "Obrigado por nos acompanhar nesta jornada emocionante com o FlyFlutter. Esperamos que você aproveite jogar e desejamos a você boa sorte ao explorar o mundo emocionante do FlyFlutter!"
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "Sistema de Recompensa",
+      "description": "Sistema automatizado de recompensa para o BRAIN+ usando Chainlink.",
+      "technologiesUsed": "Feed de Dados, Automação, Chainlink",
+      "keyFeatures": "Recompensas Automáticas, Rastreamento de Desempenho",
+      "learnMore": "Saiba Mais",
+      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+    },
+    {
+      "projectName": "Gridding",
+      "description": "Painel de controle de portfólio DeFi com mutação dinâmica de NFT.",
+      "technologiesUsed": "DeFi, Chainlink, Tableland, IPFS",
+      "keyFeatures": "Acessibilidade, Interatividade, Mutação Dinâmica de NFT",
+      "learnMore": "Comece Agora",
+      "learnMoreLink": "https://gridding.xyz/"
+    },
+    {
+      "projectName": "Willr.io",
+      "description": "Crie testamentos seguros na blockchain.",
+      "technologiesUsed": "ICON, Ethereum, Cross-Chain",
+      "keyFeatures": "Transferência Segura de Ativos, Funcionalidade Cross-Chain",
+      "learnMore": "Descubra Agora",
+      "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
+    },
+    {
+      "projectName": "MIND Liquidity Tool",
+      "description": "Gerencie a liquidez para o par de tokens MIND/AVAX.",
+      "technologiesUsed": "Automated Market Making (AMM), Gerenciamento de Pool de Liquidez",
+      "keyFeatures": "Adicionar/Remover Liquidez, Definir Parâmetros",
+      "learnMore": "Explore",
+      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
+    },
+    {
+      "projectName": "SoulWars",
+      "description": "Jogo Unity baseado em navegador com integração de NFT para controlar o acesso.",
+      "technologiesUsed": "ERC-1155, Java, Solidity",
+      "keyFeatures": "Controle de Acesso, Unity Thirdweb SDK, Renderização 3D Condicional",
+      "learnMore": "Jogue Agora",
+      "learnMoreLink": "https://soulwars.web.app/"
+    },
+    {
+      "projectName": "Portfólio Frontend",
+      "description": "Exibindo habilidades de frontend, transição de páginas, animações e renderização no lado do servidor.",
+      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
+      "keyFeatures": "Website de Portfólio",
+      "learnMore": "Ver Demonstração",
+      "learnMoreLink": "https://vjkportifolio.web.app/"
+    },
+    {
+      "projectName": "Criador de Campanhas",
+      "description": "Contrato de financiamento coletivo para gerenciar campanhas.",
+      "technologiesUsed": "ERC20, Solidity, Hardhat",
+      "keyFeatures": "Duração máxima, Financiamento ERC20, Reembolso em caso de falha no objetivo",
+      "learnMore": "Iniciar Financiamento Coletivo",
+      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
+    },
+    {
+      "projectName": "ERC-20 Playground",
+      "description": "Interface para interagir com tokens ERC-20 e Uniswap.",
+      "technologiesUsed": "Ethereum, ERC20, Uniswap, Material Ui",
+      "keyFeatures": "Interação com tokens, Troca na Uniswap, Histórico de transações",
+      "learnMore": "Trocar Tokens",
+      "learnMoreLink": "https://vjkswapp.web.app/"
+    },
+    {
+      "projectName": "Gerador de NFTs",
+      "description": "Contratos inteligentes automatizados para geração de NFTs usando Chainlink.",
+      "technologiesUsed": "Chainlink, Solidity, Ether.js",
+      "keyFeatures": "Automação de contratos, Coleção de NFTs, Criação de SVG",
+      "learnMore": "Criar NFTs",
+      "learnMoreLink": "https://vjknft.web.app/"
+    },
+    {
+      "projectName": "SaudeVapor",
+      "description": "Plataforma sobre cannabis e pesquisa médica.",
+      "technologiesUsed": "Google Cloud, Solana, Metaplex, DAO",
+      "keyFeatures": "Coleção de NFTs de Compostos de Cannabis, Criação de DAO",
+      "learnMore": "Saiba Mais",
+      "learnMoreLink": "https://www.saudevapor.com/"
+    }
+  ]
+}
