@@ -12,12 +12,12 @@ interface LanguageOption {
 }
 
 const languageOptions: LanguageOption[] = [
-  { value: "en", emoji: "🌐" }, // English "en-US"
-  { value: "es", emoji: "🇪🇸" }, // Spanish "es-ES"
-  { value: "fr", emoji: "🇫🇷" }, // French "fr-FR"
-  { value: "ja", emoji: "🇯🇵" }, // Japanese "ja-JP"
-  { value: "pt", emoji: "🇧🇷" }, // Brazilian Portuguese "pt-BR
-  { value: "zh", emoji: "🇨🇳" }, // Chinese "zh-CN"
+  { value: "en-US", emoji: "🌐" }, // English "en-US"
+  { value: "es-ES", emoji: "🇪🇸" }, // Spanish "es-ES"
+  { value: "fr-FR", emoji: "🇫🇷" }, // French "fr-FR"
+  { value: "ja-JP", emoji: "🇯🇵" }, // Japanese "ja-JP"
+  { value: "pt-BR", emoji: "🇧🇷" }, // Brazilian Portuguese "pt-BR
+  { value: "zh-CN", emoji: "🇨🇳" }, // Chinese "zh-CN"
 ];
 
 const LanguageSelect: FC = () => {

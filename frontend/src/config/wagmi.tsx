@@ -24,23 +24,12 @@ export default function WagmiWrapper({
   children: React.ReactNode;
 }) {
   const { i18n } = useTranslation();
-  const currentLanguage: string = i18n.language;
-
-  const languageMap: { [key: string]: Languages } = {
-    en: "en-US",
-    es: "es-ES",
-    fr: "fr-FR",
-    ja: "ja-JP",
-    pt: "pt-BR",
-    zh: "zh-CN",
-  };
-  const defaultLanguage: Languages = "en-US";
-  const useLanguage: Languages =
-    languageMap[currentLanguage] || defaultLanguage;
-
+  const currentLanguage = i18n.language;
   return (
     <WagmiConfig client={client}>
-      <ConnectKitProvider options={{ language: useLanguage }}>
+      <ConnectKitProvider
+        options={{ language: (currentLanguage as Languages) ?? "en-US" }}
+      >
         {children}
       </ConnectKitProvider>
     </WagmiConfig>

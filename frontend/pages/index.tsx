@@ -9,15 +9,15 @@ import {
   Projects,
   Rocket,
   TalkingAstronauts,
-} from "../sections";
+} from "@/sections";
 import {
   FadeInBox,
   Header,
   SVGBox,
   ScrollToTop,
   SectionContainer,
-} from "../components";
-import { useConnectionSync } from "../hooks";
+} from "@/components";
+import { useConnectionSync } from "@/hooks";
 
 const url = (name: string, wrap = false) =>
   `${

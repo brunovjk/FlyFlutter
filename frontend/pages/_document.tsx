@@ -9,7 +9,7 @@ import Document, {
 } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import { AppType } from "next/app";
-import createEmotionCache from "../config/createEmotionCache";
+import createEmotionCache from "@/config/createEmotionCache";
 import { MyAppProps } from "./_app";
 // import { PaletteMode } from "@mui/material";
 // import { getTheme } from "@/theme";

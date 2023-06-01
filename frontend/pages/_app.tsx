@@ -2,12 +2,12 @@ import * as React from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { CacheProvider, EmotionCache } from "@emotion/react";
-import createEmotionCache from "../config/createEmotionCache";
+import createEmotionCache from "@/config/createEmotionCache";
 
 import Box from "@mui/material/Box";
-import MuiWrapper from "../config/mui";
-import WagmiWrapper from "../config/wagmi";
-import "../config/i18n";
+import MuiWrapper from "@/config/mui";
+import WagmiWrapper from "@/config/wagmi";
+import "@/config/i18n";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
