@@ -1,10 +1,8 @@
 import React, { FC } from "react";
-import {
-  MenuItem,
-  FormControl,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { SelectChangeEvent } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 

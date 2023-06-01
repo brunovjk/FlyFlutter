@@ -42,6 +42,7 @@ const Mint: FC<MintProps> = ({
   async function handleMint() {
     setIsLoadingMint(true);
     if (isConnected && address != undefined && !disabledMint) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const mintTX = await useMintFFC({ player: address });
       if (mintTX.success) {
         fetchOnlyPlayerBalances();
@@ -66,7 +67,7 @@ const Mint: FC<MintProps> = ({
     if (address) {
       handleDisabledMint(address, balances.player);
     }
-  }, [balances.player]);
+  }, [address, balances.player]);
 
   return (
     <CardBalanceButton

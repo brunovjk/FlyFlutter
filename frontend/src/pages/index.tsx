@@ -10,7 +10,6 @@ import {
   Rocket,
   TalkingAstronauts,
 } from "../sections";
-
 import {
   FadeInBox,
   Header,
@@ -18,7 +17,6 @@ import {
   ScrollToTop,
   SectionContainer,
 } from "../components";
-
 import { useConnectionSync } from "../hooks";
 
 const url = (name: string, wrap = false) =>
@@ -90,55 +88,66 @@ function Sky({ isConnected }: { isConnected: boolean }) {
       </ParallaxLayer>
 
       <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "20%", marginLeft: "55%" }}
         />
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "10%", marginLeft: "15%" }}
         />
       </ParallaxLayer>
       <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "20%", marginLeft: "70%" }}
         />
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "20%", marginLeft: "40%" }}
         />
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "10%", marginLeft: "10%" }}
         />
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "20%", marginLeft: "75%" }}
         />
       </ParallaxLayer>
       <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "20%", marginLeft: "60%" }}
         />
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "25%", marginLeft: "30%" }}
         />
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "10%", marginLeft: "80%" }}
         />
       </ParallaxLayer>
       <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "5%", marginLeft: "5%" }}
         />
-        <img
+        <Box
+          component="img"
           src={url("cloud")}
           style={{ display: "block", width: "15%", marginLeft: "75%" }}
         />
@@ -210,8 +219,8 @@ function Sections({ isConnected }: { isConnected: boolean }) {
 
 export default function HomePage() {
   const theme = useTheme();
-  const parallax = useRef<IParallax>(null!);
   const isConnected = useConnectionSync();
+  const parallax = useRef<IParallax>(null!);
 
   return (
     <Box
@@ -221,9 +230,7 @@ export default function HomePage() {
       }}
     >
       <Parallax ref={parallax} pages={4.5}>
-        <FadeInBox>
-          <Header parallax={parallax} />
-        </FadeInBox>
+        <Header parallax={parallax} />
 
         <ParallaxLayer
           offset={0}

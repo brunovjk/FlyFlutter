@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 interface SVGBoxProps {
   svgPath: string;
@@ -10,15 +10,16 @@ interface SVGBoxProps {
 const SVGBox: React.FC<SVGBoxProps> = ({ svgPath, svgAlt, styles }) => {
   return (
     <Box
+      component="img"
+      src={svgPath}
+      alt={svgAlt}
       width="100%"
       height="100%"
       display="flex"
       justifyContent="center"
       alignItems="center"
       style={styles}
-    >
-      <img src={svgPath} alt={svgAlt} style={{ width: "100%" }} />
-    </Box>
+    />
   );
 };
 

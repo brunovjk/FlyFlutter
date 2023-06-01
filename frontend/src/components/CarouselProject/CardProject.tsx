@@ -1,8 +1,8 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef, useMemo } from "react";
+import { useTheme } from "@mui/material";
 import VanillaTilt from "vanilla-tilt";
 import CardContent from "./CardContent";
 import { GlassPaperNoBlur } from "../GlassPaper";
-import { useTheme } from "@mui/material";
 
 const CardProject: FC<CardProjectProps> = ({
   projectName,
@@ -13,21 +13,41 @@ const CardProject: FC<CardProjectProps> = ({
   learnMoreLink,
 }) => {
   const theme = useTheme();
-
-  const options = {
-    gyroscope: false,
-    max: 15,
-    speed: 200,
-    glare: true,
-    "max-glare": 0.2,
-  };
   const tilt = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (tilt.current) {
-      VanillaTilt.init(tilt.current, options);
+      VanillaTilt.init(tilt.current, {
+        gyroscope: false,
+        max: 15,
+        speed: 200,
+        glare: true,
+        "max-glare": 0.2,
+      });
     }
-  }, [options]);
+  }, []);
+
+  const cardContent = useMemo(
+    () => (
+      <CardContent
+        projectName={projectName}
+        description={description}
+        technologiesUsed={technologiesUsed}
+        keyFeatures={keyFeatures}
+        learnMore={learnMore}
+        learnMoreLink={learnMoreLink}
+      />
+    ),
+    [
+      projectName,
+      description,
+      technologiesUsed,
+      keyFeatures,
+      learnMore,
+      learnMoreLink,
+    ]
+  );
+
   return (
     <GlassPaperNoBlur
       ref={tilt}
@@ -44,14 +64,7 @@ const CardProject: FC<CardProjectProps> = ({
         },
       }}
     >
-      <CardContent
-        projectName={projectName}
-        description={description}
-        technologiesUsed={technologiesUsed}
-        keyFeatures={keyFeatures}
-        learnMore={learnMore}
-        learnMoreLink={learnMoreLink}
-      />
+      {cardContent}
     </GlassPaperNoBlur>
   );
 };

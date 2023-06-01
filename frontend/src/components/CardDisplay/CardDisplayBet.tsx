@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Skeleton, Typography, Tooltip, Stack, useTheme } from "@mui/material";
+import { Typography, Tooltip, Stack, useTheme, Skeleton } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { GlassPaper } from "../GlassPaper";
 

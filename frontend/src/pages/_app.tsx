@@ -1,40 +1,46 @@
-import React from "react";
-
-import { AppProps } from "next/app";
+import * as React from "react";
 import Head from "next/head";
-import { Box } from "@mui/material";
+import { AppProps } from "next/app";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import createEmotionCache from "../config/createEmotionCache";
 
+import Box from "@mui/material/Box";
 import MuiWrapper from "../config/mui";
 import WagmiWrapper from "../config/wagmi";
-
 import "../config/i18n";
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Head>
-      <meta charSet="utf-8" />
-      <link rel="shortcut icon" href="/img/favicon.ico" />
-      <meta name="viewport" content="initial-scale=1, width=device-width" />
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
 
-      <title>brunovjk - Web Developer</title>
-      <meta name="description" content="Bruno Rocha portfolio website" />
-    </Head>
-    <WagmiWrapper>
-      <MuiWrapper>
-        <Box
-          component="div"
-          style={{
-            minHeight: "100vh",
-            overflowX: "hidden",
-            backgroundImage:
-              "linear-gradient(to bottom right, #04040c, #080817)",
-          }}
-        >
-          <Component {...pageProps} />
-        </Box>
-      </MuiWrapper>
-    </WagmiWrapper>
-  </>
-);
+export interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
 
-export default App;
+export default function MyApp(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  return (
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+        <title>Bruno Rocha - Web Developer</title>
+        <meta name="description" content="Bruno Rocha portfolio website" />
+      </Head>
+      <WagmiWrapper>
+        <MuiWrapper>
+          <Box
+            component="div"
+            style={{
+              minHeight: "100vh",
+              overflowX: "hidden",
+              backgroundImage:
+                "linear-gradient(to bottom right, #04040c, #080817)",
+            }}
+          >
+            <Component {...pageProps} />
+          </Box>
+        </MuiWrapper>
+      </WagmiWrapper>
+    </CacheProvider>
+  );
+}

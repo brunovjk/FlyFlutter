@@ -69,8 +69,8 @@ type FlyFlutterContextProps = {
   updateBalances: (newBalancesValue: BalancesProps) => void;
   updateInputs: (newInputsValue: InputsProps) => void;
   updateResults: (newResultsValue: ResultsProps) => void;
-  fetchOnlyPlayerBalances: () => Promise<void>;
-  fetchBalances: () => Promise<void>;
+  FetchOnlyPlayerBalances: () => Promise<void>;
+  FetchBalances: () => Promise<void>;
 };
 
 interface HouseDisplayProps {

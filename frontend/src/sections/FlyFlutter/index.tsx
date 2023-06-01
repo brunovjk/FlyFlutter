@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 import { FlyFlutterContextProvider } from "./context";
-
 import { Grid } from "@mui/material";
-
 import Tabs from "./Tabs";
 import Results from "./Results";
 import Header from "./Header";

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import {
-  Typography,
   Box,
+  Typography,
   useTheme,
   useMediaQuery,
   styled,

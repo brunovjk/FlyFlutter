@@ -25,8 +25,8 @@ const GuessSelector: FC<GuessSelectorProps> = ({ value, onChange }) => {
         onChange={handleChange}
         aria-label="guess selection"
       >
-        <ToggleButton value={1}>{t("even")}</ToggleButton>
-        <ToggleButton value={0}>{t("odd")}</ToggleButton>{" "}
+        <ToggleButton value={0}>{t("even")}</ToggleButton>
+        <ToggleButton value={1}>{t("odd")}</ToggleButton>
       </ToggleButtonGroup>
     </FormControl>
   );

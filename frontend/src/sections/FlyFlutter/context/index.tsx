@@ -37,12 +37,13 @@ const FlyFlutterContextProvider: FC<{ children: ReactNode }> = ({
     updateBalances,
     updateInputs,
     updateResults,
-    fetchBalances,
-    fetchOnlyPlayerBalances,
+    FetchBalances,
+    FetchOnlyPlayerBalances,
   } = useFunctions({ setBalances, setInputs, setResults });
 
   useEffect(() => {
-    fetchBalances();
+    FetchBalances();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address]);
 
   const contextValues: FlyFlutterContextProps = {
@@ -64,8 +65,8 @@ const FlyFlutterContextProvider: FC<{ children: ReactNode }> = ({
     setPlacingBet,
     setWaitingBet,
     setOpenAlert,
-    fetchOnlyPlayerBalances,
-    fetchBalances,
+    FetchOnlyPlayerBalances,
+    FetchBalances,
   };
 
   return (

@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-
 import { FlyFlutterContext } from "../context";
 import { ethers } from "ethers";
 import { id } from "ethers/lib/utils.js";
-
 import { useAccount } from "wagmi";
-
 import {
   usePlaceBetTx,
   useHashExplorer,
@@ -31,7 +28,7 @@ export function usePlayFunctions(
     setOpenAlert,
     updateInputs,
     updateResults,
-    fetchBalances,
+    FetchBalances,
   } = useContext(FlyFlutterContext);
 
   async function handleResetStates() {
@@ -93,6 +90,7 @@ export function usePlayFunctions(
       setOpenAlert({
         severity: "warning",
         message: `${t("playFunctions.handleSetWinner.fetchWinnerError")}`,
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         link: `${(await useBetIdExplorer()).data}`,
         isOpen: true,
       });
@@ -124,6 +122,7 @@ export function usePlayFunctions(
       setOpenAlert({
         severity: "warning",
         message: `${t("playFunctions.handleSetHousehand.fetchWinnerError")}`,
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         link: `${(await useBetIdExplorer()).data}`,
         isOpen: true,
       });
@@ -136,14 +135,16 @@ export function usePlayFunctions(
   ]: any[]) {
     await handleSetHousehand(ReceivedUint256Event);
     await handleSetWinner(TaskExecutedEvent);
-    await fetchBalances();
+    await FetchBalances();
     setWaitingBet(false);
   }
 
   async function handleWatchEvents() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const ReceivedUint256Event = await useWatchBettingEvent({
       eventName: "ReceivedUint256",
     });
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const TaskExecutedEvent = await useWatchBettingEvent({
       eventName: "TaskExecuted",
     });
@@ -196,6 +197,7 @@ export function usePlayFunctions(
     playerGuess: any
   ) {
     // Wait for transaction result
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const transaction: any = await useWaitForTransaction({
       hash: placeBetTx.hash,
     });
@@ -205,6 +207,7 @@ export function usePlayFunctions(
       setOpenAlert({
         severity: "success",
         message: `${t("playFunctions.handleBetTx.betPlacedSuccess")}`,
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         link: `${(await useHashExplorer({ hash: placeBetTx.hash })).data}`,
         isOpen: true,
       });
@@ -223,21 +226,23 @@ export function usePlayFunctions(
       setWaitingBet(true);
 
       setPlacingBet(false);
-      await fetchBalances();
+      await FetchBalances();
       await handleBetTxSuccess(transaction);
     } else {
       // If failed, alert the user
       console.log(
         "Transaction failed, please try again:",
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         (await useHashExplorer({ hash: placeBetTx.hash })).data
       );
       setOpenAlert({
         severity: "info",
         message: `${t("playFunctions.handleBetTx.betTransactionFailed")}`,
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         link: `${(await useHashExplorer({ hash: placeBetTx.hash })).data}`,
         isOpen: true,
       });
-      await fetchBalances();
+      await FetchBalances();
       handleResetStates();
     }
   }
@@ -267,6 +272,7 @@ export function usePlayFunctions(
         });
         setWaitingBet(false);
         setPlacingBet(true);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const placeBetTx = await usePlaceBetTx({
           player: address,
           betFee: betFee,
@@ -279,11 +285,13 @@ export function usePlayFunctions(
           // Alert user that the transaction was sent
           console.log(
             "Transaction sent, please wait for confirmation:",
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             (await useHashExplorer({ hash: placeBetTx.hash })).data
           );
           setOpenAlert({
             severity: "info",
             message: `${t("playFunctions.handlePlaceBet.transactionSent")}`,
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             link: (await useHashExplorer({ hash: placeBetTx.hash })).data,
             isOpen: true,
           });

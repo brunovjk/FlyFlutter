@@ -5,9 +5,7 @@ import { formatEther } from "ethers/lib/utils.js";
 import { usePlayFunctions } from "./functions";
 import { useBetFee } from "../../../hooks";
 import { useTranslation } from "react-i18next";
-
 import { FlyFlutterContext } from "../context";
-
 import {
   Grid,
   Stack,
@@ -17,9 +15,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
-
 import { ConfirmDialog } from "../../../components";
-
 import ConfirmBetDetails from "./ConfirmBetDetails";
 import BetAmountSelector from "./BetAmountSelector";
 import GuessSelector from "./GuessSelector";
@@ -75,11 +71,13 @@ const Play: FC = () => {
       setEnabledBet(false);
     }
     return undefined;
-  }, [isConnected, inputs?.hand, inputs?.guess, inputs?.amount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected, balances, inputs]);
 
   useEffect(() => {
     const getBetFee = async () => {
       try {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const betFeeTX = await useBetFee();
         if (betFeeTX.success) {
           updateBalances({ betFee: betFeeTX?.data });
@@ -94,6 +92,7 @@ const Play: FC = () => {
     }
 
     return undefined;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isConnected, address]);
 
   return (

@@ -13,7 +13,6 @@ const HistoryDataGrid: React.FC<HistoryProps> = ({
   columns,
   isLoading,
 }) => {
-  const theme = useTheme();
   return (
     <DataGrid
       rows={bets}

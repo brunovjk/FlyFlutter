@@ -1,6 +1,5 @@
 import React from "react";
-import { Typography, Stack, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Typography, Stack, Button, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const Custom404 = () => {
@@ -23,7 +22,7 @@ const Custom404 = () => {
       <Typography variant="body1" color="text.secondary">
         {t("errorPage.message")}
       </Typography>
-      <Button component={Link} to="/">
+      <Button component={Link} href="/">
         {t("errorPage.homeButton")}
       </Button>
     </Stack>

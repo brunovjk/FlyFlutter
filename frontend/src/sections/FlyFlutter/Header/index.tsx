@@ -9,7 +9,7 @@ import Approve from "./Approve";
 
 const Header: FC = () => {
   const theme = useTheme();
-  const { balances, fetchOnlyPlayerBalances, setOpenAlert } =
+  const { balances, FetchOnlyPlayerBalances, setOpenAlert } =
     useContext(FlyFlutterContext);
 
   return (
@@ -54,7 +54,7 @@ const Header: FC = () => {
         >
           <Mint
             balances={balances}
-            fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
+            fetchOnlyPlayerBalances={FetchOnlyPlayerBalances}
             setIsOpenAlert={setOpenAlert}
           />
         </Grid>
@@ -72,7 +72,7 @@ const Header: FC = () => {
         >
           <Approve
             balances={balances}
-            fetchOnlyPlayerBalances={fetchOnlyPlayerBalances}
+            fetchOnlyPlayerBalances={FetchOnlyPlayerBalances}
             setIsOpenAlert={setOpenAlert}
           />
         </Grid>

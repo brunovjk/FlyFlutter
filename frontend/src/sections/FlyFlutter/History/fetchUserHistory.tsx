@@ -9,7 +9,7 @@ interface UserHistoryProps {
   isLoadingHistory: boolean;
 }
 
-export default function fetchUserHistory(): UserHistoryProps {
+export default function FetchUserHistory(): UserHistoryProps {
   const { address } = useAccount();
   const { t } = useTranslation();
 
@@ -19,6 +19,7 @@ export default function fetchUserHistory(): UserHistoryProps {
   useEffect(() => {
     const _fetchUserHistory = async () => {
       if (address != undefined) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const betsByIDs = await useGetBetsPerPlayer(address, 100);
 
         if (betsByIDs.success && betsByIDs.data != undefined) {
@@ -34,6 +35,7 @@ export default function fetchUserHistory(): UserHistoryProps {
       }
     };
     _fetchUserHistory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address]);
 
   return {

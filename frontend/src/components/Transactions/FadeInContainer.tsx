@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, styled } from "@mui/material";
+import Container from "@mui/material/Container";
+import { styled } from "@mui/material";
 
 interface FadeInProps {
   justifyContent?: "flex-start" | "center" | "flex-end";
@@ -33,13 +34,15 @@ const FadeInContainer: React.FC<FadeInProps> = ({
       { threshold: 0.3 } // Intersection threshold - 30% visible
     );
 
-    if (fadeInRef.current) {
-      observer.observe(fadeInRef.current);
+    const currentRef = fadeInRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (fadeInRef.current) {
-        observer.unobserve(fadeInRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

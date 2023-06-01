@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { CardBalanceButton } from "../../../components";
 import { useAccount } from "wagmi";
@@ -48,6 +48,7 @@ const Approve: FC<FFApproveProps> = ({
       !disabledApprove &&
       balances.player != undefined
     ) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const approveTX = await useApproveBetting({
         player: address,
         amount: balances.player,
@@ -75,7 +76,7 @@ const Approve: FC<FFApproveProps> = ({
     if (address) {
       handleDisabledApprove(address, balances.allowance, balances.player);
     }
-  }, [balances.allowance, balances.player]);
+  }, [address, balances.allowance, balances.player]);
 
   return (
     <CardBalanceButton

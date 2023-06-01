@@ -52,7 +52,7 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
             position: "relative",
             opacity: { xs: "0.5", md: "1" },
           }}
-          config={{ duration: 900 }}
+          config={{ tension: 280, friction: 120 }}
         >
           <Box
             sx={{
@@ -63,7 +63,7 @@ const TalkingAstronauts: React.FC<{ isConnected: boolean }> = ({
           >
             <SVGBox
               svgPath="/img/talking_astronauts.svg"
-              svgAlt={t("talkingAstronauts.svgAlt")}
+              svgAlt="Talking Astronauts"
             />
           </Box>
 

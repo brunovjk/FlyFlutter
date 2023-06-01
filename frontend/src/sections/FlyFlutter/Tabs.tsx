@@ -1,11 +1,9 @@
 import React, { FC, useState } from "react";
 import { GlassPaper, TabPanel, TabsWrapper } from "../../components";
 import { Stack, useTheme } from "@mui/material";
-
 import Play from "./Play";
 import Rules from "./Rules";
 import History from "./History";
-
 import { useTranslation } from "react-i18next";
 
 const Tabs: FC = () => {

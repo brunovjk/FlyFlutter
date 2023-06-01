@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { Skeleton, Stack, Typography, Tooltip, useTheme } from "@mui/material";
+import { ethers } from "ethers";
+import { Typography, Tooltip, Stack, useTheme, Skeleton } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { GlassPaper } from "../GlassPaper";
-import { ethers } from "ethers";
 
 interface CardBalanceProps {
   label: string;

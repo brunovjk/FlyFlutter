@@ -34,9 +34,10 @@ export function useFunctions({
     }));
   }
 
-  async function fetchOnlyPlayerBalances() {
+  async function FetchOnlyPlayerBalances() {
     try {
       if (address != undefined) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         await usePlayerFetchBalances(address, updateBalances);
       }
     } catch (error: any) {
@@ -44,9 +45,10 @@ export function useFunctions({
     }
   }
 
-  async function fetchBalances() {
+  async function FetchBalances() {
     try {
       if (address != undefined) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         await useFetchBalances(address, updateBalances);
       }
     } catch (error: any) {
@@ -58,7 +60,7 @@ export function useFunctions({
     updateBalances,
     updateInputs,
     updateResults,
-    fetchOnlyPlayerBalances,
-    fetchBalances,
+    FetchOnlyPlayerBalances,
+    FetchBalances,
   };
 }

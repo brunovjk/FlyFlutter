@@ -1,6 +1,5 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Box } from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
+import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
 interface FadeInProps {
@@ -30,13 +29,15 @@ const FadeInBox: React.FC<FadeInProps> = ({ children }) => {
       { threshold: 0.3 } // Intersection threshold - 30% visible
     );
 
-    if (fadeInRef.current) {
-      observer.observe(fadeInRef.current);
+    const currentRef = fadeInRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (fadeInRef.current) {
-        observer.unobserve(fadeInRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

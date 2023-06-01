@@ -1,7 +1,6 @@
 import { prepareWriteContract, writeContract } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import BETTING_ABI from "../../contracts/Betting.json";
-
 import { ethers } from "ethers";
 
 // Users needs to approve `bettingAddress` to spend the `selectedBetAmount` FFC

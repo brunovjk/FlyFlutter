@@ -1,14 +1,11 @@
 import React, { FC } from "react";
-import {
-  Snackbar,
-  Link,
-  Alert,
-  AlertTitle,
-  IconButton,
-  Typography,
-  useTheme,
-  styled,
-} from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
+import Link from "@mui/material/Link";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { useTheme, styled } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
 

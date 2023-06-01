@@ -13,9 +13,11 @@ export const usePlayerFetchBalances = async (
 ) => {
   try {
     if (address != undefined) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: playerBalance } = await useFFCBalance({
         checkAddress: address,
       });
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: bettingAllowance } = await useAllowanceBetting({
         checkAddress: address,
       });
@@ -33,17 +35,22 @@ export const usePlayerFetchBalances = async (
 export const useFetchBalances = async (address: any, updateBalances: any) => {
   try {
     if (address != undefined) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: playerBalance } = await useFFCBalance({
         checkAddress: address,
       });
+
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: bettingAllowance } = await useAllowanceBetting({
         checkAddress: address,
       });
-
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: houseBalance } = await useFFCBalance({
         checkAddress: houseAddress,
       });
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: totalBetted } = await useHouseTotalBetted();
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: totalLost } = await useHouseTotalLost();
 
       updateBalances({

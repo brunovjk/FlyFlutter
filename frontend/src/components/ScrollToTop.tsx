@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { Fab } from "@mui/material";
-import { KeyboardArrowUp } from "@mui/icons-material";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import { IParallax } from "@react-spring/parallax";
 
 const ScrollToTop: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({

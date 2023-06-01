@@ -1,6 +1,5 @@
 import { ethers } from "ethers";
 import { getProvider, fetchSigner, signMessage } from "@wagmi/core";
-
 import addresses from "../../contracts/addresses.json";
 import BETTING_ABI from "../../contracts/Betting.json";
 import FFC_ABI from "../../contracts/FlyFlutterCoin.json";

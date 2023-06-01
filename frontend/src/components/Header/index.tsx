@@ -15,7 +15,7 @@ const Header: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
       }}
     >
       <Toolbar>
-        <Logo />
+        <Logo parallax={parallax} />
         <Links parallax={parallax} />
         <ConfigMenu />
       </Toolbar>

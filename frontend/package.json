@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "latest",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.11.16",
     "@mui/lab": "^5.0.0-alpha.130",
@@ -40,6 +41,7 @@
     "wagmi": "^0.12.12"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.8"
+    "@types/nodemailer": "^6.4.8",
+    "eslint-plugin-next": "^0.0.0"
   }
 }

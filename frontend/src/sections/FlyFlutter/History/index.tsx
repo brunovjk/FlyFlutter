@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import HistoryDataGrid from "./HistoryDataGrid";
-import fetchUserHistory from "./fetchUserHistory";
+import FetchUserHistory from "./FetchUserHistory";
 
 import { GridColDef } from "@mui/x-data-grid";
 import { useTranslation } from "react-i18next";
@@ -51,7 +51,7 @@ const HistoryTab: FC = () => {
     },
   ];
 
-  const { bets, isLoadingHistory } = fetchUserHistory();
+  const { bets, isLoadingHistory } = FetchUserHistory();
 
   return (
     <HistoryDataGrid

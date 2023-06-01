@@ -1,6 +1,8 @@
 import React, { FC, useContext } from "react";
 import { MuiContext } from "../config/mui";
-import { MenuItem, FormControl, useTheme, Select } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import { useTheme, Select } from "@mui/material";
 
 const ThemeSelect: FC = () => {
   const theme = useTheme();

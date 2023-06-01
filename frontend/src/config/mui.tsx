@@ -20,7 +20,12 @@ export default function MuiWrapper({
   const isClient = typeof window !== "undefined"; // Check if running on the client-side
 
   // Retrieve the previously selected theme from localStorage (or use "dark" as default)
-  const storedMode = isClient ? localStorage.getItem("themeMode") : "dark";
+  const storedMode = isClient
+    ? localStorage?.getItem("themeMode") !== null
+      ? localStorage.getItem("themeMode")
+      : "dark"
+    : "dark";
+
   const [mode, setMode] = useState<PaletteMode>(storedMode as PaletteMode);
 
   // Update the selected theme in localStorage whenever it changes (on the client-side)
