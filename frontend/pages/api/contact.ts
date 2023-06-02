@@ -11,7 +11,7 @@ const sendEmail = async (req: any, res: any) => {
     service: "gmail",
     auth: {
       user: process.env.NEXT_PUBLIC_GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
+      pass: process.env.NEXT_PUBLIC_GMAIL_PASS,
     },
   });
 
