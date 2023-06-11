@@ -230,7 +230,7 @@ export default function HomePage() {
       }}
     >
       <Parallax ref={parallax} pages={4.5}>
-        <Header parallax={parallax} />
+        <Header parallax={parallax} isHome={true} />
 
         <ParallaxLayer
           offset={0}

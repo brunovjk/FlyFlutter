@@ -5,6 +5,7 @@ import {
   useTheme,
   useMediaQuery,
   styled,
+  Link,
 } from "@mui/material";
 import { IParallax } from "@react-spring/parallax";
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined";
@@ -44,6 +45,44 @@ const Links: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
   return (
     <Box sx={{ display: "grid", marginRight: { xs: 1, md: 2 } }}>
       <Box sx={{ display: "flex", gap: 2 }}>
+        <Link href="/about">
+          <NavLink
+            variant="button"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+            onMouseEnter={() => {
+              const dot = document.getElementById("dot");
+              if (dot) {
+                dot.style.setProperty(
+                  "transform",
+                  "translateX(40px) translateY(8px)"
+                );
+                dot.style.setProperty("opacity", "1");
+              }
+            }}
+            onMouseLeave={() => {
+              const dot = document.getElementById("dot");
+              if (dot) {
+                dot.style.setProperty(
+                  "transform",
+                  "translateX(40px) translateY(8px)"
+                );
+                dot.style.setProperty("opacity", "0");
+              }
+            }}
+          >
+            {isSmallScreen ? (
+              <AccountTreeOutlinedIcon />
+            ) : (
+              `${t("header.linkAbout")}`
+            )}
+          </NavLink>
+        </Link>
+
         <NavLink
           variant="button"
           onClick={() => parallax.current.scrollTo(1.5)}
@@ -58,7 +97,7 @@ const Links: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
             if (dot) {
               dot.style.setProperty(
                 "transform",
-                "translateX(36px) translateY(8px)"
+                "translateX(150px) translateY(8px)"
               );
               dot.style.setProperty("opacity", "1");
             }
@@ -68,7 +107,7 @@ const Links: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
             if (dot) {
               dot.style.setProperty(
                 "transform",
-                "translateX(36px) translateY(8px)"
+                "translateX(150px) translateY(8px)"
               );
               dot.style.setProperty("opacity", "0");
             }
@@ -89,7 +128,7 @@ const Links: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
             if (dot) {
               dot.style.setProperty(
                 "transform",
-                "translateX(140px) translateY(8px)"
+                "translateX(240px) translateY(8px)"
               );
               dot.style.setProperty("opacity", "1");
             }
@@ -99,7 +138,7 @@ const Links: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
             if (dot) {
               dot.style.setProperty(
                 "transform",
-                "translateX(140px) translateY(8px)"
+                "translateX(240px) translateY(8px)"
               );
               dot.style.setProperty("opacity", "0");
             }

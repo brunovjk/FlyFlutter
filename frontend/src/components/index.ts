@@ -1,3 +1,4 @@
+export { default as AboutSection } from "./AboutSection";
 export { default as AppAlert } from "./AppAlert";
 export { default as CardBalance } from "./CardBalance/CardBalance";
 export { default as CardBalanceButton } from "./CardBalance/CardBalanceButton";

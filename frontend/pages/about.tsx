@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { Hero, Rocket } from "@/sections";
+import { Box, useTheme } from "@mui/material";
 import {
   FadeInBox,
   Header,
-  SVGBox,
+  AboutSection,
   ScrollToTop,
   SectionContainer,
 } from "@/components";
@@ -97,11 +96,46 @@ function Sky() {
           style={{ display: "block", width: "15%", marginLeft: "75%" }}
         />
       </ParallaxLayer>
-      {/* Rocket */}
-      <ParallaxLayer offset={0} speed={0.8}>
-        <SectionContainer justifyContent="flex-end">
-          <Rocket isConnected={false} />
-        </SectionContainer>
+    </>
+  );
+}
+
+function Sections() {
+  return (
+    <>
+      {/*  */}
+      <ParallaxLayer offset={0} speed={0.3}>
+        <AboutSection
+          title={"Experience the thrill of gambling without risking a dime."}
+          text={
+            "FlyFlutter - Play Odd and Even Hand Game with Quantum Randomness and Smart Contracts Automation for Zero Gravity Decisions! It operates on the Polygon and Mumbai blockchains using our free to mint FlyFlutterCoin"
+          }
+          img={url("cloud")}
+          altImg={"cloud"}
+        />
+      </ParallaxLayer>
+      {/*  */}
+      <ParallaxLayer offset={1} speed={0.3}>
+        <AboutSection
+          title={"Experimente la emoción de apostar sin arriesgar un centavo."}
+          text={
+            "FlyFlutter - ¡Juega al juego de Mano Impar y Par con Aleatoriedad Cuántica y Automatización de Contratos Inteligentes para Decisiones de Gravedad Cero! Opera en las blockchains de Polygon y Mumbai utilizando nuestro token gratis FlyFlutterCoin"
+          }
+          img={url("cloud")}
+          altImg={"cloud"}
+          left={true}
+        />
+      </ParallaxLayer>
+      {/*  */}
+      <ParallaxLayer offset={2} speed={0.3}>
+        <AboutSection
+          title={"在不冒任何风险的情况下体验投注的快感。"}
+          text={
+            "FlyFlutter - 使用量子随机性和智能合约自动化玩零重力决策的单双手游戏！ 它使用我们的免费铸币在 Polygon 和 Mumbai 区块链上运行 FlyFlutterCoin"
+          }
+          img={url("cloud")}
+          altImg={"cloud"}
+        />
       </ParallaxLayer>
     </>
   );
@@ -129,26 +163,9 @@ export default function AboutPage() {
             background: `linear-gradient(to bottom, ${theme.palette.primary.dark}, ${theme.palette.primary.main}, ${theme.palette.primary.light}`,
           }}
         />
-        {/* Sky */}
+
         <Sky />
-        {/* Hero */}
-        <ParallaxLayer offset={0} speed={0.3}>
-          <SectionContainer maxWidth="xl" justifyContent="flex-start">
-            <Hero isConnected={false} />
-          </SectionContainer>
-        </ParallaxLayer>
-        {/* Hero */}
-        <ParallaxLayer offset={1} speed={0.3}>
-          <SectionContainer maxWidth="xl" justifyContent="flex-start">
-            <Hero isConnected={false} />
-          </SectionContainer>
-        </ParallaxLayer>
-        {/* Hero */}
-        <ParallaxLayer offset={2} speed={0.3}>
-          <SectionContainer maxWidth="xl" justifyContent="flex-start">
-            <Hero isConnected={false} />
-          </SectionContainer>
-        </ParallaxLayer>
+        <Sections />
 
         <FadeInBox>
           <ScrollToTop parallax={parallax} />

@@ -44,7 +44,7 @@ const ConfigMenu: FC = () => {
           if (dot) {
             dot.style.setProperty(
               "transform",
-              "translateX(228px) translateY(8px)"
+              "translateX(336px) translateY(8px)"
             );
             dot.style.setProperty("opacity", "1");
           }
@@ -54,7 +54,7 @@ const ConfigMenu: FC = () => {
           if (dot) {
             dot.style.setProperty(
               "transform",
-              "translateX(228px) translateY(8px)"
+              "translateX(336px) translateY(8px)"
             );
             dot.style.setProperty("opacity", "0");
           }

@@ -3,7 +3,13 @@ import Container from "@mui/material/Container";
 import { styled } from "@mui/material";
 
 interface FadeInProps {
-  justifyContent?: "flex-start" | "center" | "flex-end";
+  justifyContent?:
+    | "flex-start"
+    | "center"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
   children: React.ReactNode;
 }
 
@@ -54,7 +60,7 @@ const FadeInContainer: React.FC<FadeInProps> = ({
       sx={{
         height: "100%",
         width: "100%",
-        display: "flex",
+        display: { xs: "grid", sm: "flex" },
         alignItems: "center",
         justifyContent: justifyContent,
       }}

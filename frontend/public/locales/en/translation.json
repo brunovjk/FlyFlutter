@@ -71,6 +71,7 @@
     "mintFailure": "Failed to Mint FFC,"
   },
   "header": {
+    "linkAbout": "About",
     "linkProjects": "Projects",
     "linkContact": "Contact"
   },

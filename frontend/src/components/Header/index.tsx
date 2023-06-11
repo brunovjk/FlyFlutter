@@ -4,9 +4,10 @@ import Links from "./Links";
 import { ConfigMenu, Logo } from "../index";
 import { IParallax } from "@react-spring/parallax";
 
-const Header: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
-  parallax,
-}) => {
+const Header: FC<{
+  parallax: React.MutableRefObject<IParallax>;
+  isHome?: boolean;
+}> = ({ parallax, isHome }) => {
   return (
     <AppBar
       elevation={0}
@@ -15,8 +16,9 @@ const Header: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
       }}
     >
       <Toolbar>
-        <Logo parallax={parallax} />
-        <Links parallax={parallax} />
+        <Logo isHome={isHome} parallax={parallax} />
+        {isHome && <Links parallax={parallax} />}
+
         <ConfigMenu />
       </Toolbar>
     </AppBar>
