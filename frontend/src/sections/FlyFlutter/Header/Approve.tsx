@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { CardBalanceButton } from "../../../components";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 import { useApproveBetting } from "../../../hooks";
 import { ethers } from "ethers";
 
@@ -18,6 +18,7 @@ const Approve: FC<FFApproveProps> = ({
 }) => {
   const { t } = useTranslation();
   const { address, isConnected } = useAccount();
+  const chainId = useChainId();
 
   const [disabledApprove, setDisabledApprove] = useState<boolean>(true);
   const [isLoadingApprove, setIsLoadingApprove] = useState<boolean>(false);
@@ -52,6 +53,7 @@ const Approve: FC<FFApproveProps> = ({
       const approveTX = await useApproveBetting({
         player: address,
         amount: balances.player,
+        chainId: chainId,
       });
       if (approveTX.success) {
         fetchOnlyPlayerBalances();

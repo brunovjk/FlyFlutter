@@ -2,17 +2,21 @@ import { readContract } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import BETTING_ABI from "../../contracts/Betting.json";
 
-const bettingAddress: any = addresses.bettingAddress;
-
 export const useGetBetsPerPlayer = async (
   address: string,
-  endIndex: number
+  endIndex: number,
+  chainId: number
 ): Promise<{
   success: boolean;
   data?: BetProps[];
   message: string;
 }> => {
   try {
+    const bettingAddress: any =
+      chainId === 137
+        ? addresses.bettingAddress_polygon
+        : addresses.bettingAddress_mumbai;
+
     const data: any = await readContract({
       address: bettingAddress,
       abi: BETTING_ABI,

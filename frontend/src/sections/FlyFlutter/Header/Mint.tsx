@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { CardBalanceButton } from "../../../components";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 import { useMintFFC } from "../../../hooks";
 import { ethers } from "ethers";
 
@@ -18,6 +18,7 @@ const Mint: FC<MintProps> = ({
 }) => {
   const { t } = useTranslation();
   const { address, isConnected } = useAccount();
+  const chainId = useChainId();
 
   const [disabledMint, setDisabledMint] = useState<boolean>(true);
   const [isLoadingMint, setIsLoadingMint] = useState<boolean>(false);
@@ -43,7 +44,7 @@ const Mint: FC<MintProps> = ({
     setIsLoadingMint(true);
     if (isConnected && address != undefined && !disabledMint) {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const mintTX = await useMintFFC({ player: address });
+      const mintTX = await useMintFFC({ player: address, chainId: chainId });
       if (mintTX.success) {
         fetchOnlyPlayerBalances();
         setIsOpenAlert({

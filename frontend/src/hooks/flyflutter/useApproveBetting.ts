@@ -3,17 +3,26 @@ import addresses from "../../contracts/addresses.json";
 import FFC_ABI from "../../contracts/FlyFlutterCoin.json";
 import { ethers } from "ethers";
 
-const bettingAddress: any = addresses.bettingAddress;
-const ffcAddress: any = addresses.ffcAddress;
-
 export const useApproveBetting = async ({
   player,
   amount,
+  chainId,
 }: {
   player: `0x${string}` | undefined;
   amount: number | ethers.BigNumber;
+  chainId: number;
 }): Promise<{ success: boolean; hash?: string; message: string }> => {
   try {
+    const ffcAddress: any =
+      chainId === 137
+        ? addresses.ffcAddress_polygon
+        : addresses.ffcAddress_mumbai;
+
+    const bettingAddress: any =
+      chainId === 137
+        ? addresses.bettingAddress_polygon
+        : addresses.bettingAddress_mumbai;
+
     const config = await prepareWriteContract({
       address: ffcAddress,
       abi: FFC_ABI,

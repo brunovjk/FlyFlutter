@@ -2,16 +2,20 @@ import { watchContractEvent } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import BETTING_ABI from "../../contracts/Betting.json";
 
-const bettingAddress: any = addresses.bettingAddress;
-
 export const useWatchBettingEvent = async ({
   eventName,
+  chainId,
 }: {
   eventName: string;
+  chainId: number;
 }): Promise<{ node: any; label: any; owner: any }> => {
   return new Promise<{ node: any; label: any; owner: any }>(
     (resolve, reject) => {
       try {
+        const bettingAddress: any =
+          chainId === 137
+            ? addresses.bettingAddress_polygon
+            : addresses.bettingAddress_mumbai;
         watchContractEvent(
           {
             address: bettingAddress,

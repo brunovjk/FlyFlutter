@@ -35,7 +35,6 @@ const config: HardhatUserConfig = {
       url: POLYGON_RPC_ENDPOINT,
       chainId: 137,
       accounts: [PRIVATE_KEY ? PRIVATE_KEY : ""],
-      gasPrice: 8000000000,
     },
   },
   etherscan: {

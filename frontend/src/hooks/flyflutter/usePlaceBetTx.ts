@@ -3,16 +3,22 @@ import { prepareSendTransaction, sendTransaction } from "@wagmi/core";
 import addresses from "../../contracts/addresses.json";
 import BETTING_ABI from "../../contracts/Betting.json";
 
-const bettingAddress = addresses.bettingAddress;
-
-export const usePlaceBetTx = async ({
-  player,
-  betFee,
-  selectedHand,
-  selectedGuess,
-  selectedBetAmount,
-}: PlaceBetTxProps): Promise<PlaceBetTxResult> => {
+export const usePlaceBetTx = async (
+  {
+    player,
+    betFee,
+    selectedHand,
+    selectedGuess,
+    selectedBetAmount,
+  }: PlaceBetTxProps,
+  chainId: number
+): Promise<PlaceBetTxResult> => {
   try {
+    const bettingAddress: any =
+      chainId === 137
+        ? addresses.bettingAddress_polygon
+        : addresses.bettingAddress_mumbai;
+
     const config = await prepareSendTransaction({
       request: {
         to: bettingAddress,

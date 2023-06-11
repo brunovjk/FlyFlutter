@@ -3,18 +3,19 @@ import { ethers, run } from "hardhat";
 async function main() {
   const betFee = ethers.utils.parseEther("0.01");
   const qrngFee = ethers.utils.parseEther("0.005");
-  const AirnodeRrpV0_Nodary_Polygon = "";
-  const Automate_Polygon = "";
+  const AirnodeRrpV0_Polygon = "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd";
+  const Automate_Polygon = "0x527a819db1eb0e34426297b03bae11F2f8B3A19E";
 
-  const airnode_Nodary = "";
-  const endpointIdUint256_Nodary = "";
+  const airnode_ANU = "0x9d3C147cA16DB954873A498e0af5852AB39139f2";
+  const endpointIdUint256_ANU =
+    "0xfb6d017bb87991b7495f563db3c8cf59ff87b09781947bb1e417006ad7f55a78";
 
-  const verifying = false;
-  const houseAddress = "";
-  const ffcAddress = "";
-  const oddAndEvenAddress = "";
-  const bettingAddress = "";
-  const sponsorWallet = "";
+  const verifying = true;
+  const houseAddress = "0x33C8Dd92700965bDdfe5BebB074590ee57cBcA3D";
+  const ffcAddress = "0x12c7159ee5Cb747859b96620cA5DEa971aa47c66";
+  const oddAndEvenAddress = "0x94163fB9d8E2D7466f2336DfA03E017a9d2ebd33";
+  const bettingAddress = "0x5ae80EE70bCA0fCda0d4913E9E969c053ecd1e90";
+  const sponsorWallet = "0xD192D7686Daf1635070E8Bd35bBa9123D66681Ed";
 
   // Check deployer
   const [deployer] = await ethers.getSigners();
@@ -64,7 +65,7 @@ async function main() {
     : await Betting.deploy(
         betFee,
         qrngFee,
-        AirnodeRrpV0_Nodary_Polygon,
+        AirnodeRrpV0_Polygon,
         Automate_Polygon,
         ffc.address,
         deployer.address,
@@ -74,13 +75,23 @@ async function main() {
   await betting.deployed();
   console.log(`Betting Contract deployed to ${betting.address}`);
 
-  // npx @api3/airnode-admin derive-sponsor-wallet-address \
-  // --airnode-xpub Get Polygon values \
-  // --airnode-address Get Polygon values \
-  // --sponsor-address betting.address
+  // npx @api3/airnode-admin derive-sponsor-wallet-address
+  // --airnode-xpub xpub6DXSDTZBd4aPVXnv6Q3SmnGUweFv6j24SK77W4qrSFuhGgi666awUiXakjXruUSCDQhhctVG7AQt67gMdaRAsDnDXv23bBRKsMWvRzo6kbf
+  // --airnode-address 0x9d3C147cA16DB954873A498e0af5852AB39139f2
+  // --sponsor-address 0x5ae80EE70bCA0fCda0d4913E9E969c053ecd1e90
   // Sponsor wallet address: <output>
 
   if (verifying) {
+    console.log("Setting Parameters...");
+    await house.setBettingContract(bettingAddress);
+    await house.setFlyFlutterCoin(ffcAddress);
+    await ffc.setBettingContract(bettingAddress);
+    await betting.setRequestParameters(
+      airnode_ANU,
+      endpointIdUint256_ANU,
+      sponsorWallet
+    );
+
     console.log("Verifying contracts...");
     await run("verify:verify", {
       address: house.address,
@@ -106,7 +117,7 @@ async function main() {
       constructorArguments: [
         betFee,
         qrngFee,
-        AirnodeRrpV0_Nodary_Polygon,
+        AirnodeRrpV0_Polygon,
         Automate_Polygon,
         ffcAddress,
         deployer.address,
@@ -114,16 +125,6 @@ async function main() {
         oddAndEvenAddress,
       ],
     });
-
-    console.log("Setting Parameters...");
-    await house.setBettingContract(bettingAddress);
-    await house.setFlyFlutterCoin(ffcAddress);
-    await ffc.setBettingContract(bettingAddress);
-    await betting.setRequestParameters(
-      airnode_Nodary,
-      endpointIdUint256_Nodary,
-      sponsorWallet
-    );
 
     console.log("Approving Betting contract...");
     await house.approveBettingContract();

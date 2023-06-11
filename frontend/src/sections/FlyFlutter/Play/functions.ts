@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FlyFlutterContext } from "../context";
 import { ethers } from "ethers";
 import { id } from "ethers/lib/utils.js";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 import {
   usePlaceBetTx,
   useHashExplorer,
@@ -15,6 +15,8 @@ import {
 export function usePlayFunctions(
   setOpenConfirmDialog: React.Dispatch<React.SetStateAction<boolean>>
 ) {
+  const chainId = useChainId();
+
   let currentBetId: any;
   const { t } = useTranslation();
   const { address } = useAccount();
@@ -143,10 +145,12 @@ export function usePlayFunctions(
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const ReceivedUint256Event = await useWatchBettingEvent({
       eventName: "ReceivedUint256",
+      chainId,
     });
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const TaskExecutedEvent = await useWatchBettingEvent({
       eventName: "TaskExecuted",
+      chainId,
     });
     return [ReceivedUint256Event, TaskExecutedEvent];
   }
@@ -273,13 +277,16 @@ export function usePlayFunctions(
         setWaitingBet(false);
         setPlacingBet(true);
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        const placeBetTx = await usePlaceBetTx({
-          player: address,
-          betFee: betFee,
-          selectedHand: playerHand,
-          selectedGuess: playerGuess,
-          selectedBetAmount: betAmount,
-        });
+        const placeBetTx = await usePlaceBetTx(
+          {
+            player: address,
+            betFee: betFee,
+            selectedHand: playerHand,
+            selectedGuess: playerGuess,
+            selectedBetAmount: betAmount,
+          },
+          chainId
+        );
 
         if (placeBetTx.success && placeBetTx.hash !== undefined) {
           // Alert user that the transaction was sent

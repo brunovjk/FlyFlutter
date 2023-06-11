@@ -1,5 +1,5 @@
 import { usePlayerFetchBalances, useFetchBalances } from "../../../hooks";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface UseFunctionsProps {
   setBalances: React.Dispatch<React.SetStateAction<BalancesProps>>;
@@ -13,6 +13,7 @@ export function useFunctions({
   setResults,
 }: UseFunctionsProps) {
   const { address } = useAccount();
+  const chainId = useChainId();
 
   function updateBalances(newBalances: Partial<BalancesProps>) {
     setBalances((prevState: any) => ({
@@ -38,7 +39,7 @@ export function useFunctions({
     try {
       if (address != undefined) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        await usePlayerFetchBalances(address, updateBalances);
+        await usePlayerFetchBalances(address, updateBalances, chainId);
       }
     } catch (error: any) {
       console.log(error.message);
@@ -49,7 +50,7 @@ export function useFunctions({
     try {
       if (address != undefined) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        await useFetchBalances(address, updateBalances);
+        await useFetchBalances(address, updateBalances, chainId);
       }
     } catch (error: any) {
       console.log(error.message);

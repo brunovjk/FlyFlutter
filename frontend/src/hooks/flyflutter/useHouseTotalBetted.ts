@@ -3,14 +3,19 @@ import addresses from "../../contracts/addresses.json";
 import HOUSE_ABI from "../../contracts/House.json";
 import { BigNumber } from "ethers";
 
-const houseAddress: any = addresses.houseAddress;
-
-export const useHouseTotalBetted = async (): Promise<{
+export const useHouseTotalBetted = async (
+  chainId: number
+): Promise<{
   success: boolean;
   data?: number | BigNumber;
   message: string;
 }> => {
   try {
+    const houseAddress: any =
+      chainId === 137
+        ? addresses.houseAddress_polygon
+        : addresses.houseAddress_mumbai;
+
     const data: any = await readContract({
       address: houseAddress,
       abi: HOUSE_ABI,

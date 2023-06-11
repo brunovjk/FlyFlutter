@@ -3,24 +3,27 @@ import addresses from "../../contracts/addresses.json";
 import BETTING_ABI from "../../contracts/Betting.json";
 import { ethers } from "ethers";
 
-// Users needs to approve `bettingAddress` to spend the `selectedBetAmount` FFC
-// before place a bet
-const bettingAddress: any = addresses.bettingAddress;
-
 export const usePlaceBet = async ({
   player,
   betFee,
   selectedHand,
   selectedGuess,
   selectedBetAmount,
+  chainId,
 }: {
   player: `0x${string}` | undefined;
   betFee: number | ethers.BigNumber | undefined;
   selectedHand: number;
   selectedGuess: number;
   selectedBetAmount: number;
+  chainId: number;
 }): Promise<{ success: boolean; hash?: string; message: string }> => {
   try {
+    const bettingAddress: any =
+      chainId === 137
+        ? addresses.bettingAddress_polygon
+        : addresses.bettingAddress_mumbai;
+
     const config = await prepareWriteContract({
       address: bettingAddress,
       abi: BETTING_ABI,

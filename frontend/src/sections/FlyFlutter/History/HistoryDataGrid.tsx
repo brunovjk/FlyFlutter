@@ -1,6 +1,5 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { useTheme } from "@mui/material";
 
 interface HistoryProps {
   bets: any[];

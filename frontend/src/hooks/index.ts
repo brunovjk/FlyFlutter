@@ -16,6 +16,5 @@ export { useHouseTotalLost } from "./flyflutter/useHouseTotalLost";
 export { useMintFFC } from "./flyflutter/useMintFFC";
 export { usePlaceBet } from "./flyflutter/usePlaceBet";
 export { usePlaceBetTx } from "./flyflutter/usePlaceBetTx";
-export { usePlaceBetTxPermit } from "./flyflutter/usePlaceBetTxPermit";
 export { useWaitForTransaction } from "./flyflutter/useWaitForTransaction";
 export { useWatchBettingEvent } from "./flyflutter/useWatchBettingEvent";

@@ -1,8 +1,6 @@
 import { getNetwork } from "@wagmi/core";
 import addresses from "../contracts/addresses.json";
 
-const bettingAddress: any = addresses.bettingAddress;
-
 export const useHashExplorer = async ({
   hash,
 }: {
@@ -97,9 +95,9 @@ export const useBetIdExplorer = async (): Promise<{
     let url: string;
     if (chain.id != undefined) {
       if (chain.id == 137) {
-        url = `https://polygonscan.com/address/${bettingAddress}#readContract#F12`;
+        url = `https://polygonscan.com/address/${addresses.bettingAddress_polygon}#readContract#F12`;
       } else if (chain.id == 80001) {
-        url = `https://mumbai.polygonscan.com/address/${bettingAddress}#readContract#F12`;
+        url = `https://mumbai.polygonscan.com/address/${addresses.bettingAddress_mumbai}#readContract#F12`;
       } else {
         return {
           success: false,

@@ -5,21 +5,22 @@ import { useAllowanceBetting } from "./flyflutter/useAllowanceBetting";
 
 import addresses from "../contracts/addresses.json";
 
-const houseAddress: string = addresses.houseAddress;
-
 export const usePlayerFetchBalances = async (
   address: any,
-  updateBalances: any
+  updateBalances: any,
+  chainId: number
 ) => {
   try {
     if (address != undefined) {
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: playerBalance } = await useFFCBalance({
         checkAddress: address,
+        chainId,
       });
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: bettingAllowance } = await useAllowanceBetting({
         checkAddress: address,
+        chainId,
       });
 
       updateBalances({
@@ -32,26 +33,38 @@ export const usePlayerFetchBalances = async (
   }
 };
 
-export const useFetchBalances = async (address: any, updateBalances: any) => {
+export const useFetchBalances = async (
+  address: any,
+  updateBalances: any,
+  chainId: number
+) => {
   try {
     if (address != undefined) {
+      const houseAddress =
+        chainId === 137
+          ? addresses.houseAddress_polygon
+          : addresses.houseAddress_mumbai;
+
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: playerBalance } = await useFFCBalance({
         checkAddress: address,
+        chainId,
       });
 
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: bettingAllowance } = await useAllowanceBetting({
         checkAddress: address,
+        chainId,
       });
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data: houseBalance } = await useFFCBalance({
         checkAddress: houseAddress,
+        chainId,
       });
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const { data: totalBetted } = await useHouseTotalBetted();
+      const { data: totalBetted } = await useHouseTotalBetted(chainId);
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const { data: totalLost } = await useHouseTotalLost();
+      const { data: totalLost } = await useHouseTotalLost(chainId);
 
       updateBalances({
         player: playerBalance,

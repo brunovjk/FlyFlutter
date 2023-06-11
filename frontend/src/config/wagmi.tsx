@@ -5,7 +5,7 @@ import { ConnectKitProvider, getDefaultClient } from "connectkit";
 import { useTranslation } from "react-i18next";
 import { Languages } from "connectkit/build/types";
 
-// const polygonAlchemyId = process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_ID;
+const polygonAlchemyId = process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_ID;
 const mumbaiAlchemyId = process.env.NEXT_PUBLIC_ALCHEMY_MUMBAI_ID;
 
 const chains = [polygonMumbai, polygon];
@@ -25,6 +25,7 @@ export default function WagmiWrapper({
 }) {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
   return (
     <WagmiConfig client={client}>
       <ConnectKitProvider

@@ -3,18 +3,23 @@ import addresses from "../../contracts/addresses.json";
 import FFC_ABI from "../../contracts/FlyFlutterCoin.json";
 import { BigNumber } from "ethers";
 
-const ffcAddress: any = addresses.ffcAddress;
-
 export const useFFCBalance = async ({
   checkAddress,
+  chainId,
 }: {
   checkAddress: string;
+  chainId: number;
 }): Promise<{
   success: boolean;
   data?: number | BigNumber;
   message: string;
 }> => {
   try {
+    const ffcAddress: any =
+      chainId === 137
+        ? addresses.ffcAddress_polygon
+        : addresses.ffcAddress_mumbai;
+
     const data: any = await readContract({
       address: ffcAddress,
       abi: FFC_ABI,

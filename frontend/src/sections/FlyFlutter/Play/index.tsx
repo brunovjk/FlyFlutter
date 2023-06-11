@@ -1,5 +1,5 @@
 import React, { FC, useState, useContext, useEffect } from "react";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 import { ethers } from "ethers";
 import { formatEther } from "ethers/lib/utils.js";
 import { usePlayFunctions } from "./functions";
@@ -37,6 +37,7 @@ const MaticIcon: FC = () => {
 
 const Play: FC = () => {
   const { t } = useTranslation();
+  const chainId = useChainId();
 
   const [openConfirmDialog, setOpenConfirmDialog] = useState<boolean>(false);
 
@@ -78,7 +79,7 @@ const Play: FC = () => {
     const getBetFee = async () => {
       try {
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        const betFeeTX = await useBetFee();
+        const betFeeTX = await useBetFee(chainId);
         if (betFeeTX.success) {
           updateBalances({ betFee: betFeeTX?.data });
         }
