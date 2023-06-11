@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { Typography, Link } from "@mui/material";
+import { Typography } from "@mui/material";
 import { IParallax } from "@react-spring/parallax";
+import Link from "next/link";
 
 const Logo: FC<{
   parallax: React.MutableRefObject<IParallax>;
@@ -9,18 +10,20 @@ const Logo: FC<{
   const handleClick = () => {
     if (isHome) {
       parallax.current.scrollTo(1.5);
-    } else {
-      window.location.href = "/";
     }
   };
 
   return (
-    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-      <Link
-        onClick={handleClick}
+    <Link
+      href={isHome ? "#" : "/"}
+      onClick={handleClick}
+      style={{ textDecoration: "none", flexGrow: 1 }}
+    >
+      <Typography
+        variant="h6"
+        component="div"
         sx={{
           cursor: "pointer",
-          textDecoration: "none",
           color: "secondary.light",
           "&:hover": {
             color: "secondary.main",
@@ -28,8 +31,8 @@ const Logo: FC<{
         }}
       >
         brunovjk
-      </Link>
-    </Typography>
+      </Typography>
+    </Link>
   );
 };
 

@@ -5,8 +5,8 @@ import {
   useTheme,
   useMediaQuery,
   styled,
-  Link,
 } from "@mui/material";
+import Link from "next/link";
 import { IParallax } from "@react-spring/parallax";
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
@@ -45,7 +45,7 @@ const Links: FC<{ parallax: React.MutableRefObject<IParallax> }> = ({
   return (
     <Box sx={{ display: "grid", marginRight: { xs: 1, md: 2 } }}>
       <Box sx={{ display: "flex", gap: 2 }}>
-        <Link href="/about">
+        <Link href="/about" style={{ textDecoration: "none" }}>
           <NavLink
             variant="button"
             sx={{
