@@ -71,6 +71,7 @@
     "mintFailure": "Échec de la création de FFC"
   },
   "header": {
+    "linkAbout": "Propos",
     "linkProjects": "Projets",
     "linkContact": "Contact"
   },

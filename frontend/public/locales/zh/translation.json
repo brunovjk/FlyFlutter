@@ -71,6 +71,7 @@
     "mintFailure": "铸币失败"
   },
   "header": {
+    "linkAbout": "关于",
     "linkProjects": "项目",
     "linkContact": "联系方式"
   },

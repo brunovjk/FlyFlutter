@@ -71,6 +71,7 @@
     "mintFailure": "Falha ao cunhar FFC"
   },
   "header": {
+    "linkAbout": "Sobre",
     "linkProjects": "Projetos",
     "linkContact": "Contato"
   },

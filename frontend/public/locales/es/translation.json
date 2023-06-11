@@ -71,6 +71,7 @@
     "mintFailure": "Error al generar FFC"
   },
   "header": {
+    "linkAbout": "Sobre",
     "linkProjects": "Proyectos",
     "linkContact": "Contacto"
   },
