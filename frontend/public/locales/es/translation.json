@@ -6,6 +6,65 @@
     "body2": "Con un profundo conocimiento en tecnología blockchain y experiencia en Solidity y Typescript.",
     "body3": "Explora mis proyectos a continuación para ver mi trabajo con dApps y Smart Contracts."
   },
+  "aboutPage": {
+    "developer": {
+      "title": "Desarrollador web destacado",
+      "text": [
+        "Flyflutter es una demostración de tecnologías web3 de vanguardia, meticulosamente elaborada por brunovjk.",
+        "Sirve como escaparate de una colección seleccionada de tecnologías poderosas, fusionando de manera perfecta la simplicidad con la innovación para crear una experiencia de juego inmersiva y cautivadora."
+      ],
+      "altImg": "Mostrando desarrollador web"
+    },
+    "technologies": {
+      "title": "Principales tecnologías utilizadas",
+      "text": [
+        "Next.js, Material Ui, Typescript, Solidity, Ethers.js, I18next, Nodemailer, Vanilla-tilt, Vercel, Wagmi y más.",
+        "Estas tecnologías son la base de Flyflutter, ofreciendo una plataforma sólida y sofisticada que empuja los límites de lo posible en el ámbito del desarrollo web.",
+        "Para explorar más, puedes acceder al código fuente completo en el repositorio de Flyflutter en Github."
+      ],
+      "altImg": "Principales tecnologías utilizadas"
+    },
+    "front": {
+      "title": "Desarrollo de Front-End",
+      "text": [
+        "El desarrollo de Front-End de Flyflutter se realiza utilizando Wagmi y Connect Kit, meticulosamente diseñados para proporcionar a los jugadores una experiencia de juego intuitiva y sin interrupciones.",
+        "Nuestra interfaz de usuario muestra una armoniosa combinación de simplicidad y elegancia, ofreciendo una navegación sin esfuerzo y facilidad de uso.",
+        "Impulsado por contratos inteligentes en el backend, Flyflutter garantiza una experiencia de juego segura y confiable, priorizando la transparencia y la equidad."
+      ],
+      "altImg": "Excelencia en el desarrollo de Front-End"
+    },
+    "animation": {
+      "title": "Animación y transiciones",
+      "text": [
+        "Dentro de la aplicación web de Flyflutter, cada interacción cobra vida a través de animaciones cautivadoras y transiciones fluidas.",
+        "Nuestra interfaz responde de manera fluida a las acciones del usuario, creando un entorno inmersivo y dinámico.",
+        "Desde los emocionantes momentos desencadenados por eventos de blockchain hasta las transiciones suaves en toda la aplicación, estas animaciones meticulosamente elaboradas elevan la experiencia general del usuario."
+      ],
+      "altImg": "Animación y transiciones"
+    },
+    "contracts": {
+      "title": "Contratos inteligentes para confianza y equidad",
+      "text": [
+        "FlyFlutter aprovecha el poder de los contratos inteligentes para respaldar su experiencia de juego, asegurando la máxima transparencia y equidad.",
+        "Estos contratos proporcionan un entorno seguro para los jugadores, garantizando una competencia justa para todos los participantes.",
+        "Al integrarse con el servicio API3 QRNG, FlyFlutter logra la generación descentralizada de números aleatorios, garantizando resultados imparciales e inalterables.",
+        "Además, el proyecto utiliza Gelato, un protocolo de automatización descentralizado, para agilizar y automatizar diversas funcionalidades de los contratos inteligentes, mejorando la eficiencia y confiabilidad de la plataforma."
+      ],
+      "altImg": "Contratos inteligentes para confianza y equidad"
+    },
+    "betting": {
+      "title": "Ciclo de apuestas",
+      "text": [
+        "El ciclo de apuestas en Flyflutter involucra los siguientes pasos:",
+        "- Los usuarios realizan apuestas enviando Matic y monedas de Flyflutter al contrato de apuestas.",
+        "- El contrato OddAndEven genera un número aleatorio utilizando el servicio API3 QuantumRNG.",
+        "- Con base en la elección del usuario de par o impar y el número generado, el contrato determina el resultado de la apuesta.",
+        "- El contrato de apuestas calcula el pago y transfiere las ganancias al usuario.",
+        "Este ciclo garantiza una experiencia de juego justa y transparente para todos los participantes."
+      ],
+      "altImg": "El ciclo de apuestas: una experiencia de juego sin interrupciones"
+    }
+  },
   "appAlert": {
     "checkExplorer": "Ver en Explorador"
   },

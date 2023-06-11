@@ -6,6 +6,65 @@
     "body2": "With a deep understanding of blockchain technology and expertise in Solidity and Typescript.",
     "body3": "Explore my projects below to see my work with dApps and Smart Contracts."
   },
+  "aboutPage": {
+    "developer": {
+      "title": "Web Developer Showcased",
+      "text": [
+        "Flyflutter is a Demonstration of Cutting-edge Web3 Technologies, Meticulously Crafted by brunovjk.",
+        "It Serves as a Showcase for a Curated Collection of Powerful Technologies, Seamlessly Blending Simplicity With Innovation to Create an Immersive and Captivating Gambling Experience."
+      ],
+      "altImg": "Web Developer Showcase"
+    },
+    "technologies": {
+      "title": "Main Technologies Used",
+      "text": [
+        "Next.js, Material Ui, Typescript, Solidity, Ethers.js, I18next, Nodemailer, Vanilla-tilt, Vercel, Wagmi and More.",
+        "These Technologies form the Backbone of Flyflutter, Delivering a Robust and Sophisticated Platform That Pushes the Boundaries of What is Possible in the Realm of Web Development.",
+        "To Explore Further, You Can Access the Complete Source Code on the Flyflutter Github Repository."
+      ],
+      "altImg": "Main Technologies Utilized"
+    },
+    "front": {
+      "title": "Front-End Development",
+      "text": [
+        "Flyflutter's Front-end Development is made using Wagmi and Connect Kit, Meticulously Engineered to Provide Players With an Intuitive and Seamless Gambling Experience.",
+        "Our User Interface Exhibits a Harmonious Blend of Simplicity and Elegance, Offering Effortless Navigation and Ease of Use.",
+        "Powered by Smart Contracts on the Back-end, Flyflutter Ensures a Secure and Reliable Gambling Experience, Prioritizing Transparency and Fairness."
+      ],
+      "altImg": "Front-End Development Excellence"
+    },
+    "animation": {
+      "title": "Animation and Transitions",
+      "text": [
+        "Within the Flyflutter Web App, Every Interaction is Brought to Life Through Captivating Animations and Fluid Transitions.",
+        "Our Interface Seamlessly Responds to User Actions, Creating an Immersive and Dynamic Environment.",
+        "From the Exhilarating Moments Triggered by Blockchain Events to the Smooth Transitions Throughout the App, These Meticulously Crafted Animations Elevate the Overall User Experience."
+      ],
+      "altImg": "Animation and Transitions"
+    },
+    "contracts": {
+      "title": "Smart Contracts for Trust and Fairness",
+      "text": [
+        "FlyFlutter harnesses the power of smart contracts to underpin its gambling experience, ensuring utmost transparency and fairness.",
+        "These contracts provide a secure environment for players, guaranteeing a level playing field for all participants.",
+        "By integrating with the API3 QRNG service, FlyFlutter achieves decentralized random number generation, guaranteeing unbiased and tamper-proof results.",
+        "Furthermore, the project leverages Gelato, a decentralized automation protocol, to streamline and automate various smart contract functionalities, enhancing the efficiency and reliability of the platform."
+      ],
+      "altImg": "Smart Contracts for Trust and Fairness"
+    },
+    "betting": {
+      "title": "Betting Cycle",
+      "text": [
+        "The Betting Cycle in Flyflutter Involves the Following Steps:",
+        "- Users Place Bets by Sending Matic and Flyflutter Coins to the Betting Contract.",
+        "- OddAndEven Contract Generates a Random Number Using the API3 QuantumRNG Service.",
+        "- Based on the User's Choice of Odd or Even and the Generated Number, the Contract Determines the Outcome of the Bet.",
+        "- The Betting Contract Calculates the Payout and Transfers the Winnings to the User.",
+        "This Cycle Ensures a Fair and Transparent Gambling Experience for All Participants."
+      ],
+      "altImg": "The Betting Cycle: A Seamless Gambling Experience"
+    }
+  },
   "appAlert": {
     "checkExplorer": "Check on Explorer"
   },

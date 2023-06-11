@@ -6,6 +6,65 @@
     "body2": "Avec une compréhension approfondie de la technologie blockchain et une expertise en Solidity et en TypeScript.",
     "body3": "Explorez mes projets ci-dessous pour découvrir mon travail avec les dApps et les contrats intelligents."
   },
+  "aboutPage": {
+    "developer": {
+      "title": "Mise en avant du développeur web",
+      "text": [
+        "Flyflutter est une démonstration des technologies Web3 de pointe, méticuleusement élaborée par brunovjk.",
+        "Il sert de vitrine à une collection sélectionnée de technologies puissantes, mêlant parfaitement simplicité et innovation pour créer une expérience de jeu immersive et captivante."
+      ],
+      "altImg": "Vitrine du développeur web"
+    },
+    "technologies": {
+      "title": "Principales technologies utilisées",
+      "text": [
+        "Next.js, Material Ui, Typescript, Solidity, Ethers.js, I18next, Nodemailer, Vanilla-tilt, Vercel, Wagmi et plus encore.",
+        "Ces technologies constituent l'épine dorsale de Flyflutter, offrant une plateforme robuste et sophistiquée qui repousse les limites de ce qui est possible dans le domaine du développement web.",
+        "Pour explorer davantage, vous pouvez accéder au code source complet sur le référentiel Flyflutter sur Github."
+      ],
+      "altImg": "Principales technologies utilisées"
+    },
+    "front": {
+      "title": "Développement Front-End",
+      "text": [
+        "Le développement Front-End de Flyflutter est réalisé à l'aide de Wagmi et Connect Kit, méticuleusement conçus pour offrir aux joueurs une expérience de jeu intuitive et fluide.",
+        "Notre interface utilisateur présente un mélange harmonieux de simplicité et d'élégance, offrant une navigation sans effort et une facilité d'utilisation.",
+        "Alimenté par des contrats intelligents côté serveur, Flyflutter garantit une expérience de jeu sécurisée et fiable, en mettant l'accent sur la transparence et l'équité."
+      ],
+      "altImg": "Excellence du développement Front-End"
+    },
+    "animation": {
+      "title": "Animation et transitions",
+      "text": [
+        "Au sein de l'application web Flyflutter, chaque interaction prend vie grâce à des animations captivantes et des transitions fluides.",
+        "Notre interface répond de manière transparente aux actions des utilisateurs, créant un environnement immersif et dynamique.",
+        "Des moments exaltants déclenchés par des événements blockchain aux transitions fluides dans toute l'application, ces animations méticuleusement élaborées rehaussent l'expérience utilisateur globale."
+      ],
+      "altImg": "Animation et transitions"
+    },
+    "contracts": {
+      "title": "Contrats intelligents pour la confiance et l'équité",
+      "text": [
+        "FlyFlutter exploite la puissance des contrats intelligents pour soutenir son expérience de jeu, garantissant une transparence et une équité maximales.",
+        "Ces contrats fournissent un environnement sécurisé aux joueurs, garantissant une égalité des chances pour tous les participants.",
+        "En intégrant le service API3 QRNG, FlyFlutter parvient à la génération décentralisée de nombres aléatoires, garantissant des résultats impartiaux et inviolables.",
+        "De plus, le projet exploite Gelato, un protocole d'automatisation décentralisé, pour rationaliser et automatiser diverses fonctionnalités des contrats intelligents, améliorant ainsi l'efficacité et la fiabilité de la plateforme."
+      ],
+      "altImg": "Contrats intelligents pour la confiance et l'équité"
+    },
+    "betting": {
+      "title": "Cycle de paris",
+      "text": [
+        "Le cycle de paris dans Flyflutter comprend les étapes suivantes :",
+        "- Les utilisateurs placent des paris en envoyant des jetons Matic et Flyflutter au contrat de paris.",
+        "- Le contrat OddAndEven génère un nombre aléatoire en utilisant le service API3 QuantumRNG.",
+        "- En fonction du choix de l'utilisateur (pair ou impair) et du nombre généré, le contrat détermine le résultat du pari.",
+        "- Le contrat de paris calcule le paiement et transfère les gains à l'utilisateur.",
+        "Ce cycle garantit une expérience de jeu équitable et transparente pour tous les participants."
+      ],
+      "altImg": "Cycle de paris : une expérience de jeu fluide"
+    }
+  },
   "appAlert": {
     "checkExplorer": "Vérifier sur l'Explorer"
   },

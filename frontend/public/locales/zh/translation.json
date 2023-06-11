@@ -6,6 +6,65 @@
     "body2": "我对区块链技术有着深入的理解，并精通 Solidity 和 Typescript。",
     "body3": "请查看下面的项目，了解我的去中心化应用和智能合约开发工作。"
   },
+  "aboutPage": {
+    "developer": {
+      "title": "展示的Web开发者",
+      "text": [
+        "Flyflutter是由brunovjk精心打造的前沿Web3技术的示范。",
+        "它展示了一个精心策划的强大技术集合，无缝地融合简单与创新，打造沉浸式和引人入胜的赌博体验。"
+      ],
+      "altImg": "Web开发者展示"
+    },
+    "technologies": {
+      "title": "主要使用的技术",
+      "text": [
+        "Next.js、Material Ui、Typescript、Solidity、Ethers.js、I18next、Nodemailer、Vanilla-tilt、Vercel、Wagmi等。",
+        "这些技术构成了Flyflutter的核心，提供了一个强大而复杂的平台，推动了Web开发领域所能实现的界限。",
+        "要进一步了解，您可以在Flyflutter的Github存储库中访问完整的源代码。"
+      ],
+      "altImg": "主要使用的技术"
+    },
+    "front": {
+      "title": "前端开发",
+      "text": [
+        "Flyflutter的前端开发使用了Wagmi和Connect Kit，精心设计以提供玩家直观而无缝的赌博体验。",
+        "我们的用户界面展示了简洁和优雅的完美结合，提供轻松的导航和使用便捷。",
+        "Flyflutter通过后端的智能合约确保了安全可靠的赌博体验，优先考虑透明度和公平性。"
+      ],
+      "altImg": "前端开发卓越性"
+    },
+    "animation": {
+      "title": "动画和过渡效果",
+      "text": [
+        "在Flyflutter Web应用程序中，通过引人入胜的动画和流畅的过渡给每个交互带来生机。",
+        "我们的界面无缝响应用户操作，创造沉浸式和动态的环境。",
+        "从区块链事件引发的激动人心时刻到应用程序中的流畅过渡，这些精心打造的动画提升了整体用户体验。"
+      ],
+      "altImg": "动画和过渡效果"
+    },
+    "contracts": {
+      "title": "用于信任和公平的智能合约",
+      "text": [
+        "FlyFlutter利用智能合约的力量支持其赌博体验，确保最大程度的透明度和公平性。",
+        "这些合约为玩家提供了一个安全的环境，保证了所有参与者的公平竞争环境。",
+        "通过与API3 QRNG服务集成，FlyFlutter实现了去中心化的随机数生成，保证了公正和防篡改的结果。",
+        "此外，该项目利用Gelato，一个去中心化的自动化协议，来简化和自动化各种智能合约功能，提高了平台的效率和可靠性。"
+      ],
+      "altImg": "用于信任和公平的智能合约"
+    },
+    "betting": {
+      "title": "投注周期",
+      "text": [
+        "Flyflutter的投注周期包括以下步骤：",
+        "- 用户通过向投注合约发送Matic和Flyflutter币进行下注。",
+        "- OddAndEven合约使用API3 QuantumRNG服务生成随机数。",
+        "- 基于用户选择的奇数或偶数以及生成的数字，合约确定投注的结果。",
+        "- 投注合约计算支付并将奖金转移到用户账户。",
+        "该周期确保所有参与者享有公平和透明的赌博体验。"
+      ],
+      "altImg": "投注周期：无缝的赌博体验"
+    }
+  },
   "appAlert": {
     "checkExplorer": "在浏览器上查看"
   },

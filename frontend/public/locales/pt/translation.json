@@ -6,6 +6,65 @@
     "body2": "Com um profundo conhecimento em tecnologia blockchain e experiência em Solidity e Typescript.",
     "body3": "Explore meus projetos abaixo para ver meu trabalho com dApps e Smart Contracts."
   },
+  "aboutPage": {
+    "developer": {
+      "title": "Desenvolvedor Web Showcased",
+      "text": [
+        "Flyflutter é uma demonstração de tecnologias Web3 de ponta, meticulosamente criada por brunovjk.",
+        "Serve como uma vitrine para uma coleção selecionada de tecnologias poderosas, mesclando perfeitamente simplicidade com inovação para criar uma experiência imersiva e cativante de jogos de azar."
+      ],
+      "altImg": "Destaque Desenvolvedor Web"
+    },
+    "technologies": {
+      "title": "Principais Tecnologias Utilizadas",
+      "text": [
+        "Next.js, Material Ui, Typescript, Solidity, Ethers.js, I18next, Nodemailer, Vanilla-tilt, Vercel, Wagmi e mais.",
+        "Essas tecnologias formam a base do Flyflutter, fornecendo uma plataforma robusta e sofisticada que ultrapassa os limites do que é possível no campo do desenvolvimento web.",
+        "Para explorar mais, você pode acessar o código-fonte completo no repositório do Flyflutter no Github."
+      ],
+      "altImg": "Principais Tecnologias Utilizadas"
+    },
+    "front": {
+      "title": "Desenvolvimento Front-End",
+      "text": [
+        "O desenvolvimento front-end do Flyflutter é feito usando Wagmi e Connect Kit, meticulosamente projetados para fornecer aos jogadores uma experiência de jogo intuitiva e perfeita.",
+        "Nossa interface de usuário exibe uma combinação harmoniosa de simplicidade e elegância, oferecendo navegação fácil e facilidade de uso.",
+        "Impulsionado por contratos inteligentes no back-end, o Flyflutter garante uma experiência de jogo segura e confiável, priorizando transparência e justiça."
+      ],
+      "altImg": "Excelência em Desenvolvimento Front-End"
+    },
+    "animation": {
+      "title": "Animação e Transições",
+      "text": [
+        "Dentro do aplicativo da Web Flyflutter, cada interação ganha vida por meio de animações cativantes e transições fluidas.",
+        "Nossa interface responde perfeitamente às ações do usuário, criando um ambiente imersivo e dinâmico.",
+        "Desde os momentos emocionantes desencadeados por eventos de blockchain até as transições suaves em todo o aplicativo, essas animações meticulosamente criadas elevam a experiência geral do usuário."
+      ],
+      "altImg": "Animação e Transições"
+    },
+    "contracts": {
+      "title": "Contratos Inteligentes para Confiança e Justiça",
+      "text": [
+        "O FlyFlutter utiliza o poder dos contratos inteligentes para fundamentar sua experiência de jogo, garantindo máxima transparência e justiça.",
+        "Esses contratos fornecem um ambiente seguro para os jogadores, garantindo um campo de jogo nivelado para todos os participantes.",
+        "Ao integrar-se ao serviço API3 QRNG, o FlyFlutter alcança a geração descentralizada de números aleatórios, garantindo resultados imparciais e à prova de manipulação.",
+        "Além disso, o projeto utiliza o Gelato, um protocolo de automação descentralizado, para otimizar e automatizar várias funcionalidades de contratos inteligentes, aprimorando a eficiência e a confiabilidade da plataforma."
+      ],
+      "altImg": "Contratos Inteligentes para Confiança e Justiça"
+    },
+    "betting": {
+      "title": "Ciclo de Apostas",
+      "text": [
+        "O Ciclo de Apostas no Flyflutter envolve as seguintes etapas:",
+        "- Os usuários fazem apostas enviando Matic e Moedas Flyflutter para o Contrato de Apostas.",
+        "- O Contrato OddAndEven gera um número aleatório usando o serviço API3 QuantumRNG.",
+        "- Com base na escolha do usuário de Ímpar ou Par e no número gerado, o contrato determina o resultado da aposta.",
+        "- O Contrato de Apostas calcula o pagamento e transfere os ganhos para o usuário.",
+        "Esse ciclo garante uma experiência de jogo justa e transparente para todos os participantes."
+      ],
+      "altImg": "O Ciclo de Apostas: Uma Experiência de Jogo Perfeita"
+    }
+  },
   "appAlert": {
     "checkExplorer": "Verificar no Explorer"
   },

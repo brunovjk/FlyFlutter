@@ -5,7 +5,7 @@ import VanillaTilt from "vanilla-tilt";
 
 interface AboutSectionProps {
   title: string;
-  text: string;
+  text: string[];
   img: string;
   altImg: string;
   left?: boolean;
@@ -32,16 +32,22 @@ const AboutSection: FC<AboutSectionProps> = ({
 
   return (
     <FadeInContainer justifyContent="space-between">
-      <Box sx={{ width: { xs: "100%", sm: "50%" } }} order={left ? 1 : 0}>
+      <Box sx={{ width: { xs: "100%", sm: "45%" } }} order={left ? 1 : 0}>
         <TrailFromX itemStyle={{ padding: "16px" }} fromRight={left}>
-          <Typography variant="h4">{title}</Typography>
-          <Typography variant="body1">{text}</Typography>
+          <Typography variant="h3">{title}</Typography>
+          {text.map((item, index) => {
+            return (
+              <Typography key={index} variant="body1">
+                {item}
+              </Typography>
+            );
+          })}
         </TrailFromX>
       </Box>
 
       <Box
         ref={tilt}
-        sx={{ width: { xs: "100%", sm: "40%" } }}
+        sx={{ width: { xs: "100%", sm: "50%" } }}
         order={left ? 0 : 1}
       >
         <SVGBox svgPath={img} svgAlt={altImg} />
