@@ -139,7 +139,6 @@
     "description": "FlyFlutter - Jouez au jeu des mains impaires et paires avec des hasards quantiques et une automatisation des contrats intelligents pour des décisions en apesanteur ! Il fonctionne sur les blockchains Polygon et Mumbai en utilisant notre token gratuit à créer ",
     "tokenName": "FlyFlutterCoin"
   },
-
   "history": {
     "columns": {
       "guess": {
@@ -172,7 +171,6 @@
     "totalSentLabel": "Total envoyé",
     "totalSentTooltip": "Montant total de FlyFlutterCoin envoyé par la Maison aux gagnants des paris"
   },
-
   "odd": "Impair",
   "playFunctions": {
     "handleSetWinner": {
@@ -236,7 +234,6 @@
       "title": "Accessibilité",
       "copy": "FlyFlutter est accessible aux joueurs du monde entier, il vous suffit d'une connexion Internet et de quelques MATICs pour participer. Que vous soyez situé au cœur d'une ville animée ou dans un coin reculé du monde, vous pouvez vous joindre à l'expérience FlyFlutter."
     },
-
     {
       "title": "Clause de non-responsabilité",
       "copy": "Bien que FlyFlutter soit un jeu palpitant, il est important de se rappeler qu'il comporte un élément de chance. Il y a toujours un risque de perte lors de la prise de paris. Nous conseillons vivement à tous les joueurs de jouer de manière responsable et de ne miser que des sommes qu'ils peuvent se permettre de perdre."
@@ -252,84 +249,60 @@
   ],
   "projects": [
     {
-      "projectName": "Système de récompense",
-      "description": "Système de récompense automatisé pour BRAIN+ utilisant Chainlink.",
-      "technologiesUsed": "Flux de données, Automatisation, Chainlink",
-      "keyFeatures": "Récompenses en pilote automatique, Suivi des performances",
+      "projectName": "YINxYANG",
+      "description": "Place de marché de mode avec gamification des lancements",
+      "technologiesUsed": "CTO, Contrat intelligent, Solidity, WithPaper",
+      "keyFeatures": "En tant que CTO, j'ai dirigé le développement du contrat intelligent de la plateforme et travaillé en étroite collaboration avec les équipes frontend et backend, en apportant une expertise technique, une planification et une réalisation des tâches.",
       "learnMore": "En savoir plus",
-      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+      "learnMoreLink": "https://yinxyang.com/"
+    },
+    {
+      "projectName": "BiggerMINDS",
+      "description": "Système de récompenses automatisé basé sur Chainlink",
+      "technologiesUsed": "Chainlink, Automatisation des contrats intelligents, Flux de données",
+      "keyFeatures": "Création d'un contrat intelligent pour fonctionner comme un suivi des performances et une calculatrice de récompenses en pilote automatique utilisant Chainlink.",
+      "learnMore": "En savoir plus",
+      "learnMoreLink": "https://biggerminds.io/"
     },
     {
       "projectName": "Gridding",
-      "description": "Tableau de bord de portefeuille DeFi avec mutation dynamique des NFT.",
+      "description": "Tableau de bord de portefeuille DeFi avec NFT",
       "technologiesUsed": "DeFi, Chainlink, Tableland, IPFS",
-      "keyFeatures": "Accessibilité, Interactivité, Mutation dynamique des NFT",
-      "learnMore": "Commencer",
+      "keyFeatures": "Contribué à la création de contrats intelligents pour stocker et gérer les niveaux de service du tableau de bord de portefeuille DeFi.",
+      "learnMore": "En savoir plus",
       "learnMoreLink": "https://gridding.xyz/"
     },
     {
-      "projectName": "Willr.io",
-      "description": "Créez et sécurisez des testaments sur la blockchain.",
-      "technologiesUsed": "ICON, Ethereum, Inter-chaînes",
-      "keyFeatures": "Transfert sécurisé des actifs, Fonctionnalité inter-chaînes",
-      "learnMore": "Découvrir maintenant",
+      "projectName": "Willr",
+      "description": "Création de testaments basée sur la technologie Blockchain",
+      "technologiesUsed": "ICON, Ethereum, Interconnexion de chaînes",
+      "keyFeatures": "Développement d'une page d'accueil, d'une page de connexion et d'un tableau de bord pour interagir avec ICON Blockchain, permettant aux utilisateurs de gérer leurs actifs inter-chaînes et de créer/gérer des testaments.",
+      "learnMore": "En savoir plus",
       "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
     },
     {
-      "projectName": "Outil de liquidité MIND",
-      "description": "Gérez la liquidité pour la paire de jetons MIND/AVAX.",
-      "technologiesUsed": "Automated Market Making (AMM), Gestion de pool de liquidité",
-      "keyFeatures": "Ajouter/Supprimer de la liquidité, Définir des paramètres",
-      "learnMore": "Plonger",
-      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
-    },
-    {
       "projectName": "SoulWars",
-      "description": "Jeu Unity basé sur le navigateur avec intégration NFT pour contrôler l'accès.",
-      "technologiesUsed": "ERC-1155, Java, Solidity",
-      "keyFeatures": "Contrôle d'accès, SDK Unity Thirdweb, Rendu 3D conditionnel",
-      "learnMore": "Jouer maintenant",
+      "description": "Jeu NFT basé sur navigateur développé avec Unity",
+      "technologiesUsed": "Unity, Java, Solidity, ERC-1155",
+      "keyFeatures": "Création d'un jeu basé sur navigateur avec Unity et des NFT pour suivre la progression des joueurs et assurer la propriété des actifs en jeu.",
+      "learnMore": "En savoir plus",
       "learnMoreLink": "https://soulwars.web.app/"
     },
     {
-      "projectName": "Portfolio Frontend",
-      "description": "Mise en valeur des compétences frontend, transition de pages, animations et rendu côté serveur.",
-      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
-      "keyFeatures": "Site Web Portfolio",
-      "learnMore": "Voir la démonstration",
-      "learnMoreLink": "https://vjkportifolio.web.app/"
-    },
-    {
-      "projectName": "Créateur de campagnes",
-      "description": "Contrat de financement participatif pour la gestion des campagnes.",
-      "technologiesUsed": "ERC20, Solidity, Hardhat",
-      "keyFeatures": "Durée maximale, Financement ERC20, Remboursement en cas d'échec de l'objectif",
-      "learnMore": "Démarrer une campagne",
-      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
-    },
-    {
-      "projectName": "ERC-20 Playground",
-      "description": "Interface pour interagir avec des jetons ERC-20 et Uniswap.",
-      "technologiesUsed": "Ethereum, ERC20, Uniswap, Material Ui",
-      "keyFeatures": "Interaction avec les jetons, Échange Uniswap, Historique des transactions",
-      "learnMore": "Échanger des jetons",
+      "projectName": "VjkSwapp",
+      "description": "Interface d'interaction avec des jetons ERC-20",
+      "technologiesUsed": "React, Material UI, Solidity, Hardhat",
+      "keyFeatures": "Gestion de la manipulation de jetons, des jetons natifs, wrappeds, ERC-20, des soldes et des échanges.",
+      "learnMore": "En savoir plus",
       "learnMoreLink": "https://vjkswapp.web.app/"
     },
     {
-      "projectName": "Générateur de NFT",
-      "description": "Contrats intelligents automatisés pour la génération de NFT utilisant Chainlink.",
-      "technologiesUsed": "Chainlink, Solidity, Ether.js",
-      "keyFeatures": "Automatisation des contrats, Collection de NFT, Création de SVG",
-      "learnMore": "Créer des NFT",
-      "learnMoreLink": "https://vjknft.web.app/"
-    },
-    {
-      "projectName": "SaudeVapor",
-      "description": "Plateforme sur le cannabis et la recherche médicale.",
-      "technologiesUsed": "Google Cloud, Solana, Metaplex, DAO",
-      "keyFeatures": "Collection de composés de cannabis NFT, Création de DAO",
+      "projectName": "Portfolio",
+      "description": "Mise en valeur des compétences en frontend",
+      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
+      "keyFeatures": "Travail sur les transitions de page, les animations et le rendu côté serveur.",
       "learnMore": "En savoir plus",
-      "learnMoreLink": "https://www.saudevapor.com/"
+      "learnMoreLink": "https://vjkportifolio.web.app/"
     }
   ]
 }

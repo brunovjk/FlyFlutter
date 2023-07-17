@@ -249,84 +249,60 @@
   ],
   "projects": [
     {
-      "projectName": "Sistema de Recompensa",
-      "description": "Sistema automatizado de recompensa para o BRAIN+ usando Chainlink.",
-      "technologiesUsed": "Feed de Dados, Automação, Chainlink",
-      "keyFeatures": "Recompensas Automáticas, Rastreamento de Desempenho",
+      "projectName": "YINxYANG",
+      "description": "Gamificação de marketplace de moda",
+      "technologiesUsed": "CTO, Smart Contract, Solidity, WithPaper",
+      "keyFeatures": "Como CTO, liderei o desenvolvimento do contrato inteligente da plataforma e trabalhei em estreita colaboração com as equipes de frontend e backend, fornecendo expertise técnica, planejamento e cumprimento de tarefas",
       "learnMore": "Saiba Mais",
-      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+      "learnMoreLink": "https://yinxyang.com/"
+    },
+    {
+      "projectName": "BiggerMINDS",
+      "description": "Sistema de recompensas automatizado baseado em Chainlink",
+      "technologiesUsed": "Chainlink, Automação de Smart Contracts, Data Feed",
+      "keyFeatures": "Criei um contrato inteligente para funcionar como um rastreador de desempenho e uma calculadora de recompensas em piloto automático usando Chainlink",
+      "learnMore": "Saiba Mais",
+      "learnMoreLink": "https://biggerminds.io/"
     },
     {
       "projectName": "Gridding",
-      "description": "Painel de controle de portfólio DeFi com mutação dinâmica de NFT.",
+      "description": "Painel de controle de portfólio DeFi com NFTs",
       "technologiesUsed": "DeFi, Chainlink, Tableland, IPFS",
-      "keyFeatures": "Acessibilidade, Interatividade, Mutação Dinâmica de NFT",
-      "learnMore": "Comece Agora",
+      "keyFeatures": "Contribuí para a criação de contratos inteligentes para armazenar e gerenciar camadas de serviço do painel de controle de portfólio DeFi",
+      "learnMore": "Saiba Mais",
       "learnMoreLink": "https://gridding.xyz/"
     },
     {
-      "projectName": "Willr.io",
-      "description": "Crie testamentos seguros na blockchain.",
-      "technologiesUsed": "ICON, Ethereum, Cross-Chain",
-      "keyFeatures": "Transferência Segura de Ativos, Funcionalidade Cross-Chain",
-      "learnMore": "Descubra Agora",
+      "projectName": "Willr",
+      "description": "Criação de testamentos baseada em blockchain",
+      "technologiesUsed": "ICON, Ethereum, Interconexão de blockchains",
+      "keyFeatures": "Desenvolvi uma página de apresentação, página de login e painel de controle para interagir com a ICON Blockchain, permitindo que os usuários gerenciem seus ativos interconectados e criem/gerenciem testamentos",
+      "learnMore": "Saiba Mais",
       "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
     },
     {
-      "projectName": "MIND Liquidity Tool",
-      "description": "Gerencie a liquidez para o par de tokens MIND/AVAX.",
-      "technologiesUsed": "Automated Market Making (AMM), Gerenciamento de Pool de Liquidez",
-      "keyFeatures": "Adicionar/Remover Liquidez, Definir Parâmetros",
-      "learnMore": "Explore",
-      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
-    },
-    {
       "projectName": "SoulWars",
-      "description": "Jogo Unity baseado em navegador com integração de NFT para controlar o acesso.",
-      "technologiesUsed": "ERC-1155, Java, Solidity",
-      "keyFeatures": "Controle de Acesso, Unity Thirdweb SDK, Renderização 3D Condicional",
-      "learnMore": "Jogue Agora",
+      "description": "Jogo NFT baseado em navegador desenvolvido com Unity",
+      "technologiesUsed": "Unity, Java, Solidity, ERC-1155",
+      "keyFeatures": "Criei um jogo baseado em navegador com Unity e NFTs para acompanhar o progresso dos jogadores e garantir a propriedade dos ativos no jogo",
+      "learnMore": "Saiba Mais",
       "learnMoreLink": "https://soulwars.web.app/"
     },
     {
-      "projectName": "Portfólio Frontend",
-      "description": "Exibindo habilidades de frontend, transição de páginas, animações e renderização no lado do servidor.",
-      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
-      "keyFeatures": "Website de Portfólio",
-      "learnMore": "Ver Demonstração",
-      "learnMoreLink": "https://vjkportifolio.web.app/"
-    },
-    {
-      "projectName": "Criador de Campanhas",
-      "description": "Contrato de financiamento coletivo para gerenciar campanhas.",
-      "technologiesUsed": "ERC20, Solidity, Hardhat",
-      "keyFeatures": "Duração máxima, Financiamento ERC20, Reembolso em caso de falha no objetivo",
-      "learnMore": "Iniciar Financiamento Coletivo",
-      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
-    },
-    {
-      "projectName": "ERC-20 Playground",
-      "description": "Interface para interagir com tokens ERC-20 e Uniswap.",
-      "technologiesUsed": "Ethereum, ERC20, Uniswap, Material Ui",
-      "keyFeatures": "Interação com tokens, Troca na Uniswap, Histórico de transações",
-      "learnMore": "Trocar Tokens",
+      "projectName": "VjkSwapp",
+      "description": "Interface de interação com tokens ERC-20",
+      "technologiesUsed": "React, Material UI, Solidity, Hardhat",
+      "keyFeatures": "Manipulação de tokens, nativos, wrappeds, ERC-20, saldos e trocas",
+      "learnMore": "Saiba Mais",
       "learnMoreLink": "https://vjkswapp.web.app/"
     },
     {
-      "projectName": "Gerador de NFTs",
-      "description": "Contratos inteligentes automatizados para geração de NFTs usando Chainlink.",
-      "technologiesUsed": "Chainlink, Solidity, Ether.js",
-      "keyFeatures": "Automação de contratos, Coleção de NFTs, Criação de SVG",
-      "learnMore": "Criar NFTs",
-      "learnMoreLink": "https://vjknft.web.app/"
-    },
-    {
-      "projectName": "SaudeVapor",
-      "description": "Plataforma sobre cannabis e pesquisa médica.",
-      "technologiesUsed": "Google Cloud, Solana, Metaplex, DAO",
-      "keyFeatures": "Coleção de NFTs de Compostos de Cannabis, Criação de DAO",
+      "projectName": "Portfolio",
+      "description": "Mostrando habilidades de frontend",
+      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
+      "keyFeatures": "Trabalhei em transições de página, animações e renderização no lado do servidor",
       "learnMore": "Saiba Mais",
-      "learnMoreLink": "https://www.saudevapor.com/"
+      "learnMoreLink": "https://vjkportifolio.web.app/"
     }
   ]
 }

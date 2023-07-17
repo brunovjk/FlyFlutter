@@ -249,84 +249,60 @@
   ],
   "projects": [
     {
-      "projectName": "奖励系统",
-      "description": "使用 Chainlink 实现 BRAIN+ 的自动化奖励系统。",
-      "technologiesUsed": "数据源，自动化，Chainlink",
-      "keyFeatures": "自动驾驶奖励，绩效跟踪",
+      "projectName": "YINxYANG",
+      "description": "时尚潮品市场游戏化",
+      "technologiesUsed": "CTO，智能合约，Solidity，WithPaper",
+      "keyFeatures": "作为CTO，带领团队开发平台的智能合约，并与前端和后端团队密切合作，提供技术专业知识、规划和任务履行",
       "learnMore": "了解更多",
-      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+      "learnMoreLink": "https://yinxyang.com/"
+    },
+    {
+      "projectName": "BiggerMINDS",
+      "description": "基于Chainlink的自动化奖励系统",
+      "technologiesUsed": "Chainlink，智能合约自动化，数据源",
+      "keyFeatures": "创建了一个智能合约，使用Chainlink作为绩效追踪和自动驾驶奖励计算器",
+      "learnMore": "了解更多",
+      "learnMoreLink": "https://biggerminds.io/"
     },
     {
       "projectName": "Gridding",
-      "description": "具有动态 NFT 变异的 DeFi 组合仪表盘。",
+      "description": "带有NFT的DeFi投资组合仪表板",
       "technologiesUsed": "DeFi，Chainlink，Tableland，IPFS",
-      "keyFeatures": "可访问性，互动性，动态 NFT 变异",
-      "learnMore": "开始使用",
+      "keyFeatures": "参与创建智能合约，以存储和管理DeFi投资组合仪表板的服务层级",
+      "learnMore": "了解更多",
       "learnMoreLink": "https://gridding.xyz/"
     },
     {
-      "projectName": "Willr.io",
-      "description": "在区块链上创建和保护遗嘱。",
-      "technologiesUsed": "ICON，Ethereum，跨链",
-      "keyFeatures": "安全资产转移，跨链功能",
-      "learnMore": "立即探索",
+      "projectName": "Willr",
+      "description": "基于区块链的遗嘱创建",
+      "technologiesUsed": "ICON，Ethereum，跨链技术",
+      "keyFeatures": "开发了与ICON区块链进行交互的首页、登录页面和仪表板，以便用户管理跨链资产和创建/管理遗嘱",
+      "learnMore": "了解更多",
       "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
     },
     {
-      "projectName": "MIND 流动性工具",
-      "description": "管理 MIND/AVAX 代币对的流动性。",
-      "technologiesUsed": "自动化做市（AMM），流动性池管理",
-      "keyFeatures": "增加/移除流动性，设置参数",
-      "learnMore": "立即体验",
-      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
-    },
-    {
       "projectName": "SoulWars",
-      "description": "基于 Unity 的浏览器游戏，集成 NFT 以控制访问权限。",
-      "technologiesUsed": "ERC-1155，Java，Solidity",
-      "keyFeatures": "访问控制，Thirdweb SDK Unity，条件性 3D 渲染",
-      "learnMore": "立即玩游戏",
+      "description": "基于Unity的浏览器游戏NFT",
+      "technologiesUsed": "Unity，Java，Solidity，ERC-1155",
+      "keyFeatures": "创建了一个基于Unity的浏览器游戏，使用NFT追踪玩家进度并确保游戏内资产的所有权",
+      "learnMore": "了解更多",
       "learnMoreLink": "https://soulwars.web.app/"
     },
     {
-      "projectName": "前端作品集",
-      "description": "展示前端技能，页面过渡，动画和服务器端渲染。",
-      "technologiesUsed": "Next.js，Three.js，Tailwind CSS",
-      "keyFeatures": "作品集网站",
-      "learnMore": "查看展示",
-      "learnMoreLink": "https://vjkportifolio.web.app/"
-    },
-    {
-      "projectName": "众筹创建器",
-      "description": "用于管理众筹活动的智能合约。",
-      "technologiesUsed": "ERC20，Solidity，Hardhat",
-      "keyFeatures": "最长持续时间，ERC20 资金，目标失败时退款",
-      "learnMore": "开始众筹",
-      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
-    },
-    {
-      "projectName": "ERC-20 游乐场",
-      "description": "与 ERC-20 代币和 Uniswap 进行交互的界面。",
-      "technologiesUsed": "以太坊，ERC20，Uniswap，Material Ui",
-      "keyFeatures": "代币交互，Uniswap 交换，交易历史",
-      "learnMore": "交换代币",
+      "projectName": "VjkSwapp",
+      "description": "ERC-20代币交互界面",
+      "technologiesUsed": "React，Material UI，Solidity，Hardhat",
+      "keyFeatures": "处理代币操作，原生代币，封装代币，ERC-20代币，余额和交换",
+      "learnMore": "了解更多",
       "learnMoreLink": "https://vjkswapp.web.app/"
     },
     {
-      "projectName": "NFT 生成器",
-      "description": "使用 Chainlink 进行自动化的 NFT 生成智能合约。",
-      "technologiesUsed": "Chainlink，Solidity，Ether.js",
-      "keyFeatures": "合约自动化，NFT 收藏，SVG 创建",
-      "learnMore": "创建 NFT",
-      "learnMoreLink": "https://vjknft.web.app/"
-    },
-    {
-      "projectName": "SaudeVapor",
-      "description": "关于大麻和医学研究的平台。",
-      "technologiesUsed": "Google Cloud，Solana，Metaplex，DAO",
-      "keyFeatures": "大麻化合物 NFT 收藏，DAO 创建",
+      "projectName": "Portfolio",
+      "description": "展示前端技能",
+      "technologiesUsed": "Next.js，Three.js，Tailwind CSS",
+      "keyFeatures": "参与页面转场、动画和服务器端渲染",
       "learnMore": "了解更多",
-      "learnMoreLink": "https://www.saudevapor.com/"
+      "learnMoreLink": "https://vjkportifolio.web.app/"
     }
   ]
 }

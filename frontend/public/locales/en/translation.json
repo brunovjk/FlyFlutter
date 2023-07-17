@@ -191,7 +191,6 @@
       "transactionNotSent": "Transaction not sent. Please try again."
     }
   },
-
   "results": {
     "playerLabel": "Player",
     "playerTooltip": "Your last bet",
@@ -202,7 +201,6 @@
     "houseLabel": "House",
     "houseTooltip": "House Hand"
   },
-
   "tabs": {
     "playLabel": "Play",
     "rulesLabel": "Rules",
@@ -215,7 +213,6 @@
     "bubble2_2": "decide!",
     "tokenName": "FlyFlutter"
   },
-
   "rules": [
     {
       "title": "Welcome to FlyFlutter!",
@@ -237,7 +234,6 @@
       "title": "Accessibility",
       "copy": "FlyFlutter is accessible to players worldwide, requiring only an internet connection and some MATICs to participate. Whether you're located in the heart of a bustling city or in a remote corner of the world, you can join in on the FlyFlutter experience."
     },
-
     {
       "title": "Disclaimer",
       "copy": "While FlyFlutter is an exhilarating game, it is important to remember that it involves an element of chance. There is always a risk of losing when placing bets. We strongly advise all players to gamble responsibly and only wager amounts they can afford to lose."
@@ -251,87 +247,62 @@
       "copy": "Thank you for joining us on this exciting journey with FlyFlutter. We hope you enjoy playing and wish you the best of luck as you explore the thrilling world of FlyFlutter!"
     }
   ],
-
   "projects": [
     {
-      "projectName": "Reward System",
-      "description": "Automated reward system for BRAIN+ using Chainlink.",
-      "technologiesUsed": "Data Feed, Automation, Chainlink",
-      "keyFeatures": "Autopilot Rewards, Performance Tracking",
-      "learnMore": "Explore More",
-      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+      "projectName": "YINxYANG",
+      "description": "Fashion drop marketplace gamification",
+      "technologiesUsed": "CTO, Smart Contract, Solidity, WithPaper",
+      "keyFeatures": "As CTO, led the development of the platform's smart contract and worked closely with the frontend and backend teams, providing technical expertise, planning, and task fulfillment",
+      "learnMore": "Learn More",
+      "learnMoreLink": "https://yinxyang.com/"
+    },
+    {
+      "projectName": "BiggerMINDS",
+      "description": "Chainlink-based automated reward system",
+      "technologiesUsed": "Chainlink, Smart Contract Automation, Data Feed",
+      "keyFeatures": "Created a smart contract to work as a Performance Tracking and Autopilot Rewards calculator using Chainlink",
+      "learnMore": "Learn More",
+      "learnMoreLink": "https://biggerminds.io/"
     },
     {
       "projectName": "Gridding",
-      "description": "DeFi portfolio dashboard with dynamic NFT mutation.",
+      "description": "DeFi portfolio dashboard with NFTs",
       "technologiesUsed": "DeFi, Chainlink, Tableland, IPFS",
-      "keyFeatures": "Accessibility, Interactivity, Dynamic NFT Mutation",
-      "learnMore": "Get Started",
+      "keyFeatures": "Contributed to creating smart contracts to store and manage service tiers for the DeFi portfolio dashboard",
+      "learnMore": "Learn More",
       "learnMoreLink": "https://gridding.xyz/"
     },
     {
-      "projectName": "Willr.io",
-      "description": "Create and secured wills on the blockchain.",
+      "projectName": "Willr",
+      "description": "Blockchain-based will creation",
       "technologiesUsed": "ICON, Ethereum, Cross-Chain",
-      "keyFeatures": "Secure asset transfer, Cross-chain functionality",
-      "learnMore": "Discover Now",
+      "keyFeatures": "Developed a land page, login page, and dashboard to interact with ICON Blockchain for users to manage their cross-chain assets and create/manage wills",
+      "learnMore": "Learn More",
       "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
     },
     {
-      "projectName": "MIND Liquidity Tool",
-      "description": "Manage liquidity for MIND/AVAX token pair.",
-      "technologiesUsed": "Automated Market Making (AMM), Liquidity Pool Management",
-      "keyFeatures": "Add/Remove Liquidity, Set Parameters",
-      "learnMore": "Dive In",
-      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
-    },
-    {
       "projectName": "SoulWars",
-      "description": "Unity Browser-based game with NFT integration to control access.",
-      "technologiesUsed": "ERC-1155, Java, Solidity",
-      "keyFeatures": "Access Control, Thirdweb SDK Unity, Conditional 3D rendering",
-      "learnMore": "Play Now",
+      "description": "Unity browser-based NFT game",
+      "technologiesUsed": "Unity, Java, Solidity, ERC-1155",
+      "keyFeatures": "Created a Unity browser-based game with NFTs to track player progress and ensure ownership of in-game assets",
+      "learnMore": "Learn More",
       "learnMoreLink": "https://soulwars.web.app/"
     },
     {
-      "projectName": "Frontend Portfolio",
-      "description": "Showcasing frontend skills, page transition, animations and server-side rendering.",
-      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
-      "keyFeatures": "Portfolio Website",
-      "learnMore": "See Showcase",
-      "learnMoreLink": "https://vjkportifolio.web.app/"
-    },
-    {
-      "projectName": "Campaign Creator",
-      "description": "Crowdfunding contract for managing campaigns.",
-      "technologiesUsed": "ERC20, Solidity, Hardhat",
-      "keyFeatures": "Max duration, ERC20 funding, Refund on goal failure",
-      "learnMore": "Start Crowdfunding",
-      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
-    },
-    {
-      "projectName": "ERC-20 Playground",
-      "description": "Interface for interacting with ERC-20 tokens and Uniswap.",
-      "technologiesUsed": "Ethereum, ERC20, Uniswap, Material Ui",
-      "keyFeatures": "Token interaction, Uniswap swapping, Transaction history",
-      "learnMore": "Swap Tokens",
+      "projectName": "VjkSwapp",
+      "description": "ERC-20 token interaction interface",
+      "technologiesUsed": "React, Material UI, Solidity, Hardhat",
+      "keyFeatures": "Handled token manipulation, natives, wrappeds, ERC-20, balances, and swaps",
+      "learnMore": "Learn More",
       "learnMoreLink": "https://vjkswapp.web.app/"
     },
     {
-      "projectName": "NFT Generator",
-      "description": "Automated smart contracts for NFT generation using Chainlink.",
-      "technologiesUsed": "Chainlink, Solidity, Ether.js",
-      "keyFeatures": "Contract automation, NFT collection, SVG creation",
-      "learnMore": "Create NFTs",
-      "learnMoreLink": "https://vjknft.web.app/"
-    },
-    {
-      "projectName": "SaudeVapor",
-      "description": "Platform about cannabis and medical research.",
-      "technologiesUsed": "Google Cloud, Solana, Metaplex, DAO",
-      "keyFeatures": "Cannabis Compound NFT collection, DAO creation",
+      "projectName": "Portfolio",
+      "description": "Showcasing frontend skills",
+      "technologiesUsed": "Next.js, Three.js, Tailwind CSS",
+      "keyFeatures": "Worked on page transition, animations, and server-side renderin",
       "learnMore": "Learn More",
-      "learnMoreLink": "https://www.saudevapor.com/"
+      "learnMoreLink": "https://vjkportifolio.web.app/"
     }
   ]
 }

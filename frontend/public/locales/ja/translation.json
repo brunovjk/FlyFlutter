@@ -249,84 +249,60 @@
   ],
   "projects": [
     {
-      "projectName": "報酬システム",
-      "description": "Chainlinkを使用したBRAIN+の自動報酬システム。",
-      "technologiesUsed": "データフィード、自動化、Chainlink",
-      "keyFeatures": "自動報酬、パフォーマンス追跡",
+      "projectName": "YINxYANG",
+      "description": "ファッションドロップマーケットプレイスのゲーミフィケーション",
+      "technologiesUsed": "CTO、スマートコントラクト、Solidity、WithPaper",
+      "keyFeatures": "CTOとして、プラットフォームのスマートコントラクトの開発を主導し、フロントエンドとバックエンドのチームと緊密に連携して、技術的な専門知識、計画、タスクの遂行を提供しました。",
       "learnMore": "詳細を見る",
-      "learnMoreLink": "https://blog.biggerminds.io/biggerminds-integrates-chainlink-automation-to-help-update-and-distribute-dynamic-rewards-27a7c016623c"
+      "learnMoreLink": "https://yinxyang.com/"
+    },
+    {
+      "projectName": "BiggerMINDS",
+      "description": "Chainlinkをベースとした自動化された報酬システム",
+      "technologiesUsed": "Chainlink、スマートコントラクトの自動化、データフィード",
+      "keyFeatures": "Chainlinkを使用したパフォーマンス追跡と自動報酬計算機能を持つスマートコントラクトを作成しました。",
+      "learnMore": "詳細を見る",
+      "learnMoreLink": "https://biggerminds.io/"
     },
     {
       "projectName": "Gridding",
-      "description": "動的なNFT変異を持つDeFiポートフォリオダッシュボード。",
+      "description": "NFTを使用したDeFiポートフォリオダッシュボード",
       "technologiesUsed": "DeFi、Chainlink、Tableland、IPFS",
-      "keyFeatures": "アクセシビリティ、インタラクティビティ、動的なNFT変異",
-      "learnMore": "はじめる",
+      "keyFeatures": "DeFiポートフォリオダッシュボードのサービスティアを保存・管理するスマートコントラクトの作成に貢献しました。",
+      "learnMore": "詳細を見る",
       "learnMoreLink": "https://gridding.xyz/"
     },
     {
-      "projectName": "Willr.io",
-      "description": "ブロックチェーン上で遺言を作成し、保護します。",
+      "projectName": "Willr",
+      "description": "ブロックチェーンベースの遺言作成",
       "technologiesUsed": "ICON、Ethereum、クロスチェーン",
-      "keyFeatures": "セキュアな資産移転、クロスチェーン機能",
-      "learnMore": "今すぐ詳しく",
+      "keyFeatures": "ユーザーがクロスチェーンアセットを管理し、遺言を作成・管理するためにICON Blockchainと連携するランディングページ、ログインページ、ダッシュボードを開発しました。",
+      "learnMore": "詳細を見る",
       "learnMoreLink": "https://github.com/nour-karoui/Willr.io"
     },
     {
-      "projectName": "MIND Liquidity Tool",
-      "description": "MIND/AVAXトークンペアの流動性を管理します。",
-      "technologiesUsed": "自動マーケットメイキング（AMM）、流動性プールの管理",
-      "keyFeatures": "流動性の追加/削除、パラメータの設定",
-      "learnMore": "詳細を確認",
-      "learnMoreLink": "https://github.com/brunovjk/MINDSLiquidityTool/"
-    },
-    {
       "projectName": "SoulWars",
-      "description": "NFT統合を備えたUnityベースのブラウザゲームでアクセスを制御します。",
-      "technologiesUsed": "ERC-1155、Java、Solidity",
-      "keyFeatures": "アクセス制御、Thirdweb SDK Unity、条件付き3Dレンダリング",
-      "learnMore": "今すぐプレイ",
+      "description": "UnityベースのブラウザゲームNFT",
+      "technologiesUsed": "Unity、Java、Solidity、ERC-1155",
+      "keyFeatures": "NFTを使用したUnityベースのブラウザゲームを作成し、プレイヤーの進行状況を追跡し、ゲーム内アセットの所有権を確保しました。",
+      "learnMore": "詳細を見る",
       "learnMoreLink": "https://soulwars.web.app/"
     },
     {
-      "projectName": "フロントエンドポートフォリオ",
-      "description": "フロントエンドのスキル、ページ遷移、アニメーション、サーバーサイドレンダリングをショーケースします。",
-      "technologiesUsed": "Next.js、Three.js、Tailwind CSS",
-      "keyFeatures": "ポートフォリオウェブサイト",
-      "learnMore": "ショーケースを見る",
-      "learnMoreLink": "https://vjkportifolio.web.app/"
-    },
-    {
-      "projectName": "キャンペーンクリエーター",
-      "description": "キャンペーンを管理するためのクラウドファンディング契約。",
-      "technologiesUsed": "ERC20、Solidity、Hardhat",
-      "keyFeatures": "最大期間、ERC20ファンディング、目標未達時の払い戻し",
-      "learnMore": "クラウドファンディングを開始する",
-      "learnMoreLink": "https://github.com/brunovjk/crowdfunding"
-    },
-    {
-      "projectName": "ERC-20プレイグラウンド",
-      "description": "ERC-20トークンとUniswapとのやり取りのためのインターフェース。",
-      "technologiesUsed": "Ethereum、ERC20、Uniswap、Material Ui",
-      "keyFeatures": "トークンのやり取り、Uniswapのスワッピング、トランザクション履歴",
-      "learnMore": "トークンの交換",
+      "projectName": "VjkSwapp",
+      "description": "ERC-20トークンのインタラクションインターフェース",
+      "technologiesUsed": "React、Material UI、Solidity、Hardhat",
+      "keyFeatures": "トークンの操作、ネイティブ、ラップド、ERC-20、残高、スワップの処理を行いました。",
+      "learnMore": "詳細を見る",
       "learnMoreLink": "https://vjkswapp.web.app/"
     },
     {
-      "projectName": "NFTジェネレーター",
-      "description": "Chainlinkを使用したNFT生成のための自動スマートコントラクト。",
-      "technologiesUsed": "Chainlink、Solidity、Ether.js",
-      "keyFeatures": "契約の自動化、NFTコレクション、SVGの作成",
-      "learnMore": "NFTを作成する",
-      "learnMoreLink": "https://vjknft.web.app/"
-    },
-    {
-      "projectName": "SaudeVapor",
-      "description": "大麻と医学研究に関するプラットフォーム。",
-      "technologiesUsed": "Google Cloud、Solana、Metaplex、DAO",
-      "keyFeatures": "大麻化合物NFTコレクション、DAOの作成",
-      "learnMore": "詳細を知る",
-      "learnMoreLink": "https://www.saudevapor.com/"
+      "projectName": "Portfolio",
+      "description": "フロントエンドのスキルを披露する",
+      "technologiesUsed": "Next.js、Three.js、Tailwind CSS",
+      "keyFeatures": "ページの遷移、アニメーション、サーバーサイドレンダリングに取り組みました。",
+      "learnMore": "詳細を見る",
+      "learnMoreLink": "https://vjkportifolio.web.app/"
     }
   ]
 }
