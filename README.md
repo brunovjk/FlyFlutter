@@ -9,7 +9,7 @@ The house operates without making any profits and solely holds FlyFlutter coins.
 
 ## Technologies Showcased
 
-FlyFlutter serves as a showcase for a collection of simple yet powerful technologies. Developed by brunovjk, a proficient full-stack web developer, this game demonstrates the effective utilization of these technologies to create a seamless gambling experience.
+FlyFlutter serves as a showcase for a collection of simple yet powerful technologies. Developed by brunovjk this game demonstrates the effective utilization of these technologies to create a seamless gambling experience.
 
 ## Development Environment Setup
 
